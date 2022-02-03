@@ -644,7 +644,60 @@ end;
 function H55_Insert(array, sample)
 	local index = length(array);
 	array[index] = sample;
-end;
+end
+
+-- Initializes table[key] = value, if not set already.
+function H55_Init(table, key, value)
+    if table[key] == nil then
+        table[key] = value;
+    end
+end
+
+-- Sets table[key] = value, returns true if the value changed.
+function H55_Update(table, key, value)
+    if table[key] ~= value then
+        table[key] = value;
+        return not nil;
+    else
+        return nil;
+    end
+end
+
+-- Shows a flysign to nonAI players.
+function H55_Display(text, object, player, num)
+    if H55_IsThisAIPlayer(player) ~= 1 then
+        sleep(2);
+        ShowFlyingSign(text, object, player, num);
+        sleep(8);
+    end
+end
+
+H55_Skills = { {}, {}, {}, {}, {}, {}, {}, {}, {} }
+H55_SkillText = {
+    "/Text/Game/Scripts/Experience.txt",
+    "/Text/Game/Scripts/Attack.txt",
+    "/Text/Game/Scripts/Defense.txt",
+    "/Text/Game/Scripts/SpellPower.txt",
+    "/Text/Game/Scripts/Knowledge.txt",
+    "/Text/Game/Scripts/Luck.txt",
+    "/Text/Game/Scripts/Morale.txt",
+    "/Text/Game/Scripts/MovePoints.txt",
+    "/Text/Game/Scripts/ManaPoints.txt",
+}
+
+-- Gives the hero[stat] += amount*skill_mastery.
+-- When the mastery decreases, the stat is decreased accordingly.
+function H55_ChangeHeroStatOnSkill(player, hero, skill, stat, amount)
+    H55_Init(H55_Skills[stat], skill, {});
+    H55_Init(H55_Skills[stat][skill], hero, 0);
+
+    amount = H55_Round(amount * GetHeroSkillMastery(hero, skill));
+
+    if H55_Update(H55_Skills[stat][skill], hero, amount) then
+        ChangeHeroStat(hero, stat, amount - H55_Skills[stat][skill][hero]);
+        H55_Display({H55_SkillText; num=amount},hero,player,5);
+    end
+end
 		
 function H55_TakeResources(PlayerID,ResourceID,chosenamount,AffectedHero)
 	local currentamount = GetPlayerResource(PlayerID,ResourceID);
@@ -8100,43 +8153,12 @@ function H55_ContinuesEvent(player)
 			-- if (HasHeroSkill(hero,RANGER_FEAT_INSIGHTS) == nil) and (H55_BrillianceOwners[hero] == 1) then
 				-- H55_BrillianceOwners[hero] = 0;
 				-- ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			-- end; 	
-			if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_DARK) ~= nil) and (H55_WeakenDarkOwners[hero] ~= 1) then
-				H55_WeakenDarkOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Knowledge.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_DARK) == nil) and (H55_WeakenDarkOwners[hero] == 1) then
-				H55_WeakenDarkOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-			end; 	
-			if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_LIGHT) ~= nil) and (H55_WeakenLightOwners[hero] ~= 1) then
-				H55_WeakenLightOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Knowledge.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_LIGHT) == nil) and (H55_WeakenLightOwners[hero] == 1) then
-				H55_WeakenLightOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-			end; 
-			if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_SUMMONING) ~= nil) and (H55_WeakenSummoningOwners[hero] ~= 1) then
-				H55_WeakenSummoningOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Knowledge.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_SUMMONING) == nil) and (H55_WeakenSummoningOwners[hero] == 1) then
-				H55_WeakenSummoningOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-			end; 	
-			if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_DESTRUCTIVE) ~= nil) and (H55_WeakenDestructiveOwners[hero] ~= 1) then
-				H55_WeakenDestructiveOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Knowledge.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_DESTRUCTIVE) == nil) and (H55_WeakenDestructiveOwners[hero] == 1) then
-				H55_WeakenDestructiveOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-			end; 
+			-- end;
+            H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_WEAKEN_DARK,STAT_KNOWLEDGE,2);
+            H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_WEAKEN_LIGHT,STAT_KNOWLEDGE,2);
+            H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_WEAKEN_SUMMONING,STAT_KNOWLEDGE,2);
+            H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_WEAKEN_DESTRUCTIVE,STAT_KNOWLEDGE,2);
+
 			if (HasHeroSkill(hero,HERO_SKILL_DETAIN_DARK) ~= nil) and (H55_DetainDarkOwners[hero] ~= 1) then
 				H55_DetainDarkOwners[hero] = 1;
 				ChangeHeroStat(hero,STAT_SPELL_POWER,2);
