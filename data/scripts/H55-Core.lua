@@ -8160,97 +8160,27 @@ function H55_ContinuesEvent(player)
 			H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_WEAKEN_SUMMONING,STAT_KNOWLEDGE,2);
 			H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_WEAKEN_DESTRUCTIVE,STAT_KNOWLEDGE,2);
 
-			if (HasHeroSkill(hero,HERO_SKILL_DETAIN_DARK) ~= nil) and (H55_DetainDarkOwners[hero] ~= 1) then
-				H55_DetainDarkOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,HERO_SKILL_DETAIN_DARK) == nil) and (H55_DetainDarkOwners[hero] == 1) then
-				H55_DetainDarkOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			end; 	
-			if (HasHeroSkill(hero,HERO_SKILL_DETAIN_LIGHT) ~= nil) and (H55_DetainLightOwners[hero] ~= 1) then
-				H55_DetainLightOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,HERO_SKILL_DETAIN_LIGHT) == nil) and (H55_DetainLightOwners[hero] == 1) then
-				H55_DetainLightOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			end; 
-			if (HasHeroSkill(hero,HERO_SKILL_DETAIN_SUMMONING) ~= nil) and (H55_DetainSummoningOwners[hero] ~= 1) then
-				H55_DetainSummoningOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,HERO_SKILL_DETAIN_SUMMONING) == nil) and (H55_DetainSummoningOwners[hero] == 1) then
-				H55_DetainSummoningOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			end; 	
-			if (HasHeroSkill(hero,HERO_SKILL_DETAIN_DESTRUCTIVE) ~= nil) and (H55_DetainDestructiveOwners[hero] ~= 1) then
-				H55_DetainDestructiveOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,HERO_SKILL_DETAIN_DESTRUCTIVE) == nil) and (H55_DetainDestructiveOwners[hero] == 1) then
-				H55_DetainDestructiveOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			end;			
-			if (HasHeroSkill(hero,NECROMANCER_FEAT_TWILIGHT) ~= nil) and (GetHeroLevel(hero) >= 30) and (H55_TwilightOwners[hero] ~= 1) then
-				H55_TwilightOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,3);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,NECROMANCER_FEAT_TWILIGHT) == nil) and (H55_TwilightOwners[hero] == 1) then
-				H55_TwilightOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-3);
-			end;	
-			if (HasHeroSkill(hero,WIZARD_FEAT_SEAL_OF_PROTECTION) ~= nil) and (H55_SealOfProtectionOwners[hero] ~= 1) then
-				H55_SealOfProtectionOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_DEFENCE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Defense.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,WIZARD_FEAT_SEAL_OF_PROTECTION) == nil) and (H55_SealOfProtectionOwners[hero] == 1) then
-				H55_SealOfProtectionOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_DEFENCE,-2);
-			end;			
-			if (HasHeroSkill(hero,KNIGHT_FEAT_PARIAH) ~= nil) and (GetHeroLevel(hero) >= 30) and (H55_PariahOwners[hero] ~= 1) then
-				H55_PariahOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,5);
-				ChangeHeroStat(hero,STAT_LUCK,-1);				
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,KNIGHT_FEAT_PARIAH) == nil) and (H55_PariahOwners[hero] == 1) then
-				H55_PariahOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-5);
-				ChangeHeroStat(hero,STAT_LUCK,1);				
-			end;				
-			if (HasHeroSkill(hero,HERO_SKILL_SHRUG_DARKNESS) ~= nil) and (H55_GetHeroRaceNum(hero) ~= 4) and (H55_DarkEmissaryOwners[hero] ~= 1) then
-				H55_DarkEmissaryOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_MORALE,3);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Morale.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,HERO_SKILL_SHRUG_DARKNESS) == nil) and (H55_DarkEmissaryOwners[hero] == 1) then
-				H55_DarkEmissaryOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_MORALE,-3);
-			end;
-			if (HasHeroSkill(hero,NECROMANCER_FEAT_CHILLING_BONES) ~= nil) and (H55_ChillingBonesOwners[hero] ~= 1) then
-				H55_ChillingBonesOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_DEFENCE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Defense.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,NECROMANCER_FEAT_CHILLING_BONES) == nil) and (H55_ChillingBonesOwners[hero] == 1) then
-				H55_ChillingBonesOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_DEFENCE,-2);
-			end;
-			if (HasHeroSkill(hero,NECROMANCER_FEAT_CHILLING_BONES) ~= nil) and (H55_GetHeroRaceNum(hero) ~= 4) and (H55_ChillingBonesOwnersLife[hero] ~= 1) then
-				H55_ChillingBonesOwnersLife[hero] = 1;
-				ChangeHeroStat(hero,STAT_DEFENCE,4);
-			end;
-			if (HasHeroSkill(hero,NECROMANCER_FEAT_CHILLING_BONES) == nil) and (H55_ChillingBonesOwnersLife[hero] == 1) then
-				H55_ChillingBonesOwnersLife[hero] = 0;
-				ChangeHeroStat(hero,STAT_DEFENCE,-4);
-			end;			
+
+			H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_DETAIN_DARK,STAT_SPELL_POWER,2);
+			H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_DETAIN_LIGHT,STAT_SPELL_POWER,2);
+			H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_DETAIN_SUMMONING,STAT_SPELL_POWER,2);
+			H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_DETAIN_DESTRUCTIVE,STAT_SPELL_POWER,2);
+
+
+			H55_ChangeHeroStatOnSkill(player,hero,WIZARD_FEAT_SEAL_OF_PROTECTION,STAT_DEFENCE,2);
+
+			if (GetHeroLevel(hero) >= 30) then
+				H55_ChangeHeroStatOnSkill(player,hero,NECROMANCER_FEAT_TWILIGHT,STAT_KNOWLEDGE, 3);
+				H55_ChangeHeroStatOnSkill(player,hero,KNIGHT_FEAT_PARIAH,STAT_SPELL_POWER,5);
+				H55_ChangeHeroStatOnSkill(player,hero,KNIGHT_FEAT_PARIAH,STAT_LUCK,-1);
+			end
+
+			H55_ChangeHeroStatOnSkill(player,hero,NECROMANCER_FEAT_CHILLING_BONES,STAT_DEFENCE,2);
+			if (H55_GetHeroRaceNum(hero) ~= 4) then
+				H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_SHRUG_DARKNESS,STAT_MORALE,3);
+				H55_ChangeHeroStatOnSkill(player,hero,NECROMANCER_FEAT_CHILLING_BONES,STAT_DEFENCE,6);
+			end
+
 			if (HasHeroSkill(hero,DEMON_FEAT_DEMONIC_RETALIATION) ~= nil) and (H55_DemonicRetaliationOwners[hero] ~= 1) then
 				H55_DemonicRetaliationOwners[hero] = 1;
 				ChangeHeroStat(hero,STAT_ATTACK,2);
@@ -8522,26 +8452,8 @@ function H55_ContinuesEvent(player)
 			H55_DEBUG = {23,"BaseSkills",player,hero};----------------------------------------------------------------------------------------------------
 			------------------------------------------------------------------------------------------------------------------------------------------------
 
-			if (HasHeroSkill(hero,SKILL_INVOCATION) ~= nil) and H55_OccultismPowerOwners[hero] == nil then
-				H55_OccultismPowerOwners[hero] = 0;
-			end;
-			if (HasHeroSkill(hero,SKILL_INVOCATION) == nil) and H55_OccultismPowerOwners[hero] ~= nil then
-				if H55_OccultismPowerOwners[hero] > 0 then
-					ChangeHeroStat(hero,STAT_SPELL_POWER,-H55_OccultismPowerOwners[hero]);
-					H55_OccultismPowerOwners[hero] = nil;
-				end;
-			end;
-			if H55_OccultismPowerOwners[hero] ~= nil then
-				local power = H55_GetOccultismPowerRebalanced(hero);
-				if H55_OccultismPowerOwners[hero] < power then
-					ChangeHeroStat(hero,STAT_SPELL_POWER,(power-H55_OccultismPowerOwners[hero]));
-					H55_OccultismPowerOwners[hero] = power;
-				end;
-				if H55_OccultismPowerOwners[hero] > power then
-					ChangeHeroStat(hero,STAT_SPELL_POWER,-(H55_OccultismPowerOwners[hero]-power));
-					H55_OccultismPowerOwners[hero] = power;
-				end;
-			end;	
+			H55_ChangeHeroStatOnSkill(player,hero,SKILL_INVOCATION,STAT_SPELL_POWER, HasHeroSkill(hero,SKILL_DESTRUCTIVE_MAGIC) and 0 or 2);
+
 			if (HasHeroSkill(hero,KNIGHT_FEAT_CASTER_CERTIFICATE) ~= nil) and H55_TribalPowerOwners[hero] == nil then
 				H55_TribalPowerOwners[hero] = 0;
 			end;
@@ -8562,46 +8474,10 @@ function H55_ContinuesEvent(player)
 					H55_TribalPowerOwners[hero] = power;
 				end;
 			end;
-			if (HasHeroSkill(hero,SKILL_LEARNING) ~= nil) and H55_LearningPowerOwners[hero] == nil then
-				H55_LearningPowerOwners[hero] = 0;
-			end;
-			if (HasHeroSkill(hero,SKILL_LEARNING) == nil) and H55_LearningPowerOwners[hero] ~= nil then
-				if H55_LearningPowerOwners[hero] > 0 then
-					ChangeHeroStat(hero,STAT_KNOWLEDGE,-H55_LearningPowerOwners[hero]);
-					H55_LearningPowerOwners[hero] = nil;
-				end;
-			end;
-			if H55_LearningPowerOwners[hero] ~= nil then
-				local power = H55_GetLearningPower(hero);
-				if H55_LearningPowerOwners[hero] < power then
-					ChangeHeroStat(hero,STAT_KNOWLEDGE,(power-H55_LearningPowerOwners[hero]));
-					H55_LearningPowerOwners[hero] = power;
-				end;
-				if H55_LearningPowerOwners[hero] > power then
-					ChangeHeroStat(hero,STAT_KNOWLEDGE,-(H55_LearningPowerOwners[hero]-power));
-					H55_LearningPowerOwners[hero] = power;
-				end;
-			end;
-			if (HasHeroSkill(hero,HERO_SKILL_BARBARIAN_LEARNING) ~= nil) and H55_BLearningPowerOwners[hero] == nil then
-				H55_BLearningPowerOwners[hero] = 0;
-			end;
-			if (HasHeroSkill(hero,HERO_SKILL_BARBARIAN_LEARNING) == nil) and H55_BLearningPowerOwners[hero] ~= nil then
-				if H55_BLearningPowerOwners[hero] > 0 then
-					ChangeHeroStat(hero,STAT_KNOWLEDGE,-H55_BLearningPowerOwners[hero]);
-					H55_BLearningPowerOwners[hero] = nil;
-				end;
-			end;
-			if H55_BLearningPowerOwners[hero] ~= nil then
-				local power = H55_GetBLearningPower(hero);
-				if H55_BLearningPowerOwners[hero] < power then
-					ChangeHeroStat(hero,STAT_KNOWLEDGE,(power-H55_BLearningPowerOwners[hero]));
-					H55_BLearningPowerOwners[hero] = power;
-				end;
-				if H55_BLearningPowerOwners[hero] > power then
-					ChangeHeroStat(hero,STAT_KNOWLEDGE,-(H55_BLearningPowerOwners[hero]-power));
-					H55_BLearningPowerOwners[hero] = power;
-				end;
-			end;			
+
+			H55_ChangeHeroStatOnSkill(player,hero,SKILL_LEARNING, STAT_KNOWLEDGE, 1);
+			H55_ChangeHeroStatOnSkill(player,hero,HERO_SKILL_BARBARIAN_LEARNING, STAT_KNOWLEDGE, 1);
+
 			if contains(H55_NecropolisHeroes,hero) ~= nil then		
 				if (HasHeroSkill(hero,SKILL_LEADERSHIP) ~= nil) then
 					H55_BaseLeadershipOwners[hero] = 1;
