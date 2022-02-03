@@ -26,20 +26,14 @@ H55_NoMentoring = 0; --If this is set to 1, Memory Mentoring is not allowed, all
 H55_BuildNeutralTowns = 0; --Use this if you want neutral towns on the map to be of higher level than 1, Only accepts numbers 0,1,2,3,4,5; each number builds up the town ~20% more,
 H55_BuildPlayerTowns = 0; --Use this if you want player towns on the map to be of higher level than 1, Only accepts numbers 0,1,2,3,4,5; each number builds up the town ~20% more.
 
---	WARNING!!! Use AllAgainstOne function only for playing ARMG maps and multiplayer maps. Option is skipped if multiple humans are playing.
-
-H55_AllAgainstOne = 0; --If this is set to 1, all AI players will always be teamed up against a single human player automatically.
-
---	WARNING!!! The AICheatMode setting does not affect 'casual game' mode, in this mode Cheating is always off!
-
-H55_AIHandicap = 0; --Set this to 1 to make AI start with fewer resources for easier game. Also makes casual game easier. Don't use for Campaign.
-H55_AICheatMode = 4; --Makes AI Cheating more or less difficult, Only accepts numbers 0,1,2,3,4,5,6; 
+H55_AICheatMode = 4; --Makes AI get more or less creatures to make up for quick-combat losses the human player isn't making, Only accepts numbers 0,1,2,3,4,5,6; 
 
 --	GUIDELINES for AICheatMode setting:
---	0 = Cheating is ALWAYS off, allows choosing bonus without cheating, casual game mode is still a little easier above hard since AI starts with less resources.
+--	0 = Cheating is ALWAYS off, lowers the default difficulties but casual game will still be easier because AI starting resources are lower.
 --	1 = 40%, 2 = 60%, 3 = 80%.
---	4 = 100% same difficulty as previous releases.
---	6 = 5 = 120%, 6 = 140%.
+--	4 = 100% Default, same difficulty as all previous releases.
+--	5 = 120%, 6 = 140%.
+--	WARNING!!! The AICheatMode setting does not affect 'casual game' mode, in this mode Cheating is always off!
 
 H55_ForceAIFix = 0; --If this is set to 1, the bug where 31j AI sometimes doesn't attack after losing all towns is fixed on all maps instead of only ARMG maps.
 
@@ -66,11 +60,17 @@ H55_ManaObservatories = 1; --By default Redwood Observatories also replenish man
 
 H55_NoArtifactMerchantsInTowns = 0; --Set this to 1 to make artifact merchants in towns completely forbidden.
 
-H55_ForcedObelisk = 0; --Allows forcing the reward for Obelisk quests on RMG maps, only accepts numbers 0,1,2,3,4,5,6,7
-H55_ForcedShantiri = 0; --Allows forcing the reward for Shantiri quests on RMG maps, only accepts numbers 0,1,2,3,4,5,6,7
+H55_ForcedObelisk = 0; --Allows forcing the reward for Obelisk quests on RMG maps, only accepts numbers 0,1,2,3,4,5,6,7,8,9
+H55_ForcedShantiri = 0; --Allows forcing the reward for Shantiri quests on RMG maps, only accepts numbers 0,1,2,3,4,5,6,7,8,9
 
 --	You will only get the forced reward if there are enough objects to satisfy the ultimate item requirement.
---	Setting 0 = random, 1 = sword, 2 = armor, 3 = shield, 4 = staff, 5 = book, 6 = cape, 7 = tear of asha. 
+--	Setting 0 = random, 1 = sword, 2 = armor, 3 = shield, 4 = staff, 5 = helmet, 6 = wings, 7 = book, 8 = ring, 9 = tear of asha.
+
+H55_NegativeArtifacts = 1; --Set to 0 to disable secret negative artifacts from HOMM2 that troll the player.
+H55_MoonDiscQuest = 0; --Set to 1 to activate moondisc combo-artifact quest on all maps, NOT RECOMMENDED, copy/paste this setting only to maps that are suitable.
+H55_MoonDiscOnARMGMaps = 1; --Set to 0 to disable moondisc combo-artifact quests on ARMG maps.
+
+H55_RPGPotions = 0; --Set to 1 to enable experimental potion feature.
 
 H55_Duel_WeeksGrowth = 8; --Settings for ARMG Duel Template, this one determines army size.
 H55_Duel_HeroLevel = 25; --Levels given by witch hut, Max level = 50!
