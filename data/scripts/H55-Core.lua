@@ -696,7 +696,7 @@ function H55_ChangeHeroStatOnSkill(player, hero, skill, stat, amount)
 
 	if H55_Update(H55_Skills[stat][skill], hero, amount) then
 		ChangeHeroStat(hero, stat, change);
-		H55_Display({H55_SkillText; num=change},hero,player,5);
+		H55_Display({H55_SkillText[skill]; num=change},hero,player,5);
 	end
 end
 		
