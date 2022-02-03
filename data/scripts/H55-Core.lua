@@ -692,10 +692,11 @@ function H55_ChangeHeroStatOnSkill(player, hero, skill, stat, amount)
 	H55_Init(H55_Skills[stat][skill], hero, 0);
 
 	amount = H55_Round(amount * GetHeroSkillMastery(hero, skill));
+	local change = amount - H55_Skills[stat][skill][hero];
 
 	if H55_Update(H55_Skills[stat][skill], hero, amount) then
-		ChangeHeroStat(hero, stat, amount - H55_Skills[stat][skill][hero]);
-		H55_Display({H55_SkillText; num=amount},hero,player,5);
+		ChangeHeroStat(hero, stat, change);
+		H55_Display({H55_SkillText; num=change},hero,player,5);
 	end
 end
 		
