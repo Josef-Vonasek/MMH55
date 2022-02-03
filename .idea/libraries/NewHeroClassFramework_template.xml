@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="NewHeroClassFramework_template">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Frameworks/NewHeroClassFramework/NewHeroClassFramework_template.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
