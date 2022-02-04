@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <WindowTextView ObjectRecordID="1000429">
 	<ClassTypeID>285694860</ClassTypeID>
-	<Shared href="/UI/Doc/SkillWheel/Common/PerkName.(WindowTextViewShared).xdb#xpointer(/WindowTextViewShared)"/>
+	<Shared href="/UI/Doc/SkillWheel/Common/PerkName.(WindowTextViewShared).xdb#xpointer(/WindowTextViewShared)" />
 	<Name>PerkName</Name>
-	<TooltipFileRef href=""/>
+	<TooltipFileRef href="" />
 	<Visible>true</Visible>
 	<Priority>10</Priority>
-	<GameMessageReactions/>
+	<GameMessageReactions />
 	<Placement>
 		<Position>
 			<First>
@@ -46,14 +46,14 @@
 		</UpperMargin>
 	</Placement>
 	<Enabled>true</Enabled>
-	<TextString/>
-	<relatedTexts/>
-	<relatedTextures/>
+	<TextString />
+	<relatedTexts />
+	<relatedTextures />
 	<Flags>
 		<SuperActive>false</SuperActive>
 	</Flags>
-	<TextFileRef href="/Text/Game/Skills/Common/Sorcery/ExplodingCorpses/Name.txt"/>
+	<TextFileRef href="/Text/Game/Skills/Common/DarkMagic/Pariah/Name.txt" />
 	<ResizeOnTextSet>false</ResizeOnTextSet>
 	<ResizeWidthOnTextSet>false</ResizeWidthOnTextSet>
-	<TextFormat href="/UI/Doc/SkillWheel/Common/Name.(TextFormat).xdb#xpointer(/TextFormat)"/>
+	<TextFormat href="/UI/Doc/SkillWheel/Common/Name.(TextFormat).xdb#xpointer(/TextFormat)" />
 </WindowTextView>

@@ -30,13 +30,13 @@
 	<Icon128/>
 	<InternalName>Tamika</InternalName>
 	<Class>HERO_CLASS_RUNEMAGE</Class>
-	<Specialization/>
+	<Specialization>HERO_SPEC_VAMPIRES</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_ADVANCED</Mastery>
+		<Mastery>MASTERY_EXPERT</Mastery>
 		<SkillID>HERO_SKILL_OFFENCE</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Added/Vampires/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Added/Vampires/Description.txt"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Necropolis/Vampire_Princess/Name.txt"/>
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Necropolis/Vampire_Princess/Description.txt"/>
 	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Necropolis/Vampire_Princess.xdb#xpointer(/Texture)"/>
 	<FaceTexture href="/Textures/Icons/Heroes/Necropolis/Necropolis_Lucretia_128x128.(Texture).xdb#xpointer(/Texture)"/>
 	<FaceTextureSmall/>
@@ -52,11 +52,9 @@
 		<Offence>2</Offence>
 		<Defence>1</Defence>
 		<Spellpower>1</Spellpower>
-		<Knowledge>1</Knowledge>
+		<Knowledge>2</Knowledge>
 		<skills/>
-		<perkIDs>
-			<Item>HERO_SKILL_FRENZY</Item>
-		</perkIDs>
+		<perkIDs/>
 		<spellIDs/>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>

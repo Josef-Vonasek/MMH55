@@ -52,7 +52,7 @@
 		<Offence>3</Offence>
 		<Defence>0</Defence>
 		<Spellpower>1</Spellpower>
-		<Knowledge>1</Knowledge>
+		<Knowledge>2</Knowledge>
 		<skills>
 			<Item>
 				<Mastery>MASTERY_ADVANCED</Mastery>

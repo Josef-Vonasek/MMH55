@@ -32,7 +32,7 @@
 	<Class>HERO_CLASS_WARLOCK</Class>
 	<Specialization>HERO_SPEC_MATRON_SALVO</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_BASIC</Mastery>
+		<Mastery>MASTERY_ADVANCED</Mastery>
 		<SkillID>HERO_SKILL_INVOCATION</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Matron_Salvo/Name.txt"/>
@@ -52,7 +52,7 @@
 		<Offence>0</Offence>
 		<Defence>0</Defence>
 		<Spellpower>3</Spellpower>
-		<Knowledge>2</Knowledge>
+		<Knowledge>3</Knowledge>
 		<skills>
 			<Item>
 				<Mastery>MASTERY_BASIC</Mastery>

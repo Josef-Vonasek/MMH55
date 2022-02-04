@@ -1,20 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <WindowSimpleShared ObjectRecordID="1000326">
 	<Crap>false</Crap>
 	<Children>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Undead/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Large_creature/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Flyer/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Cursing_attack/P4.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Horror_of_death/P5.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		
-		
-		
-		
-		
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/UNDEAD/P0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/CURSING_ATTACK/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/HORROR_OF_THE_DEATH/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="C.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 	</Children>
-	<Background/>
-	<Foreground/>
+	<Background />
+	<Foreground />
 	<Flags>
 		<Transparent>false</Transparent>
 	</Flags>
@@ -56,7 +50,7 @@
 			<Second>false</Second>
 		</UpperMargin>
 	</Placement>
-	<ActiveArea/>
+	<ActiveArea />
 	<IgnoreDblClick>false</IgnoreDblClick>
-	<ActiveMask/>
+	<ActiveMask />
 </WindowSimpleShared>

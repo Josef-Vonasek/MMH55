@@ -1,9 +1,9 @@
-<?xml version="9.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <WindowMSButtonShared ObjectRecordID="1000064">
 	<Crap>false</Crap>
-	<Children/>
-	<Background/>
-	<Foreground/>
+	<Children />
+	<Background />
+	<Foreground />
 	<Flags>
 		<Transparent>false</Transparent>
 	</Flags>
@@ -45,66 +45,66 @@
 			<Second>false</Second>
 		</UpperMargin>
 	</Placement>
-	<ActiveArea/>
+	<ActiveArea />
 	<IgnoreDblClick>false</IgnoreDblClick>
-	<ActiveMask/>
+	<ActiveMask />
 	<VisualStates>
 		<Item>
 			<Normal>
-				<Background href="9.(BackgroundSimpleScallingTexture).xdb#xpointer(/BackgroundSimpleScallingTexture)"/>
-				<Foreground/>
-				<TextString/>
+				<Background href="9.(BackgroundSimpleScallingTexture).xdb#xpointer(/BackgroundSimpleScallingTexture)" />
+				<Foreground />
+				<TextString />
 				<OnEnterSubState>
-					<Commands/>
+					<Commands />
 					<Reversable>false</Reversable>
 				</OnEnterSubState>
-				<TextFormat/>
+				<TextFormat />
 			</Normal>
 			<MouseOver>
-				<Background href="9.(BackgroundSimpleScallingTexture).xdb#xpointer(/BackgroundSimpleScallingTexture)"/>
-				<Foreground href="/UI/Doc/SkillWheel/Common/Select36.(BackgroundSimpleTexture).xdb#xpointer(/BackgroundSimpleTexture)"/>
-				<TextString/>
+				<Background href="9.(BackgroundSimpleScallingTexture).xdb#xpointer(/BackgroundSimpleScallingTexture)" />
+				<Foreground href="/UI/Doc/SkillWheel/Common/Select36.(BackgroundSimpleTexture).xdb#xpointer(/BackgroundSimpleTexture)" />
+				<TextString />
 				<OnEnterSubState>
 					<Commands>
-						<Item href="SwitchOn9.(UISSendUIMessage).xdb#xpointer(/UISSendUIMessage)"/>
+						<Item href="SwitchOn9.(UISSendUIMessage).xdb#xpointer(/UISSendUIMessage)" />
 					</Commands>
 					<Reversable>true</Reversable>
 				</OnEnterSubState>
-				<TextFormat/>
+				<TextFormat />
 			</MouseOver>
 			<Pushed>
-				<Background href="9.(BackgroundSimpleScallingTexture).xdb#xpointer(/BackgroundSimpleScallingTexture)"/>
-				<Foreground href="/UI/Doc/SkillWheel/Common/Select36.(BackgroundSimpleTexture).xdb#xpointer(/BackgroundSimpleTexture)"/>
-				<TextString/>
+				<Background href="9.(BackgroundSimpleScallingTexture).xdb#xpointer(/BackgroundSimpleScallingTexture)" />
+				<Foreground href="/UI/Doc/SkillWheel/Common/Select36.(BackgroundSimpleTexture).xdb#xpointer(/BackgroundSimpleTexture)" />
+				<TextString />
 				<OnEnterSubState>
-					<Commands/>
+					<Commands />
 					<Reversable>false</Reversable>
 				</OnEnterSubState>
-				<TextFormat/>
+				<TextFormat />
 			</Pushed>
 			<Disabled>
-				<Background/>
-				<Foreground/>
-				<TextString/>
+				<Background href="9.(BackgroundSimpleScallingTexture).xdb#xpointer(/BackgroundSimpleScallingTexture)" />
+				<Foreground />
+				<TextString />
 				<OnEnterSubState>
-					<Commands/>
+					<Commands />
 					<Reversable>false</Reversable>
 				</OnEnterSubState>
-				<TextFormat/>
+				<TextFormat />
 			</Disabled>
 			<RightButtonDown>
-				<Background href="9.(BackgroundSimpleScallingTexture).xdb#xpointer(/BackgroundSimpleScallingTexture)"/>
-				<Foreground href="/UI/Doc/SkillWheel/Common/Select36.(BackgroundSimpleTexture).xdb#xpointer(/BackgroundSimpleTexture)"/>
-				<TextString/>
+				<Background href="9.(BackgroundSimpleScallingTexture).xdb#xpointer(/BackgroundSimpleScallingTexture)" />
+				<Foreground href="/UI/Doc/SkillWheel/Common/Select36.(BackgroundSimpleTexture).xdb#xpointer(/BackgroundSimpleTexture)" />
+				<TextString />
 				<OnEnterSubState>
-					<Commands/>
+					<Commands />
 					<Reversable>false</Reversable>
 				</OnEnterSubState>
-				<TextFormat/>
+				<TextFormat />
 			</RightButtonDown>
 			<DefaultSubState>BST_NORMAL</DefaultSubState>
 			<VisualOnEnterState>
-				<Commands/>
+				<Commands />
 				<Reversable>false</Reversable>
 			</VisualOnEnterState>
 		</Item>

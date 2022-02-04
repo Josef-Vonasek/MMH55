@@ -10,8 +10,8 @@
 	<CombatLogTexts/>
 	<Level>3</Level>
 	<MagicSchool>MAGIC_SCHOOL_WARCRIES</MagicSchool>
-	<RequiredHeroLevel>11</RequiredHeroLevel>
-	<TrainedCost>14</TrainedCost>
+	<RequiredHeroLevel>25</RequiredHeroLevel>
+	<TrainedCost>10</TrainedCost>
 	<damage>
 		<Item>
 			<Base>1</Base>

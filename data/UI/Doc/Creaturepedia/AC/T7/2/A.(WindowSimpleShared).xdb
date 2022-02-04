@@ -1,20 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <WindowSimpleShared ObjectRecordID="1000326">
 	<Crap>false</Crap>
 	<Children>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Flesh_and_blood/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Large_creature/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Immunity_to_mind_control/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Shooter/P4.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/No_melee_penalty/P5.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Presence_of_the_storm/P6.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		
-		
-		
-		
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/FLESH_AND_BLOOD/P0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/IMMUNITY_TO_MIND_CONTROL/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/CALL_STORM/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/LIGHTNING_BREATH/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/NO_MELEE_PENALTY/P4.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/SHOOTER/P5.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="C.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 	</Children>
-	<Background/>
-	<Foreground/>
+	<Background />
+	<Foreground />
 	<Flags>
 		<Transparent>false</Transparent>
 	</Flags>
@@ -56,7 +53,7 @@
 			<Second>false</Second>
 		</UpperMargin>
 	</Placement>
-	<ActiveArea/>
+	<ActiveArea />
 	<IgnoreDblClick>false</IgnoreDblClick>
-	<ActiveMask/>
+	<ActiveMask />
 </WindowSimpleShared>

@@ -8,44 +8,44 @@
 		<Item href="/Text/Game/Spells/Combat/Celestial_Shield/SpellBookPrediction.txt"/>
 	</SpellBookPredictions>
 	<CombatLogTexts/>
-	<Level>5</Level>
+	<Level>4</Level>
 	<MagicSchool>MAGIC_SCHOOL_LIGHT</MagicSchool>
 	<RequiredHeroLevel>0</RequiredHeroLevel>
-	<TrainedCost>36</TrainedCost>
+	<TrainedCost>50</TrainedCost>
 	<damage>
 		<Item>
-			<Base>0.5</Base>
-			<PerPower>0.005</PerPower>
-		</Item>
-		<Item>
-			<Base>0.5</Base>
-			<PerPower>0.005</PerPower>
+			<Base>1</Base>
+			<PerPower>0</PerPower>
 		</Item>
 		<Item>
 			<Base>0.6</Base>
-			<PerPower>0.005</PerPower>
+			<PerPower>0</PerPower>
 		</Item>
 		<Item>
-			<Base>0.7</Base>
-			<PerPower>0.005</PerPower>
+			<Base>0.8</Base>
+			<PerPower>0</PerPower>
+		</Item>
+		<Item>
+			<Base>1</Base>
+			<PerPower>0</PerPower>
 		</Item>
 	</damage>
 	<duration>
 		<Item>
 			<Base>400</Base>
-			<PerPower>30</PerPower>
+			<PerPower>200</PerPower>
 		</Item>
 		<Item>
 			<Base>400</Base>
-			<PerPower>40</PerPower>
+			<PerPower>100</PerPower>
 		</Item>
 		<Item>
 			<Base>400</Base>
-			<PerPower>50</PerPower>
+			<PerPower>150</PerPower>
 		</Item>
 		<Item>
 			<Base>400</Base>
-			<PerPower>60</PerPower>
+			<PerPower>200</PerPower>
 		</Item>
 	</duration>
 	<sSpellCost>

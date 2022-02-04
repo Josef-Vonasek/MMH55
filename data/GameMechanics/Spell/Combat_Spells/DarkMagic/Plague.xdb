@@ -14,7 +14,7 @@
 	<MagicSchool>MAGIC_SCHOOL_DARK</MagicSchool>
 	<RequiredHeroLevel>0</RequiredHeroLevel>
 	<IsAimed>true</IsAimed>
-	<TrainedCost>8</TrainedCost>
+	<TrainedCost>4</TrainedCost>
 	<damage>
 		<Item>
 			<Base>0</Base>
@@ -35,19 +35,19 @@
 	</damage>
 	<duration>
 		<Item>
-			<Base>2</Base>
+			<Base>3</Base>
 			<PerPower>0.1</PerPower>
 		</Item>
 		<Item>
-			<Base>2</Base>
+			<Base>3</Base>
 			<PerPower>0.1</PerPower>
 		</Item>
 		<Item>
-			<Base>2</Base>
+			<Base>3</Base>
 			<PerPower>0.1</PerPower>
 		</Item>
 		<Item>
-			<Base>2</Base>
+			<Base>3</Base>
 			<PerPower>0.1</PerPower>
 		</Item>
 	</duration>

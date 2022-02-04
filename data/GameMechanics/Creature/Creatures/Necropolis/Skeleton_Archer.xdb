@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="65">
-	<AttackSkill>1</AttackSkill>
+	<AttackSkill>2</AttackSkill>
 	<DefenceSkill>2</DefenceSkill>
-	<Shots>5</Shots>
+	<Shots>10</Shots>
 	<MinDamage>1</MinDamage>
 	<MaxDamage>2</MaxDamage>
 	<Speed>4</Speed>
 	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>7</Health>
-	<KnownSpells/>
+	<Health>14</Health>
+	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
 	<SpellPoints2>0</SpellPoints2>
@@ -35,16 +35,17 @@
 		<Gold>40</Gold>
 	</Cost>
 	<SubjectOfRandomGeneration>true</SubjectOfRandomGeneration>
-	<MonsterShared href="/MapObjects/Necropolis/Sceleton_Archer.(AdvMapMonsterShared).xdb#xpointer(/AdvMapMonsterShared)"/>
+	<MonsterShared href="/MapObjects/Necropolis/Sceleton_Archer.(AdvMapMonsterShared).xdb#xpointer(/AdvMapMonsterShared)" />
 	<CombatSize>1</CombatSize>
-	<PatternAttack/>
-	<flybySequence/>
-	<Visual href="/GameMechanics/CreatureVisual/Creatures/Necropolis/Skeleton_Archer.xdb#xpointer(/CreatureVisual)"/>
+	<PatternAttack />
+	<flybySequence />
+	<Visual href="/GameMechanics/CreatureVisual/Creatures/Necropolis/Skeleton_Archer.xdb#xpointer(/CreatureVisual)" />
 	<Range>-2</Range>
 	<BaseCreature>CREATURE_SKELETON</BaseCreature>
-	<Upgrades/>
+	<Upgrades />
 	<Abilities>
 		<Item>ABILITY_UNDEAD</Item>
-		<Item>ABILITY_MAGIC_PROOF_25</Item>		
+		<Item>ABILITY_MAGIC_PROOF_25</Item>
+		<Item>ABILITY_MAGIC_ATTACK</Item>
 	</Abilities>
 </Creature>

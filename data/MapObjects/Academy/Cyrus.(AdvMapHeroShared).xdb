@@ -32,8 +32,8 @@
 	<Class>HERO_CLASS_ELEMENTALIST</Class>
 	<Specialization/>
 	<PrimarySkill>
-		<Mastery>MASTERY_BASIC</Mastery>
-		<SkillID>HERO_SKILL_SUMMONING_MAGIC</SkillID>
+		<Mastery>MASTERY_ADVANCED</Mastery>
+		<SkillID>HERO_SKILL_ARTIFICIER</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Added/Djinns/Name.txt"/>
 	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Added/Djinns/Description.txt"/>
@@ -52,19 +52,14 @@
 		<Offence>0</Offence>
 		<Defence>1</Defence>
 		<Spellpower>3</Spellpower>
-		<Knowledge>1</Knowledge>
+		<Knowledge>2</Knowledge>
 		<skills>
 			<Item>
 				<Mastery>MASTERY_BASIC</Mastery>
 				<SkillID>HERO_SKILL_INVOCATION</SkillID>
 			</Item>
 		</skills>
-		<perkIDs>
-			<Item>HERO_SKILL_MASTER_OF_CREATURES</Item>
-		</perkIDs>
-		<spellIDs>
-			<Item>SPELL_SUMMON_ELEMENTALS</Item>
-		</spellIDs>
+		<perkIDs/>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>
 		<AmmoCart>false</AmmoCart>

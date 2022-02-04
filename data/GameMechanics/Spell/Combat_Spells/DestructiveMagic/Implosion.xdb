@@ -8,18 +8,18 @@
 		<Item href="/Text/Game/Spells/SpellBookPredictions/DirectDamage.txt"/>
 	</SpellBookPredictions>
 	<CombatLogTexts/>
-	<Level>5</Level>
+	<Level>4</Level>
 	<MagicSchool>MAGIC_SCHOOL_DESTRUCTIVE</MagicSchool>
 	<RequiredHeroLevel>0</RequiredHeroLevel>
-	<TrainedCost>32</TrainedCost>
+	<TrainedCost>13</TrainedCost>
 	<damage>
 		<Item>
 			<Base>0</Base>
-			<PerPower>30</PerPower>
+			<PerPower>70</PerPower>
 		</Item>
 		<Item>
 			<Base>0</Base>
-			<PerPower>40</PerPower>
+			<PerPower>30</PerPower>
 		</Item>
 		<Item>
 			<Base>0</Base>
@@ -27,7 +27,7 @@
 		</Item>
 		<Item>
 			<Base>0</Base>
-			<PerPower>60</PerPower>
+			<PerPower>70</PerPower>
 		</Item>
 	</damage>
 	<duration/>

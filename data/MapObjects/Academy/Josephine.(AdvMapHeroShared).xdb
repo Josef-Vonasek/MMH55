@@ -32,8 +32,8 @@
 	<Class>HERO_CLASS_GUILDMASTER</Class>
 	<Specialization>HERO_SPEC_LOGISTICS</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_ADVANCED</Mastery>
-		<SkillID>HERO_SKILL_LIGHT_MAGIC</SkillID>
+		<Mastery>MASTERY_EXPERT</Mastery>
+		<SkillID>HERO_SKILL_ARTIFICIER</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Haven/Wanderer2/Name.txt"/>
 	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Haven/Wanderer2/Description.txt"/>
@@ -52,15 +52,10 @@
 		<Offence>2</Offence>
 		<Defence>0</Defence>
 		<Spellpower>1</Spellpower>
-		<Knowledge>2</Knowledge>
+		<Knowledge>3</Knowledge>
 		<skills/>
-		<perkIDs>
-			<Item>HERO_SKILL_MASTER_OF_BLESSING</Item>
-		</perkIDs>
-		<spellIDs>
-			<Item>SPELL_MAGIC_ARROW</Item>		
-			<Item>SPELL_BLESS</Item>
-		</spellIDs>
+		<perkIDs/>
+		<spellIDs/>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>
 		<AmmoCart>false</AmmoCart>

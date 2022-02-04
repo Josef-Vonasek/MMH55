@@ -32,7 +32,7 @@
 	<Class>HERO_CLASS_SEER</Class>
 	<Specialization>HERO_SPEC_MINOTAURS</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_ADVANCED</Mastery>
+		<Mastery>MASTERY_EXPERT</Mastery>
 		<SkillID>HERO_SKILL_LUCK</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Slaveholder/Name.txt"/>
@@ -52,14 +52,10 @@
 		<Offence>2</Offence>
 		<Defence>0</Defence>
 		<Spellpower>2</Spellpower>
-		<Knowledge>1</Knowledge>
+		<Knowledge>2</Knowledge>
 		<skills/>
-		<perkIDs>
-			<Item>HERO_SKILL_CHAOTIC_SPELLS</Item>
-		</perkIDs>
-		<spellIDs>
-			<Item>SPELL_DISRUPTING_RAY</Item>
-		</spellIDs>
+		<perkIDs/>
+		<spellIDs/>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>
 		<AmmoCart>false</AmmoCart>

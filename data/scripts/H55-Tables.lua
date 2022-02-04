@@ -59,6 +59,27 @@ H55_ClassesNames = {
 "Engineer", "Runemage", "Flamekeeper",
 "Chieftain", "Shaman", "Witch" 
 };
+-- 	{{1,2,106},{3,4,107},{5,6,108},{7,8,109},{9,10,110},{11,12,111},{13,14,112}}, --Haven
+	-- {{43,44,145},{45,46,146},{47,48,147},{49,50,148},{51,52,149},{53,54,150},{55,56,151}}, --Sylvan
+	-- {{15,16,131},{17,18,132},{19,20,133},{21,22,134},{23,24,135},{25,26,136},{27,28,137}}, --Inferno
+	-- {{29,30,152},{31,32,153},{33,34,154},{35,36,155},{37,38,156},{39,40,157},{41,42,158}}, --Necropolis
+	-- {{57,58,159},{59,60,160},{61,62,161},{63,64,162},{65,66,163},{67,68,164},{69,70,165}}, --Academy
+	-- {{71,72,138},{73,74,139},{75,76,140},{77,78,141},{79,80,142},{81,82,143},{83,84,144}}, --Dungeon
+	-- {{92,93,166},{94,95,167},{96,97,168},{98,99,169},{100,101,170},{102,103,171},{104,105,172}}, --Fortress
+	-- {{117,118,173},{119,120,174},{121,122,175},{123,124,176},{125,126,177},{127,128,178},{129,130,179}}, --Stronghold
+	-- {{}, {}, {}, {85,86,87,88}, {113,116}, {89,90,114,115}, {91}} --Neutral
+
+H55_EvilTowns = {
+	{1, 2, 5, 7, 9}, -- Haven
+	{1, 2, 5, 7, 9}, -- Sylvan
+	{3, 4, 6, 8, 9}, -- Inferno
+	{3, 4, 6, 8, 9}, -- Necro
+	{1, 2, 5, 7, 9}, -- Academy
+	{3, 4, 6, 8, 9}, -- Dungeon
+	{1, 2, 5, 7, 9}, -- Fortress
+	{3, 4, 6, 8, 9}, -- Stronghold
+	{1, 2, 5, 7, 9}, -- Neutral
+}
 
 -- H55_ClassesTexts = {
 	-- "/Text/Game/Scripts/Classes/H55_Knights.txt",
@@ -102,36 +123,47 @@ H55_StrongholdHeroes = {"Hero1","Hero2","Hero3","Hero4","Hero5","Hero6","Hero7",
 --Creatures
 
 H55_Creatures = {
-{{1,2,106},{3,4,107},{5,6,108},{7,8,109},{9,10,110},{11,12,111},{13,14,112}}, --Haven
-{{43,44,145},{45,46,146},{47,48,147},{49,50,148},{51,52,149},{53,54,150},{55,56,151}}, --Sylvan
-{{15,16,131},{17,18,132},{19,20,133},{21,22,134},{23,24,135},{25,26,136},{27,28,137}}, --Inferno
-{{29,30,152},{31,32,153},{33,34,154},{35,36,155},{37,38,156},{39,40,157},{41,42,158}}, --Necropolis
-{{57,58,159},{59,60,160},{61,62,161},{63,64,162},{65,66,163},{67,68,164},{69,70,165}}, --Academy
-{{71,72,138},{73,74,139},{75,76,140},{77,78,141},{79,80,142},{81,82,143},{83,84,144}}, --Dungeon
-{{92,93,166},{94,95,167},{96,97,168},{98,99,169},{100,101,170},{102,103,171},{104,105,172}}, --Fortress
-{{117,118,173},{119,120,174},{121,122,175},{123,124,176},{125,126,177},{127,128,178},{129,130,179}} --Stronghold
-};
+	{{1,2,106},{3,4,107},{5,6,108},{7,8,109},{9,10,110},{11,12,111},{13,14,112}}, --Haven
+	{{43,44,145},{45,46,146},{47,48,147},{49,50,148},{51,52,149},{53,54,150},{55,56,151}}, --Sylvan
+	{{15,16,131},{17,18,132},{19,20,133},{21,22,134},{23,24,135},{25,26,136},{27,28,137}}, --Inferno
+	{{29,30,152},{31,32,153},{33,34,154},{35,36,155},{37,38,156},{39,40,157},{41,42,158}}, --Necropolis
+	{{57,58,159},{59,60,160},{61,62,161},{63,64,162},{65,66,163},{67,68,164},{69,70,165}}, --Academy
+	{{71,72,138},{73,74,139},{75,76,140},{77,78,141},{79,80,142},{81,82,143},{83,84,144}}, --Dungeon
+	{{92,93,166},{94,95,167},{96,97,168},{98,99,169},{100,101,170},{102,103,171},{104,105,172}}, --Fortress
+	{{117,118,173},{119,120,174},{121,122,175},{123,124,176},{125,126,177},{127,128,178},{129,130,179}}, --Stronghold
+	{{85,85,86}, {87,87,88}, {113,113,113}, {116,116,116}, {115,115,114}, {90,90,89}, {91,91,91}} --Neutral
+};	
+H55_CreaturesInv = {}
+for faction = 1,9,1 do
+	for tier = 1,7,1 do
+		for upgrade = 1,3 do
+			H55_CreaturesInv[H55_Creatures[faction][tier][upgrade]] = {faction, tier, upgrade}
+		end
+	end
+end
 
 H55_CreaturesGrowth = {
 {24.5, 12, 10, 5, 3, 2, 1}, --Haven
 {14, 9, 7, 4, 3, 2.5, 1}, --Sylvan
 {17, 16, 8, 5, 3.5, 2, 1}, --Inferno
-{22.5, 15, 9, 5, 3, 2, 1.5}, --Necropolis  
+{22.5, 15, 6, 5, 3, 2, 1.5}, --Necropolis  
 {20, 14, 9, 5, 3.5, 2, 1}, --Academy
-{8.5, 6, 6.5, 4, 3, 2, 1}, --Dungeon
+{7, 6, 5, 4, 3, 2, 1}, --Dungeon
 {16, 14, 7, 8, 3, 2, 1}, --Fortress
-{28, 14, 11, 5, 5, 2, 1} --Stronghold
+{28, 14, 11, 5, 5, 2, 1}, --Stronghold
+{4, 4, 6, 3, 2, 2, 1} -- Neutral
 };
 
 H55_CreaturesGrowthReal = {
 {22, 12, 10, 5, 3, 2, 1}, --Haven
 {12, 9, 7, 4, 3, 2, 1}, --Sylvan
 {17, 15, 8, 5, 3, 2, 1}, --Inferno
-{20, 15, 9, 5, 3, 2, 1}, --Necropolis  
+{20, 15, 6, 5, 3, 2, 1}, --Necropolis  
 {20, 14, 9, 5, 3, 2, 1}, --Academy
 {7, 5, 6, 4, 3, 2, 1}, --Dungeon
 {16, 14, 7, 6, 3, 2, 1}, --Fortress
-{25, 14, 11, 5, 5, 2, 1} --Stronghold
+{25, 14, 11, 5, 5, 2, 1}, --Stronghold
+{4, 4, 6, 3, 2, 2, 1} -- Neutral
 };
 
 H55_NeutralCreatures = {85,86,87,88,91,113,115,116}; --Fire,Water,Earth,Air,Phoenix,Wolf,MissingSnowApe(114),Manticore,Mummy
@@ -723,24 +755,32 @@ H55_UnusualSchools = {
 [9] = {SKILL_DARK_MAGIC,SKILL_DESTRUCTIVE_MAGIC}
 }
 
-H55_UnusualSpells = {
+H55_Spells = {
 	[SKILL_SUMMONING_MAGIC] = {
+        [1] = {SPELL_WASP_SWARM,SPELL_LAND_MINE},
+        [2] = {SPELL_EARTHQUAKE,SPELL_ARCANE_CRYSTAL},
 		[3] = {SPELL_ANTI_MAGIC,SPELL_BLADE_BARRIER},
 		[4] = {SPELL_SUMMON_HIVE,SPELL_FIREWALL},
 		[5] = {SPELL_HYPNOTIZE,SPELL_CONJURE_PHOENIX}
 	},
 	[SKILL_DESTRUCTIVE_MAGIC] = {
-		[3] = {SPELL_FROST_RING,SPELL_CHAIN_LIGHTNING},
-		[4] = {SPELL_METEOR_SHOWER,SPELL_DEEP_FREEZE},
-		[5] = {SPELL_ARMAGEDDON,SPELL_IMPLOSION}
+        [1] = {SPELL_ICE_BOLT,SPELL_STONE_SPIKES},
+        [2] = {SPELL_FROST_RING,SPELL_LIGHTNING_BOLT},
+		[3] = {SPELL_FIREBALL,SPELL_METEOR_SHOWER},
+		[4] = {SPELL_ARMAGEDDON,SPELL_IMPLOSION},
+		[5] = {SPELL_DEEP_FREEZE,SPELL_CHAIN_LIGHTNING}
 	},
 	[SKILL_DARK_MAGIC] = {
-		[3] = {SPELL_WEAKNESS,SPELL_SORROW},
-		[4] = {SPELL_TELEPORT,SPELL_PHANTOM},
+        [1] = {SPELL_CURSE,SPELL_DISRUPTING_RAY,SPELL_SLOW},
+        [2] = {SPELL_WEAKNESS,SPELL_PLAGUE,SPELL_WEAKNESS},
+		[3] = {SPELL_ANIMATE_DEAD,SPELL_SORROW},
+		[4] = {SPELL_TELEPORT,SPELL_PHANTOM,SPELL_UNHOLY_WORD},
 		[5] = {SPELL_BERSERK,SPELL_VAMPIRISM}
 	},
 	[SKILL_LIGHT_MAGIC] = {
-		[3] = {SPELL_DEFLECT_ARROWS,SPELL_REGENERATION},
+        [1] = {SPELL_BLESS,SPELL_STONESKIN,SPELL_MAGIC_ARROW},
+        [2] = {SPELL_BLOODLUST,SPELL_HASTE,SPELL_DEFLECT_ARROWS},
+		[3] = {SPELL_DISPEL,SPELL_REGENERATION,SPELL_HOLY_WORD},
 		[4] = {SPELL_BLIND,SPELL_DIVINE_VENGEANCE},
 		[5] = {SPELL_CELESTIAL_SHIELD,SPELL_RESURRECT}
 	}
@@ -1133,38 +1173,38 @@ H55_Warcries = {
 --Witch Huts
 
 ------------------------Def,Elt,logt,lck,off,Drk,Dst,Lgt,Smg,Lp/Sc,Cb/Oc,WarM/Racial
-H55_WitchRenegades = 	{  6,  8, 13, 14, 17,  5, 20, 21, 22,  10,   4, 26 };
-H55_WitchKnights =      {  6,  8, 13, 14, 17, 19, 20, 12, 22,  10,   4, 26 };
-H55_WitchHeretics = 	{  6,  8, 13, 14, 17,  5,  7, 21, 24,  23,  16, 26 };
+H55_WitchRenegades = 	{  6,  8, 13, 14, 17,  5,  6,  6,  6,  10,   4, 26 };
+H55_WitchKnights =      {  6,  8, 13, 14, 17,  6,  6, 12,  6,  10,   4, 26 };
+H55_WitchHeretics = 	{  6,  8, 13, 14, 17,  5,  7,  6, 24,  23,  16, 26 };
 
-H55_WitchRangers =      {  6,  8, 13, 14, 17, 19, 20, 12, 22,  10,   4, 26 }; 
-H55_WitchAvengers =     {  6,  8, 13, 14, 17,  5,  7, 21, 24,  10,   4, 26 }; --Summoning instead of Avenger
-H55_WitchDruids =       {  6,  8, 13, 14, 17, 19,  7, 12, 24,  23,  16, 26 };
+H55_WitchRangers =      {  6,  8, 13, 14, 17,  6,  6, 12,  6,  10,   4, 26 }; 
+H55_WitchAvengers =     {  6,  8, 13, 14, 17,  5,  7,  6, 24,  10,   4, 26 }; --Summoning instead of Avenger
+H55_WitchDruids =       {  6,  8, 13, 14, 17,  6,  7, 12, 24,  23,  16, 26 };
 
-H55_WitchDemonlords = 	{  6,  8, 13, 14, 17,  5, 20, 21, 22,  10,   4, 26 }; 
-H55_WitchGatekeepers = 	{  6,  8, 13, 14, 17,  5,  7, 12, 22,  23,   9, 26 }; --No Combat/Occultism so included Gating
-H55_WitchSorcerers = 	{  6,  8, 13, 14, 17,  5,  7, 21, 24,  23,  16,  9 };
+H55_WitchDemonlords = 	{  6,  8, 13, 14, 17,  5,  6,  6,  6,  10,   4, 26 }; 
+H55_WitchGatekeepers = 	{  6,  8, 13, 14, 17,  5,  7, 12,  9,  23,   4, 26 }; --Combat
+H55_WitchSorcerers = 	{  6,  8, 13, 14, 17,  5,  7,  6, 24,  23,  16,  9 };
 
-H55_WitchDeathKnights = {  6,  8, 13, 14, 17,  5, 20, 21, 22,  10,   4, 26 }; --Shatter Summoning instead of Necromancy
-H55_WitchNecromancers = {  6,  8, 13, 14, 17,  5, 20, 12, 24,  23,  16, 15 };
-H55_WitchNethermages =  {  6,  8, 13, 14, 17,  5,  7, 21, 24,  23,  16, 15 };
+H55_WitchDeathKnights = {  6,  8, 13, 14, 17,  5,  6,  6, 15,  10,   4, 26 }; --Necromancy
+H55_WitchNecromancers = {  6,  8, 13, 14, 17,  5,  6, 12, 24,  23,  16, 15 };
+H55_WitchNethermages =  {  6,  8, 13, 14, 17,  5,  7,  6, 24,  23,  16, 15 };
 
 ------------------------Def,Elt,logt,lck,off,Drk,Dst,Lgt,Smg,Lp/Sc,Cb/Oc,WarM/Racial
-H55_WitchEnchanters =   {  6,  8, 13, 14, 17,  5, 20, 12, 22,  10,   1, 26 };
-H55_WitchConjurers =	{  6,  8, 13, 14, 17,  5,  7, 21, 24,  23,  16,  1 }; 
+H55_WitchEnchanters =   {  6,  8, 13, 14, 17,  5,  6, 12, 16,  10,   1, 26 }; --Occultism 
+H55_WitchConjurers =	{  6,  8, 13, 14, 17,  5,  7,  6, 24,  23,  16,  1 }; 
 H55_WitchWizards =      {  6,  8, 13, 14, 17,  5,  7, 12, 24,  23,  16,  1 }; 
 
-H55_WitchOverlords = 	{  6,  8, 13, 14, 17,  5, 20, 21, 22,  10,   4, 26 };
-H55_WitchTricksters = 	{  6,  8, 13, 14, 17,  5,  7, 12, 22,  23,  16, 26 };
-H55_WitchWarlocks = 	{  6,  8, 13, 14, 17,  5,  7, 21, 24,  23,  16, 15 };
+H55_WitchOverlords = 	{  6,  8, 13, 14, 17,  5,  6,  6,  6,  10,   4, 26 };
+H55_WitchTricksters = 	{  6,  8, 13, 14, 17,  5,  7, 12, 15,  23,  16, 26 }; --Necromancy
+H55_WitchWarlocks = 	{  6,  8, 13, 14, 17,  5,  7,  6, 24,  23,  16, 15 };
 
-H55_WitchEngineers = 	{  6,  8, 13, 14, 17, 19, 20, 12, 22,  10,   4, 26 }; --Shatter Summoning instead of Runelore
-H55_WitchRunemages = 	{  6,  8, 13, 14, 17,  5, 20, 12, 24,  23,  18, 26 };
-H55_WitchFlamekeepers = {  6,  8, 13, 14, 17, 19,  7, 12, 24,  23,  16, 18 };
+H55_WitchEngineers = 	{  6,  8, 13, 14, 17,  6,  6, 12, 18,  10,   4, 26 }; --Runelore
+H55_WitchRunemages = 	{  6,  8, 13, 14, 17,  5,  6, 12, 24,  23,  18, 26 };
+H55_WitchFlamekeepers = {  6,  8, 13, 14, 17,  6,  7, 12, 24,  23,  16, 18 };
 
-H55_WitchChieftains = 	{  6, 11, 13, 14, 17, 19, 20, 21, 22,  10,  25, 26 }; --Access to all shatters, Voice and Barb learning instead of enlightement
-H55_WitchShamans =      {  6,  8, 13, 14, 17, 19, 20, 12, 24,  23,  16, 26 };
-H55_WitchWitches =      {  6,  8, 13, 14, 17,  5,  7, 21, 24,  23,  16, 15 };
+H55_WitchChieftains = 	{  6, 11, 13, 14, 17,  6,  6,  6,  6,  10,  25, 26 }; --Voice and Barb learning instead of enlightement
+H55_WitchShamans =      {  6,  8, 13, 14, 17,  6,  6, 12, 24,  23,  16, 26 };
+H55_WitchWitches =      {  6,  8, 13, 14, 17,  5,  7,  6, 24,  23,  16, 15 };
 
 H55_WitchSelect = { 
 	H55_WitchRenegades, H55_WitchKnights, H55_WitchHeretics,

@@ -6,26 +6,26 @@
 	<EffectTexture href="/UI/Common/Icons/Spell_Buff_Icons/Dispel.(Texture).xdb#xpointer(/Texture)"/>
 	<SpellBookPredictions/>
 	<CombatLogTexts/>
-	<Level>2</Level>
+	<Level>3</Level>
 	<MagicSchool>MAGIC_SCHOOL_LIGHT</MagicSchool>
 	<RequiredHeroLevel>0</RequiredHeroLevel>
 	<IsAimed>true</IsAimed>
-	<TrainedCost>20</TrainedCost>
+	<TrainedCost>8</TrainedCost>
 	<damage>
 		<Item>
-			<Base>0.1</Base>
+			<Base>0.8</Base>
 			<PerPower>0.03</PerPower>
 		</Item>
 		<Item>
-			<Base>0.3</Base>
+			<Base>0.4</Base>
 			<PerPower>0.03</PerPower>
 		</Item>
 		<Item>
-			<Base>0.55</Base>
+			<Base>0.6</Base>
 			<PerPower>0.03</PerPower>
 		</Item>
 		<Item>
-			<Base>0.7</Base>
+			<Base>0.8</Base>
 			<PerPower>0.03</PerPower>
 		</Item>
 	</damage>

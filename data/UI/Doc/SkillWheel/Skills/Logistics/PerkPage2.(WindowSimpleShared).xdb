@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <WindowSimpleShared ObjectRecordID="1000326">
 	<Crap>false</Crap>
 	<Children>
-		<Item href="PerkDesc2.(WindowTextView).xdb#xpointer(/WindowTextView)"/>
+		<Item href="PerkDesc2.(WindowTextView).xdb#xpointer(/WindowTextView)" />
 	</Children>
-	<Background/>
-	<Foreground/>
+	<Background />
+	<Foreground />
 	<Flags>
 		<Transparent>false</Transparent>
 	</Flags>
@@ -47,7 +47,7 @@
 			<Second>false</Second>
 		</UpperMargin>
 	</Placement>
-	<ActiveArea/>
+	<ActiveArea />
 	<IgnoreDblClick>false</IgnoreDblClick>
-	<ActiveMask/>
+	<ActiveMask />
 </WindowSimpleShared>

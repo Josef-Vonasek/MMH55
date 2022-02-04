@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <WindowMSButton ObjectRecordID="1000123">
 	<ClassTypeID>285694855</ClassTypeID>
-	<Shared href="/UI/Doc/SkillWheel/Skills/Dark/PerkButton7.(WindowMSButtonShared).xdb#xpointer(/WindowMSButtonShared)"/>
+	<Shared href="/UI/Doc/SkillWheel/Skills/Dark/PerkButton7.(WindowMSButtonShared).xdb#xpointer(/WindowMSButtonShared)" />
 	<Name>PerkButton</Name>
-	<TooltipFileRef/>
+	<TooltipFileRef />
 	<Visible>true</Visible>
 	<Priority>30</Priority>
-	<GameMessageReactions/>
+	<GameMessageReactions />
 	<Placement>
 		<Position>
 			<First>
-				<x>590</x>
-				<y>611</y>
+				<x>591</x>
+				<y>126</y>
 			</First>
 			<Second>true</Second>
 		</Position>
@@ -46,39 +46,39 @@
 		</UpperMargin>
 	</Placement>
 	<Enabled>true</Enabled>
-	<TextString/>
-	<relatedTexts/>
-	<relatedTextures/>
+	<TextString />
+	<relatedTexts />
+	<relatedTextures />
 	<Flags>
 		<SuperActive>false</SuperActive>
 	</Flags>
 	<ButtonStates>
 		<Item>
-			<MessageOnEnterState/>
+			<MessageOnEnterState />
 			<CommandsOnEnterState>
-				<Commands/>
+				<Commands />
 				<Reversable>false</Reversable>
 			</CommandsOnEnterState>
 			<CommandsOnRightClick>
-				<Commands/>
+				<Commands />
 				<Reversable>false</Reversable>
 			</CommandsOnRightClick>
 			<commandsOnLDblKlick>
-				<Commands/>
+				<Commands />
 				<Reversable>false</Reversable>
 			</commandsOnLDblKlick>
 			<WaitVisual>false</WaitVisual>
 			<ReverseCommands>false</ReverseCommands>
-			<Name/>
+			<Name />
 		</Item>
 	</ButtonStates>
 	<ButtonGroupID>0</ButtonGroupID>
 	<AutoChangeState>true</AutoChangeState>
 	<PushEffect>
-		<Commands/>
+		<Commands />
 		<Reversable>false</Reversable>
 	</PushEffect>
 	<State>0</State>
-	<TextFileRef href=""/>
-	<TextFormat/>
+	<TextFileRef href="" />
+	<TextFormat />
 </WindowMSButton>

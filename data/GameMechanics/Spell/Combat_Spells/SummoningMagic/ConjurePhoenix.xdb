@@ -13,18 +13,18 @@
 	<Level>5</Level>
 	<MagicSchool>MAGIC_SCHOOL_SUMMONING</MagicSchool>
 	<RequiredHeroLevel>0</RequiredHeroLevel>
-	<TrainedCost>44</TrainedCost>
+	<TrainedCost>25</TrainedCost>
 	<damage>
+		<Item>
+			<Base>1</Base>
+			<PerPower>0</PerPower>
+		</Item>
 		<Item>
 			<Base>3</Base>
 			<PerPower>0</PerPower>
 		</Item>
 		<Item>
 			<Base>2</Base>
-			<PerPower>0</PerPower>
-		</Item>
-		<Item>
-			<Base>1.5</Base>
 			<PerPower>0</PerPower>
 		</Item>
 		<Item>

@@ -32,7 +32,7 @@
 	<Class>HERO_CLASS_SORCERER</Class>
 	<Specialization/>
 	<PrimarySkill>
-		<Mastery>MASTERY_BASIC</Mastery>
+		<Mastery>MASTERY_ADVANCED</Mastery>
 		<SkillID>HERO_SKILL_SORCERY</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Added/ElemFire/Name.txt"/>
@@ -52,19 +52,15 @@
 		<Offence>0</Offence>
 		<Defence>0</Defence>
 		<Spellpower>3</Spellpower>
-		<Knowledge>2</Knowledge>
+		<Knowledge>3</Knowledge>
 		<skills>
 			<Item>
 				<Mastery>MASTERY_BASIC</Mastery>
 				<SkillID>HERO_SKILL_SUMMONING_MAGIC</SkillID>
 			</Item>
 		</skills>
-		<perkIDs>
-			<Item>HERO_SKILL_ARCANE_TRAINING</Item>
-		</perkIDs>
-		<spellIDs>
-			<Item>SPELL_LAND_MINE</Item>
-		</spellIDs>
+		<perkIDs/>
+		<spellIDs/>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>
 		<AmmoCart>false</AmmoCart>

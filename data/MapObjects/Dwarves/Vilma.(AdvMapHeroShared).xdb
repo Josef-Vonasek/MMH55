@@ -32,8 +32,8 @@
 	<Class>HERO_CLASS_FLAMEKEEPERA</Class>
 	<Specialization>HERO_SPEC_LOGISTICS</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_ADVANCED</Mastery>
-		<SkillID>HERO_SKILL_DESTRUCTIVE_MAGIC</SkillID>
+		<Mastery>MASTERY_EXPERT</Mastery>
+		<SkillID>HERO_SKILL_RUNELORE</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Haven/Wanderer3/Name.txt"/>
 	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Haven/Wanderer3/Description.txt"/>
@@ -52,14 +52,10 @@
 		<Offence>0</Offence>
 		<Defence>1</Defence>
 		<Spellpower>2</Spellpower>
-		<Knowledge>2</Knowledge>
+		<Knowledge>3</Knowledge>
 		<skills/>
-		<perkIDs>
-			<Item>HERO_SKILL_MASTER_OF_FIRE</Item>
-		</perkIDs>
-		<spellIDs>
-			<Item>SPELL_FIREBALL</Item>
-		</spellIDs>
+		<perkIDs/>
+		<spellIDs/>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>
 		<AmmoCart>false</AmmoCart>

@@ -32,13 +32,13 @@
 	<Icon128/>
 	<InternalName>Crag</InternalName>
 	<Class>HERO_CLASS_BARBARIAN</Class>
-	<Specialization/>
+	<Specialization>HERO_SPEC_WHITE_KNIGHT</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_BASIC</Mastery>
+		<Mastery>MASTERY_ADVANCED</Mastery>
 		<SkillID>HERO_SKILL_DEMONIC_RAGE</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Added/Offense/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Added/Offense/Description.txt"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Haven/White_Knight2/Name.txt"/>
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Haven/White_Knight2/Description.txt"/>
 	<SpecializationIcon href="/Textures/HeroScreen/Skills/Offence_3.xdb#xpointer(/Texture)"/>
 	<FaceTexture href="/Textures/Icons/Heroes/Stronghold/Stronghold_Crag_128x128.(Texture).xdb#xpointer(/Texture)"/>
 	<FaceTextureSmall/>
@@ -54,16 +54,14 @@
 		<Offence>4</Offence>
 		<Defence>0</Defence>
 		<Spellpower>1</Spellpower>
-		<Knowledge>1</Knowledge>
+		<Knowledge>2</Knowledge>
 		<skills>
 			<Item>
 				<Mastery>MASTERY_BASIC</Mastery>
-				<SkillID>HERO_SKILL_BARBARIAN_LEARNING</SkillID>
+				<SkillID>HERO_SKILL_LEADERSHIP</SkillID>
 			</Item>
 		</skills>
-		<perkIDs>
-			<Item>HERO_SKILL_MEMORY_OF_OUR_BLOOD</Item>
-		</perkIDs>
+		<perkIDs/>
 		<spellIDs/>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>
@@ -84,6 +82,6 @@
 		<Offence>2</Offence>
 		<Defence>2</Defence>
 		<Spellpower>2</Spellpower>
-		<Knowledge>2</Knowledge>
+		<Knowledge>3</Knowledge>
 	</PresetMinimalAttributes>
 </AdvMapHeroShared>

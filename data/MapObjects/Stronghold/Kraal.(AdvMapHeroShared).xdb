@@ -34,7 +34,7 @@
 	<Class>HERO_CLASS_BARBARIAN</Class>
 	<Specialization>HERO_SPEC_WAR_MACHINES</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_BASIC</Mastery>
+		<Mastery>MASTERY_ADVANCED</Mastery>
 		<SkillID>HERO_SKILL_DEMONIC_RAGE</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Haven/Artilleryman3/Name.txt"/>
@@ -54,16 +54,14 @@
 		<Offence>3</Offence>
 		<Defence>0</Defence>
 		<Spellpower>1</Spellpower>
-		<Knowledge>1</Knowledge>
+		<Knowledge>2</Knowledge>
 		<skills>			
 			<Item>
 				<Mastery>MASTERY_BASIC</Mastery>
 				<SkillID>HERO_SKILL_WAR_MACHINES</SkillID>
 			</Item>		
 		</skills>
-		<perkIDs>
-			<Item>HERO_SKILL_BALLISTA</Item>
-		</perkIDs>
+		<perkIDs/>
 		<spellIDs/>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>

@@ -2,7 +2,7 @@
 <WindowSimpleShared ObjectRecordID="1000732">
 	<Crap>false</Crap>
 	<Children/>
-	<Background href="Background_Norm.(BackgroundSimpleTexture).xdb#xpointer(/BackgroundSimpleTexture)"/>
+	<Background href="Background_Barb.(BackgroundSimpleTexture).xdb#xpointer(/BackgroundSimpleTexture)"/>
 	<Foreground/>
 	<Flags>
 		<Transparent>false</Transparent>

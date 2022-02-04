@@ -1,20 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <WindowSimpleShared ObjectRecordID="1000326">
 	<Crap>false</Crap>
 	<Children>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Flesh_and_blood/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Large_shield/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Enraged/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Armored/P4.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Shield_wall/P5.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		
-		
-		
-		
-		
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/FLESH_AND_BLOOD/P0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/ENRAGED/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/LARGE_SHIELD/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/ARMORED/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/SHIELD_WALL/P4.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="C.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 	</Children>
-	<Background/>
-	<Foreground/>
+	<Background />
+	<Foreground />
 	<Flags>
 		<Transparent>false</Transparent>
 	</Flags>
@@ -56,7 +52,7 @@
 			<Second>false</Second>
 		</UpperMargin>
 	</Placement>
-	<ActiveArea/>
+	<ActiveArea />
 	<IgnoreDblClick>false</IgnoreDblClick>
-	<ActiveMask/>
+	<ActiveMask />
 </WindowSimpleShared>

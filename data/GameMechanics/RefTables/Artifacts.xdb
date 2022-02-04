@@ -64,7 +64,7 @@
 				<AIValue>8000</AIValue>
 				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
 				<HeroStatsModif>
-					<Attack>6</Attack>
+					<Attack>7</Attack>
 					<Defence>0</Defence>
 					<Knowledge>0</Knowledge>
 					<SpellPower>0</SpellPower>
@@ -114,7 +114,7 @@
 				<AIValue>12000</AIValue>
 				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
 				<HeroStatsModif>
-					<Attack>0</Attack>
+					<Attack>-4</Attack>
 					<Defence>0</Defence>
 					<Knowledge>0</Knowledge>
 					<SpellPower>0</SpellPower>
@@ -227,31 +227,6 @@
 			</obj>
 		</Item>
 		<Item>
-			<ID>ICEBERG_SHIELD</ID>
-			<obj>
-				<NameFileRef href="/Text/Game/Artifacts/Iceberg_shield/Name.txt"/>
-				<DescriptionFileRef href="/Text/Game/Artifacts/Iceberg_shield/Description.txt"/>
-				<Model/>
-				<Type>ARTF_CLASS_MAJOR</Type>
-				<Slot>SECONDARY</Slot>
-				<Icon href="/Textures/HeroScreen/Artifacts/Icberg_Shield.xdb#xpointer(/Texture)"/>
-				<CostOfGold>24000</CostOfGold>
-				<AIValue>8000</AIValue>
-				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
-				<HeroStatsModif>
-					<Attack>0</Attack>
-					<Defence>4</Defence>
-					<Knowledge>0</Knowledge>
-					<SpellPower>0</SpellPower>
-					<Morale>0</Morale>
-					<Luck>0</Luck>
-				</HeroStatsModif>
-				<ArtifactShared href="/MapObjects/Artifacts/iceberg_shield.(AdvMapArtifactShared).xdb#xpointer(/AdvMapArtifactShared)"/>
-				<AvailableForPresets>true</AvailableForPresets>
-				<PresetPrice>0</PresetPrice>
-			</obj>
-		</Item>
-		<Item>
 			<ID>GOLDEN_SEXTANT</ID>
 			<obj>
 				<NameFileRef href="/Text/Game/Artifacts/Golden_sextant/Name.txt"/>
@@ -293,7 +268,7 @@
 					<Defence>0</Defence>
 					<Knowledge>0</Knowledge>
 					<SpellPower>0</SpellPower>
-					<Morale>2</Morale>
+					<Morale>1</Morale>
 					<Luck>0</Luck>
 				</HeroStatsModif>
 				<ArtifactShared href="/MapObjects/Artifacts/crown_of_courage.(AdvMapArtifactShared).xdb#xpointer(/AdvMapArtifactShared)"/>
@@ -432,7 +407,7 @@
 				<NameFileRef href="/Text/Game/Artifacts/Werewolf_claw_necklace/Name.txt"/>
 				<DescriptionFileRef href="/Text/Game/Artifacts/Werewolf_claw_necklace/Description.txt"/>
 				<Model/>
-				<Type>ARTF_CLASS_MAJOR</Type>
+				<Type>ARTF_CLASS_RELIC</Type>
 				<Slot>NECK</Slot>
 				<Icon href="/Textures/HeroScreen/Artifacts/Werewolf_Claw_Necklace.xdb#xpointer(/Texture)"/>
 				<CostOfGold>20000</CostOfGold>
@@ -498,32 +473,7 @@
 				</HeroStatsModif>
 				<ArtifactShared href="/MapObjects/Artifacts/necklace_of_power.(AdvMapArtifactShared).xdb#xpointer(/AdvMapArtifactShared)"/>
 				<AvailableForPresets>true</AvailableForPresets>
-				<PresetPrice>0</PresetPrice>
-			</obj>
-		</Item>
-		<Item>
-			<ID>RING_OF_LIGHTING_PROTECTION</ID>
-			<obj>
-				<NameFileRef href="/Text/Game/Artifacts/Ring_of_lightning_protection/Name.txt"/>
-				<DescriptionFileRef href="/Text/Game/Artifacts/Ring_of_lightning_protection/Description.txt"/>
-				<Model href="/_(Model)/Artefacts/Ring_of_Lightning_Protection.(Model).xdb#xpointer(/Model)"/>
-				<Type>ARTF_CLASS_MINOR</Type>
-				<Slot>FINGER</Slot>
-				<Icon href="/Textures/HeroScreen/Artifacts/Ring_of_Lightning_Protection.xdb#xpointer(/Texture)"/>
-				<CostOfGold>12000</CostOfGold>
-				<AIValue>4000</AIValue>
-				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
-				<HeroStatsModif>
-					<Attack>0</Attack>
-					<Defence>2</Defence>
-					<Knowledge>0</Knowledge>
-					<SpellPower>0</SpellPower>
-					<Morale>0</Morale>
-					<Luck>0</Luck>
-				</HeroStatsModif>
-				<ArtifactShared href="/MapObjects/Artifacts/ring_of_lightning_protection.(AdvMapArtifactShared).xdb#xpointer(/AdvMapArtifactShared)"/>
-				<AvailableForPresets>true</AvailableForPresets>
-				<PresetPrice>0</PresetPrice>
+				<PresetPrice>1000</PresetPrice>
 			</obj>
 		</Item>
 		<Item>
@@ -539,12 +489,12 @@
 				<AIValue>3800</AIValue>
 				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
 				<HeroStatsModif>
-					<Attack>0</Attack>
-					<Defence>0</Defence>
+					<Attack></Attack>
+					<Defence>3</Defence>
 					<Knowledge>0</Knowledge>
 					<SpellPower>0</SpellPower>
 					<Morale>0</Morale>
-					<Luck>0</Luck>
+					<Luck></Luck>
 				</HeroStatsModif>
 				<ArtifactShared href="/MapObjects/Artifacts/RingOfLife.(AdvMapArtifactShared).xdb#xpointer(/AdvMapArtifactShared)"/>
 				<AvailableForPresets>true</AvailableForPresets>
@@ -582,7 +532,7 @@
 				<NameFileRef href="/Text/Game/Artifacts/Nightmarish_ring/Name.txt"/>
 				<DescriptionFileRef href="/Text/Game/Artifacts/Nightmarish_ring/Description.txt"/>
 				<Model href="/_(Model)/Artefacts/Nightmarish_Ring.(Model).xdb#xpointer(/Model)"/>
-				<Type>ARTF_CLASS_MAJOR</Type>
+				<Type>ARTF_CLASS_RELIC</Type>
 				<Slot>FINGER</Slot>
 				<Icon href="/Textures/HeroScreen/Artifacts/Nightmarish_Ring_3.xdb#xpointer(/Texture)"/>
 				<CostOfGold>20000</CostOfGold>
@@ -768,8 +718,8 @@
 					<Defence>0</Defence>
 					<Knowledge>0</Knowledge>
 					<SpellPower>0</SpellPower>
-					<Morale>3</Morale>
-					<Luck>3</Luck>
+					<Morale>0</Morale>
+					<Luck>0</Luck>
 				</HeroStatsModif>
 				<ArtifactShared href="/MapObjects/Artifacts/AngelWings.(AdvMapArtifactShared).xdb#xpointer(/AdvMapArtifactShared)"/>
 				<AvailableForPresets>true</AvailableForPresets>
@@ -793,8 +743,8 @@
 					<Defence>0</Defence>
 					<Knowledge>2</Knowledge>
 					<SpellPower>0</SpellPower>
-					<Morale>2</Morale>
-					<Luck>0</Luck>
+					<Morale>1</Morale>
+					<Luck>1</Luck>
 				</HeroStatsModif>
 				<ArtifactShared href="/MapObjects/Artifacts/Lion_hide_cape.(AdvMapArtifactShared).xdb#xpointer(/AdvMapArtifactShared)"/>
 				<AvailableForPresets>true</AvailableForPresets>
@@ -1072,31 +1022,6 @@
 					<Luck>0</Luck>
 				</HeroStatsModif>
 				<ArtifactShared href="/MapObjects/Artifacts/Dragon_eye_ring.(AdvMapArtifactShared).xdb#xpointer(/AdvMapArtifactShared)"/>
-				<AvailableForPresets>true</AvailableForPresets>
-				<PresetPrice>0</PresetPrice>
-			</obj>
-		</Item>
-		<Item>
-			<ID>DRAGON_FLAME_TONGUE</ID>
-			<obj>
-				<NameFileRef href="/Text/Game/Artifacts/Dragon_flame_tongue/Name.txt"/>
-				<DescriptionFileRef href="/Text/Game/Artifacts/Dragon_flame_tongue/Description.txt"/>
-				<Model/>
-				<Type>ARTF_CLASS_MAJOR</Type>
-				<Slot>PRIMARY</Slot>
-				<Icon href="/Textures/HeroScreen/Artifacts/Dragon_Flame_Tongue.xdb#xpointer(/Texture)"/>
-				<CostOfGold>24000</CostOfGold>
-				<AIValue>8000</AIValue>
-				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
-				<HeroStatsModif>
-					<Attack>4</Attack>
-					<Defence>0</Defence>
-					<Knowledge>0</Knowledge>
-					<SpellPower>0</SpellPower>
-					<Morale>0</Morale>
-					<Luck>0</Luck>
-				</HeroStatsModif>
-				<ArtifactShared href="/MapObjects/Artifacts/Dragon_flame_tongue.(AdvMapArtifactShared).xdb#xpointer(/AdvMapArtifactShared)"/>
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
@@ -1527,56 +1452,6 @@
 			</obj>
 		</Item>
 		<Item>
-			<ID>ARTIFACT_EARTHSLIDERS</ID>
-			<obj>
-				<NameFileRef href="/Text/Game/Artifacts/Earthsliders/Name.txt"/>
-				<DescriptionFileRef href="/Text/Game/Artifacts/Earthsliders/Description.txt"/>
-				<Model/>
-				<Type>ARTF_CLASS_MINOR</Type>
-				<Slot>FEET</Slot>
-				<Icon href="/Textures/Icons/Artifacts/Earth_Sliders.(Texture).xdb#xpointer(/Texture)"/>
-				<CostOfGold>12000</CostOfGold>
-				<AIValue>4000</AIValue>
-				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
-				<HeroStatsModif>
-					<Attack>0</Attack>
-					<Defence>0</Defence>
-					<Knowledge>0</Knowledge>
-					<SpellPower>0</SpellPower>
-					<Morale>0</Morale>
-					<Luck>0</Luck>
-				</HeroStatsModif>
-				<ArtifactShared href="/MapObjects/Artifacts/Earthsliders.(AdvMapArtifactShared).xdb#xpointer(/AdvMapArtifactShared)"/>
-				<AvailableForPresets>true</AvailableForPresets>
-				<PresetPrice>0</PresetPrice>
-			</obj>
-		</Item>
-		<Item>
-			<ID>ARTIFACT_RIGID_MANTLE</ID>
-			<obj>
-				<NameFileRef href="/Text/Game/Artifacts/Rigid_Mantle/Name.txt"/>
-				<DescriptionFileRef href="/Text/Game/Artifacts/Rigid_Mantle/Description.txt"/>
-				<Model/>
-				<Type>ARTF_CLASS_MINOR</Type>
-				<Slot>SHOULDERS</Slot>
-				<Icon href="/Textures/HeroScreen/Artifacts/Rigid_Mantle.xdb#xpointer(/Texture)"/>
-				<CostOfGold>12000</CostOfGold>
-				<AIValue>4000</AIValue>
-				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
-				<HeroStatsModif>
-					<Attack>0</Attack>
-					<Defence>0</Defence>
-					<Knowledge>0</Knowledge>
-					<SpellPower>0</SpellPower>
-					<Morale>0</Morale>
-					<Luck>0</Luck>
-				</HeroStatsModif>
-				<ArtifactShared href="/MapObjects/Artifacts/Rigid_Mantle.(AdvMapArtifactShared).xdb#xpointer(/AdvMapArtifactShared)"/>
-				<AvailableForPresets>true</AvailableForPresets>
-				<PresetPrice>0</PresetPrice>
-			</obj>
-		</Item>
-		<Item>
 			<ID>ARTIFACT_JINXING_BAND</ID>
 			<obj>
 				<NameFileRef href="/Text/Game/Artifacts/Jinxing_Band/Name.txt"/>
@@ -1864,7 +1739,7 @@
 				<AIValue>6600</AIValue>
 				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
 				<HeroStatsModif>
-					<Attack>7</Attack>
+					<Attack>8</Attack>
 					<Defence>0</Defence>
 					<Knowledge>0</Knowledge>
 					<SpellPower>0</SpellPower>
@@ -1890,7 +1765,7 @@
 				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
 				<HeroStatsModif>
 					<Attack>0</Attack>
-					<Defence>7</Defence>
+					<Defence>10</Defence>
 					<Knowledge>0</Knowledge>
 					<SpellPower>0</SpellPower>
 					<Morale>0</Morale>
@@ -2101,7 +1976,7 @@
 				<PresetPrice>0</PresetPrice>
 			</obj>
 		</Item>
-		<Item>
+		<!-- <Item>
 			<ID>ARTIFACT_BEARHIDE_WRAPS</ID>
 			<obj>
 				<NameFileRef href="/Text/Game/Artifacts/Bearhide_Wraps/name.txt"/>
@@ -2125,7 +2000,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>
+		</Item> -->
 		<Item>
 			<ID>ARTIFACT_DWARVEN_SMITHY_HUMMER</ID>
 			<obj>
@@ -2159,7 +2034,7 @@
 				<Model href="/_(Model)/Artefacts/H5Addon1/DwarvenSmythyHummer.xdb#xpointer(/Model)"/>
 				<Type>ARTF_CLASS_MINOR</Type>
 				<Slot>PRIMARY</Slot>
-				<Icon href="/UI/H5A1/Icons/Artefacts/128x128/Dwarven_Smithy_Hammer.(Texture).xdb#xpointer(/Texture)"/>				
+				<Icon href="/UI/H5A1/Icons/Artefacts/128x128/Dwarven_Smithy_Hammer.(Texture).xdb#xpointer(/Texture)"/>
 				<CostOfGold>8000</CostOfGold>
 				<AIValue>3800</AIValue>
 				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
@@ -3065,7 +2940,7 @@
 				<CanBeGeneratedToSell>true</CanBeGeneratedToSell>
 				<HeroStatsModif>
 					<Attack>0</Attack>
-					<Defence>8</Defence>
+					<Defence>9</Defence>
 					<Knowledge>0</Knowledge>
 					<SpellPower>0</SpellPower>
 					<Morale>0</Morale>
@@ -3175,7 +3050,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_PIRATE01</ID>
 			<obj>
@@ -3200,7 +3075,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_PIRATE02</ID>
 			<obj>
@@ -3225,7 +3100,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>		
+		</Item>
 		<Item>
 			<ID>ARTIFACT_PIRATE03</ID>
 			<obj>
@@ -3250,7 +3125,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_PIRATE04</ID>
 			<obj>
@@ -3275,7 +3150,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_PIRATE05</ID>
 			<obj>
@@ -3300,7 +3175,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_PIRATE06</ID>
 			<obj>
@@ -3350,7 +3225,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_MEDICAL02</ID>
 			<obj>
@@ -3375,7 +3250,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_MEDICAL03</ID>
 			<obj>
@@ -3400,7 +3275,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_MEDICAL04</ID>
 			<obj>
@@ -3425,7 +3300,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_POTION01</ID>
 			<obj>
@@ -3450,7 +3325,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_POTION02</ID>
 			<obj>
@@ -3475,7 +3350,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_POTION03</ID>
 			<obj>
@@ -3500,7 +3375,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_A1</ID>
 			<obj>
@@ -3525,7 +3400,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>		
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_A2</ID>
 			<obj>
@@ -3550,7 +3425,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_A3</ID>
 			<obj>
@@ -3575,7 +3450,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>		
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_A4</ID>
 			<obj>
@@ -3600,7 +3475,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_D1</ID>
 			<obj>
@@ -3625,7 +3500,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_D2</ID>
 			<obj>
@@ -3650,7 +3525,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_D3</ID>
 			<obj>
@@ -3675,7 +3550,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_D4</ID>
 			<obj>
@@ -3700,7 +3575,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>		
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_S1</ID>
 			<obj>
@@ -3725,7 +3600,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_S2</ID>
 			<obj>
@@ -3750,7 +3625,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_S3</ID>
 			<obj>
@@ -3775,7 +3650,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_S4</ID>
 			<obj>
@@ -3800,7 +3675,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_K1</ID>
 			<obj>
@@ -3825,7 +3700,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_K2</ID>
 			<obj>
@@ -3850,7 +3725,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>		
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_K3</ID>
 			<obj>
@@ -3875,7 +3750,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_K4</ID>
 			<obj>
@@ -3950,7 +3825,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_BOOK_R3</ID>
 			<obj>
@@ -3975,7 +3850,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_SHANTIRI_01</ID>
 			<obj>
@@ -4000,7 +3875,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_SHANTIRI_02</ID>
 			<obj>
@@ -4025,7 +3900,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_SHANTIRI_03</ID>
 			<obj>
@@ -4050,7 +3925,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_SHANTIRI_04</ID>
 			<obj>
@@ -4075,7 +3950,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_SHANTIRI_05</ID>
 			<obj>
@@ -4100,7 +3975,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_AR1</ID>
 			<obj>
@@ -4125,7 +4000,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_AR2</ID>
 			<obj>
@@ -4150,7 +4025,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>		
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_AR3</ID>
 			<obj>
@@ -4175,7 +4050,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_HM1</ID>
 			<obj>
@@ -4200,7 +4075,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_HM2</ID>
 			<obj>
@@ -4225,7 +4100,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>		
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_HM3</ID>
 			<obj>
@@ -4250,7 +4125,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_ST1</ID>
 			<obj>
@@ -4275,7 +4150,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_ST2</ID>
 			<obj>
@@ -4300,7 +4175,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_ST3</ID>
 			<obj>
@@ -4325,7 +4200,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_SW1</ID>
 			<obj>
@@ -4350,7 +4225,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_SW2</ID>
 			<obj>
@@ -4375,7 +4250,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_UPG_SW3</ID>
 			<obj>
@@ -4400,7 +4275,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_FIZBIN</ID>
 			<obj>
@@ -4450,7 +4325,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_URGASH_01</ID>
 			<obj>
@@ -4475,7 +4350,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>		
+		</Item>
 		<Item>
 			<ID>ARTIFACT_URGASH_02</ID>
 			<obj>
@@ -4525,7 +4400,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_ELRATH_02</ID>
 			<obj>
@@ -4550,7 +4425,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_GOVERNOR_01</ID>
 			<obj>
@@ -4575,7 +4450,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_GOVERNOR_02</ID>
 			<obj>
@@ -4603,7 +4478,7 @@
 		</Item>
 		<Item>
 			<ID>ARTIFACT_GEAR_01</ID>
-			<obj>				
+			<obj>
 				<NameFileRef href="/Text/Game/Artifacts/Gear_01/Name.txt"/>
 				<DescriptionFileRef href="/Text/Game/Artifacts/Gear_01/Description.txt"/>
 				<Model href="/_(Model)/TerrainObjects/Water/SeaChest.(Model).xdb#xpointer(/Model)"/>
@@ -4625,7 +4500,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_GEAR_02</ID>
 			<obj>
@@ -4650,7 +4525,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_GEAR_03</ID>
 			<obj>
@@ -4675,7 +4550,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_GEAR_04</ID>
 			<obj>
@@ -4700,7 +4575,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_GEAR_05</ID>
 			<obj>
@@ -4725,7 +4600,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_GEAR_06</ID>
 			<obj>
@@ -4750,7 +4625,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_GEAR_07</ID>
 			<obj>
@@ -4775,7 +4650,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_GEAR_08</ID>
 			<obj>
@@ -4800,7 +4675,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_ORB_01</ID>
 			<obj>
@@ -4825,7 +4700,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_ORB_02</ID>
 			<obj>
@@ -4850,7 +4725,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_ORB_03</ID>
 			<obj>
@@ -4875,7 +4750,7 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>	
+		</Item>
 		<Item>
 			<ID>ARTIFACT_ORB_04</ID>
 			<obj>
@@ -4900,6 +4775,6 @@
 				<AvailableForPresets>true</AvailableForPresets>
 				<PresetPrice>0</PresetPrice>
 			</obj>
-		</Item>			
+		</Item>
 	</objects>
 </Table_DBArtifact_ArtifactEffect>
