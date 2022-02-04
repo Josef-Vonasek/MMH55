@@ -1,0 +1,1 @@
+This creature shots spread 3 by 3 Death Cloud: in addition to normal damage to primary target, the Death Cloud deals half the damage to all non-undead creatures that are covered by it.

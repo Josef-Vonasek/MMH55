@@ -6,17 +6,17 @@
 	<ATBBaseTime>100000</ATBBaseTime>
 	<RumorCost>100</RumorCost>
 	<adventure>
-		<BaseHeroMovement>2750</BaseHeroMovement>
+		<BaseHeroMovement>2500</BaseHeroMovement>
 		<BaseHeroLookRange>12</BaseHeroLookRange>
 		<MinCreatureSpeed>3</MinCreatureSpeed>
 		<MaxCreatureSpeed>8</MaxCreatureSpeed>
 		<DepthBetweenFloors>10</DepthBetweenFloors>
-		<VisitFountainOfYouthMovementBonus>400</VisitFountainOfYouthMovementBonus>
-		<VisitRallyFlagMovementBonus>400</VisitRallyFlagMovementBonus>
+		<VisitFountainOfYouthMovementBonus>600</VisitFountainOfYouthMovementBonus>
+		<VisitRallyFlagMovementBonus>600</VisitRallyFlagMovementBonus>
 		<VisitOasisMovementBonus>800</VisitOasisMovementBonus>
-		<VisitStablesMovementBonus>600</VisitStablesMovementBonus>
-		<ForWeekStablesMaxLandMovementBonus>600</ForWeekStablesMaxLandMovementBonus>
-		<LighthouseMaxSeaMovementBonus>500</LighthouseMaxSeaMovementBonus>
+		<VisitStablesMovementBonus>500</VisitStablesMovementBonus>
+		<ForWeekStablesMaxLandMovementBonus>250</ForWeekStablesMaxLandMovementBonus>
+		<LighthouseMaxSeaMovementBonus>375</LighthouseMaxSeaMovementBonus>
 		<HeroManaPerKnowledge>10</HeroManaPerKnowledge>
 		<Respawn>
 			<MonstersMin>2</MonstersMin>
@@ -66,22 +66,22 @@
 		</StartHumanResources>
 		<StartComputerResources>
 			<Item>
-				<Wood>30</Wood>
-				<Ore>30</Ore>
-				<Mercury>15</Mercury>
-				<Crystal>15</Crystal>
-				<Sulfur>15</Sulfur>
-				<Gem>15</Gem>
-				<Gold>30001</Gold>
+				<Wood>20</Wood>
+				<Ore>20</Ore>
+				<Mercury>10</Mercury>
+				<Crystal>10</Crystal>
+				<Sulfur>10</Sulfur>
+				<Gem>10</Gem>
+				<Gold>20001</Gold>
 			</Item>
 			<Item>
-				<Wood>30</Wood>
-				<Ore>30</Ore>
-				<Mercury>15</Mercury>
-				<Crystal>15</Crystal>
-				<Sulfur>15</Sulfur>
-				<Gem>15</Gem>
-				<Gold>30001</Gold>
+				<Wood>20</Wood>
+				<Ore>20</Ore>
+				<Mercury>10</Mercury>
+				<Crystal>10</Crystal>
+				<Sulfur>10</Sulfur>
+				<Gem>10</Gem>
+				<Gold>20001</Gold>
 			</Item>
 			<Item>
 				<Wood>30</Wood>
@@ -112,9 +112,9 @@
 			</CountCoefs>
 			<ExpCoefs>
 				<Item>1</Item>
-				<Item>0.9</Item>
-				<Item>0.8</Item>
-				<Item>0.7</Item>
+				<Item>0.83</Item>
+				<Item>0.77</Item>
+				<Item>0.71</Item>
 			</ExpCoefs>
 			<WeeklyGrowCoefs>
 				<Item>1.05</Item>
@@ -132,9 +132,9 @@
 			</CountCoefs>
 			<ExpCoefs>
 				<Item>1</Item>
-				<Item>0.92</Item>
-				<Item>0.85</Item>
-				<Item>0.79</Item>
+				<Item>0.91</Item>
+				<Item>0.83</Item>
+				<Item>0.77</Item>
 			</ExpCoefs>
 			<WeeklyGrowCoefs>
 				<Item>1.11</Item>
@@ -1916,23 +1916,23 @@
 			</Barbarian>
 			<Melee>
 				<HeroDamageLevel1>
-					<Item>2.4</Item>
-					<Item>1.6</Item>
+					<Item>2</Item>
+					<Item>1.5</Item>
 					<Item>0.8</Item>
 					<Item>0.6</Item>
 					<Item>0.4</Item>
-					<Item>0.24</Item>
-					<Item>0.16</Item>
-					<Item>0.01</Item>
+					<Item>0.28</Item>
+					<Item>0.15</Item>
+					<Item>0.03</Item>
 				</HeroDamageLevel1>
 				<HeroDamageLevel30>
-					<Item>19.2</Item>
-					<Item>14.4</Item>
-					<Item>9.6</Item>
-					<Item>6.4</Item>
-					<Item>4</Item>
-					<Item>2.4</Item>
-					<Item>1.2</Item>
+					<Item>16</Item>
+					<Item>12</Item>
+					<Item>8</Item>
+					<Item>5</Item>
+					<Item>3.3</Item>
+					<Item>2.2</Item>
+					<Item>1.2</Item>				
 					<Item>0.25</Item>
 				</HeroDamageLevel30>
 			</Melee>
@@ -2063,7 +2063,7 @@
 				<Rash_MovementPenaltyReducePerLevel>0.02</Rash_MovementPenaltyReducePerLevel>
 				<Rash_MovePointsIncreasePerPevel>0.0033</Rash_MovePointsIncreasePerPevel>
 				<CentaurMistress_StartATBBonusPerHeroLevel>0.0025</CentaurMistress_StartATBBonusPerHeroLevel>
-				<Offender_HeroAttackDamageBonusPerLevel>0.02</Offender_HeroAttackDamageBonusPerLevel>
+				<Offender_HeroAttackDamageBonusPerLevel>0.01</Offender_HeroAttackDamageBonusPerLevel>
 				<WyvernTamer_HealthBonus>
 					<Base>2</Base>
 					<LevelDivisor>1</LevelDivisor>

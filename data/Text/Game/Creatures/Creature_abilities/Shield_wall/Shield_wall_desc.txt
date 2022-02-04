@@ -1,0 +1,1 @@
+Damage suffered by this creature from enemy attack is reduced by 10% for every tile the attacker walked to hit. Damage reduction is capped at 80%.

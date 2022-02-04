@@ -1,0 +1,1 @@
+Three times per combat, this creature can increase the Luck value of a chosen friendly stack or decrease it on a chosen enemy stack for a random value between 1 and 3 (activated ability).
