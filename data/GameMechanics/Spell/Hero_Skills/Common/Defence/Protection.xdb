@@ -2,8 +2,8 @@
 <Spell ObjectRecordID="96">
 	<NameFileRef href="/Text/Game/Skills/Common/Defence/Protection/Name.txt"/>
 	<LongDescriptionFileRef href="/Text/Game/Skills/Common/Defence/Protection/Description.txt"/>
-	<Texture href="/UI/H5A1/Icons/Abilites/Skills/128x128/Runic_Armor.(Texture).xdb#xpointer(/Texture)"/>
-	<EffectTexture href="/UI/H5A1/Icons/Abilites/Skills/128x128/Runic_Armor.(Texture).xdb#xpointer(/Texture)"/>
+	<Texture href="/Textures/HeroScreen/Perks/Defence_Protection.xdb#xpointer(/Texture)"/>
+	<EffectTexture href="/Textures/HeroScreen/Perks/Defence_Protection.xdb#xpointer(/Texture)"/>
 	<SpellBookPredictions/>
 	<CombatLogTexts/>
 	<Level>0</Level>

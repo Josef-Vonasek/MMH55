@@ -2,8 +2,8 @@
 <Spell>
 	<NameFileRef href="/Text/Game/Skills/Common/Luck/LuckOfTheBarbarian/Name.txt"/>
 	<LongDescriptionFileRef href="/Text/Game/Skills/Common/Luck/LuckOfTheBarbarian/Description.txt"/>
-	<Texture href="/UI/H5A1/Icons/Abilites/Heroes_Abillites/128x128/Border_Guard.(Texture).xdb#xpointer(/Texture)"/>
-	<EffectTexture href="/UI/H5A1/Icons/Abilites/Heroes_Abillites/128x128/Border_Guard.(Texture).xdb#xpointer(/Texture)"/>
+	<Texture/>
+	<EffectTexture href="/UI/H5A2/Icons/Creatures_Abilites/Luck_Of_Barbarian_Buff.(Texture).xdb#xpointer(/Texture)"/>
 	<SpellBookPredictions/>
 	<CombatLogTexts/>
 	<Level>0</Level>
