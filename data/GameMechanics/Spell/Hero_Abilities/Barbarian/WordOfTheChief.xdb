@@ -10,10 +10,10 @@
 	<CombatLogTexts>
 		<Item href="/Text/CombatLog/Abilities/WarcryWordOfTheChief.txt"/>
 	</CombatLogTexts>
-	<Level>2</Level>
+	<Level>1</Level>
 	<MagicSchool>MAGIC_SCHOOL_WARCRIES</MagicSchool>
-	<RequiredHeroLevel>6</RequiredHeroLevel>
-	<TrainedCost>6</TrainedCost>
+	<RequiredHeroLevel>10</RequiredHeroLevel>
+	<TrainedCost>4</TrainedCost>
 	<damage>
 		<Item>
 			<Base>1</Base>

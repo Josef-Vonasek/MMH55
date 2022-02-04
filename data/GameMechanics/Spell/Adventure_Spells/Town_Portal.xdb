@@ -11,7 +11,12 @@
 	<RequiredHeroLevel>15</RequiredHeroLevel>
 	<TrainedCost>20</TrainedCost>
 	<damage/>
-	<duration/>
+	<duration>
+		<Item>
+			<Base>0.50</Base>
+			<PerPower>0</PerPower>
+		</Item>
+	</duration>
 	<sSpellCost>
 		<Wood>0</Wood>
 		<Ore>0</Ore>

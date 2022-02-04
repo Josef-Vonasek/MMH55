@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="70">
-	<AttackSkill>13</AttackSkill>
-	<DefenceSkill>13</DefenceSkill>
+	<AttackSkill>26</AttackSkill>
+	<DefenceSkill>26</DefenceSkill>
 	<Shots>0</Shots>
 	<MinDamage>15</MinDamage>
 	<MaxDamage>35</MaxDamage>
 	<Speed>8</Speed>
 	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>115</Health>
-	<KnownSpells/>
+	<Health>230</Health>
+	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
 	<SpellPoints2>0</SpellPoints2>
@@ -35,14 +35,14 @@
 		<Gold>1200</Gold>
 	</Cost>
 	<SubjectOfRandomGeneration>true</SubjectOfRandomGeneration>
-	<MonsterShared/>
+	<MonsterShared />
 	<CombatSize>2</CombatSize>
-	<PatternAttack/>
-	<flybySequence/>
-	<Visual href="/GameMechanics/CreatureVisual/Creatures/Neutrals/Black_Knight.xdb#xpointer(/CreatureVisual)"/>
+	<PatternAttack />
+	<flybySequence />
+	<Visual href="/GameMechanics/CreatureVisual/Creatures/Neutrals/Black_Knight.xdb#xpointer(/CreatureVisual)" />
 	<Range>0</Range>
 	<BaseCreature>CREATURE_UNKNOWN</BaseCreature>
-	<Upgrades/>
+	<Upgrades />
 	<Abilities>
 		<Item>ABILITY_UNDEAD</Item>
 		<Item>ABILITY_CURSING_ATTACK</Item>

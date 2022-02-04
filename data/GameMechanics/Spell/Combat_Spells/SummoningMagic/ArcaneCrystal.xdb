@@ -11,7 +11,7 @@
 	<Level>2</Level>
 	<MagicSchool>MAGIC_SCHOOL_SUMMONING</MagicSchool>
 	<RequiredHeroLevel>0</RequiredHeroLevel>
-	<TrainedCost>10</TrainedCost>
+	<TrainedCost>5</TrainedCost>
 	<damage>
 		<Item>
 			<Base>0</Base>

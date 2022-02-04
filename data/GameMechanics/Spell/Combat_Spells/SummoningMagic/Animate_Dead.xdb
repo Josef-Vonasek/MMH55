@@ -14,8 +14,16 @@
 	<MagicSchool>MAGIC_SCHOOL_DARK</MagicSchool>
 	<RequiredHeroLevel>0</RequiredHeroLevel>
 	<IsAimed>true</IsAimed>
-	<TrainedCost>20</TrainedCost>
+	<TrainedCost>10</TrainedCost>
 	<damage>
+		<Item>
+			<Base>0</Base>
+			<PerPower>25</PerPower>
+		</Item>
+		<Item>
+			<Base>0</Base>
+			<PerPower>15</PerPower>
+		</Item>
 		<Item>
 			<Base>0</Base>
 			<PerPower>20</PerPower>
@@ -24,31 +32,23 @@
 			<Base>0</Base>
 			<PerPower>25</PerPower>
 		</Item>
-		<Item>
-			<Base>0</Base>
-			<PerPower>32</PerPower>
-		</Item>
-		<Item>
-			<Base>0</Base>
-			<PerPower>40</PerPower>
-		</Item>
 	</damage>
 	<duration>
 		<Item>
-			<Base>0.25</Base>
-			<PerPower>-0.005</PerPower>
+			<Base>0.17</Base>
+			<PerPower>0</PerPower>
 		</Item>
 		<Item>
-			<Base>0.25</Base>
-			<PerPower>-0.005</PerPower>
+			<Base>0.17</Base>
+			<PerPower>0</PerPower>
 		</Item>
 		<Item>
-			<Base>0.25</Base>
-			<PerPower>-0.005</PerPower>
+			<Base>0.17</Base>
+			<PerPower>0</PerPower>
 		</Item>
 		<Item>
-			<Base>0.25</Base>
-			<PerPower>-0.005</PerPower>
+			<Base>0.17</Base>
+			<PerPower>0</PerPower>
 		</Item>
 	</duration>
 	<sSpellCost>
@@ -62,7 +62,7 @@
 	</sSpellCost>
 	<IsAreaAttack>false</IsAreaAttack>
 	<CanSelectDead>true</CanSelectDead>
-	<Target>TARGET_FRIEND</Target>
+	<Target>TARGET_NEUTRAL</Target>
 	<Element>ELEMENT_NONE</Element>
 	<visuals>
 		<Item href="AnimateDead.(SpellVisual).xdb#xpointer(/SpellVisual)"/>

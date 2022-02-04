@@ -32,7 +32,7 @@
 	<Class>HERO_CLASS_WARLOCK</Class>
 	<Specialization>HERO_SPEC_MINOTAURS</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_BASIC</Mastery>
+		<Mastery>MASTERY_ADVANCED</Mastery>
 		<SkillID>HERO_SKILL_INVOCATION</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Savage/Name.txt"/>
@@ -52,16 +52,14 @@
 		<Offence>1</Offence>
 		<Defence>0</Defence>
 		<Spellpower>3</Spellpower>
-		<Knowledge>1</Knowledge>
+		<Knowledge>2</Knowledge>
 		<skills>
 			<Item>
 				<Mastery>MASTERY_BASIC</Mastery>
 				<SkillID>HERO_SKILL_LUCK</SkillID>
 			</Item>
 		</skills>
-		<perkIDs>
-			<Item>HERO_SKILL_OFFENCE</Item>
-		</perkIDs>
+		<perkIDs/>
 		<spellIDs/>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>

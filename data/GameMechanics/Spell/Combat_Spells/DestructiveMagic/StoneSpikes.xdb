@@ -12,7 +12,7 @@
 	<MagicSchool>MAGIC_SCHOOL_DESTRUCTIVE</MagicSchool>
 	<RequiredHeroLevel>0</RequiredHeroLevel>
 	<IsAimed>true</IsAimed>
-	<TrainedCost>10</TrainedCost>
+	<TrainedCost>3</TrainedCost>
 	<damage>
 		<Item>
 			<Base>20</Base>
@@ -20,15 +20,15 @@
 		</Item>
 		<Item>
 			<Base>20</Base>
-			<PerPower>12</PerPower>
-		</Item>
-		<Item>
-			<Base>20</Base>
-			<PerPower>14</PerPower>
+			<PerPower>13</PerPower>
 		</Item>
 		<Item>
 			<Base>20</Base>
 			<PerPower>16</PerPower>
+		</Item>
+		<Item>
+			<Base>20</Base>
+			<PerPower>20</PerPower>
 		</Item>
 	</damage>
 	<duration/>

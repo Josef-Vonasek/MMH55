@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WindowSimple ObjectRecordID="1001150">
 	<ClassTypeID>285700802</ClassTypeID>
-	<Shared href="Background_Norm.(WindowSimpleShared).xdb#xpointer(/WindowSimpleShared)"/>
+	<Shared href="Background_Barb.(WindowSimpleShared).xdb#xpointer(/WindowSimpleShared)"/>
 	<Name/>
 	<TooltipFileRef href=""/>
 	<Visible>true</Visible>

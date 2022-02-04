@@ -30,13 +30,13 @@
 	<Icon128/>
 	<InternalName>Linaas</InternalName>
 	<Class>HERO_CLASS_RANGERA</Class>
-	<Specialization>HERO_SPEC_WAYLAYER</Specialization>
+	<Specialization/>
 	<PrimarySkill>
-		<Mastery>MASTERY_ADVANCED</Mastery>
+		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_LOGISTICS</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Preserve/Waylayer/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Preserve/Waylayer/Description.txt"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Preserve/Favorite/Name.txt"/>
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Preserve/Favorite/Description.txt"/>
 	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Preserve/Waylayer.xdb#xpointer(/Texture)"/>
 	<FaceTexture href="/Textures/Icons/Heroes/Preserve/Preserve_Wyngaal_128x128.(Texture).xdb#xpointer(/Texture)"/>
 	<FaceTextureSmall/>
@@ -52,16 +52,85 @@
 		<Offence>3</Offence>
 		<Defence>0</Defence>
 		<Spellpower>1</Spellpower>
-		<Knowledge>1</Knowledge>
-		<skills/>
-		<perkIDs>
-			<Item>HERO_SKILL_PATHFINDING</Item>
-		</perkIDs>
+		<Knowledge>2</Knowledge>
+		<skills>
+			<Item>
+				<Mastery>MASTERY_ADVANCED</Mastery>
+				<SkillID>HERO_SKILL_AVENGER</SkillID>
+			</Item>
+		</skills>
+		<perkIDs/>
 		<spellIDs/>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>
 		<AmmoCart>false</AmmoCart>
-		<FavoriteEnemies/>
+		<FavoriteEnemies>
+		
+			<!-- <Item>CREATURE_GREMLIN</Item> -->
+			<!-- <Item>CREATURE_STONE_GARGOYLE</Item> -->
+			<Item>CREATURE_IRON_GOLEM</Item>
+			<Item>CREATURE_MAGI</Item>
+			<Item>CREATURE_GENIE</Item>
+			<Item>CREATURE_RAKSHASA</Item>
+			<Item>CREATURE_GIANT</Item>
+
+			<!-- <Item>CREATURE_SCOUT</Item> -->
+			<!-- <Item>CREATURE_WITCH</Item> -->
+			<Item>CREATURE_MINOTAUR</Item>
+			<Item>CREATURE_RIDER</Item>
+			<Item>CREATURE_HYDRA</Item>
+			<Item>CREATURE_MATRON</Item>
+			<Item>CREATURE_DEEP_DRAGON</Item>
+
+			<!-- <Item>CREATURE_DEFENDER</Item> -->
+			<!-- <Item>CREATURE_AXE_FIGHTER</Item> -->
+			<Item>CREATURE_BEAR_RIDER</Item>
+			<Item>CREATURE_BROWLER</Item>
+			<Item>CREATURE_RUNE_MAGE</Item>
+			<Item>CREATURE_THANE</Item>
+			<Item>CREATURE_FIRE_DRAGON</Item>
+
+			<!-- <Item>CREATURE_PEASANT</Item> -->
+			<!-- <Item>CREATURE_ARCHER</Item> -->
+			<Item>CREATURE_SWORDSMAN</Item>
+			<Item>CREATURE_GRIFFIN</Item>
+			<Item>CREATURE_PRIEST</Item>
+			<Item>CREATURE_CAVALIER</Item>
+			<Item>CREATURE_ANGEL</Item>
+			
+			<!-- <Item>CREATURE_IMP</Item> -->
+			<!-- <Item>CREATURE_CERBERI</Item> -->
+			<Item>CREATURE_DEMON</Item>
+			<Item>CREATURE_SUCCUBUS</Item>
+			<Item>CREATURE_NIGHTMARE</Item>
+			<Item>CREATURE_PIT_FIEND</Item>
+			<Item>CREATURE_DEVIL</Item>
+
+			<!-- <Item>CREATURE_SKELETON</Item> -->
+			<!-- <Item>CREATURE_ZOMBIE</Item> -->
+			<Item>CREATURE_GHOST</Item>
+			<Item>CREATURE_VAMPIRE</Item>
+			<Item>CREATURE_LICH</Item>
+			<Item>CREATURE_WIGHT</Item>
+			<Item>CREATURE_BONE_DRAGON</Item>
+			
+			<!-- <Item>CREATURE_GOBLIN</Item> -->
+			<!-- <Item>CREATURE_CENTAUR</Item> -->
+			<Item>CREATURE_ORC_WARRIOR</Item>
+			<Item>CREATURE_SHAMAN</Item>
+			<Item>CREATURE_ORCCHIEF_BUTCHER</Item>
+			<Item>CREATURE_WYVERN</Item>
+			<Item>CREATURE_CYCLOP</Item>
+			
+			<!-- <Item>CREATURE_PIXIE</Item> -->
+			<!-- <Item>CREATURE_BLADE_JUGGLER</Item> -->
+			<Item>CREATURE_WOOD_ELF</Item>
+			<Item>CREATURE_DRUID</Item>
+			<Item>CREATURE_UNICORN</Item>
+			<Item>CREATURE_TREANT</Item>
+			<Item>CREATURE_GREEN_DRAGON</Item>
+
+		</FavoriteEnemies>
 	</Editable>
 	<ArrowButtonState>0</ArrowButtonState>
 	<Decal/>

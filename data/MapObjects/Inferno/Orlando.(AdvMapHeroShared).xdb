@@ -34,7 +34,7 @@
 	<Class>HERO_CLASS_DEMON_LORD</Class>
 	<Specialization>HERO_SPEC_FURIOUS</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_BASIC</Mastery>
+		<Mastery>MASTERY_ADVANCED</Mastery>
 		<SkillID>HERO_SKILL_GATING</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Inferno/Furious/Name.txt"/>
@@ -82,6 +82,6 @@
 		<Offence>2</Offence>
 		<Defence>2</Defence>
 		<Spellpower>2</Spellpower>
-		<Knowledge>2</Knowledge>
+		<Knowledge>3</Knowledge>
 	</PresetMinimalAttributes>
 </AdvMapHeroShared>

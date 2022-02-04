@@ -32,7 +32,7 @@
 	<Class>HERO_CLASS_RUNEMAGE</Class>
 	<Specialization>HERO_SPEC_EMPIRIC</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_BASIC</Mastery>
+		<Mastery>MASTERY_ADVANCED</Mastery>
 		<SkillID>HERO_SKILL_OFFENCE</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Necropolis/Empiric/Name.txt"/>
@@ -52,7 +52,7 @@
 		<Offence>2</Offence>
 		<Defence>1</Defence>
 		<Spellpower>1</Spellpower>
-		<Knowledge>1</Knowledge>
+		<Knowledge>2</Knowledge>
 		<skills>
 			<Item>
 				<Mastery>MASTERY_BASIC</Mastery>

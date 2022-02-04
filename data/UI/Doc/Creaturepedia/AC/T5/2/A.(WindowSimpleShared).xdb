@@ -1,20 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <WindowSimpleShared ObjectRecordID="1000326">
 	<Crap>false</Crap>
 	<Children>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Flesh_and_blood/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Large_creature/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Flyer/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Luck_gambler/P4.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Magic_proof_50/P5.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Immunity_to_air/P6.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		
-		
-		
-		
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/FLESH_AND_BLOOD/P0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/LUCK_GAMBLER/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/MAGIC_PROOF_75/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/RIDE_BY_ATTACK/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="C.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 	</Children>
-	<Background/>
-	<Foreground/>
+	<Background />
+	<Foreground />
 	<Flags>
 		<Transparent>false</Transparent>
 	</Flags>
@@ -56,7 +51,7 @@
 			<Second>false</Second>
 		</UpperMargin>
 	</Placement>
-	<ActiveArea/>
+	<ActiveArea />
 	<IgnoreDblClick>false</IgnoreDblClick>
-	<ActiveMask/>
+	<ActiveMask />
 </WindowSimpleShared>

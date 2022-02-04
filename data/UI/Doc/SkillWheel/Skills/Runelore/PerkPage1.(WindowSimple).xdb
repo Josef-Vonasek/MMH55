@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <WindowSimple ObjectRecordID="1000406">
 	<ClassTypeID>285700801</ClassTypeID>
-	<Shared href="PerkPage1.(WindowSimpleShared).xdb#xpointer(/WindowSimpleShared)"/>
+	<Shared href="PerkPage1.(WindowSimpleShared).xdb#xpointer(/WindowSimpleShared)" />
 	<Name>Runelore_Perk1</Name>
-	<TooltipFileRef href=""/>
+	<TooltipFileRef href="" />
 	<Visible>false</Visible>
 	<Priority>10</Priority>
-	<GameMessageReactions/>
+	<GameMessageReactions />
 	<Placement>
 		<Position>
 			<First>
@@ -46,9 +46,9 @@
 		</UpperMargin>
 	</Placement>
 	<Enabled>true</Enabled>
-	<TextString/>
-	<relatedTexts/>
-	<relatedTextures/>
+	<TextString />
+	<relatedTexts />
+	<relatedTextures />
 	<Flags>
 		<SuperActive>false</SuperActive>
 	</Flags>

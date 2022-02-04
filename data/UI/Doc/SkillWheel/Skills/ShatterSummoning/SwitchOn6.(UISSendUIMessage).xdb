@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <UISSendUIMessage ObjectRecordID="5">
 	<ClassTypeID>285694982</ClassTypeID>
 	<SUIStateBaseFakeField>0</SUIStateBaseFakeField>
@@ -7,7 +7,7 @@
 		<Second>true</Second>
 	</szMessageID>
 	<szParam>
-		<First>ShatterSummoning_Perk6</First>
+		<First>Shattersummoning_Perk6</First>
 		<Second>true</Second>
 	</szParam>
 	<nForwardParam>

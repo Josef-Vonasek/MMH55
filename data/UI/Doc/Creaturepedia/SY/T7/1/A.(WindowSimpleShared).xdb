@@ -1,20 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <WindowSimpleShared ObjectRecordID="1000326">
 	<Crap>false</Crap>
 	<Children>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Flesh_and_blood/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Large_creature/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Flyer/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Fire_breath/P4.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/Immunity_to_earth/P5.(WindowMSButton).xdb#xpointer(/WindowMSButton)"/>
-		
-		
-		
-		
-		
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/FLESH_AND_BLOOD/P0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/IMMUNITY_TO_EARTH/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/FIRE_BREATH/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="C.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 	</Children>
-	<Background/>
-	<Foreground/>
+	<Background />
+	<Foreground />
 	<Flags>
 		<Transparent>false</Transparent>
 	</Flags>
@@ -56,7 +50,7 @@
 			<Second>false</Second>
 		</UpperMargin>
 	</Placement>
-	<ActiveArea/>
+	<ActiveArea />
 	<IgnoreDblClick>false</IgnoreDblClick>
-	<ActiveMask/>
+	<ActiveMask />
 </WindowSimpleShared>
