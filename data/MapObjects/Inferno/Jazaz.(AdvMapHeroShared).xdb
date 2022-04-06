@@ -30,13 +30,13 @@
 	<Icon128/>
 	<InternalName>Jazaz</InternalName>
 	<Class>HERO_CLASS_WIZARD</Class>
-	<Specialization>HERO_SPEC_OFFENDER</Specialization>
+	<Specialization>HERO_SPEC_FEATHER_MAGE</Specialization>
 	<PrimarySkill>
 		<Mastery>MASTERY_ADVANCED</Mastery>
 		<SkillID>HERO_SKILL_TRAINING</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Stronghold/Offender4/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Stronghold/Offender4/Description.txt"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Academy/Feather_Mage2/Name.txt"/>
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Academy/Feather_Mage2/Description.txt"/>
 	<SpecializationIcon href="/Textures/HeroScreen/Perks/Gating_AbsoluteGating.xdb#xpointer(/Texture)"/>
 	<FaceTexture href="/Textures/Icons/Heroes/Inferno/Inferno_Veyer_128x128.(Texture).xdb#xpointer(/Texture)"/>
 	<FaceTextureSmall/>

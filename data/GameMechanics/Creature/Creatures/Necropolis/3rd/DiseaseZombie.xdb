@@ -24,7 +24,7 @@
 		<First>ELEMENT_EARTH</First>
 		<Second>ELEMENT_FIRE</Second>
 	</MagicElement>
-	<WeeklyGrowth>15</WeeklyGrowth>
+	<WeeklyGrowth>16</WeeklyGrowth>
 	<Cost>
 		<Wood>0</Wood>
 		<Ore>0</Ore>

@@ -30,14 +30,14 @@
 	<Icon128/>
 	<InternalName>Sylsai</InternalName>
 	<Class>HERO_CLASS_SEER</Class>
-	<Specialization>HERO_SPEC_AVATAR_OF_DEATH</Specialization>
+	<Specialization>HERO_SPEC_BEATER</Specialization>
 	<PrimarySkill>
 		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_LUCK</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Necropolis/AvatarOfDeath/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Necropolis/AvatarOfDeath/Description.txt"/>
-	<SpecializationIcon href="/UI/H5A2/Icons/Heroes_Specializations/AvatarOfDeath.(Texture).xdb#xpointer(/Texture)"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Inferno/Beater2/Name.txt"/>
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Inferno/Beater2/Description.txt"/>
+	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Dungeon/Power_Bargain.xdb#xpointer(/Texture)"/>
 	<FaceTexture href="/Textures/Icons/Heroes/Dungeon/Dungeon_Sylsai_128x128.(Texture).xdb#xpointer(/Texture)"/>
 	<FaceTextureSmall/>
 	<HeroCharacterArena href="/Characters/Heroes/Warlock.(Character).xdb#xpointer(/Character)"/>
@@ -64,6 +64,7 @@
 		</perkIDs>
 		<spellIDs>
 			<Item>SPELL_FORGETFULNESS</Item>
+			<Item>SPELL_TELEPORT</Item>
 		</spellIDs>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>

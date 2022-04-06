@@ -1,3 +1,5 @@
+dofile("/scripts/H55-Library.lua")
+
 HUMAN = 0
 COMPUTER = 1
 
@@ -15,22 +17,22 @@ DIFFICULTY_NORMAL = 1
 DIFFICULTY_HARD = 2
 DIFFICULTY_HEROIC = 3
 
-function length(array)
-	local count = 0
-	for index, element in array do
-		count = count + 1
-	end
-	return count
-end
+-- function length(array)
+	-- local count = 0
+	-- for i, element in array do
+		-- count = count + 1
+	-- end
+	-- return count
+-- end
 
-function contains(array, sample)
-	for index, element in array do
-		if (element == sample) then
-			return not nil
-		end
-	end
-	return nil
-end
+-- function contains(array, sample)
+	-- for i, element in array do
+		-- if (element == sample) then
+			-- return not nil
+		-- end
+	-- end
+	-- return nil
+-- end
 
 function WaitForTutorialMessageBox()
 	while IsTutorialMessageBoxOpen() do
@@ -38,14 +40,13 @@ function WaitForTutorialMessageBox()
 	end;
 end;
 
-function abs( n )
-	if n < 0 then
-		return -n;
-	else
-		return n;
-	end;
-end;
-
+-- function abs( n )
+	-- if n < 0 then
+		-- return -n;
+	-- else
+		-- return n;
+	-- end;
+-- end;
 
 	--
 	-- Creatures IDs

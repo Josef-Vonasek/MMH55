@@ -32,7 +32,7 @@
 	<Icon128 href="/UI/H5A2/Icons/Heroes/Portrets128x128/Stronghold_Kilghan.(Texture).xdb#xpointer(/Texture)"/>
 	<InternalName>Hero9</InternalName>
 	<Class>HERO_CLASS_BARBARIAN</Class>
-	<Specialization>HERO_SPEC_GOBLIN_KING</Specialization>
+	<Specialization/>
 	<PrimarySkill>
 		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_DEMONIC_RAGE</SkillID>

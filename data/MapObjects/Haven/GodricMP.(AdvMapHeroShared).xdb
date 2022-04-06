@@ -63,7 +63,7 @@
 			<Item>HERO_SKILL_TOUGHNESS</Item>
 		</perkIDs>
 		<spellIDs>
-			<Item>SPELL_MAGIC_ARROW</Item>		
+			<Item>SPELL_STONESKIN</Item>		
 		</spellIDs>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>

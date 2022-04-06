@@ -105,19 +105,19 @@
 		<ChestMinorArtifactChance>4</ChestMinorArtifactChance>
 		<NeutralsInCampaign>
 			<CountCoefs>
-				<Item>1.0</Item>
-				<Item>1.2</Item>
-				<Item>1.3</Item>
+				<Item>0.9</Item>
+				<Item>1.1</Item>
+				<Item>1.25</Item>
 				<Item>1.4</Item>
 			</CountCoefs>
 			<ExpCoefs>
 				<Item>1</Item>
-				<Item>0.83</Item>
-				<Item>0.77</Item>
+				<Item>0.9</Item>
+				<Item>0.8</Item>
 				<Item>0.71</Item>
 			</ExpCoefs>
 			<WeeklyGrowCoefs>
-				<Item>1.05</Item>
+				<Item>1.08</Item>
 				<Item>1.09</Item>
 				<Item>1.1</Item>
 				<Item>1.11</Item>
@@ -1867,7 +1867,7 @@
 				<PowerfullBlow_ChanceToCritical>1</PowerfullBlow_ChanceToCritical>
 				<PathOfWar_MovePointsBonus>200</PathOfWar_MovePointsBonus>
 				<LuckOfTheBarbarian_MagicProofPerLuck>0.15</LuckOfTheBarbarian_MagicProofPerLuck>
-				<StunningBlow_ATBDrop>0.25</StunningBlow_ATBDrop>
+				<StunningBlow_ATBDrop>0.2</StunningBlow_ATBDrop>
 				<DefendUsAll_CreatureToCount>CREATURE_ORC_WARRIOR</DefendUsAll_CreatureToCount>
 				<DefendUsAll_CreatureCountMultiplier>0</DefendUsAll_CreatureCountMultiplier>
 				<GoblinSupport_GoblinsIncomePerDay>1</GoblinSupport_GoblinsIncomePerDay>
@@ -1976,8 +1976,8 @@
 			</Knight>
 			<Demonlord>
 				<Hypnotist_ManaDrainPerLevel>1</Hypnotist_ManaDrainPerLevel>
-				<Bombardier_FireballSpellpower>-1</Bombardier_FireballSpellpower>
-				<Bombardier_FireballSpellpowerLevelDivisor>5</Bombardier_FireballSpellpowerLevelDivisor>
+				<Bombardier_FireballSpellpower>-2.329</Bombardier_FireballSpellpower>
+				<Bombardier_FireballSpellpowerLevelDivisor>3</Bombardier_FireballSpellpowerLevelDivisor>
 				<Bombardier_FireballSpellpowerPerLevel>1</Bombardier_FireballSpellpowerPerLevel>
 				<Beater_MPBonusBase>0.05</Beater_MPBonusBase>
 				<Beater_MPBonusPerLevel>0.01</Beater_MPBonusPerLevel>
@@ -2019,7 +2019,7 @@
 				</MasterOfElements_SpellpowerBonus>
 				<MasterOfElements_NumElementals>
 					<Base>1</Base>
-					<LevelDivisor>40</LevelDivisor>
+					<LevelDivisor>5</LevelDivisor>
 					<PerDividedLevel>1</PerDividedLevel>
 				</MasterOfElements_NumElementals>
 				<Inexhaustible_ManaRestorePerTurn>
@@ -2040,8 +2040,8 @@
 				<PowerBargain_CostReducePerLevel>0.005</PowerBargain_CostReducePerLevel>
 				<Prudent_InitiativeDisbonusBase>0.02</Prudent_InitiativeDisbonusBase>
 				<Prudent_InitiativeDisbonusPerLevel>0.002</Prudent_InitiativeDisbonusPerLevel>
-				<Evasive_DamageReduceBase>0</Evasive_DamageReduceBase>
-				<Evasive_DamageReducePerLevel>0.01</Evasive_DamageReducePerLevel>
+				<Evasive_DamageReduceBase>0.15</Evasive_DamageReduceBase>
+				<Evasive_DamageReducePerLevel>0.005</Evasive_DamageReducePerLevel>
 			</Warlock>
 			<Runemage>
 				<BorderGuard_DistanceFromCityInDays>99</BorderGuard_DistanceFromCityInDays>
@@ -2060,7 +2060,7 @@
 				<StrongAndFineRuneCostConstant>2</StrongAndFineRuneCostConstant>
 			</Runemage>
 			<Barbarian>
-				<Rash_MovementPenaltyReducePerLevel>0.02</Rash_MovementPenaltyReducePerLevel>
+				<Rash_MovementPenaltyReducePerLevel>0.05</Rash_MovementPenaltyReducePerLevel>
 				<Rash_MovePointsIncreasePerPevel>0.0033</Rash_MovePointsIncreasePerPevel>
 				<CentaurMistress_StartATBBonusPerHeroLevel>0.0025</CentaurMistress_StartATBBonusPerHeroLevel>
 				<Offender_HeroAttackDamageBonusPerLevel>0.01</Offender_HeroAttackDamageBonusPerLevel>
@@ -2082,7 +2082,7 @@
 				<GoblinKing_TreacheryBonusPerLevel>0.01</GoblinKing_TreacheryBonusPerLevel>
 				<WarLeader_WarcryCostReducePerHeroLevel>
 					<Base>1</Base>
-					<LevelDivisor>20</LevelDivisor>
+					<LevelDivisor>10</LevelDivisor>
 					<PerDividedLevel>1</PerDividedLevel>
 				</WarLeader_WarcryCostReducePerHeroLevel>
 			</Barbarian>
@@ -2117,15 +2117,15 @@
 				<Power>10000</Power>
 				<Initiative>
 					<Item>
-						<Base>11</Base>
+						<Base>8</Base>
+						<PerPower>0.1</PerPower>
+					</Item>
+					<Item>
+						<Base>10</Base>
 						<PerPower>0.1</PerPower>
 					</Item>
 					<Item>
 						<Base>12</Base>
-						<PerPower>0.1</PerPower>
-					</Item>
-					<Item>
-						<Base>13</Base>
 						<PerPower>0.1</PerPower>
 					</Item>
 					<Item>
@@ -2249,19 +2249,19 @@
 	</GhostMode>
 	<HeroArmyGeneration>
 		<MinWeekGrowthCoef_Tier1>1</MinWeekGrowthCoef_Tier1>
-		<MaxWeekGrowthCoef_Tier1>1.5</MaxWeekGrowthCoef_Tier1>
-		<MinWeekGrowthCoef_Tier2>0.6</MinWeekGrowthCoef_Tier2>
-		<MaxWeekGrowthCoef_Tier2>0.8</MaxWeekGrowthCoef_Tier2>
-		<MinWeekGrowthCoef_Tier3>-0.1</MinWeekGrowthCoef_Tier3>
-		<MaxWeekGrowthCoef_Tier3>0.4</MaxWeekGrowthCoef_Tier3>
-		<MinWeekGrowthCoef_SpecTier1>1</MinWeekGrowthCoef_SpecTier1>
-		<MaxWeekGrowthCoef_SpecTier1>1.2</MaxWeekGrowthCoef_SpecTier1>
+		<MaxWeekGrowthCoef_Tier1>1.2</MaxWeekGrowthCoef_Tier1>
+		<MinWeekGrowthCoef_Tier2>0.7</MinWeekGrowthCoef_Tier2>
+		<MaxWeekGrowthCoef_Tier2>0.9</MaxWeekGrowthCoef_Tier2>
+		<MinWeekGrowthCoef_Tier3>0</MinWeekGrowthCoef_Tier3>
+		<MaxWeekGrowthCoef_Tier3>0</MaxWeekGrowthCoef_Tier3>
+		<MinWeekGrowthCoef_SpecTier1>0.85</MinWeekGrowthCoef_SpecTier1>
+		<MaxWeekGrowthCoef_SpecTier1>0.95</MaxWeekGrowthCoef_SpecTier1>
 		<NumSuchStacks_SpecTier1>2</NumSuchStacks_SpecTier1>
-		<MinWeekGrowthCoef_SpecTier2>0.7</MinWeekGrowthCoef_SpecTier2>
-		<MaxWeekGrowthCoef_SpecTier2>0.8</MaxWeekGrowthCoef_SpecTier2>
+		<MinWeekGrowthCoef_SpecTier2>0.65</MinWeekGrowthCoef_SpecTier2>
+		<MaxWeekGrowthCoef_SpecTier2>0.75</MaxWeekGrowthCoef_SpecTier2>
 		<NumSuchStacks_SpecTier2>2</NumSuchStacks_SpecTier2>
-		<MinWeekGrowthCoef_SpecTier3>0.6</MinWeekGrowthCoef_SpecTier3>
-		<MaxWeekGrowthCoef_SpecTier3>0.7</MaxWeekGrowthCoef_SpecTier3>
+		<MinWeekGrowthCoef_SpecTier3>0.55</MinWeekGrowthCoef_SpecTier3>
+		<MaxWeekGrowthCoef_SpecTier3>0.65</MaxWeekGrowthCoef_SpecTier3>
 		<NumSuchStacks_SpecTier3>2</NumSuchStacks_SpecTier3>
 	</HeroArmyGeneration>
 	<AI>
@@ -2507,7 +2507,7 @@
 			<ValueOfHundredMovePoints>10</ValueOfHundredMovePoints>
 			<ValueOfLuckBuff>100</ValueOfLuckBuff>
 			<ValueOfMoraleBuff>50</ValueOfMoraleBuff>
-			<ValueOfMinorArtifact>3000</ValueOfMinorArtifact>
+			<ValueOfMinorArtifact>6000</ValueOfMinorArtifact>
 			<ValueOfMajorArtifact>9000</ValueOfMajorArtifact>
 			<ValueOfRelicArtifact>12000</ValueOfRelicArtifact>
 			<ValueOfHeroLevelPow2>1000</ValueOfHeroLevelPow2>

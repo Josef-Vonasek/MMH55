@@ -30,7 +30,7 @@
 	<Icon128 href="/UI/H5A2/Icons/Heroes/Portrets128x128/Dungeon_Agbeth.(Texture).xdb#xpointer(/Texture)"/>
 	<InternalName>Agbeth</InternalName>
 	<Class>HERO_CLASS_BEASTMASTER</Class>
-	<Specialization/>
+	<Specialization>HERO_SPEC_INFERNAL_MACHINE</Specialization>
 	<PrimarySkill>
 		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_LEADERSHIP</SkillID>
@@ -56,7 +56,7 @@
 		<skills>
 			<Item>
 				<Mastery>MASTERY_BASIC</Mastery>
-				<SkillID>HERO_SKILL_WAR_MACHINES</SkillID>
+				<SkillID>HERO_SKILL_TRAINING</SkillID>
 			</Item>
 		</skills>
 		<perkIDs>

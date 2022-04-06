@@ -62,10 +62,10 @@
 					<Visual href="/GameMechanics/CreatureVisual/WarMachines/Ballista.xdb#xpointer(/CreatureVisual)"/>
 					<TimeToCommand>10</TimeToCommand>
 					<Offense>
-						<Item>5</Item>
+						<Item>7</Item>
 						<Item>9</Item>
 						<Item>12</Item>
-						<Item>15</Item>
+						<Item>14</Item>
 						<Item>17</Item>
 					</Offense>
 					<Defense>
@@ -76,14 +76,14 @@
 						<Item>20</Item>
 					</Defense>
 					<MinDamageFactor>
-						<Item>2</Item>
+						<Item>3</Item>
 						<Item>3</Item>
 						<Item>4</Item>
 						<Item>5</Item>
 						<Item>6</Item>
 					</MinDamageFactor>
 					<MaxDamageFactor>
-						<Item>3</Item>
+						<Item>4</Item>
 						<Item>4</Item>
 						<Item>5</Item>
 						<Item>6</Item>

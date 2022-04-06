@@ -1,6 +1,7 @@
 -- Global symbols (DO NOT EDIT)
-
-	doFile('/scripts/events.lua')
+	dofile = doFile
+	
+	dofile("/scripts/events.lua")
 
 	--
 	-- Logical constants
@@ -981,4 +982,5 @@ end
 if StartDialogSceneInt then
 	StartDialogScene = function(name, callback, saveName) SyncCommand(StartDialogSceneInt, name, callback, saveName) end
 end
-doFile("/scripts/advmap-common.lua")
+
+dofile("/scripts/advmap-common.lua")

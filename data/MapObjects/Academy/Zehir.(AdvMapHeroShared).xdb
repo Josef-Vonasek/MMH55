@@ -51,7 +51,7 @@
 		<BiographyFileRef href="/Text/Game/Heroes/Persons/Academy/Zehir/Bio.txt"/>
 		<Offence>0</Offence>
 		<Defence>1</Defence>
-		<Spellpower>1</Spellpower>
+		<Spellpower>3</Spellpower>
 		<Knowledge>1</Knowledge>
 		<skills>
 			<Item>

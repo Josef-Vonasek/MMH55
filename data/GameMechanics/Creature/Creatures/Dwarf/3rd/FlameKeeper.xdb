@@ -2,13 +2,13 @@
 <Creature>
 	<AttackSkill>10</AttackSkill>
 	<DefenceSkill>10</DefenceSkill>
-	<Shots>4</Shots>
-	<MinDamage>17</MinDamage>
-	<MaxDamage>20</MaxDamage>
+	<Shots>5</Shots>
+	<MinDamage>16</MinDamage>
+	<MaxDamage>19</MaxDamage>
 	<Speed>4</Speed>
-	<Initiative>9</Initiative>
+	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>80</Health>
+	<Health>70</Health>
 	<KnownSpells>
 		<Item>
 			<Spell>SPELL_STONESKIN</Spell>
@@ -45,7 +45,7 @@
 		<Crystal>0</Crystal>
 		<Sulfur>0</Sulfur>
 		<Gem>0</Gem>
-		<Gold>720</Gold>
+		<Gold>750</Gold>
 	</Cost>
 	<PresetPrice>0</PresetPrice>
 	<SubjectOfRandomGeneration>true</SubjectOfRandomGeneration>

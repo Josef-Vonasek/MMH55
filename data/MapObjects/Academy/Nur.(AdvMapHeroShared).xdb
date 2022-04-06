@@ -32,11 +32,11 @@
 	<Class>HERO_CLASS_ELEMENTALIST</Class>
 	<Specialization>HERO_SPEC_POWER_BARGAIN</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_BASIC</Mastery>
+		<Mastery>MASTERY_ADVANCED</Mastery>
 		<SkillID>HERO_SKILL_SUMMONING_MAGIC</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Power_Bargain2/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Power_Bargain2/Description.txt"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Added/Mines/Name.txt"/>
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Added/Mines/Description.txt"/>
 	<SpecializationIcon href="/UI/H5A1/Icons/Abilites/Heroes_Abillites/128x128/Stormcaller.(Texture).xdb#xpointer(/Texture)"/>
 	<FaceTexture href="/Textures/Icons/Heroes/Academy/Academy_Nathir_128x128.(Texture).xdb#xpointer(/Texture)"/>
 	<FaceTextureSmall/>
@@ -53,17 +53,12 @@
 		<Defence>1</Defence>
 		<Spellpower>3</Spellpower>
 		<Knowledge>1</Knowledge>
-		<skills>
-			<Item>
-				<Mastery>MASTERY_BASIC</Mastery>
-				<SkillID>HERO_SKILL_INVOCATION</SkillID>
-			</Item>	
-		</skills>
+		<skills/>
 		<perkIDs>
-			<Item>HERO_SKILL_EMPOWERED_SPELLS</Item>
+			<Item>HERO_SKILL_MASTER_OF_QUAKES</Item>
 		</perkIDs>
 		<spellIDs>
-			<Item>SPELL_SUMMON_ELEMENTALS</Item>
+			<Item>SPELL_LAND_MINE</Item>
 		</spellIDs>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>

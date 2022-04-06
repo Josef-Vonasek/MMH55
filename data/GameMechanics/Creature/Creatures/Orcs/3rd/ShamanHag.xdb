@@ -24,7 +24,7 @@
 		</Item>
 		<Item>
 			<Spell>SPELL_CURSE</Spell>
-			<Mastery>MASTERY_ADVANCED</Mastery>
+			<Mastery>MASTERY_EXPERT</Mastery>
 		</Item>
 		<Item>
 			<Spell>SPELL_DISRUPTING_RAY</Spell>

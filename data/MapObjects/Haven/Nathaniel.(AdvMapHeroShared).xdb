@@ -30,7 +30,7 @@
 	<Icon128 href="/Textures/Icons/Heroes/Heaven/Heaven_Freyda_128x128.(Texture).xdb#xpointer(/Texture)"/>
 	<InternalName>Nathaniel</InternalName>
 	<Class>HERO_CLASS_RANGER</Class>
-	<Specialization>HERO_SPEC_PEASANTS</Specialization>
+	<Specialization/>
 	<PrimarySkill>
 		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_DEFENCE</SkillID>
@@ -50,7 +50,7 @@
 		<NameFileRef href="/Text/Game/Heroes/Persons/Haven/Nathaniel/Name.txt"/>
 		<BiographyFileRef href="/Text/Game/Heroes/Persons/Haven/Nathaniel/Bio.txt"/>
 		<Offence>1</Offence>
-		<Defence>4</Defence>
+		<Defence>2</Defence>
 		<Spellpower>1</Spellpower>
 		<Knowledge>1</Knowledge>
 		<skills>

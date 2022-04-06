@@ -3,7 +3,6 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 --Author: Magnomagus
---Website: http://heroescommunity.com/viewthread.php3?TID=41303
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 --	Note: All settings in this document are script variables always follow guidelines behind "--", otherwise the game can run in critical bugs. 
@@ -11,11 +10,15 @@
 
 H55_TownGateEnabled = 1; --Activates Town Gate, allows teleportation of heroes to any town (0 = deactivated).
 
-H55_TownConvEnabled = 0; --Activates Town and Dwelling Conversion (0 = deactivated)
+H55_TownConvEnabled = 1; --Activates Town and Dwelling Conversion (0 = deactivated)
 H55_AmountExtraTownsDwellings = 1; --Allows to increase amount of allowed conversions for dwellings and towns (1 = balanced like RC3, zero can also be used).
 
-H55_GovernanceEnabled = 0; --Allows the creation of governor heroes (0 = deactivated).
+--Town Conversion, Governance and Mine Control are always disabled in the campaign and scenario maps, since those maps were not designed for this mechanism and would have bugs/balance issues.
+
+H55_GovernanceEnabled = 1; --Allows the creation of governor heroes (0 = deactivated).
 H55_GovernorExpCoef = 1; --Multiplier for experience gain of governors (do not set to zero) Example: 1.2 = 20% more, 0.8 = 20% less.
+
+H55_MineControl = 1; --Allows players to easily guard mines with self-sustaining armies (0 = deactivated).
 
 H55_IgnoreExpAdjustment = 0; --If this is set to 1, the game will not adjust the experience gain to the size of the neutral stacks (so higher difficulty will not be as hard).
 
@@ -23,8 +26,10 @@ H55_NoMentoring = 0; --If this is set to 1, Memory Mentoring is not allowed, all
 
 --	WARNING!!! Use the Build town functions only for playing ARMG maps and multiplayer maps, these functions will not build Shipyards, Tear of Asha and various special buildings.
 
-H55_BuildNeutralTowns = 0; --Use this if you want neutral towns on the map to be of higher level than 1, Only accepts numbers 0,1,2,3,4,5; each number builds up the town ~20% more,
+H55_BuildNeutralTowns = 0; --Use this if you want neutral towns on the map to be of higher level than 1, Only accepts numbers 0,1,2,3,4,5; each number builds up the town ~20% more.
 H55_BuildPlayerTowns = 0; --Use this if you want player towns on the map to be of higher level than 1, Only accepts numbers 0,1,2,3,4,5; each number builds up the town ~20% more.
+
+H55_NoAutoTeamHumans = 0; --Set to 1 to prevent human players from teaming up automatically in Nightmare or Savage mode, AI players still team up.
 
 H55_AICheatMode = 4; --Makes AI get more or less creatures to make up for quick-combat losses the human player isn't making, Only accepts numbers 0,1,2,3,4,5,6; 
 
@@ -35,13 +40,14 @@ H55_AICheatMode = 4; --Makes AI get more or less creatures to make up for quick-
 --	5 = 120%, 6 = 140%.
 --	WARNING!!! The AICheatMode setting does not affect 'casual game' mode, in this mode Cheating is always off!
 
-H55_ForceAIFix = 0; --If this is set to 1, the bug where 31j AI sometimes doesn't attack after losing all towns is fixed on all maps instead of only ARMG maps.
-
---	WARNING!!! Do not set H55_ForceAIFix to 1, if you intend to play any campaign or storyline singleplayer maps.
-
 H55_LowResGame = 0; --Set this to 1 to substract the following resource pattern: (10,10,5,5,5,5,10K) from every player at the start of the game. Don't use for Campaign or scenarios.
 
 --If this is enabled hard and heroic will be played with Impossible starting resources and Impossible will start completely bankrupt.
+
+H55_GenerateMixedStacks = 1;  --If this is set to 0, mixed neutral stacks will not be generated (by script) on any maps ever.
+H55_MixStacksThreshold = 200; --If there are more monsters on the map than this customizable number, mixed stack generation will not happen to prevent heavy lag (use mapmixer instead)
+H55_AskForMixedStacks = 0; --If this is set to one the first human player will be asked on every multiplayer map if mixed neutrals should be generated and threshold is ignored.
+H55_ForceMixedStacks = 0; --copy/paste this variable to a mapscript to always have mixed neutrals generated on that map. If this is set to 1 here, generation will be forced on all multiplayer maps.
 
 H55_BanksDifficulty = 1; --Multiplier for neutral stack size in Battle Sites (do not set to zero) Example: 1.2 = 20% more, 0.8 = 20% less.
 
@@ -50,11 +56,7 @@ H55_BanksDifficulty = 1; --Multiplier for neutral stack size in Battle Sites (do
 
 H55_NeutralStackSize = 1; --Multiplier for neutral stack size standing on the adventure map (do not set to zero) Example: 1.2 = 20% more, 0.8 = 20% less.
 
---	GUIDELINES for tweaking the Advanced RMG monsters:
---	Strong creatures x1.58 = Halfway between Strong & very Strong.
---	Very Strong creatures x0.75 = Halfway between Strong & very Strong.
---	Very Strong x1.55 = Halfway between Very Strong and Impossible.
---	Impossible x 0.5 = Halfway between Very Strong and Impossible.
+--	Since RC15b1 RMG monsters have been rebalanced and this feature is less important, Strong = between old strong and very strong (which used to be huge gap) also impossible monsters were made more balanced.
 
 H55_ManaObservatories = 1; --By default Redwood Observatories also replenish mana on ARMG maps, set to 0 to switch it off.
 
@@ -70,7 +72,9 @@ H55_NegativeArtifacts = 1; --Set to 0 to disable secret negative artifacts from 
 H55_MoonDiscQuest = 0; --Set to 1 to activate moondisc combo-artifact quest on all maps, NOT RECOMMENDED, copy/paste this setting only to maps that are suitable.
 H55_MoonDiscOnARMGMaps = 1; --Set to 0 to disable moondisc combo-artifact quests on ARMG maps.
 
-H55_RPGPotions = 0; --Set to 1 to enable experimental potion feature.
+H55_RPGPotions = 0; --Set to 1 to enable potions on multiplayer and rmg maps, by default potions can be bought from trading posts in Scenarios and Campaign maps.
+
+--If set to 1 potions will also be for sale at trading posts on multiplayer+ARMG maps, costs for movement potions are significantly higher on multiplayer+ARMG maps, resurrection potions cannot be bought.
 
 H55_Duel_WeeksGrowth = 8; --Settings for ARMG Duel Template, this one determines army size.
 H55_Duel_HeroLevel = 25; --Levels given by witch hut, Max level = 50!
@@ -78,3 +82,5 @@ H55_Duel_Relics = 4; --can be set to zero, amount of random artifacts given
 H55_Duel_Majors = 8; --can be set to zero, artifacts that cannot be used in duel are removed from the pool
 H55_Duel_Minors = 4; --can be set to zero, if very few artifacts are given and H55_Duel_BankDifficulty is low a run for the battle sites will happen.
 H55_Duel_BankDifficulty = 6; --By default Battle sites on duel map are 3x stronger as H55_Duel_WeeksGrowth, making them much too dangerous.
+
+---------------------------------------------------------------------------------------------------------------------------------------------

@@ -8885,42 +8885,42 @@
 				<AIRacesValues>
 					<Haven>
 						<CommanderValue>1000</CommanderValue>
-						<CollectorSupplierValue>10</CollectorSupplierValue>
+						<CollectorSupplierValue>1000</CollectorSupplierValue>
 						<FreelancerValue>1000</FreelancerValue>
 					</Haven>
 					<Sylvan>
 						<CommanderValue>1000</CommanderValue>
-						<CollectorSupplierValue>10</CollectorSupplierValue>
+						<CollectorSupplierValue>1000</CollectorSupplierValue>
 						<FreelancerValue>1000</FreelancerValue>
 					</Sylvan>
 					<Academy>
 						<CommanderValue>1000</CommanderValue>
-						<CollectorSupplierValue>10</CollectorSupplierValue>
+						<CollectorSupplierValue>1000</CollectorSupplierValue>
 						<FreelancerValue>1000</FreelancerValue>
 					</Academy>
 					<Dungeon>
 						<CommanderValue>1000</CommanderValue>
-						<CollectorSupplierValue>10</CollectorSupplierValue>
+						<CollectorSupplierValue>1000</CollectorSupplierValue>
 						<FreelancerValue>1000</FreelancerValue>
 					</Dungeon>
 					<Necropolis>
 						<CommanderValue>1000</CommanderValue>
-						<CollectorSupplierValue>10</CollectorSupplierValue>
+						<CollectorSupplierValue>1000</CollectorSupplierValue>
 						<FreelancerValue>1000</FreelancerValue>
 					</Necropolis>
 					<Inferno>
 						<CommanderValue>1000</CommanderValue>
-						<CollectorSupplierValue>10</CollectorSupplierValue>
+						<CollectorSupplierValue>1000</CollectorSupplierValue>
 						<FreelancerValue>1000</FreelancerValue>
 					</Inferno>
 					<Fortress>
 						<CommanderValue>1000</CommanderValue>
-						<CollectorSupplierValue>10</CollectorSupplierValue>
+						<CollectorSupplierValue>1000</CollectorSupplierValue>
 						<FreelancerValue>1000</FreelancerValue>
 					</Fortress>
 					<Stronghold>
 						<CommanderValue>1000</CommanderValue>
-						<CollectorSupplierValue>10</CollectorSupplierValue>
+						<CollectorSupplierValue>1000</CollectorSupplierValue>
 						<FreelancerValue>1000</FreelancerValue>
 					</Stronghold>
 				</AIRacesValues>

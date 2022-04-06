@@ -559,15 +559,15 @@
 				<Model href="/_(Model)/TerrainObjects/Water/SeaChest.(Model).xdb#xpointer(/Model)"/>
 				<Type>ARTF_CLASS_RELIC</Type>
 				<Slot>PRIMARY</Slot>
-				<Icon href="/Textures/HeroScreen/Artifacts/Angelic.xdb#xpointer(/Texture)"/>
+				<Icon href="/Textures/HeroScreen/Artifacts/Eightfold.xdb#xpointer(/Texture)"/>
 				<CostOfGold>80000</CostOfGold>
 				<AIValue>26000</AIValue>
 				<CanBeGeneratedToSell>false</CanBeGeneratedToSell>
 				<HeroStatsModif>
-					<Attack>12</Attack>
+					<Attack>0</Attack>
 					<Defence>0</Defence>
 					<Knowledge>0</Knowledge>
-					<SpellPower>0</SpellPower>
+					<SpellPower>12</SpellPower>
 					<Morale>0</Morale>
 					<Luck>0</Luck>
 				</HeroStatsModif>
@@ -3134,15 +3134,15 @@
 				<Model href="/_(Model)/TerrainObjects/Water/SeaChest.(Model).xdb#xpointer(/Model)"/>
 				<Type>ARTF_CLASS_RELIC</Type>
 				<Slot>PRIMARY</Slot>
-				<Icon href="/Textures/HeroScreen/Artifacts/Eightfold.xdb#xpointer(/Texture)"/>
+				<Icon href="/Textures/HeroScreen/Artifacts/Angelic.xdb#xpointer(/Texture)"/>
 				<CostOfGold>80000</CostOfGold>
 				<AIValue>26000</AIValue>
 				<CanBeGeneratedToSell>false</CanBeGeneratedToSell>
 				<HeroStatsModif>
-					<Attack>0</Attack>
+					<Attack>12</Attack>
 					<Defence>0</Defence>
 					<Knowledge>0</Knowledge>
-					<SpellPower>12</SpellPower>
+					<SpellPower>0</SpellPower>
 					<Morale>0</Morale>
 					<Luck>0</Luck>
 				</HeroStatsModif>

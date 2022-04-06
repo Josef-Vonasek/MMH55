@@ -20,7 +20,7 @@
 					<Item href="/MapObjects/Inferno/OrlandoMP.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Inferno/Oddrema.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Inferno/Ash.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
-					<Item href="/MapObjects/Inferno/Agrael.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
+					<Item href="/MapObjects/Inferno/AgraelMP.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Inferno/Biara.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Inferno/Sovereign2.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Inferno/Efion.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
@@ -1416,7 +1416,7 @@
 					<Item href="/MapObjects/Haven/Maeve.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>		
 					<Item href="/MapObjects/Haven/Nathaniel.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Haven/Jeddite.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>	
-					<Item href="/MapObjects/Haven/Alaric.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>		
+					<Item href="/MapObjects/Haven/AlaricMP.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>		
 					<Item href="/MapObjects/Haven/RedHeavenHero04.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Haven/RedHeaven07_Orlando.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>		
 					<Item href="/MapObjects/Haven/Markal.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>				
@@ -3477,18 +3477,18 @@
 					<Item href="/MapObjects/Dungeon/Menel.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Dungeon/Agbeth.xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Dungeon/Ranleth.xdb#xpointer(/AdvMapHeroShared)"/>
-					<Item href="/MapObjects/Dungeon/Thralsai.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>					
+					<Item href="/MapObjects/Dungeon/ThralsaiMP.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>					
 					<Item href="/MapObjects/Dungeon/Urunir.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Dungeon/Ohtarig.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Dungeon/Darkstorm.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Dungeon/Eruina.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
-					<Item href="/MapObjects/Dungeon/Almegir.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
+					<Item href="/MapObjects/Dungeon/AlmegirMP.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Dungeon/Sephinroth.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>					
 					<Item href="/MapObjects/Dungeon/Sylsai.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>		
 					<Item href="/MapObjects/Dungeon/Inagost.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Dungeon/Kelodin.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Dungeon/Raelag.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
-					<Item href="/MapObjects/Dungeon/Shadwyn.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
+					<Item href="/MapObjects/Dungeon/ShadwynMP.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Dungeon/Dalom.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Dungeon/Kastore.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 				</HeroPool>
@@ -4194,7 +4194,7 @@
 					<Item href="/MapObjects/Necropolis/Xerxon.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>	
 					<Item href="/MapObjects/Necropolis/Aberrar.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>		
 					<Item href="/MapObjects/Necropolis/Effig.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
-					<Item href="/MapObjects/Necropolis/A2_Arantir.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>		
+					<Item href="/MapObjects/Necropolis/A2_ArantirMP.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>		
 					<Item href="/MapObjects/Necropolis/Aislinn.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>	
 					<Item href="/MapObjects/Necropolis/Nimbus.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Necropolis/Archilus.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
@@ -4203,7 +4203,7 @@
 					<Item href="/MapObjects/Necropolis/Nemor.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 					<Item href="/MapObjects/Necropolis/Muscip.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>		
 					<Item href="/MapObjects/Necropolis/Vidomina.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
-					<Item href="/MapObjects/Necropolis/Giovanni.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
+					<Item href="/MapObjects/Necropolis/GiovanniMP.(AdvMapHeroShared).xdb#xpointer(/AdvMapHeroShared)"/>
 				</HeroPool>
 				<Dwellings>
 					<Item href="/MapObjects/Necropolis/Graveyard.(AdvMapDwellingShared).xdb#xpointer(/AdvMapDwellingShared)"/>

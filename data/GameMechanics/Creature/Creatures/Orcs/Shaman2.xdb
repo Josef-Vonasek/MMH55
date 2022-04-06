@@ -20,7 +20,7 @@
 		</Item>		
 		<Item>
 			<Spell>SPELL_BLESS</Spell>
-			<Mastery>MASTERY_ADVANCED</Mastery>
+			<Mastery>MASTERY_EXPERT</Mastery>
 		</Item>
 		<Item>
 			<Spell>SPELL_HASTE</Spell>

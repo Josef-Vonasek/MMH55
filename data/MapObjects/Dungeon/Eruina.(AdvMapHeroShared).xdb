@@ -32,7 +32,7 @@
 	<Class>HERO_CLASS_SEER</Class>
 	<Specialization>HERO_SPEC_MATRON_SALVO</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_BASIC</Mastery>
+		<Mastery>MASTERY_ADVANCED</Mastery>
 		<SkillID>HERO_SKILL_LUCK</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Matron_Salvo/Name.txt"/>
@@ -53,12 +53,7 @@
 		<Defence>0</Defence>
 		<Spellpower>2</Spellpower>
 		<Knowledge>1</Knowledge>
-		<skills>
-			<Item>
-				<Mastery>MASTERY_BASIC</Mastery>
-				<SkillID>HERO_SKILL_DARK_MAGIC</SkillID>
-			</Item>
-		</skills>
+		<skills/>
 		<perkIDs>
 			<Item>HERO_SKILL_CHAOTIC_SPELLS</Item>
 		</perkIDs>

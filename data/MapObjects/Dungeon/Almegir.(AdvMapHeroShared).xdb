@@ -35,8 +35,8 @@
 		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_LUCK</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Dark_Acolyte/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Dark_Acolyte/Description.txt"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Dark_Acolyte2/Name.txt"/>
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Dark_Acolyte2/Description.txt"/>
 	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Academy/Inexhaustible.xdb#xpointer(/Texture)"/>	
 	<FaceTexture href="/Textures/Icons/Heroes/Dungeon/Dungeon_Yrbeth_128x128.(Texture).xdb#xpointer(/Texture)"/>
 	<FaceTextureSmall/>
@@ -56,7 +56,7 @@
 		<skills>
 			<Item>
 				<Mastery>MASTERY_BASIC</Mastery>
-				<SkillID>HERO_SKILL_INVOCATION</SkillID>
+				<SkillID>HERO_SKILL_DESTRUCTIVE_MAGIC</SkillID>
 			</Item>
 		</skills>
 		<perkIDs>
@@ -76,7 +76,7 @@
 	<Trace href="/MapObjects/_(AdvMapHeroTraceSet)/Dungeon.xdb#xpointer(/AdvMapHeroTraceSet)"/>
 	<RaceTraitIcon/>
 	<RaceTraitDescFileRef href=""/>
-	<ScenarioHero>false</ScenarioHero>
+	<ScenarioHero>true</ScenarioHero>
 	<AdventureMusic/>
 	<HideInEditor>false</HideInEditor>
 </AdvMapHeroShared>

@@ -30,14 +30,14 @@
 	<Icon128 href="/UI/H5A1/Icons/Heroes/Portrets128x128/Shadwyn.(Texture).xdb#xpointer(/Texture)"/>
 	<InternalName>Shadwyn</InternalName>
 	<Class>HERO_CLASS_WARLOCK</Class>
-	<Specialization/>
+	<Specialization>HERO_SPEC_DARK_ACOLYTE</Specialization>
 	<PrimarySkill>
 		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_INVOCATION</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Added/Witches/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Added/Witches/Description.txt"/>
-	<SpecializationIcon href="/Textures/Interface/CombatArena/Faces/Dungeon/ico_Matron_64.xdb#xpointer(/Texture)"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Dark_Acolyte/Name.txt"/>
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Dungeon/Dark_Acolyte/Description.txt"/>
+	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Academy/Inexhaustible.xdb#xpointer(/Texture)"/>	
 	<FaceTexture href="/UI/H5A1/Icons/Heroes/Portrets128x128/Shadwyn.(Texture).xdb#xpointer(/Texture)"/>
 	<FaceTextureSmall/>
 	<HeroCharacterArena href="/Characters/Heroes/Ilaya.(Character).xdb#xpointer(/Character)"/>
@@ -76,7 +76,7 @@
 	<Trace href="/MapObjects/_(AdvMapHeroTraceSet)/Dungeon.xdb#xpointer(/AdvMapHeroTraceSet)"/>
 	<RaceTraitIcon/>
 	<RaceTraitDescFileRef href=""/>
-	<ScenarioHero>false</ScenarioHero>
+	<ScenarioHero>true</ScenarioHero>
 	<AdventureMusic href="/Sounds/_(Music)/AdvMap-Heroes/a1-Shadwyn-Ylaya.xdb#xpointer(/Music)"/>
 	<HideInEditor>false</HideInEditor>
 </AdvMapHeroShared>

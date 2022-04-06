@@ -63,7 +63,7 @@
 			<Item>HERO_SKILL_MASTER_OF_BLESSING</Item>
 		</perkIDs>
 		<spellIDs>
-			<Item>SPELL_BLOODLUST</Item>
+			<Item>SPELL_REGENERATION</Item>
 			<Item>SPELL_BLESS</Item>
 		</spellIDs>
 		<Ballista>false</Ballista>

@@ -32,7 +32,7 @@
 	<Class>HERO_CLASS_ELEMENTALIST</Class>
 	<Specialization/>
 	<PrimarySkill>
-		<Mastery>MASTERY_BASIC</Mastery>
+		<Mastery>MASTERY_ADVANCED</Mastery>
 		<SkillID>HERO_SKILL_SUMMONING_MAGIC</SkillID>
 	</PrimarySkill>
 	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Added/Djinns/Name.txt"/>
@@ -53,17 +53,13 @@
 		<Defence>1</Defence>
 		<Spellpower>3</Spellpower>
 		<Knowledge>1</Knowledge>
-		<skills>
-			<Item>
-				<Mastery>MASTERY_BASIC</Mastery>
-				<SkillID>HERO_SKILL_INVOCATION</SkillID>
-			</Item>
-		</skills>
+		<skills/>
 		<perkIDs>
 			<Item>HERO_SKILL_MASTER_OF_CREATURES</Item>
 		</perkIDs>
 		<spellIDs>
 			<Item>SPELL_SUMMON_ELEMENTALS</Item>
+			<Item>SPELL_VAMPIRISM</Item>
 		</spellIDs>
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>

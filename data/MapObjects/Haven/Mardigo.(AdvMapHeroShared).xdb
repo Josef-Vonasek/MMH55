@@ -30,13 +30,13 @@
 	<Icon128/>
 	<InternalName>Mardigo</InternalName>
 	<Class>HERO_CLASS_KNIGHT</Class>
-	<Specialization>HERO_SPEC_FOOTMEN</Specialization>
+	<Specialization/>
 	<PrimarySkill>
 		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_OFFENCE</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Haven/Infantry_Commander2/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Haven/Infantry_Commander2/Description.txt"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Haven/Infantry_Commander/Name.txt"/>
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Haven/Infantry_Commander/Description.txt"/>
 	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Haven/Infantry_Commander.xdb#xpointer(/Texture)"/>
 	<FaceTexture href="/UI/H5A1/Icons/Heroes/Portrets128x128/Lazlo.(Texture).xdb#xpointer(/Texture)"/>
 	<FaceTextureSmall/>

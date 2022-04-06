@@ -3,7 +3,6 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 --Author: Magnomagus
---Website: http://heroescommunity.com/viewthread.php3?TID=41303
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 --TABLES
@@ -11,24 +10,24 @@
 
 --Classes
 
-H55_Renegades = {"Mardigo","RedHeavenHero02","RedHeavenHero05","RedHeavenHero03","RedHeavenHero06"				,"RedHeavenHero01"};
-H55_Knights = {"Duncan","Sarge","Isabell","Orrin","Nicolai","GodricMP","Maeve","Nathaniel","Axel","Christian"   ,"Brem","Ving","Godric","Freyda","Ornella","GhostFSLord","Giar","Glen","Isabell_A1","Saint Isabell","Laszlo"};
-H55_Heretics = {"Jeddite","Markal","Orlando","Alaric","RedHeavenHero04"};
+H55_Renegades = {"Mardigo","RedHeavenHero02","RedHeavenHero05","RedHeavenHero03","RedHeavenHero06"				,"Alaric","RedHeavenHero01","Laszlo"};
+H55_Knights = {"Duncan","Sarge","Isabell","Orrin","Nicolai","GodricMP","Maeve","Nathaniel","Axel","Christian"   ,"Brem","Ving","Godric","Freyda","Ornella","GhostFSLord","Giar","Glen","Isabell_A1","Saint Isabell"};
+H55_Heretics = {"Jeddite","Markal","Orlando","AlaricMP","RedHeavenHero04"};
 H55_Rangers = {"Heam","Gillion","Linaas","Ossir","Melodia","Mephala"};
 H55_Avengers = {"Kyrre","Nadaur","Arniel","Ildar","Jenova","Metlirn"};
 H55_Druids = {"Vaniel","Elleshar","Vinrael","Itil","Diraya","Gem"                            					,"Tieru"};
 H55_Demonlords = {"Marder","Malustar","Harkenraz","Calh","Calid","Jazaz"                      					,"Sheltem","Gamor","Guarg","Erasial","Kha-Beleth","Veyer","DMessiah"};
-H55_Gatekeepers = {"Deleb","Ash","Nymus","Oddrema","Nelech","Grok"};
-H55_Sorcerers = {"Sovereign","Efion","Calid2","Zydar","Agrael","Biara"};
+H55_Gatekeepers = {"Deleb","Ash","Nymus","Oddrema","Nelech","Grok"                                              ,"Agrael"};
+H55_Sorcerers = {"Sovereign","Efion","Calid2","Zydar","AgraelMP","Biara"};
 H55_DeathKnights = {"Gles","Pelt","Tamika","OrnellaNecro","Straker","Xerxon"};
-H55_Necromancers = {"Archilus","Nimbus","Aislinn","Arantir","Aberrar","Effig" 									,"Berein","Nikolay"};
-H55_Nethermages = {"Thant","Vidomina","Nemor","Muscip","Giovanni","Sandro"};                  
+H55_Necromancers = {"Archilus","Nimbus","Aislinn","ArantirMP","Aberrar","Effig" 								,"Arantir","Berein","Nikolay","Giovanni"};
+H55_Nethermages = {"Thant","Vidomina","Nemor","Muscip","GiovanniMP","Sandro"};                  
 H55_Enchanters = {"Isher","Rissa","Minasli","Davius","Josephine","Havez"};
 H55_Conjurers = {"Zehir","Timerkhan","Nur","Cyrus","Emilia","Astral"};
 H55_Wizards = {"Gurvilin","Razzak","Maahir","Faiz","Sufi","Tan"};
-H55_Overlords = {"Agbeth","Ranleth","Thralsai","Urunir","Menel","Ferigl"};
-H55_Tricksters = {"Sephinroth","Eruina","Ohtarig","Sylsai","Darkstorm","Almegir"};
-H55_Warlocks = {"Raelag","Kastore","Kelodin","Shadwyn","Dalom","Inagost"										,"Raelag_A1","Segref","Ohtar","Eruina_A1"};
+H55_Overlords = {"Agbeth","Ranleth","ThralsaiMP","Urunir","Menel","Ferigl"};
+H55_Tricksters = {"Sephinroth","Eruina","Ohtarig","Sylsai","Darkstorm","AlmegirMP"								,"Thralsai","Almegir"};
+H55_Warlocks = {"Raelag","Kastore","Kelodin","ShadwynMP","Dalom","Inagost"										,"Shadwyn","Raelag_A1","Segref","Ohtar","Eruina_A1"};
 H55_Engineers = {"Wulfstan","Rolf","Maximus","Tazar","Ufretin","Skeggy"};
 H55_Runemages = {"Hangvul","KingTolghar","Ingvar","Bersy","Ottar","Una"};
 H55_Flamekeepers = {"Vilma","Bart","Hangvul2","Brand","Egil","Vegeyr"};
@@ -39,135 +38,127 @@ H55_Witches = {"Hero2","Hero3","Zouleika","Erika"};
 H55_ClassesCount = 24
 
 H55_ClassesList = { 
-H55_Renegades, H55_Knights, H55_Heretics,
-H55_Rangers, H55_Avengers, H55_Druids,
-H55_Demonlords, H55_Gatekeepers, H55_Sorcerers,
-H55_DeathKnights, H55_Necromancers, H55_Nethermages,
-H55_Enchanters, H55_Conjurers, H55_Wizards,
-H55_Overlords, H55_Tricksters, H55_Warlocks,
-H55_Engineers, H55_Runemages, H55_Flamekeepers,
-H55_Chieftains, H55_Shamans, H55_Witches
+	H55_Renegades, H55_Knights, H55_Heretics,
+	H55_Rangers, H55_Avengers, H55_Druids,
+	H55_Demonlords, H55_Gatekeepers, H55_Sorcerers,
+	H55_DeathKnights, H55_Necromancers, H55_Nethermages,
+	H55_Enchanters, H55_Conjurers, H55_Wizards,
+	H55_Overlords, H55_Tricksters, H55_Warlocks,
+	H55_Engineers, H55_Runemages, H55_Flamekeepers,
+	H55_Chieftains, H55_Shamans, H55_Witches
 };
 
 H55_ClassesNames = {
-"Renegade", "Knight", "Heretic",
-"Ranger", "Avenger", "Druid",
-"Demonlord", "Gatekeeper", "Sorcerer",
-"Deathknight","Necromancer", "Nethermage",
-"Enchanter", "Conjurer", "Wizard",
-"Overlord", "Trickster", "Warlock",
-"Engineer", "Runemage", "Flamekeeper",
-"Chieftain", "Shaman", "Witch" 
+	"Renegade", "Knight", "Heretic",
+	"Ranger", "Avenger", "Druid",
+	"Demonlord", "Gatekeeper", "Sorcerer",
+	"Deathknight","Necromancer", "Nethermage",
+	"Enchanter", "Conjurer", "Wizard",
+	"Overlord", "Trickster", "Warlock",
+	"Engineer", "Runemage", "Flamekeeper",
+	"Chieftain", "Shaman", "Witch" 
 };
-
--- H55_ClassesTexts = {
-	-- "/Text/Game/Scripts/Classes/H55_Knights.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Renegades.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Paladins.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Heretics.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Rangers.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Wardens.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Druids.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Demonlords.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Gatekeepers.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Sorcerers.txt",
-	-- "/Text/Game/Scripts/Classes/H55_DeathKnights.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Reavers.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Necromancers.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Seers.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Wizards.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Elementalists.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Overlords.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Assassins.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Warlocks.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Engineers.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Runemages.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Flamekeepers.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Barbarians.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Shamans.txt",
-	-- "/Text/Game/Scripts/Classes/H55_Witches.txt"
--- };
 
 --Factions
 
-H55_HavenHeroes = {"Nicolai","GodricMP","Maeve","Nathaniel","Axel","Brem","Jeddite","Markal","Orlando","RedHeavenHero03","RedHeavenHero06","Alaric","RedHeavenHero01","Duncan","Sarge","Isabell","Mardigo","Ving","Orrin","Godric","Freyda","Ornella","GhostFSLord","Giar","Glen","Laszlo","Isabell_A1","Saint Isabell","RedHeavenHero04","RedHeavenHero02","RedHeavenHero05","Christian","Malik"};
-H55_SylvanHeroes = {"Heam","Metlirn","Nadaur","Linaas","Ossir","Jenova","Kyrre","Mephala","Arniel","Ildar","Melodia","Gillion","Vaniel","Elleshar","Vinrael","Itil","Diraya","Gem","Tieru"};
-H55_InfernoHeroes = {"Marder","Sheltem","Harkenraz","Calh","Calid","Jazaz","Gamor","Guarg","Erasial","Kha-Beleth","Veyer","DMessiah","Efion","Ash","Nymus","Oddrema","Malustar","Grok","Sovereign","Deleb","Calid2","Zydar","Agrael","Biara","Nelech"};
-H55_DungeonHeroes = {"Agbeth","Ranleth","Sylsai","Urunir","Menel","Ferigl","Dalom","Eruina","Darkstorm","Ohtarig","Thralsai","Almegir","Raelag","Kastore","Kelodin","Shadwyn","Sephinroth","Inagost","Raelag_A1","Segref","Ohtar","Eruina_A1"};
-H55_NecropolisHeroes = {"Gles","Pelt","Tamika","OrnellaNecro","Straker","Xerxon","Archilus","Nimbus","Aislinn","Nemor","Muscip","Giovanni","Thant","Vidomina","Arantir","Aberrar","Effig","Sandro","Berein","Nikolay"};
-H55_AcademyHeroes = {"Isher","Rissa","Minasli","Davius","Josephine","Havez","Gurvilin","Razzak","Maahir","Faiz","Sufi","Cyrus","Zehir","Timerkhan","Nur","Tan","Emilia","Astral"};
-H55_FortressHeroes = {"Wulfstan","Rolf","Maximus","Tazar","Ingvar","Skeggy","Hangvul2","KingTolghar","Ufretin","Bersy","Ottar","Una","Bart","Vilma","Hangvul","Brand","Egil","Vegeyr"};
-H55_StrongholdHeroes = {"Hero1","Hero2","Hero3","Hero4","Hero5","Hero6","Hero7","Hero8","Hero9","Gottai","Crag","Azar","Kraal","Kujin","KujinMP","Kunyak","Matewa","Shiva","Zouleika","Quroq","Mokka","Erika","GottaiMP"}; 
+H55_HavenPhonebook = {["Nicolai"]=1,["GodricMP"]=1,["Maeve"]=1,["Nathaniel"]=1,["Axel"]=1,["Brem"]=1,["Jeddite"]=1,["Markal"]=1,["Orlando"]=1,["RedHeavenHero03"]=1,["RedHeavenHero06"]=1,["Alaric"]=1,["AlaricMP"]=1,["RedHeavenHero01"]=1,["Duncan"]=1,["Sarge"]=1,["Isabell"]=1,["Mardigo"]=1,["Ving"]=1,["Orrin"]=1,["Godric"]=1,["Freyda"]=1,["Ornella"]=1,["GhostFSLord"]=1,["Giar"]=1,["Glen"]=1,["Laszlo"]=1,["Isabell_A1"]=1,["Saint Isabell"]=1,["RedHeavenHero04"]=1,["RedHeavenHero02"]=1,["RedHeavenHero05"]=1,["Christian"]=1,["Malik"]=1};
+H55_SylvanPhonebook = {["Heam"]=1,["Metlirn"]=1,["Nadaur"]=1,["Linaas"]=1,["Ossir"]=1,["Jenova"]=1,["Kyrre"]=1,["Mephala"]=1,["Arniel"]=1,["Ildar"]=1,["Melodia"]=1,["Gillion"]=1,["Vaniel"]=1,["Elleshar"]=1,["Vinrael"]=1,["Itil"]=1,["Diraya"]=1,["Gem"]=1,["Tieru"]=1};
+H55_InfernoPhonebook = {["Marder"]=1,["Sheltem"]=1,["Harkenraz"]=1,["Calh"]=1,["Calid"]=1,["Jazaz"]=1,["Gamor"]=1,["Guarg"]=1,["Erasial"]=1,["Kha-Beleth"]=1,["Veyer"]=1,["DMessiah"]=1,["Efion"]=1,["Ash"]=1,["Nymus"]=1,["Oddrema"]=1,["Malustar"]=1,["Grok"]=1,["Sovereign"]=1,["Deleb"]=1,["Calid2"]=1,["Zydar"]=1,["Agrael"]=1,["AgraelMP"]=1,["Biara"]=1,["Nelech"]=1};
+H55_DungeonPhonebook = {["Agbeth"]=1,["Ranleth"]=1,["Sylsai"]=1,["Urunir"]=1,["Menel"]=1,["Ferigl"]=1,["Dalom"]=1,["Eruina"]=1,["Darkstorm"]=1,["Ohtarig"]=1,["Thralsai"]=1,["Almegir"]=1,["Raelag"]=1,["Kastore"]=1,["Kelodin"]=1,["Shadwyn"]=1,["ShadwynMP"]=1,["Sephinroth"]=1,["Inagost"]=1,["Raelag_A1"]=1,["Segref"]=1,["Ohtar"]=1,["Eruina_A1"]=1,["ThralsaiMP"]=1,["AlmegirMP"]=1};
+H55_NecropolisPhonebook = {["Gles"]=1,["Pelt"]=1,["Tamika"]=1,["OrnellaNecro"]=1,["Straker"]=1,["Xerxon"]=1,["Archilus"]=1,["Nimbus"]=1,["Aislinn"]=1,["Nemor"]=1,["Muscip"]=1,["Giovanni"]=1,["GiovanniMP"]=1,["Thant"]=1,["Vidomina"]=1,["Arantir"]=1,["ArantirMP"]=1,["Aberrar"]=1,["Effig"]=1,["Sandro"]=1,["Berein"]=1,["Nikolay"]=1};
+H55_AcademyPhonebook = {["Isher"]=1,["Rissa"]=1,["Minasli"]=1,["Davius"]=1,["Josephine"]=1,["Havez"]=1,["Gurvilin"]=1,["Razzak"]=1,["Maahir"]=1,["Faiz"]=1,["Sufi"]=1,["Cyrus"]=1,["Zehir"]=1,["Timerkhan"]=1,["Nur"]=1,["Tan"]=1,["Emilia"]=1,["Astral"]=1};
+H55_FortressPhonebook = {["Wulfstan"]=1,["Rolf"]=1,["Maximus"]=1,["Tazar"]=1,["Ingvar"]=1,["Skeggy"]=1,["Hangvul2"]=1,["KingTolghar"]=1,["Ufretin"]=1,["Bersy"]=1,["Ottar"]=1,["Una"]=1,["Bart"]=1,["Vilma"]=1,["Hangvul"]=1,["Brand"]=1,["Egil"]=1,["Vegeyr"]=1};
+H55_StrongholdPhonebook = {["Hero1"]=1,["Hero2"]=1,["Hero3"]=1,["Hero4"]=1,["Hero5"]=1,["Hero6"]=1,["Hero7"]=1,["Hero8"]=1,["Hero9"]=1,["Gottai"]=1,["Crag"]=1,["Azar"]=1,["Kraal"]=1,["Kujin"]=1,["KujinMP"]=1,["Kunyak"]=1,["Matewa"]=1,["Shiva"]=1,["Zouleika"]=1,["Quroq"]=1,["Mokka"]=1,["Erika"]=1,["GottaiMP"]=1}; 
 
 --Creatures
 
+H55_StartArmyAmount = {};
+
 H55_Creatures = {
-{{1,2,106},{3,4,107},{5,6,108},{7,8,109},{9,10,110},{11,12,111},{13,14,112}}, --Haven
-{{43,44,145},{45,46,146},{47,48,147},{49,50,148},{51,52,149},{53,54,150},{55,56,151}}, --Sylvan
-{{15,16,131},{17,18,132},{19,20,133},{21,22,134},{23,24,135},{25,26,136},{27,28,137}}, --Inferno
-{{29,30,152},{31,32,153},{33,34,154},{35,36,155},{37,38,156},{39,40,157},{41,42,158}}, --Necropolis
-{{57,58,159},{59,60,160},{61,62,161},{63,64,162},{65,66,163},{67,68,164},{69,70,165}}, --Academy
-{{71,72,138},{73,74,139},{75,76,140},{77,78,141},{79,80,142},{81,82,143},{83,84,144}}, --Dungeon
-{{92,93,166},{94,95,167},{96,97,168},{98,99,169},{100,101,170},{102,103,171},{104,105,172}}, --Fortress
-{{117,118,173},{119,120,174},{121,122,175},{123,124,176},{125,126,177},{127,128,178},{129,130,179}} --Stronghold
+	{{1,2,106},{3,4,107},{5,6,108},{7,8,109},{9,10,110},{11,12,111},{13,14,112}}, --Haven
+	{{43,44,145},{45,46,146},{47,48,147},{49,50,148},{51,52,149},{53,54,150},{55,56,151}}, --Sylvan
+	{{15,16,131},{17,18,132},{19,20,133},{21,22,134},{23,24,135},{25,26,136},{27,28,137}}, --Inferno
+	{{29,30,152},{31,32,153},{33,34,154},{35,36,155},{37,38,156},{39,40,157},{41,42,158}}, --Necropolis
+	{{57,58,159},{59,60,160},{61,62,161},{63,64,162},{65,66,163},{67,68,164},{69,70,165}}, --Academy
+	{{71,72,138},{73,74,139},{75,76,140},{77,78,141},{79,80,142},{81,82,143},{83,84,144}}, --Dungeon
+	{{92,93,166},{94,95,167},{96,97,168},{98,99,169},{100,101,170},{102,103,171},{104,105,172}}, --Fortress
+	{{117,118,173},{119,120,174},{121,122,175},{123,124,176},{125,126,177},{127,128,178},{129,130,179}}, --Stronghold
+	{{87,87,88},{85,85,86},{113,113,113},{116,116,116},{115,115,114},{90,90,89},{91,91,91}} --Neutral
+};
+
+H55_CreaturesExp = {
+	{{4,8,8},{12,22,22},{17,29,29},{40,60,60},{70,95,95},{115,160,160},{252,332,332}}, --Haven
+	{{10,15,15},{15,28,28},{30,45,45},{55,70,70},{75,100,100},{100,136,136},{240,320,320}}, --Sylvan
+	{{7,13,13},{10,16,16},{21,33,33},{40,60,60},{76,96,96},{129,160,160},{245,336,336}}, --Inferno
+	{{5,10,10},{10,15,15},{20,31,31},{38,58,58},{74,105,105},{115,156,156},{166,220,220}}, --Necropolis
+	{{6,12,12},{10,17,17},{21,34,34},{42,60,60},{55,76,76},{120,160,160},{242,330,330}}, --Academy
+	{{14,26,26},{21,35,35},{25,36,36},{45,70,70},{54,82,82},{136,160,160},{260,342,342}}, --Dungeon
+	{{7,12,12},{10,17,17},{27,41,41},{24,36,36},{65,95,95},{130,170,170},{220,310,310}}, --Fortress
+	{{4,8,8},{12,20,20},{17,26,26},{32,50,50},{50,70,70},{120,165,165},{200,300,300}} --Stronghold
 };
 
 H55_CreaturesGrowth = {
-{24.5, 12, 10, 5, 3, 2, 1}, --Haven
-{14, 9, 7, 4, 3, 2.5, 1}, --Sylvan
-{17, 16, 8, 5, 3.5, 2, 1}, --Inferno
-{22.5, 15, 9, 5, 3, 2, 1.5}, --Necropolis  
-{20, 14, 9, 5, 3.5, 2, 1}, --Academy
-{8.5, 6, 6.5, 4, 3, 2, 1}, --Dungeon
-{16, 14, 7, 8, 3, 2, 1}, --Fortress
-{28, 14, 11, 5, 5, 2, 1} --Stronghold
+	{24.5, 12, 10, 5, 3, 2, 1}, --Haven
+	{14, 9, 7, 4, 3, 2.5, 1}, --Sylvan
+	{17, 16, 8, 5, 3.5, 2, 1}, --Inferno
+	{22.5, 16, 9, 5, 3, 2, 1.5}, --Necropolis  
+	{20, 14, 9, 5, 4, 2, 1}, --Academy
+	{8.5, 7, 6.5, 4, 3, 2, 1}, --Dungeon
+	{16, 14, 7, 8, 3.5, 2, 1}, --Fortress
+	{28, 14, 11, 5, 5, 2, 1}, --Stronghold
+	{4, 4, 6, 3, 2, 2, 1} -- Neutral
 };
 
 H55_CreaturesGrowthReal = {
-{22, 12, 10, 5, 3, 2, 1}, --Haven
-{12, 9, 7, 4, 3, 2, 1}, --Sylvan
-{17, 15, 8, 5, 3, 2, 1}, --Inferno
-{20, 15, 9, 5, 3, 2, 1}, --Necropolis  
-{20, 14, 9, 5, 3, 2, 1}, --Academy
-{7, 5, 6, 4, 3, 2, 1}, --Dungeon
-{16, 14, 7, 6, 3, 2, 1}, --Fortress
-{25, 14, 11, 5, 5, 2, 1} --Stronghold
+	{22, 12, 10, 5, 3, 2, 1}, --Haven
+	{12, 9, 7, 4, 3, 2, 1}, --Sylvan
+	{17, 15, 8, 5, 3, 2, 1}, --Inferno
+	{20, 16, 9, 5, 3, 2, 1}, --Necropolis  
+	{20, 14, 9, 5, 3, 2, 1}, --Academy
+	{7, 6, 6, 4, 3, 2, 1}, --Dungeon
+	{16, 14, 7, 6, 3, 2, 1}, --Fortress
+	{25, 14, 11, 5, 5, 2, 1}, --Stronghold
+	{4, 4, 6, 3, 2, 2, 1} -- Neutral
 };
 
-H55_NeutralCreatures = {85,86,87,88,91,113,115,116}; --Fire,Water,Earth,Air,Phoenix,Wolf,MissingSnowApe(114),Manticore,Mummy
-H55_NeutralCreaturesGrowth = {4,4,4,4,1,8,2,3};
-
---AI
+H55_NeutralCreatures = {85,86,87,88,91,113,114,115,116,90}; --Fire,Water,Earth,Air,Phoenix,Wolf,Eagle,Manticore,Mummy,BKnight
+H55_NeutralCreaturesExp = {60,60,60,60,500,37,130,135,72,158};
+H55_NeutralCreaturesGrowth = {4,4,4,4,1,8,2,2,3};
+H55_NeutralSpecialists = {"Calid2","Melodia","Kunyak","KingTolghar","RedHeavenHero03","Emilia","Menel"};
+H55_NeutralSpecialistsCr = {["Calid2"] = 85,["Melodia"] = 86,["Kunyak"] = 87,["KingTolghar"] = 88,["RedHeavenHero03"] = 113,["Emilia"] = 114,["Menel"] = 115};
 
 H55_AICreaturesGrowth = {
-{11, 6, 5, 3, 2, 1, 1}, --Haven
-{6, 5, 3, 3, 2, 1, 1}, --Sylvan
-{8, 8, 5, 3, 2, 1, 1}, --Inferno
-{10, 8, 5, 3, 2, 1, 1}, --Necropolis  
-{10, 8, 5, 3, 2, 1, 1}, --Academy
-{4, 3, 3, 3, 2, 1, 1}, --Dungeon
-{8, 7, 3, 4, 2, 1, 1}, --Fortress
-{14, 7, 6, 3, 3, 1, 1} --Stronghold
+	{11, 6, 5, 3, 2, 1, 1}, --Haven
+	{6, 5, 3, 3, 2, 1, 1}, --Sylvan
+	{8, 8, 5, 3, 2, 1, 1}, --Inferno
+	{10, 8, 5, 3, 2, 1, 1}, --Necropolis  
+	{10, 8, 5, 3, 2, 1, 1}, --Academy
+	{4, 3, 3, 3, 2, 1, 1}, --Dungeon
+	{8, 7, 3, 4, 2, 1, 1}, --Fortress
+	{14, 7, 6, 3, 3, 1, 1} --Stronghold
 };
 
---Specializations and Skills
+H55_EvilTowns = {
+	{2, 5, 7, 1}, -- Haven
+	{1, 5, 7, 2}, -- Sylvan
+	{4, 6, 8, 3}, -- Inferno
+	{3, 6, 8, 4}, -- Necro
+	{1, 2, 7, 5}, -- Academy
+	{3, 4, 8, 6}, -- Dungeon
+	{1, 2, 5, 7}, -- Fortress
+	{3, 4, 6, 8}, -- Stronghold
+	{9, 2, 5, 7} -- Neutral
+};
 
-H55_SpecT6coef = 0.07;
-H55_SpecT5coef = 0.1;
-H55_SpecT4Lcoef = 0.13;
-H55_SpecT4Mcoef = 0.2; --0.17
-H55_SpecT4Hcoef = 0.24; --0.2
-H55_SpecT3coef = 0.4; --0.3
-H55_SpecT2Lcoef = 0.8; --0.5
-H55_SpecT2coef = 0.9; --0.6
-H55_SpecT1coef = 1.4; --0.9
+H55_CreaturesInv = {};
 
-H55_RndResources = {1,2,3,4,5,5};
-H55_RndGold = {1000,1100,1200,1300,1400,1500,1500};
-H55_RndDayGold = {50,100,150,200,250};
-
-H55_GldLevelFactor = {0,0,0,0,0, 0,0,0,0,1, 1,1,1,1,2, 2,2,2,2,3, 3,3,3,3,4, 4,4,4,4,5, 5,5,5,5,6, 6,6,6,6,7, 7,7,7,7,8, 8,8,8,8,9,  9,9,9,9,    10, 10,10,10,10,11};
-H55_ResLevelFactor = {0,0,0,0,1, 1,1,1,1,2, 2,2,2,2,3, 3,3,3,3,4, 4,4,4,4,5, 5,5,5,5,6, 6,6,6,6,7, 7,7,7,7,8, 8,8,8,8,9, 9,9,9,9,10, 10,10,10,10,11, 11,11,11,11,12};
+for town = 1,9,1 do
+	for tier = 1,7,1 do
+		for upgrade = 1,3 do
+			H55_CreaturesInv[H55_Creatures[town][tier][upgrade]] = {town, tier, upgrade};
+		end;
+	end;
+end;
 
 --Sounds
 
@@ -517,10 +508,10 @@ H55_RelicArtifacts = {
 }; --amount is 43
 
 H55_UltimateArtifacts = {
-	ARTIFACT_RING_OF_HASTE,
+	ARTIFACT_EIGHTFOLD,
 	ARTIFACT_DRACONIC,
 	ARTIFACT_SENTINEL,
-	ARTIFACT_EIGHTFOLD,
+	ARTIFACT_RING_OF_HASTE,
 	ARTIFACT_UPG_HM2,
 	ARTIFACT_ANGEL_WINGS,
 	ARTIFACT_CODEX,
@@ -955,7 +946,7 @@ H55_UnusualSummoningSpellsTextL5 = {"/Text/Game/Scripts/Spells/spell_name_SPELL_
 H55_ShamanSummoningSpells = {
 	{SPELL_MAGIC_FIST,
 	SPELL_LAND_MINE,
-	SPELL_ARCANE_CRYSTAL},
+	SPELL_WASP_SWARM},
 	{SPELL_ARCANE_CRYSTAL,
 	SPELL_SUMMON_ELEMENTALS,
 	SPELL_EARTHQUAKE},
@@ -970,7 +961,7 @@ H55_ShamanSummoningSpells = {
 H55_ShamanSummoningSpellsText = {
 	{"/Text/Game/Scripts/Spells/spell_name_SPELL_MAGIC_FIST.txt",
 	"/Text/Game/Scripts/Spells/spell_name_SPELL_LAND_MINE.txt",
-	"/Text/Game/Scripts/Spells/spell_name_SPELL_ARCANE_CRYSTAL.txt"},
+	"/Text/Game/Scripts/Spells/spell_name_SPELL_WASP_SWARM.txt"},
 	{"/Text/Game/Scripts/Spells/spell_name_SPELL_ARCANE_CRYSTAL.txt",
 	"/Text/Game/Scripts/Spells/spell_name_SPELL_SUMMON_ELEMENTALS.txt",
 	"/Text/Game/Scripts/Spells/spell_name_SPELL_EARTHQUAKE.txt"},
@@ -1331,79 +1322,219 @@ H55_Supply_Txt = {
 	"/Text/Game/Scripts/Supply/P5Name.txt",
 	"/Text/Game/Scripts/Supply/P6Name.txt",
 	"/Text/Game/Scripts/Supply/P7Name.txt",
-	"/Text/Game/Scripts/Supply/P8Name.txt",
-};	
+	"/Text/Game/Scripts/Supply/P8Name.txt"
+};
 
 H55_Supply_Txt_Warren = "/Text/Game/Scripts/Supply/WarrenDesc.txt";
 H55_Supply_Txt_Mill = "/Text/Game/Scripts/Supply/MillDesc.txt";
 H55_Supply_Txt_Garden = "/Text/Game/Scripts/Supply/GardenDesc.txt";
 H55_Supply_Txt_Workshop = "/Text/Game/Scripts/Supply/WorkshopDesc.txt";
 
+H55_Observatory_Name = "/Text/Game/Scripts/Supply/ObservatoryName.txt";
+H55_Observatory_Txt = "/Text/Game/Scripts/Supply/ObservatoryTxt.txt";
+H55_PotionShop_Name = "/Text/Game/Scripts/Supply/PotionShopName.txt";
+H55_PotionShop_Txt = "/Text/Game/Scripts/Supply/PotionShopTxt.txt";
+
 --Duel
 
 H55_ExpTable = {
-0,
-1000,
-2000,
-3200,
-4600,
+	0,
+	1000,
+	2000,
+	3200,
+	4600,
 
-6200,
-8000,
-10000,
-12200,
-14700,
+	6200,
+	8000,
+	10000,
+	12200,
+	14700,
 
-17500,
-20600,
-24320,
-28784,
-34140,
+	17500,
+	20600,
+	24320,
+	28784,
+	34140,
 
-40567,
-48279,
-57533,
-68637,
-81961,
+	40567,
+	48279,
+	57533,
+	68637,
+	81961,
 
-97600,
-116000,
-139000,
-167000,
-200000,
+	97600,
+	116000,
+	139000,
+	167000,
+	200000,
 
-239000,
-286000,
-343000,
-411000,
-492000,
+	239000,
+	286000,
+	343000,
+	411000,
+	492000,
 
-590000,
-706000,
-846000,
-1010000,
-1210000,
+	590000,
+	706000,
+	846000,
+	1010000,
+	1210000,
 
-1450000,
-1740000,
-2080000,
-2500000,
-3000000,
+	1450000,
+	1740000,
+	2080000,
+	2500000,
+	3000000,
 
-3600000,
-4330000,
-5230000,
-6310000,
-7640000,
+	3600000,
+	4330000,
+	5230000,
+	6310000,
+	7640000,
 
-9240000,
-11200000,
-13500000,
-16400000,
-20000000,
+	9240000,
+	11200000,
+	13500000,
+	16400000,
+	20000000,
 }; --50 is not the max level
 
---Appendix
+--Campaigns
+
+H55_CampaignsM5 = {
+	"Maps/Scenario/C1M5/",
+	"Maps/Scenario/C2M5/",
+	"Maps/Scenario/C3M5/",
+	"Maps/Scenario/C4M5/",
+	"Maps/Scenario/C5M5/",
+	"Maps/Scenario/C6M5/",
+	"Maps/Scenario/A1C1M5/",
+	"Maps/Scenario/A1C2M5/",
+	"Maps/Scenario/A1C3M5/",
+	"Maps/Scenario/A2C1M5/",
+	"Maps/Scenario/A2C2M5/",
+	"Maps/Scenario/A2C3M5/"
+};
+
+H55_CampaignsM4 = {
+	"Maps/Scenario/C1M4/",
+	"Maps/Scenario/C2M4/",
+	"Maps/Scenario/C3M4/",
+	"Maps/Scenario/C4M4/",
+	"Maps/Scenario/C5M4/",
+	"Maps/Scenario/C6M4/",
+	"Maps/Scenario/A1C1M4/",
+	"Maps/Scenario/A1C2M4/",
+	"Maps/Scenario/A1C3M4/",
+	"Maps/Scenario/A2C1M4/",
+	"Maps/Scenario/A2C2M4/",
+	"Maps/Scenario/A2C3M4/"
+};
+
+H55_CampaignsM3 = {
+	"Maps/Scenario/C1M3/",
+	"Maps/Scenario/C2M3/",
+	"Maps/Scenario/C3M3/",
+	"Maps/Scenario/C4M3/",
+	"Maps/Scenario/C5M3/",
+	"Maps/Scenario/C6M3/",
+	"Maps/Scenario/A1C1M3/",
+	"Maps/Scenario/A1C2M3/",
+	"Maps/Scenario/A1C3M3/",
+	"Maps/Scenario/A2C1M3/",
+	"Maps/Scenario/A2C2M3/",
+	"Maps/Scenario/A2C3M3/"
+};
+
+H55_CampaignsM2 = {
+	"Maps/Scenario/C1M2/",
+	"Maps/Scenario/C2M2/",
+	"Maps/Scenario/C3M2/",
+	"Maps/Scenario/C4M2/",
+	"Maps/Scenario/C5M2/",
+	"Maps/Scenario/C6M2/",
+	"Maps/Scenario/A1C1M2/",
+	"Maps/Scenario/A1C2M2/",
+	"Maps/Scenario/A1C3M2/",
+	"Maps/Scenario/A2C1M2/",
+	"Maps/Scenario/A2C2M2/",
+	"Maps/Scenario/A2C3M2/"
+};
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+--APPENDIX
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+-- H55_MultiplayerMaps = {
+	-- "Maps/Multiplayer/A1L1/",
+	-- "Maps/Multiplayer/A1L10/",
+	-- "Maps/Multiplayer/A1M2/",
+	-- "Maps/Multiplayer/A1M3/",
+	-- "Maps/Multiplayer/A1M4/",
+	-- "Maps/Multiplayer/A1M5/",
+	-- "Maps/Multiplayer/A1M6/",
+	-- "Maps/Multiplayer/A1M7/",
+	-- "Maps/Multiplayer/A1M9/",
+	-- "Maps/Multiplayer/A1S1/",
+	-- "Maps/Multiplayer/A2M1/",
+	-- "Maps/Multiplayer/A2M2/",
+	-- "Maps/Multiplayer/A2M4/",
+	-- "Maps/Multiplayer/A2M5/",
+	-- "Maps/Multiplayer/A2M7/",
+	-- "Maps/Multiplayer/A2M8/",
+	-- "Maps/Multiplayer/A2M10/",
+	-- "Maps/Multiplayer/A2M11/",
+	-- "Maps/Multiplayer/A2M12/",
+	-- "Maps/Multiplayer/A2M13/",
+	-- "Maps/Multiplayer/L1/",
+	-- "Maps/Multiplayer/L2/",
+	-- "Maps/Multiplayer/L3/",
+	-- "Maps/Multiplayer/L4/", --Rise to Power
+	-- "Maps/Multiplayer/M1/",
+	-- "Maps/Multiplayer/M2/",
+	-- "Maps/Multiplayer/M3/",
+	-- "Maps/Multiplayer/M4/",
+	-- "Maps/Multiplayer/M5/",
+	-- "Maps/Multiplayer/M6/",
+	-- "Maps/Multiplayer/M7/",
+	-- "Maps/Multiplayer/M8/",
+	-- "Maps/Multiplayer/M9/",
+	-- "Maps/Multiplayer/M10/",
+	-- "Maps/Multiplayer/S1/",
+	-- "Maps/Multiplayer/S2/",
+	-- "Maps/Multiplayer/S3/",
+	-- "Maps/Multiplayer/S4/",
+	-- "Maps/Multiplayer/XL1/",
+	-- "Maps/Multiplayer/XL2/"
+-- };
+
+-- H55_ClassesTexts = {
+	-- "/Text/Game/Scripts/Classes/H55_Knights.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Renegades.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Paladins.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Heretics.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Rangers.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Wardens.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Druids.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Demonlords.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Gatekeepers.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Sorcerers.txt",
+	-- "/Text/Game/Scripts/Classes/H55_DeathKnights.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Reavers.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Necromancers.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Seers.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Wizards.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Elementalists.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Overlords.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Assassins.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Warlocks.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Engineers.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Runemages.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Flamekeepers.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Barbarians.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Shamans.txt",
+	-- "/Text/Game/Scripts/Classes/H55_Witches.txt"
+-- };
 
 -- H55_HeroNames = {
  -- ["Astral"]="/Text/Game/Heroes/Persons/Academy/Astral/Name.txt",
@@ -1554,6 +1685,36 @@ H55_ExpTable = {
  -- ["Mokka"]="/Text/Game/Heroes/Persons/Stronghold/Mokka/Name.txt",
  -- ["Shiva"]="/Text/Game/Heroes/Persons/Stronghold/Shiva/Name.txt",
  -- ["Zouleika"]="/Text/Game/Heroes/Persons/Stronghold/Zouleika/Name.txt"
+-- };
+
+-- H55_HavenHeroes = {"Nicolai","GodricMP","Maeve","Nathaniel","Axel","Brem","Jeddite","Markal","Orlando","RedHeavenHero03","RedHeavenHero06","Alaric","AlaricMP","RedHeavenHero01","Duncan","Sarge","Isabell","Mardigo","Ving","Orrin","Godric","Freyda","Ornella","GhostFSLord","Giar","Glen","Laszlo","Isabell_A1","Saint Isabell","RedHeavenHero04","RedHeavenHero02","RedHeavenHero05","Christian","Malik"};
+-- H55_SylvanHeroes = {"Heam","Metlirn","Nadaur","Linaas","Ossir","Jenova","Kyrre","Mephala","Arniel","Ildar","Melodia","Gillion","Vaniel","Elleshar","Vinrael","Itil","Diraya","Gem","Tieru"};
+-- H55_InfernoHeroes = {"Marder","Sheltem","Harkenraz","Calh","Calid","Jazaz","Gamor","Guarg","Erasial","Kha-Beleth","Veyer","DMessiah","Efion","Ash","Nymus","Oddrema","Malustar","Grok","Sovereign","Deleb","Calid2","Zydar","Agrael","AgraelMP","Biara","Nelech"};
+-- H55_DungeonHeroes = {"Agbeth","Ranleth","Sylsai","Urunir","Menel","Ferigl","Dalom","Eruina","Darkstorm","Ohtarig","Thralsai","Almegir","Raelag","Kastore","Kelodin","Shadwyn","ShadwynMP","Sephinroth","Inagost","Raelag_A1","Segref","Ohtar","Eruina_A1","ThralsaiMP","AlmegirMP"};
+-- H55_NecropolisHeroes = {"Gles","Pelt","Tamika","OrnellaNecro","Straker","Xerxon","Archilus","Nimbus","Aislinn","Nemor","Muscip","Giovanni","GiovanniMP","Thant","Vidomina","Arantir","ArantirMP","Aberrar","Effig","Sandro","Berein","Nikolay"};
+-- H55_AcademyHeroes = {"Isher","Rissa","Minasli","Davius","Josephine","Havez","Gurvilin","Razzak","Maahir","Faiz","Sufi","Cyrus","Zehir","Timerkhan","Nur","Tan","Emilia","Astral"};
+-- H55_FortressHeroes = {"Wulfstan","Rolf","Maximus","Tazar","Ingvar","Skeggy","Hangvul2","KingTolghar","Ufretin","Bersy","Ottar","Una","Bart","Vilma","Hangvul","Brand","Egil","Vegeyr"};
+-- H55_StrongholdHeroes = {"Hero1","Hero2","Hero3","Hero4","Hero5","Hero6","Hero7","Hero8","Hero9","Gottai","Crag","Azar","Kraal","Kujin","KujinMP","Kunyak","Matewa","Shiva","Zouleika","Quroq","Mokka","Erika","GottaiMP"}; 
+
+-- local tonum = {
+	-- ["0"] = 0,  
+	-- ["1"] = 1,   ["2"] = 2,   ["3"] = 3,   ["4"] = 4,   ["5"] = 5,   ["6"] = 6,   ["7"] = 7,   ["8"] = 8,   ["9"] = 9,   ["10"] = 10, 
+	-- ["11"] = 11, ["12"] = 12, ["13"] = 13, ["14"] = 14, ["15"] = 15, ["16"] = 16, ["17"] = 17, ["18"] = 18, ["19"] = 19, ["20"] = 20, 
+	-- ["21"] = 21, ["22"] = 22, ["23"] = 23, ["24"] = 24, ["25"] = 25, ["26"] = 26, ["27"] = 27, ["28"] = 28, ["29"] = 29, ["30"] = 30, 
+	-- ["31"] = 31, ["32"] = 32, ["33"] = 33, ["34"] = 34, ["35"] = 35, ["36"] = 36, ["37"] = 37, ["38"] = 38, ["39"] = 39, ["40"] = 40, 
+	-- ["41"] = 41, ["42"] = 42, ["43"] = 43, ["44"] = 44, ["45"] = 45, ["46"] = 46, ["47"] = 47, ["48"] = 48, ["49"] = 49, ["50"] = 50,
+	-- ["51"] = 51, ["52"] = 52, ["53"] = 53, ["54"] = 54, ["55"] = 55, ["56"] = 56, ["57"] = 57, ["58"] = 58, ["59"] = 59, ["60"] = 60,
+	-- ["61"] = 61, ["62"] = 62, ["63"] = 63, ["64"] = 64, ["65"] = 65, ["66"] = 66, ["67"] = 67, ["68"] = 68, ["69"] = 69, ["70"] = 70,
+	-- ["71"] = 71, ["72"] = 72, ["73"] = 73, ["74"] = 74, ["75"] = 75, ["76"] = 76, ["77"] = 77, ["78"] = 78, ["79"] = 79, ["80"] = 80,
+	-- ["81"] = 81, ["82"] = 82, ["83"] = 83, ["84"] = 84, ["85"] = 85, ["86"] = 86, ["87"] = 87, ["88"] = 88, ["89"] = 89, ["90"] = 90,
+	-- ["91"] = 91, ["92"] = 92, ["93"] = 93, ["94"] = 94, ["95"] = 95, ["96"] = 96, ["97"] = 99, ["98"] = 98, ["99"] = 99, ["100"] = 100
+-- };
+
+-- H55_Alphabet = {
+-- ["a"]=1,["b"]=2,["c"]=3,["d"]=4,["e"]=5,["f"]=6,["g"]=7,
+-- ["h"]=8,["i"]=9,["j"]=10,["k"]=11,["l"]=12,["m"]=13,
+-- ["n"]=14,["o"]=15,["p"]=16,["q"]=17,["r"]=18,["s"]=19,
+-- ["t"]=20,["u"]=21,["v"]=22,["w"]=23,["x"]=24,["y"]=25,["z"]=26
 -- };
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------

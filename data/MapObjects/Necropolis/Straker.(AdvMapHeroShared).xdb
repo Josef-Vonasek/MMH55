@@ -35,8 +35,8 @@
 		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_OFFENCE</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Necropolis/Zombie_Leader/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Necropolis/Zombie_Leader/Description.txt"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Necropolis/Zombie_Leader_B/Name.txt"/>
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Necropolis/Zombie_Leader_B/Description.txt"/>
 	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Necropolis/Zombie_Leader.xdb#xpointer(/Texture)"/>
 	<FaceTexture href="/Textures/Icons/Heroes/Necropolis/Necropolis_Orson_128x128.(Texture).xdb#xpointer(/Texture)"/>
 	<FaceTextureSmall/>
