@@ -8,7 +8,7 @@
 	<CombatLogTexts/>
 	<Level>3</Level>
 	<MagicSchool>MAGIC_SCHOOL_ADVENTURE</MagicSchool>
-	<RequiredHeroLevel>10</RequiredHeroLevel>
+	<RequiredHeroLevel>15</RequiredHeroLevel>
 	<TrainedCost>0</TrainedCost>
 	<damage>
 		<Item>

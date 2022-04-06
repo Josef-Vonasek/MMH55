@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>26</AttackSkill>
-	<DefenceSkill>26</DefenceSkill>
+	<AttackSkill>27</AttackSkill>
+	<DefenceSkill>27</DefenceSkill>
 	<Shots>0</Shots>
 	<MinDamage>20</MinDamage>
 	<MaxDamage>25</MaxDamage>
 	<Speed>8</Speed>
 	<Initiative>10</Initiative>
 	<Flying>true</Flying>
-	<Health>300</Health>
-	<KnownSpells/>
+	<Health>225</Health>
+	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
 	<SpellPoints2>0</SpellPoints2>
@@ -45,8 +45,8 @@
 	<BaseCreature>CREATURE_WYVERN</BaseCreature>
 	<Upgrades />
 	<Abilities>
-		<Item>ABILITY_LIGHTNING_BREATH</Item>
 		<Item>ABILITY_SCAVENGER</Item>
+		<Item>ABILITY_LIGHTNING_BREATH</Item>
 		<Item>ABILITY_IMMUNITY_TO_BLIND</Item>
 	</Abilities>
 </Creature>

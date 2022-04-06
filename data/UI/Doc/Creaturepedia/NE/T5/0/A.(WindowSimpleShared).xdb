@@ -4,7 +4,8 @@
 	<Children>
 		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/UNDEAD/P0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/DEATH_CLOUD/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/SHOOTER/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/VENOM/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/SHOOTER/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="C.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 	</Children>
 	<Background />

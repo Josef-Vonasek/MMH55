@@ -1,22 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>10</AttackSkill>
-	<DefenceSkill>10</DefenceSkill>
+	<AttackSkill>19</AttackSkill>
+	<DefenceSkill>19</DefenceSkill>
 	<Shots>0</Shots>
 	<MinDamage>3</MinDamage>
 	<MaxDamage>5</MaxDamage>
 	<Speed>6</Speed>
 	<Initiative>12</Initiative>
 	<Flying>false</Flying>
-	<Health>50</Health>
+	<Health>37</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
-	<SpellPoints1>2</SpellPoints1>
+	<SpellPoints1>1</SpellPoints1>
 	<SpellPoints2>0</SpellPoints2>
 	<Exp>37</Exp>
 	<Power>425</Power>
 	<TimeToCommand>10</TimeToCommand>
-	<CreatureTier>4</CreatureTier>
+	<CreatureTier>3</CreatureTier>
 	<Upgrade>true</Upgrade>
 	<PairCreature>CREATURE_UNKNOWN</PairCreature>
 	<CreatureTown>TOWN_NO_TYPE</CreatureTown>

@@ -3,9 +3,8 @@
 	<Crap>false</Crap>
 	<Children>
 		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/FLESH_AND_BLOOD/P0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/IMMUNITY_TO_MAGIC/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/ENCHANTED_OBSIDIAN/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/FIRE_BREATH/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/ENCHANTED_OBSIDIAN/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="C.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 	</Children>
 	<Background />

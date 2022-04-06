@@ -193,8 +193,8 @@ ARTIFACT_EARTHSLIDERS = 61
 ARTIFACT_RIGID_MANTLE = 62
 ARTIFACT_JINXING_BAND = 63
 ARTIFACT_BONESTUDDED_LEATHER = 64
-ARTIFACT_WISPERING_RING = 65
-ARTIFACT_HELM_OF_CHAOS = 66
+ARTIFACT_WISPERING_RING = 66
+ARTIFACT_HELM_OF_CHAOS = 65
 ARTIFACT_TWISTING_NEITHER = 67
 ARTIFACT_SANDALS_OF_THE_SAINT = 68
 ARTIFACT_SHAWL_OF_GREAT_LICH = 69
@@ -1193,6 +1193,10 @@ ExecConsoleCommand = consoleCmd
 SetCombatLight = SetCombatAmbientLight
 GiveArtifact = GiveArtefact
 end
+
+AddHeroCreatures_ = AddHeroCreatures
+AddObjectCreatures_ = AddObjectCreatures
+
 
 MakeSyncCommandCallback = function(event_id)
     return function() mark_event(%event_id)	end

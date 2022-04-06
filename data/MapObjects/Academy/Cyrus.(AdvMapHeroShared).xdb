@@ -1,77 +1,77 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <AdvMapHeroShared ObjectRecordID="76">
-	<Model href="/Characters/Heroes/Wizard_LOD.xdb#xpointer(/Model)"/>
-	<AnimSet href="/Characters/Heroes/Wizard_LOD-adv.xdb#xpointer(/AnimSet)"/>
-	<blockedTiles/>
-	<holeTiles/>
+	<Model href="/Characters/Heroes/Wizard_LOD.xdb#xpointer(/Model)" />
+	<AnimSet href="/Characters/Heroes/Wizard_LOD-adv.xdb#xpointer(/AnimSet)" />
+	<blockedTiles />
+	<holeTiles />
 	<activeTiles>
 		<Item>
 			<x>0</x>
 			<y>0</y>
 		</Item>
 	</activeTiles>
-	<passableTiles/>
+	<passableTiles />
 	<PossessionMarkerTile>
 		<x>0</x>
 		<y>0</y>
 	</PossessionMarkerTile>
-	<Effect/>
-	<EffectWhenOwned/>
-	<messagesFileRef/>
+	<Effect />
+	<EffectWhenOwned />
+	<messagesFileRef />
 	<WaterBased>false</WaterBased>
 	<ApplyHeroTrace>false</ApplyHeroTrace>
-	<SoundEffect/>
-	<flybyMessageFileRef href=""/>
-	<ObjectTypeFileRef href="/Text/Visibility_Types/Units.txt"/>
+	<SoundEffect />
+	<flybyMessageFileRef href="" />
+	<ObjectTypeFileRef href="/Text/Visibility_Types/Units.txt" />
 	<TerrainAligned>false</TerrainAligned>
 	<FlyPassable>true</FlyPassable>
-	<AdventureSoundEffect/>
-	<RazedStatic/>
-	<Icon128 href="/Textures/Icons/Heroes/Academy/Academy_Cyrus_128x128.(Texture).xdb#xpointer(/Texture)"/>
+	<AdventureSoundEffect />
+	<RazedStatic />
+	<Icon128 href="/Textures/Icons/Heroes/Academy/Academy_Cyrus_128x128.(Texture).xdb#xpointer(/Texture)" />
 	<InternalName>Cyrus</InternalName>
 	<Class>HERO_CLASS_ELEMENTALIST</Class>
-	<Specialization/>
+	<Specialization />
 	<PrimarySkill>
-		<Mastery>MASTERY_ADVANCED</Mastery>
+		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_ARTIFICIER</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Added/Djinns/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Added/Djinns/Description.txt"/>
-	<SpecializationIcon href="/Textures/Interface/CombatArena/Faces/Academy/ico_mastergenie_64.xdb#xpointer(/Texture)"/>
-	<FaceTexture href="/Textures/Icons/Heroes/Academy/Academy_Cyrus_128x128.(Texture).xdb#xpointer(/Texture)"/>
-	<FaceTextureSmall/>
-	<HeroCharacterArena href="/Characters/Heroes/Wizard.(Character).xdb#xpointer(/Character)"/>
-	<HeroCharacterArenaMelee/>
-	<HeroCharacterAdventure href="/Characters/Heroes/Wizard_LOD.(Character).xdb#xpointer(/Character)"/>
-	<HeroIndividualCamera/>
-	<CombatVisual href="/GameMechanics/CreatureVisual/Heroes/Wizard.xdb#xpointer(/CreatureVisual)"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Added/Djinns/Name.txt" />
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Added/Djinns/Description.txt" />
+	<SpecializationIcon href="/Textures/Interface/CombatArena/Faces/Academy/ico_mastergenie_64.xdb#xpointer(/Texture)" />
+	<FaceTexture href="/Textures/Icons/Heroes/Academy/Academy_Cyrus_128x128.(Texture).xdb#xpointer(/Texture)" />
+	<FaceTextureSmall />
+	<HeroCharacterArena href="/Characters/Heroes/Wizard.(Character).xdb#xpointer(/Character)" />
+	<HeroCharacterArenaMelee />
+	<HeroCharacterAdventure href="/Characters/Heroes/Wizard_LOD.(Character).xdb#xpointer(/Character)" />
+	<HeroIndividualCamera />
+	<CombatVisual href="/GameMechanics/CreatureVisual/Heroes/Wizard.xdb#xpointer(/CreatureVisual)" />
 	<TownType>TOWN_ACADEMY</TownType>
 	<Editable>
-		<NameFileRef href="/Text/Game/Heroes/Persons/Academy/Cyrus/Name.txt"/>
-		<BiographyFileRef href="/Text/Game/Heroes/Persons/Academy/Cyrus/Bio.txt"/>
+		<NameFileRef href="/Text/Game/Heroes/Persons/Academy/Cyrus/Name.txt" />
+		<BiographyFileRef href="/Text/Game/Heroes/Persons/Academy/Cyrus/Bio.txt" />
 		<Offence>0</Offence>
 		<Defence>1</Defence>
 		<Spellpower>3</Spellpower>
-		<Knowledge>2</Knowledge>
+		<Knowledge>1</Knowledge>
 		<skills>
 			<Item>
 				<Mastery>MASTERY_BASIC</Mastery>
-				<SkillID>HERO_SKILL_INVOCATION</SkillID>
+				<SkillID>HERO_SKILL_OFFENCE</SkillID>
 			</Item>
 		</skills>
-		<perkIDs/>
+		<perkIDs />
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>
 		<AmmoCart>false</AmmoCart>
-		<FavoriteEnemies/>
+		<FavoriteEnemies />
 	</Editable>
 	<ArrowButtonState>0</ArrowButtonState>
-	<Decal/>
-	<Selection href="/_(Model)/Heroes/Wizard_Path/Symbol.xdb#xpointer(/Model)"/>
-	<Trace href="/MapObjects/_(AdvMapHeroTraceSet)/Academy.xdb#xpointer(/AdvMapHeroTraceSet)"/>
-	<RaceTraitIcon/>
-	<RaceTraitDescFileRef href=""/>
+	<Decal />
+	<Selection href="/_(Model)/Heroes/Wizard_Path/Symbol.xdb#xpointer(/Model)" />
+	<Trace href="/MapObjects/_(AdvMapHeroTraceSet)/Academy.xdb#xpointer(/AdvMapHeroTraceSet)" />
+	<RaceTraitIcon />
+	<RaceTraitDescFileRef href="" />
 	<ScenarioHero>false</ScenarioHero>
-	<AdventureMusic href="/Sounds/_(Music)/AdvMap-Heroes/Zehir.xdb#xpointer(/Music)"/>
+	<AdventureMusic href="/Sounds/_(Music)/AdvMap-Heroes/Zehir.xdb#xpointer(/Music)" />
 	<HideInEditor>false</HideInEditor>
 </AdvMapHeroShared>

@@ -40,7 +40,7 @@
 			<Obj href="#n:inline(WarMachine)" id="item_20388156-af46-40fe-b843-66d3a2404b58">
 				<WarMachine ObjectRecordID="29">
 					<Shots>100</Shots>
-					<Initiative>7</Initiative>
+					<Initiative>8</Initiative>
 					<Health>500</Health>
 					<Range>0</Range>
 					<spellIDs>
@@ -151,7 +151,7 @@
 			<ID>WAR_MACHINE_FIRST_AID_TENT</ID>
 			<Obj href="#n:inline(WarMachine)" id="item_9f5e94d7-770d-44c8-9b64-03dc4472504e">
 				<WarMachine ObjectRecordID="31">
-					<Shots>6</Shots>
+					<Shots>4</Shots>
 					<Initiative>8</Initiative>
 					<Health>500</Health>
 					<Range>0</Range>

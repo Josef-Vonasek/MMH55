@@ -3,7 +3,7 @@
 	<NameFileRef href="/Text/Game/Creatures/Creature_abilities/Battle_rage/Name.txt"/>
 	<LongDescriptionFileRef href="/Text/Game/Creatures/Creature_abilities/Battle_rage/Description.txt"/>
 	<Texture/>
-	<EffectTexture href="/UI/H5A2/Icons/Creatures_Abilites/Battle_Rage.(Texture).xdb#xpointer(/Texture)"/>
+	<EffectTexture href="/Textures/HeroScreen/Specializations/Haven/Expediter.xdb#xpointer(/Texture)"/>
 	<SpellBookPredictions/>
 	<CombatLogTexts/>
 	<Level>0</Level>

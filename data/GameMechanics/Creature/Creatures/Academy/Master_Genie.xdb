@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="1000046">
-	<AttackSkill>16</AttackSkill>
-	<DefenceSkill>16</DefenceSkill>
+	<AttackSkill>24</AttackSkill>
+	<DefenceSkill>24</DefenceSkill>
 	<Shots>0</Shots>
 	<MinDamage>14</MinDamage>
 	<MaxDamage>20</MaxDamage>
 	<Speed>9</Speed>
 	<Initiative>15</Initiative>
 	<Flying>true</Flying>
-	<Health>120</Health>
+	<Health>90</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>99</SpellPoints1>

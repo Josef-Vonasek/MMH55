@@ -6,6 +6,7 @@
 		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/DEMONIC/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/VORPAL_SWORD/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/FLAMESTRIKE/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/DOUBLE_ATTACK/P4.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="C.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 	</Children>
 	<Background />

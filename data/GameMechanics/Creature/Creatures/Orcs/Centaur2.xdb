@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>4</AttackSkill>
-	<DefenceSkill>4</DefenceSkill>
-	<Shots>12</Shots>
+	<AttackSkill>16</AttackSkill>
+	<DefenceSkill>16</DefenceSkill>
+	<Shots>9</Shots>
 	<MinDamage>3</MinDamage>
 	<MaxDamage>5</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>11</Initiative>
 	<Flying>false</Flying>
-	<Health>30</Health>
+	<Health>22</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>

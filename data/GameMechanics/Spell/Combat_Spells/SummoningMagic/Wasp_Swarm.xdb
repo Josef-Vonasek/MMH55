@@ -1,19 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Spell ObjectRecordID="10">
-	<NameFileRef href="/Text/Game/Spells/Combat/Wasp_Swarm/Name.txt"/>
-	<LongDescriptionFileRef href="/Text/Game/Spells/Combat/Wasp_Swarm/Long_Description.txt"/>
-	<Texture href="/Textures/SpellBook______2618/Spells/Spell_WaspSwarm.xdb#xpointer(/Texture)"/>
-	<EffectTexture href="/UI/Common/Icons/Spell_Buff_Icons/WaspSwarm.(Texture).xdb#xpointer(/Texture)"/>
+	<NameFileRef href="/Text/Game/Spells/Combat/Wasp_Swarm/Name.txt" />
+	<LongDescriptionFileRef href="/Text/Game/Spells/Combat/Wasp_Swarm/Long_Description.txt" />
+	<Texture href="/Textures/SpellBook______2618/Spells/Spell_WaspSwarm.xdb#xpointer(/Texture)" />
+	<EffectTexture href="/UI/Common/Icons/Spell_Buff_Icons/WaspSwarm.(Texture).xdb#xpointer(/Texture)" />
 	<SpellBookPredictions>
-		<Item href="/Text/Game/Spells/SpellBookPredictions/DirectDamage.txt"/>
+		<Item href="/Text/Game/Spells/SpellBookPredictions/DirectDamage.txt" />
 	</SpellBookPredictions>
-	<CombatLogTexts/>
+	<CombatLogTexts />
 	<Level>1</Level>
 	<MagicSchool>MAGIC_SCHOOL_SUMMONING</MagicSchool>
 	<RequiredHeroLevel>0</RequiredHeroLevel>
 	<IsAimed>true</IsAimed>
-	<TrainedCost>3</TrainedCost>
+	<TrainedCost>4</TrainedCost>
 	<damage>
+		<Item>
+			<Base>30</Base>
+			<PerPower>8</PerPower>
+		</Item>
 		<Item>
 			<Base>30</Base>
 			<PerPower>10</PerPower>
@@ -25,10 +29,6 @@
 		<Item>
 			<Base>30</Base>
 			<PerPower>14</PerPower>
-		</Item>
-		<Item>
-			<Base>30</Base>
-			<PerPower>16</PerPower>
 		</Item>
 	</damage>
 	<duration>
@@ -63,6 +63,6 @@
 	<Target>TARGET_HOSTILE</Target>
 	<Element>ELEMENT_NONE</Element>
 	<visuals>
-		<Item href="WaspSwarm.(SpellVisual).xdb#xpointer(/SpellVisual)"/>
+		<Item href="WaspSwarm.(SpellVisual).xdb#xpointer(/SpellVisual)" />
 	</visuals>
 </Spell>

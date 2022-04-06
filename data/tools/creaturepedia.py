@@ -39,9 +39,9 @@ neutrals = {
     'Wolf': (3,1),
     'Mummy': (4,1),
     'Manticore': (5,1),
-    'SnowApe': (5,2),
     'Death_Knight': (6,1),
-    'Black_Knight': (6,0),
+    'SnowApe': (7,3),
+    'Black_Knight': (7,2),
     'Phoenix': (7,1),
 }
 
@@ -64,12 +64,16 @@ caster_text = '''\
 <br><br><color_bright>~Spells~<br>
 '''
 
-def creaturepedia(path):
-    spellname = {'VAMPIRISM': 'Vampirism', 'SORROW': 'Sorrow'}
+def creaturepedia():
+    path = 'GameMechanics/Creature/Creatures'
+    spellname = {'VAMPIRISM': 'Vampirism', 'SORROW': 'Sorrow', 'ABILITY_LAY_HANDS': 'Lay Hands'}
     for data in list(XDB.load('GameMechanics/RefTables/UndividedSpells.xdb')['objects'])[1:]:
         name = data['Obj'].atr['href'][1:-17]
-        if 'Combat_Spells' not in name or 'Runic' in name or 'Sorrow' in name or 'Vampirism' in name: continue
-        spellname[data['ID'].txt[6:]] = open(XDB.load(name)['NameFileRef'].atr['href'][1:], encoding='utf-16').read()
+        try:
+            name = open(XDB.load(name)['NameFileRef'].atr['href'][1:], encoding='utf-16').read()
+        except Exception:
+            name = ' '.join(word.capitalize() for word in data['ID'].txt[6:].split('_'))
+        spellname[data['ID'].txt[6:]] = name
 
     for town, townID in towns.items():
         u3 = upgrade3(town)
@@ -135,4 +139,4 @@ def ability_positions():
 
 
 ability_positions()
-creaturepedia(sys.argv[1])
+creaturepedia()

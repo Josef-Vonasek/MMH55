@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="1000030">
-	<AttackSkill>16</AttackSkill>
-	<DefenceSkill>16</DefenceSkill>
+	<AttackSkill>24</AttackSkill>
+	<DefenceSkill>24</DefenceSkill>
 	<Shots>0</Shots>
 	<MinDamage>9</MinDamage>
 	<MaxDamage>14</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>8</Initiative>
 	<Flying>false</Flying>
-	<Health>200</Health>
+	<Health>150</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
@@ -406,7 +406,6 @@
 	<Abilities>
 		<Item>ABILITY_WHIRLWIND</Item>
 		<Item>ABILITY_NO_ENEMY_RETALIATION</Item>
-		<Item>ABILITY_ENRAGED</Item>
 		<Item>ABILITY_TAUNT</Item>
 	</Abilities>
 </Creature>

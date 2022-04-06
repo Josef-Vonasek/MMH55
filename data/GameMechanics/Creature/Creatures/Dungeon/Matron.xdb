@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="1000032">
-	<AttackSkill>26</AttackSkill>
-	<DefenceSkill>26</DefenceSkill>
-	<Shots>10</Shots>
+	<AttackSkill>27</AttackSkill>
+	<DefenceSkill>27</DefenceSkill>
+	<Shots>7</Shots>
 	<MinDamage>17</MinDamage>
 	<MaxDamage>24</MaxDamage>
 	<Speed>4</Speed>
 	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>200</Health>
+	<Health>150</Health>
 	<KnownSpells>
 		<Item>
 			<Spell>SPELL_SLOW</Spell>
@@ -23,7 +23,7 @@
 			<Mastery>MASTERY_ADVANCED</Mastery>
 		</Item>
 	</KnownSpells>
-	<SpellPoints>7</SpellPoints>
+	<SpellPoints>15</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
 	<SpellPoints2>0</SpellPoints2>
 	<Exp>136</Exp>

@@ -5,7 +5,6 @@
 		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/FLESH_AND_BLOOD/P0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/LUCK_GAMBLER/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/MAGIC_PROOF_75/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/RIDE_BY_ATTACK/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="C.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 	</Children>
 	<Background />

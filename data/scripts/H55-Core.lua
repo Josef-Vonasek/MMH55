@@ -10,7 +10,6 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 --Game
-
 H55_Switch = 1;
 H55_Difficulty = GetDifficulty();
 H55_TeamAsked = 0;
@@ -31,7 +30,7 @@ H55_BanksDifficulty = 1;
 H55_BanksDMGAdjust = 0.16;
 H55_TownGateEnabled = 1;
 H55_TownConvEnabled = 0;
-H55_GovernanceEnabled = 0;
+H55_GovernanceEnabled = 1;
 H55_GovernorExpCoef = 1;
 H55_IgnoreExpAdjustment = 0;
 H55_CompetitiveRunelore = 0;
@@ -66,6 +65,7 @@ H55_DuelArtifactsReceived = {};
 H55_Duel_MessageFirst = 0;
 H55_Duel_MessageShown = {0,0,0,0,0,0,0,0};
 H55_Sign_Queue = 0;
+H55_Booksread = {};
 
 --Campaigns
 
@@ -86,6 +86,7 @@ H55_SPMapContinuesEvent = 0;
 --end;
 
 doFile("/scripts/H55-Settings.lua");
+doFile("/scripts/H55-Skills.lua")
 
 --Timer
 
@@ -94,6 +95,7 @@ H55_Week = 1;
 H55_Month = 1;
 H55_Workday = 1;
 H55_DailyEventsCounter = {1,1,1,1,1,1,1,1};
+H55_WeeklyEventsCounter = {1,1,1,1,1,1,1,1};
 H55_EstatesDay = {};
 H55_MiningDay = {};
 H55_BankDay = 0;
@@ -224,6 +226,7 @@ H55_SylvanMoveCorrection = {};
 H55_StrongholdMoveCorrection = {};
 H55_InfernoMoveCorrection = {};
 H55_DungeonMoveCorrection = {};
+H55_AngelWings = {};
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 --DYNAMIC VARIABLES
@@ -325,50 +328,27 @@ H55_DarkRitualCI = {}
 H55_DarkRitualDay = 0
 H55_AwardCI = {}
 
+H55_GuildSpells = {}
+
 
 H55_MagicOwners = {
-	[1] = {
-		[SKILL_SUMMONING_MAGIC] = {},
-		[SKILL_DESTRUCTIVE_MAGIC] = {},
-		[SKILL_DARK_MAGIC] = {},
-		[SKILL_LIGHT_MAGIC] = {}
-	},
-	[2] = {
-		[SKILL_SUMMONING_MAGIC] = {},
-		[SKILL_DESTRUCTIVE_MAGIC] = {},
-		[SKILL_DARK_MAGIC] = {},
-		[SKILL_LIGHT_MAGIC] = {}
-	},
-	[3] = {
-		[SKILL_SUMMONING_MAGIC] = {},
-		[SKILL_DESTRUCTIVE_MAGIC] = {},
-		[SKILL_DARK_MAGIC] = {},
-		[SKILL_LIGHT_MAGIC] = {}
-	},
+	[SKILL_SUMMONING_MAGIC]   = {{},{},{}},
+	[SKILL_DESTRUCTIVE_MAGIC] = {{},{},{}},
+	[SKILL_DARK_MAGIC]        = {{},{},{}},
+	[SKILL_LIGHT_MAGIC]       = {{},{},{}},
 }
+H55_ScholarOwners = {
+	[SKILL_SUMMONING_MAGIC]   = {{},{},{}},
+	[SKILL_DESTRUCTIVE_MAGIC] = {{},{},{}},
+	[SKILL_DARK_MAGIC]        = {{},{},{}},
+	[SKILL_LIGHT_MAGIC]       = {{},{},{}},
+}
+H55_WisdomOwners = {}
 H55_InsightsOwners = {}
 
-H55_WisdomOwners = {
-	[SKILL_SUMMONING_MAGIC] = {},
-	[SKILL_DESTRUCTIVE_MAGIC] = {},
-	[SKILL_DARK_MAGIC] = {},
-	[SKILL_LIGHT_MAGIC] = {}
-};
-
-H55_ScholarOwners = {
-[4] = {
-	[SKILL_SUMMONING_MAGIC] = {},
-	[SKILL_DESTRUCTIVE_MAGIC] = {},
-	[SKILL_DARK_MAGIC] = {},
-	[SKILL_LIGHT_MAGIC] = {}
-},
-[5] = {
-	[SKILL_SUMMONING_MAGIC] = {},
-	[SKILL_DESTRUCTIVE_MAGIC] = {},
-	[SKILL_DARK_MAGIC] = {},
-	[SKILL_LIGHT_MAGIC] = {}
-}
-};
+H55_Towns = {1,1,1,1,1,1,1,1}
+H55_HauntedMines = {{},{},{},{},{},{},{},{}}
+H55_MineOwners = {}
 
 --Town Buildings
 
@@ -400,7 +380,7 @@ H55_MinorArtifactsUsed = {};
 H55_MajorArtifactsUsed = {};
 H55_RelicArtifactsUsed = {};
 H55_UltimateArtifactsUsed = {};
-H55_RemoveTheseArtifactsFromBanks = {};
+H55_RemoveTheseArtifactsFromBanks = {ARTIFACT_HELM_OF_CHAOS};
 
 H55_ArtWoodReceived = {};
 H55_ArtOreReceived = {};
@@ -422,7 +402,9 @@ H55_FlameManaReceived = {};
 -- H55_StaffExpReceived = {};
 H55_BootsMoveReceived = {};
 H55_GuardianMoveReceived = {};
+H55_VictoriousMoveReceived = {};
 H55_HatMoveReceived = {};
+H55_ArtManaReceived = {};
 H55_NecklaceMoveReceived = {};
 H55_PirateResourcesReceived = {};
 H55_PirateGoldReceived = {};
@@ -549,6 +531,7 @@ H55_DragonishReceived = {};
 H55_EmbraceReceived = {};
 H55_LightPenaltyReceived = {};
 H55_DestructivePenaltyReceived = {};
+H55_Curses = 0
 
 H55_WeeklyEventsDone = {};
 
@@ -561,15 +544,17 @@ H55_Dungeon = 6
 H55_Fortress = 7
 H55_Stronghold = 8
 
+H55_IsUtilityExe = GiveHeroBattleBonus and 1 or 0
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 --SUPPORT FUNCTIONS
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
-function H55_Display(text, object, player, num)
+function H55_Display(text, object, player)
 	if H55_IsThisAIPlayer(player) ~= 1 then
 		sleep(2)
-		ShowFlyingSign(text, object, player, num)
+		ShowFlyingSign(text, object, player, 5)
 		sleep(8)
 	end
 end
@@ -586,9 +571,9 @@ end
 H55_BattleBonus = { {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {} }
 H55_BattleBonusCI = {}
 function H55_ChangeHeroStat(hero, stat, amount)
-	if amount == 0 then return end
+	if amount > -1 and amount < 1 then return end
 	if stat >= STAT_HEALTH then
-		if GiveHeroBattleBonus then
+		if H55_IsUtilityExe then
 			H55_BattleBonus[stat][hero] = amount + (H55_BattleBonus[stat][hero] or 0)
 			GiveHeroBattleBonus(hero, stat - 5, amount)
 		else
@@ -603,35 +588,219 @@ function H55_ChangeHeroStat(hero, stat, amount)
 	end
 end
 
-H55_Skills = { {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {} }
-function H55_ChangeHeroStatOnSkill(hero, skill, stat, amount)
-	default(H55_Skills[stat], skill, {})
-	default(H55_Skills[stat][skill], hero, 0)
+H55_Stats = { {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {} }
+function H55_ChangeHeroStatOn(hero, skill, stat, amount)
+	default(H55_Stats[stat], skill, {})
+	default(H55_Stats[stat][skill], hero, 0)
 
-	amount = H55_Round(amount * GetHeroSkillMastery(hero, skill))
-
-	H55_ChangeHeroStat(hero, stat, amount - H55_Skills[stat][skill][hero])
-	H55_Skills[stat][skill][hero] = amount
+	H55_ChangeHeroStat(hero, stat, amount - H55_Stats[stat][skill][hero])
+	H55_Stats[stat][skill][hero] = amount
 end
+
+function H55_ChangeHeroStatOnSkill(hero, skill, stat, amount)
+	H55_ChangeHeroStatOn(hero, skill, stat, amount * GetHeroSkillMastery(hero, skill))
+end
+
+function H55_GiveAllArtefacts(hero)
+	for i = 1,195 do
+		GiveArtefact(hero, i)
+	end
+end
+
+function H55_ArtefactCount(hero, equip, artifacts)
+	local count = 0
+	for _, artifact in artifacts do
+		count = count + (HasArtefact(hero, artifact, equip) and 1 or 0)
+	end
+	return count
+end
+
+function H55_PerkCount(hero, perks)
+	local count = 0
+	for _, perk in perks do
+		count = count + GetHeroSkillMastery(hero, perk)
+	end
+	return count
+end
+
+H55_UltimatesAI = {SKILL_DESTRUCTIVE_MAGIC, SKILL_SORCERY, SKILL_NECROMANCY, SKILL_OFFENCE, SKILL_SHATTER_DARK_MAGIC, SKILL_LUCK, SKILL_DEFENCE,  SKILL_WAR_MACHINES, SKILL_TRAINING, SKILL_INVOCATION, SKILL_WARCRY_LEARNING, SKILL_LEADERSHIP, SKILL_DEMONIC_RAGE}
+
+H55_Boots = { ARTIFACT_BOOTS_OF_SPEED, ARTIFACT_WAYFARER_BOOTS, ARTIFACT_BOOTS_OF_INTERFERENCE, ARTIFACT_BOOTS_OF_LEVITATION, ARTIFACT_BOOTS_OF_SWIFTNESS, ARTIFACT_SANDALS_OF_THE_SAINT, ARTIFACT_MONK_03, ARTIFACT_GUARDIAN_02, ARTIFACT_PIRATE05, ARTIFACT_EARTHSLIDERS }
+H55_Staffs = { ARTIFACT_WAND_OF_X, ARTIFACT_BEGINNER_MAGIC_STICK, ARTIFACT_STAFF_OF_VEXINGS, ARTIFACT_STAFF_OF_MAGI, ARTIFACT_UPG_ST1, ARTIFACT_MEDICAL02, ARTIFACT_EIGHTFOLD }
+H55_Resists = { ARTIFACT_BOOTS_OF_INTERFERENCE, ARTIFACT_UPG_SW2, ARTIFACT_UPG_SW1, ARTIFACT_PLATE_MAIL_OF_STABILITY }
+H55_Shields = { ARTIFACT_DRAGON_SCALE_SHIELD, ARTIFACT_DWARVEN_MITHRAL_SHIELD, ARTIFACT_OGRE_SHIELD, ARTIFACT_GUARDIAN_03, ARTIFACT_BUCKLER, ARTIFACT_GUARDIAN_01, ARTIFACT_MEDICAL01, ARTIFACT_STEADFAST, ARTIFACT_UPG_AR3, ARTIFACT_ICEBERG_SHIELD, ARTIFACT_SENTINEL }
+H55_Armors = { ARTIFACT_UPG_AR2, ARTIFACT_VALORIOUS_ARMOR, ARTIFACT_DRAGON_SCALE_ARMOR, ARTIFACT_DWARVEN_MITHRAL_CUIRASS, ARTIFACT_GEAR_05, ARTIFACT_PLATE_MAIL_OF_STABILITY, ARTIFACT_RUNIC_WAR_HARNESS, ARTIFACT_DRACONIC }
+H55_Neglucks = { ARTIFACT_JINXING_BAND, ARTIFACT_UPG_SW3,  ARTIFACT_UPG_AR1, ARTIFACT_RING_OF_THE_SHADOWBRAND, ARTIFACT_CLOAK_OF_MOURNING }
+H55_Lucks = { ARTIFACT_TAROT_DECK, ARTIFACT_RES_WOOD, ARTIFACT_LEGION_T1, ARTIFACT_PIRATE06, ARTIFACT_FOUR_LEAF_CLOVER, ARTIFACT_GEAR_06, ARTIFACT_GOLDEN_HORSESHOE }
+H55_Cursed = { ARTIFACT_FIZBIN, ARTIFACT_FORGING, ARTIFACT_JINXING_BAND }
+H55_NecroSet = {6, 70, 71, 33, 55, 83}
+H55_FraxSet = {112, 113, 114, 115, 68, 133, 134}
+H55_DwarvenSet = {48, 49, 50, 51}
+H55_GuardianSet = {13, 120, 121, 122}
+H55_LionSet = {11, 16, 31}
+
+H55_HeroUltimates = {}
+
+function H55_GiveArtefacts(hero, artefacts)
+	for _, artefact in artefacts do
+		GiveArtefact(hero, artefact)
+	end
+end
+
+
+function H55_OfferUltimatesQuestionBox(hero)
+	if H55_HeroUltimates[hero] then return end
+	local player = GetObjectOwner(hero)
+	QuestionBoxForPlayers(GetPlayerFilter(player), 
+		"/Text/Game/Scripts/Ultimates/OfferUltimates.txt",
+		"H55_OfferUltimates("..player..",'"..hero.."',1)",
+		"H55_Noop"
+	)
+end
+
+
+function H55_OfferUltimates(player, hero, trigger)
+
+	local heroskills = 0;
+	for i,s in H55_Skills do
+		 if HasHeroSkill(hero, s) then
+			heroskills = heroskills+1;
+		end
+	end
+	if heroskills > 7 then return end
+
+	if H55_IsThisAIPlayer(player) == 1 then 
+		if not H55_HeroUltimates[hero] and GetHeroLevel(hero) >= 25 then
+			local race = H55_GetHeroRaceNum(hero)
+			H55_GiveUltimate(player, hero, H55_UltimatesAI[race==8 and 4+random(10) or race==4 and 1+random(10) or 1+random(12)])
+		end
+		return
+	end
+
+	if not H55_HeroUltimates[hero] and GetHeroLevel(hero) >= 25 then
+		if HasArtefact(hero, ARTIFACT_MEDICAL01) then
+			H55_OfferUltimate(player, hero, SKILL_DEFENCE, H55_Shields, 4, trigger)
+		end
+		if H55_IsUtilityExe == 1 then
+			H55_OfferUltimate(player, hero, SKILL_STAMINA, H55_Armors, 5, trigger)
+		end
+		if (H55_Booksread[hero] or 0) >= 2 and H55_GetHeroClass(hero) ~= "Chieftain" then
+			H55_OfferUltimate(player, hero, SKILL_LEARNING, {}, 0, trigger)
+		end		
+		if H55_GetHeroRaceNum(hero) ~= H55_Necropolis then
+			H55_OfferUltimate(player, hero, SKILL_WARCRY_LEARNING, H55_LionSet, 2 , trigger)
+		end
+		if H55_GetHeroRaceNum(hero) ~= H55_Stronghold then
+			H55_OfferUltimate(player, hero, SKILL_SORCERY, H55_Staffs, 3, trigger)
+			H55_OfferUltimate(player, hero, SKILL_DESTRUCTIVE_MAGIC, {ARTIFACT_BOOK_OF_POWER, ARTIFACT_TOME_OF_DESTRUCTION}, 2, trigger)
+		end
+		H55_OfferUltimate(player, hero, SKILL_LUCK, H55_Lucks, 4, trigger)
+		H55_OfferUltimate(player, hero, SKILL_LOGISTICS, H55_Boots, 5, trigger)
+		H55_OfferUltimate(player, hero, SKILL_SHATTER_DARK_MAGIC, H55_Neglucks, 3, trigger)
+		H55_OfferUltimate(player, hero, SKILL_WAR_MACHINES, H55_DwarvenSet, 2, trigger)
+		H55_OfferUltimate(player, hero, SKILL_TRAINING, H55_Resists, 2, trigger)
+		H55_OfferUltimate(player, hero, SKILL_LEADERSHIP, H55_GuardianSet, 2, trigger)
+		H55_OfferUltimate(player, hero, SKILL_INVOCATION, H55_NecroSet, 4, trigger)		
+		H55_OfferUltimate(player, hero, SKILL_VOICE, H55_NecroSet, 4, trigger)
+
+		H55_OfferUltimate(player, hero, SKILL_GATING, H55_FraxSet, 4, trigger)
+		H55_OfferUltimate(player, hero, SKILL_NECROMANCY, H55_FraxSet, 4, trigger)
+		H55_OfferUltimate(player, hero, SKILL_AVENGER, H55_FraxSet, 4, trigger)
+		H55_OfferUltimate(player, hero, SKILL_ARTIFICIER, H55_FraxSet, 4, trigger)
+		H55_OfferUltimate(player, hero, SKILL_RUNELORE, H55_FraxSet, 4, trigger)	
+		
+		H55_OfferUltimate(player, hero, SKILL_OFFENCE, {ARTIFACT_FOUR_LEAF_CLOVER, ARTIFACT_RES_WOOD, ARTIFACT_RES_ORE}, 3, trigger)	
+		H55_OfferUltimate(player, hero, SKILL_SUMMONING_MAGIC, {ARTIFACT_BOOK_OF_POWER, ARTIFACT_TOME_OF_SUMMONING_MAGIC}, 2, trigger)
+		H55_OfferUltimate(player, hero, SKILL_DARK_MAGIC, {ARTIFACT_BOOK_OF_POWER, ARTIFACT_TOME_OF_DARK_MAGIC}, 2, trigger)
+		H55_OfferUltimate(player, hero, SKILL_LIGHT_MAGIC, {ARTIFACT_BOOK_OF_POWER, ARTIFACT_TOME_OF_LIGHT_MAGIC}, 2, trigger)
+		H55_OfferUltimate(player, hero, SKILL_DEMONIC_RAGE, {ARTIFACT_OGRE_CLUB, ARTIFACT_OGRE_SHIELD}, 2, trigger)
+
+	end
+	
+	if trigger then
+		H55_Display("/Text/Game/Scripts/Ultimates/NoLeft.txt",hero,player);
+	end
+end
+
+
+function H55_OfferUltimate(player, hero, skill, artefacts, count, trigger)
+	trigger = trigger or H55_Changed(H55_Ultimates[skill]["hero"], hero, 1)
+	if not trigger or H55_Ultimates[skill]["player"][player] or H55_HeroUltimates[hero] then return end
+	if H55_PerkCount(hero, H55_Perks[skill]) < 3 or H55_ArtefactCount(hero, 0, artefacts) < count then return end
+	
+	QuestionBoxForPlayers(GetPlayerFilter(player), 
+		"/Text/Game/Scripts/Ultimates/"..H55_Skillnames[skill]..".txt",
+		"H55_GiveUltimate("..player..",'"..hero.."',"..skill..")",
+		"H55_Noop"
+	)
+end
+
+function H55_GiveUltimate(player, hero, skill)
+	if H55_HeroUltimates[hero] then return end
+	H55_Ultimates[skill]["player"][player] = true
+	H55_HeroUltimates[hero] = skill
+	local ultimate = H55_Ultimates[skill]["skill"]
+	GiveHeroSkill(hero, ultimate)
+	GiveHeroSkill(hero, ultimate)
+	GiveHeroSkill(hero, ultimate)
+	if skill == SKILL_LOGISTICS then
+		GiveArtefact(hero,ARTIFACT_ANGEL_WINGS)
+	elseif skill == SKILL_LEARNING then
+		TeachHeroSpell(hero,SPELL_MASS_HASTE)
+		TeachHeroSpell(hero,SPELL_MASS_BLOODLUST)
+		TeachHeroSpell(hero,SPELL_MASS_DISPEL)
+		TeachHeroSpell(hero,SPELL_MASS_STONESKIN)
+		TeachHeroSpell(hero,SPELL_MASS_BLESS)
+		TeachHeroSpell(hero,SPELL_MASS_DEFLECT_ARROWS)
+
+		TeachHeroSpell(hero,SPELL_MASS_SLOW)
+		TeachHeroSpell(hero,SPELL_MASS_FORGETFULNESS)
+		TeachHeroSpell(hero,SPELL_MASS_DISRUPTING_RAY)
+		TeachHeroSpell(hero,SPELL_MASS_WEAKNESS)
+		TeachHeroSpell(hero,SPELL_MASS_CURSE)
+		TeachHeroSpell(hero,SPELL_MASS_PLAGUE)
+
+		TeachHeroSpell(hero, SPELL_WARCRY_RALLING_CRY)
+		TeachHeroSpell(hero, SPELL_WARCRY_CALL_OF_BLOOD)
+		TeachHeroSpell(hero, SPELL_WARCRY_WORD_OF_THE_CHIEF)
+		TeachHeroSpell(hero, SPELL_WARCRY_FEAR_MY_ROAR)
+		TeachHeroSpell(hero, SPELL_WARCRY_BATTLECRY)
+		TeachHeroSpell(hero, SPELL_WARCRY_SHOUT_OF_MANY)
+	elseif skill == SKILL_WAR_MACHINES then
+		-- TeachHeroSpell(hero, SPELL_RUNE_OF_CHARGE)
+		-- TeachHeroSpell(hero, SPELL_RUNE_OF_BERSERKING)
+		-- TeachHeroSpell(hero, SPELL_RUNE_OF_MAGIC_CONTROL)
+		-- TeachHeroSpell(hero, SPELL_RUNE_OF_EXORCISM)
+		-- TeachHeroSpell(hero, SPELL_RUNE_OF_ELEMENTAL_IMMUNITY)	
+		-- TeachHeroSpell(hero, SPELL_RUNE_OF_STUNNING)
+		-- TeachHeroSpell(hero, SPELL_RUNE_OF_BATTLERAGE)
+		-- TeachHeroSpell(hero, SPELL_RUNE_OF_ETHEREALNESS)
+		-- TeachHeroSpell(hero, SPELL_RUNE_OF_REVIVE)
+		-- TeachHeroSpell(hero, SPELL_RUNE_OF_DRAGONFORM)
+	elseif skill == SKILL_DEFENCE then
+		sleep(1)
+		GiveHeroSkill(hero, SKILL_SEAL_OF_PROTECTION)
+	end
+end
+
 
 function H55_FactionsInArmy(hero)
 	local factions = {}
 	for ix, creature in H55_ArmyInfoSimple(hero) do
-		if creature ~= 0 then
-			factions[H55_CreaturesInv[creature][1]] = 1
-		end
+		if not creature or creature == 0 then break end
+		factions[H55_CreaturesInv[creature][1]] = 1
 	end
 	local len = length(factions) -- needs to be stored in variable, crashes otherwise
 	return len
 end
 
-function H55_TeachHeroRandomSpell(hero, school, level)
+function H55_TeachHeroRandomSpell(player, hero, school, level)
 	local spells = H55_Spells[school][level]
 	local len = length(spells)
 	local rnd = random(len)
 	for i = 1,len do
 		if not KnowHeroSpell(hero, spells[mod(rnd+i, len)+1]) then
-			-- H55_Display({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsText[school][level][rnd]},hero,player,7)
+			H55_Display({"/Text/Game/Scripts/Learnspell.txt";level=level},hero,player)
 			return TeachHeroSpell(hero, spells[mod(rnd+i, len)+1])
 		end
 	end
@@ -688,31 +857,13 @@ function H55_RndWithout(num,excluded)
 	elseif rnd4 ~= excluded then return rnd4
 	else return rnd5
 	end;
-end;		
+end;
 
 function H55_GetDistance(object1,object2)
-	local x1,y1,z1 = GetObjectPosition(object1);
-	local x2,y2,z2 = GetObjectPosition(object2);
-	local a = 0;
-	local b = 0;
-	local distance = 0;
-	if z1 == z2 then
-		if x1 > x2 then a = x1-x2 elseif x2 > x1 then a = x2-x1 end;
-		if y1 > y2 then b = y1-y2 elseif y2 > y1 then b = y2-y1 end;
-		if a == 0 then 
-			distance = b; 
-		elseif b == 0 then 
-			distance = a;
-		else
-			local pythagoras1 = a*a;
-			local pythagoras2 = b*b;
-			distance = H55_Round(sqrt(pythagoras1+pythagoras2));
-		end;
-	else
-		distance = 1000;
-	end;
-	return distance;
-end;
+	local x1,y1,z1 = GetObjectPosition(object1)
+	local x2,y2,z2 = GetObjectPosition(object2)
+	return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)) + ((z1 == z2) and 0 or 1000)
+end
 
 function H55_GetDistanceUG(object1,object2)
 	local x1,y1,z1 = GetObjectPosition(object1);
@@ -1274,9 +1425,9 @@ function H55_PrepareDuel()
 			if contains(heroes,"Menel") ~= nil then
 				AddHeroCreatures("Menel",115,tier_a);
 			end;
-			if contains(heroes,"Emilia") ~= nil then
-				AddHeroCreatures("Emilia",114,tier_a);
-			end;			
+			-- if contains(heroes,"Emilia") ~= nil then
+			-- 	AddHeroCreatures("Emilia",114,tier_a);
+			-- end;			
 			if contains(heroes,"Melodia") ~= nil then
 				AddHeroCreatures("Melodia",86,tier_e);
 			end;
@@ -1478,7 +1629,6 @@ function H55_DetectPAI(player)
 	else
 		H55_PlayerStatus[player] = 2;
 	end;
-	print(player)
 end;
 
 function H55_DetectP1AI()
@@ -1572,6 +1722,12 @@ function H55_DetectTeamConfig()
 	if amounthuman == 1 and amountai >= 2 then teamsituation = 2 end;
 	return teamsituation
 end;
+
+function H55_PrintArtefacts(hero)
+	for i=0,1000 do
+		if HasArtefact(hero, i) then print(i) end
+	end
+end
 
 function H55_TeamHumansvsAI()
 	for i=1,8 do
@@ -1973,21 +2129,6 @@ function H55_GetHeroClassType(hero)
 	return type
 end;
 
-function H55_GetUnusualSchools(hero)
-	local race = H55_GetHeroRaceNum(hero);
-	local school1 = H55_UnusualSchools[race][1]
-	local school2 = H55_UnusualSchools[race][2]
-	if hero == "Erika" or hero == "Zouleika" then
-		school1 = H55_UnusualSchools[9][1];
-		school2 = H55_UnusualSchools[8][2];
-	end;
-	if hero == "Hero2" or hero == "Hero3" then
-		school1 = H55_UnusualSchools[9][2];
-		school2 = H55_UnusualSchools[8][2];
-	end;	
-	return school1,school2
-end;	
-
 function H55_GetTownRace(town)
 	local towntype = 0;
 	if contains(GetObjectNamesByType("TOWN_HEAVEN"),town) ~= nil then towntype = 1 
@@ -2057,7 +2198,7 @@ function H55_GetRaceElementalTypeID(player,cityrace)
 	local elemtype = 87;
 	if cityrace == 1 and H55_FireSwitch[player] == 1 then elemtype = 85 
 	elseif cityrace == 1 then elemtype = 113 
-	elseif cityrace == 5 then elemtype = 114
+	elseif cityrace == 5 then elemtype = 85
 	elseif cityrace == 8 and H55_WolfSwitch[player] == 1 then elemtype = 113	
 	elseif cityrace == 8 then elemtype = 87 
 	elseif cityrace == 6 then elemtype = 115
@@ -2282,20 +2423,16 @@ function H55_GetHeroDragonblood(hero)
 	if hero == "Calid2" then amount = amount + 10 end;
 	if hero == "RedHeavenHero03" then amount = amount + 10 end;
 
-	amount = amount + 4 * GetHeroSkillMastery(hero, SKILL_SHATTER_DARK_MAGIC)
-
-	if HasArtefact(hero, ARTIFACT_SHAWL_OF_GREAT_LICH, 0) then -- ARTIFACT_ELRATH_02
+	if HasArtefact(hero, ARTIFACT_ELRATH_02, 0) then
 		local knowledge = GetHeroStat(hero,STAT_KNOWLEDGE);
-		knowledge = knowledge + (HasArtefact(hero,ARTIFACT_CROWN_OF_COURAGE,1) and 10 or 0);
-		knowledge = knowledge + (HasArtefact(hero,ARTIFACT_VALORIOUS_ARMOR,1) and 5 or 0);
+		knowledge = knowledge + 10 * (HasArtefact(hero,ARTIFACT_CROWN_OF_COURAGE,1) or 0);
+		knowledge = knowledge +  5 * (HasArtefact(hero,ARTIFACT_VALORIOUS_ARMOR,1) or 0);
 		amount = amount + H55_Round(knowledge/2);
 	end;
-	if (HasArtefact(hero,60,0) ~= nil) then
-		if amount >= 2 then
-			local factor = GetHeroStat(hero,STAT_KNOWLEDGE);
-			local coef = ((100+(factor*2))/100);
-			amount = H55_Round(coef*amount);
-		end;
+	if HasArtefact(hero,ARTIFACT_BAND_OF_CONJURER,0) then
+		local factor = GetHeroStat(hero,STAT_KNOWLEDGE);
+		local coef = ((100+(factor*2))/100);
+		amount = H55_Round(coef*amount);
 	end;
 	amount = GetHeroLevel(hero)*amount
 	return amount
@@ -2319,14 +2456,6 @@ function H55_GetHeroEnlightenmentStrength(hero)
 	-- end;
 	return strength;
 end;
-
-function H55_SetCount(hero, artifacts, typ)
-	local count = 0
-	for _, artifact in artifacts do
-		count = count + (HasArtefact(hero, artifact, typ) and 1 or 0)
-	end
-	return count
-end
 
 function H55_GetMoonDiscOwnCount(hero)
 	local gainedartifacts = {0,0,0,0};
@@ -2358,11 +2487,11 @@ function H55_GetMonkSetCount(hero)
 end;
 
 function H55_GetDwarvenSetCount(hero)
-	return 0 + H55_SetCount(hero, {48, 49, 50, 51}, 1)
+	return 0 + H55_ArtefactCount(hero, 1, {48, 49, 50, 51})
 end
 
 function H55_GetDwarvenOwnCount(hero)
-	return 0 + H55_SetCount(hero, {48, 49, 50, 51}, 0)
+	return 0 + H55_ArtefactCount(hero, 0, {48, 49, 50, 51})
 end
 
 -- function H55_ExchangeDwarvenSet(hero)
@@ -2374,11 +2503,16 @@ end
 -- end;
 
 function H55_GetLionSetCount(hero)
-	return 0 + H55_SetCount(hero, {11, 16, 31}, 1)
+	return 0 + H55_ArtefactCount(hero, 1, {11, 16, 31})
+end
+
+
+function H55_GetLionOwnCount(hero)
+	return 0 + H55_ArtefactCount(hero, 0, {11, 16, 31})
 end
 
 function H55_GetVestmentSetCount(hero)
-	return 0 + H55_SetCount(hero, {34, 35}, 1)
+	return 0 + H55_ArtefactCount(hero, 1, {34, 35})
 end
 
 function H55_GetNecroSetCount(hero)
@@ -2389,6 +2523,19 @@ function H55_GetNecroSetCount(hero)
 	if (HasArtefact(hero,33,1) ~= nil) then gainedartifacts[4] = 1 end;
 	if (HasArtefact(hero,55,1) ~= nil) then gainedartifacts[5] = 1 end;
 	if (HasArtefact(hero,83,1) ~= nil) then gainedartifacts[6] = 1 end;
+	local setstrength = (gainedartifacts[1]+gainedartifacts[2]+gainedartifacts[3]+gainedartifacts[4]+gainedartifacts[5]+gainedartifacts[6]);
+	return setstrength
+end;
+
+
+function H55_GetNecroOwnCount(hero)
+	local gainedartifacts = {0,0,0,0,0,0};
+	if (HasArtefact(hero,6,0) ~= nil) then gainedartifacts[1] = 1 end;
+	if (HasArtefact(hero,70,0) ~= nil) then gainedartifacts[2] = 1 end;
+	if (HasArtefact(hero,71,0) ~= nil) then gainedartifacts[3] = 1 end;
+	if (HasArtefact(hero,33,0) ~= nil) then gainedartifacts[4] = 1 end;
+	if (HasArtefact(hero,55,0) ~= nil) then gainedartifacts[5] = 1 end;
+	if (HasArtefact(hero,83,0) ~= nil) then gainedartifacts[6] = 1 end;
 	local setstrength = (gainedartifacts[1]+gainedartifacts[2]+gainedartifacts[3]+gainedartifacts[4]+gainedartifacts[5]+gainedartifacts[6]);
 	return setstrength
 end;
@@ -2672,13 +2819,12 @@ end;
 function H55_WeeklyReinforce(hero, player, town, tier, coef)
 	local level = GetHeroLevel(hero);
 	local multiplier = H55_GetJoinSpecMultiplier(hero,player);
-	local growth = H55_RoundDown(multiplier*coef*level*H55_CreaturesGrowth[town][tier]);
+	local growth = H55_RoundDown(multiplier*coef*level*H55_CreaturesGrowthReal[town][tier]);
 	if growth >= 1 then
 		for _, cr in H55_ArmyInfoSimple(hero) do
 			if contains(H55_Creatures[town][tier], cr) then
-				print("DING DONG")
 				AddHeroCreatures(hero,cr,growth);
-				H55_Display({"/Text/Game/Scripts/Reinforcements.txt"; num=growth},hero,player,5);
+				H55_Display({"/Text/Game/Scripts/Reinforcements.txt"; num=growth},hero,player);
 				return
 			end;
 		end;
@@ -2754,10 +2900,11 @@ function H55_InfernalLoom(hero,player,u1,u2,u3,coef,multiplier)
 end;
 
 function H55_DefendUs(hero,player,town,tier,growth)
+	if growth < 1 then return end
 	for _, cr in H55_ArmyInfoSimple(hero) do
 		if contains(H55_Creatures[town][tier], cr) then
 			AddHeroCreatures(hero,cr,growth)
-			H55_Display({"/Text/Game/Scripts/Reinforcements.txt"; num=growth},hero,player,5);
+			-- H55_Display({"/Text/Game/Scripts/Reinforcements.txt"; num=growth},hero,player);
 			return
 		end
 	end
@@ -2897,21 +3044,63 @@ function H55_ApplyMoveCorrection(hero)
 	end;
 end;
 
-H55_Resurrect = { }
 function H55_ResurrectArmy(player,hero,ci,baseperc)
-	if GetSavedCombatArmyHero(ci, 1) ~= hero or not H55_Changed(H55_Resurrect, hero, ci) then
-		return
-	end
 	local stackscount = GetSavedCombatArmyCreaturesCount(ci,1)
 	for i = 0,stackscount-1,1 do
 		creature,cnt,died = GetSavedCombatArmyCreatureInfo(ci,1,i)
-		local resurrect = H55_Min(died, H55_Round((cnt+died)*baseperc))
+		local resurrect = H55_Min(died, cnt*baseperc)
 		if resurrect >= 1 then
 			AddHeroCreatures(hero,creature,resurrect)
-			H55_Display({"/Text/Game/Scripts/Resurrection.txt"; num=resurrect},hero,player,7)
+			H55_Display({"/Text/Game/Scripts/Resurrection.txt"; num=resurrect, tier=H55_CreaturesInv[creature][2]},hero,player)
 		end
 	end
 end
+
+function H55_Diplomacy(player,hero,ci,percent)
+	-- local tiers = {}
+	-- local race = H55_GetHeroRaceNum(hero)
+	local stackscount = GetSavedCombatArmyCreaturesCount(ci,0)
+	-- local total = 0
+	for i = 0,stackscount-1 do
+		local creature,cnt,died = GetSavedCombatArmyCreatureInfo(ci,0,i)
+		if died * percent >= 1 then
+			AddHeroCreatures(hero,creature,died*percent)
+		end
+		-- print(""..creature.." "..cnt.." "..died)
+		-- local amount = H55_Round(died*0.05)
+		-- local typ = H55_CreaturesInv[creature]
+		-- if amount >= 1 then
+		-- 	for _, creature in H55_ArmyInfoSimple(hero) do
+		-- 		local t = H55_CreaturesInv[creature]
+		-- 		if typ[1] == t[1] and typ[2] == t[2] then
+		-- 			total = total + amount
+		-- 			AddHeroCreatures(hero,creature,amount)
+		-- 			break
+		-- 		end				
+		-- 	end
+		-- end
+	end
+end
+
+
+function H55_MineVisit(hero, mine)
+	local owner = H55_MineOwners[mine]
+	H55_MineOwners[mine] = GetObjectOwner(hero)
+
+	if owner and GetObjectOwner(hero) ~= owner and length(H55_HauntedMines[owner]) > 0 then
+		local lvl = 20
+		for h, _ in H55_HauntedMines[owner] do 
+			lvl = lvl + GetHeroLevel(h)
+		end
+		local num = lvl/60 * H55_CreaturesGrowthReal[H55_Necropolis][3] * H55_Towns[owner] * GetDate(WEEK)
+		if num < 1 then return end
+
+		StartCombat(hero,nil,6,CREATURE_POLTERGEIST,num,CREATURE_POLTERGEIST,num,CREATURE_POLTERGEIST,num,CREATURE_GHOST,num,CREATURE_GHOST,num,CREATURE_GHOST,num, nil, nil,
+			"/Arenas/CombatArena/FinalCombat/Bank_Mine.(AdvMapTownCombat).xdb#xpointer(/AdvMapTownCombat)",1
+		);
+	end
+end
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 --TOWN MANAGEMENT
@@ -3077,20 +3266,20 @@ end
 
 function H55_TownInfoElementals(player, town, blood)
 	local townrace = H55_GetTownRace(town)
-	local bloodcoef = 12
-	local growth = 0
+	local bloodcoef = 3
 	local bloodroot = sqrt(blood)
 	local elemtype = H55_GetRaceElementalTypeID(player,townrace)
 	if townrace == 1 then bloodcoef = 8 end
 	if townrace == 4 then bloodcoef = 18 end
-	if townrace == 5 then bloodcoef = 30 end
 	if townrace == 6 then bloodcoef = 30 end
-	if elemtype == 90 then bloodcoef = 30 end
-	if townrace == 8 then
-		growth = 3+2+ GetTownBuildingLevel(town, TOWN_BUILDING_SPECIAL_1) + GetTownBuildingLevel(town, TOWN_BUILDING_SPECIAL_3)
+	
+	local growth = 0
+	if townrace == H55_Stronghold then
+		growth = 3 + GetTownBuildingLevel(town, TOWN_BUILDING_SPECIAL_1) + GetTownBuildingLevel(town, TOWN_BUILDING_SPECIAL_3)
 	else
-		growth = 3+2+ GetTownBuildingLevel(town, TOWN_BUILDING_MAGIC_GUILD)
+		growth = 3 + GetTownBuildingLevel(town, TOWN_BUILDING_MAGIC_GUILD)
 	end
+
 	local totalgrowth = H55_Round((bloodroot/bloodcoef)*growth)
 	return totalgrowth
 end;
@@ -3099,8 +3288,8 @@ function H55_InfoLegion(hero)
 	local cap = H55_GetLegionCap(hero)
 	local growth = 0;
 	local bonus = 0;
-	if HasHeroSkill(hero,SKILL_RECRUITMENT) ~= nil then bonus = bonus+10 end;
-	--if HasHeroSkill(hero,SKILL_RECRUITMENT) ~= nil and HasArtefact(hero,ARTIFACT_CROWN_OF_LEADER,1) ~= nil then bonus = bonus+10 end;
+	if HasHeroSkill(hero,SKILL_RECRUITMENT) ~= nil then bonus = bonus+5 end;
+	-- if HasHeroSkill(hero,SKILL_RECRUITMENT) ~= nil and HasArtefact(hero,ARTIFACT_CROWN_OF_LEADER,1) ~= nil then bonus = bonus+10 end;
 	if HasArtefact(hero,ARTIFACT_CROWN_OF_COURAGE,1) ~= nil then bonus = bonus+10 end;
 	if HasArtefact(hero,ARTIFACT_VALORIOUS_ARMOR,1) ~= nil then bonus = bonus+5 end;
 	--if H55_Governors[hero] == 1 then bonus = bonus+5 end;
@@ -3163,7 +3352,7 @@ function H55_InfoGoldIncome(hero)
 	local knowledge = GetHeroStat(hero,STAT_KNOWLEDGE);
 	if HasArtefact(hero,ARTIFACT_CROWN_OF_COURAGE,1) ~= nil then knowledge = knowledge+10 end;
 	if HasArtefact(hero,ARTIFACT_VALORIOUS_ARMOR,1) ~= nil then knowledge = knowledge+5 end;
-	if (HasHeroSkill(hero,SKILL_ESTATES) ~= nil) then gold = gold+(H55_Round(GetHeroStat(hero,STAT_KNOWLEDGE)*25)) end;
+	if (HasHeroSkill(hero,SKILL_ESTATES) ~= nil) then gold = gold+(H55_Round(GetHeroStat(hero,knowledge)*25)) end;
 	if (HasHeroSkill(hero,SKILL_LORD_OF_UNDEAD) ~= nil) then gold = gold+H55_InfoSkeletonTaxes(hero) end;
 	if (HasHeroSkill(hero,SKILL_GOBLIN_SUPPORT) ~= nil) then gold = gold+H55_InfoGoblinTaxes(hero) end;
 	if (HasArtefact(hero,ARTIFACT_ENDLESS_SACK_OF_GOLD,0) ~= nil) then gold = gold+(H55_Round(knowledge*50)) end;
@@ -3220,6 +3409,7 @@ function H55_AbortTC(hero)
 end;
 
 function H55_TownManagement(hero,CUSTOM_ABILITY_4)
+	print(1)
 	local player = GetObjectOwner(hero);
 	local playerrace = H55_GetPlayerRace(player);	
 	local herorace = H55_GetHeroRaceNum(hero);
@@ -3232,6 +3422,7 @@ function H55_TownManagement(hero,CUSTOM_ABILITY_4)
 			townrace = H55_GetTownRace(gate);
 		end;
 	end;
+	print(2)
 	if H55_TownManageOwners[hero] == 1 then
 		if H55_TownGateEnabled == 0 then
 			if town ~= nil and townrace ~= playerrace then --hero is in strange town
@@ -3252,6 +3443,7 @@ function H55_TownManagement(hero,CUSTOM_ABILITY_4)
 					H55_TM_InfoOnly(hero,town);
 			end;
 		else
+			print(3)
 			if town ~= nil and townrace ~= playerrace then --hero is in strange town
 				if H55_TownConvEnabled == 1 and herorace == playerrace then
 					H55_TM_Conv_or_Tele(hero,town);
@@ -3305,13 +3497,13 @@ end
 
 function H55_TM_InfoOnly(hero,town)
 	local text = H55_TM(hero, town, "/Text/Game/Scripts/TownPortal/TM_Info_Only.txt")
-	MessageBoxForPlayers(GetPlayerFilter(player), text, "H55_AbortTC('"..hero.."')")
+	MessageBoxForPlayers(GetPlayerFilter(GetObjectOwner(hero)), text, "H55_AbortTC('"..hero.."')")
 end
 
 	
 function H55_TM_Conv_or_Tele(hero,town)
 	local text = H55_TM(hero, town, "/Text/Game/Scripts/TownPortal/TM_Conv_or_Tele.txt")
-	QuestionBoxForPlayers(GetPlayerFilter(player), text,
+	QuestionBoxForPlayers(GetPlayerFilter(GetObjectOwner(hero)), text,
 		"H55_TCQuestionBox('"..hero.."','"..town.."')",
 		"H55_ATPQuestionBox('"..hero.."')"
 	)
@@ -3319,7 +3511,7 @@ end
 
 function H55_TM_Conv_or_Close(hero,town)
 	local text = H55_TM(hero, town, "/Text/Game/Scripts/TownPortal/TM_Conv_or_Close.txt")
-	QuestionBoxForPlayers(GetPlayerFilter(player), text,
+	QuestionBoxForPlayers(GetPlayerFilter(GetObjectOwner(hero)), text,
 		"H55_TCQuestionBox('"..hero.."','"..town.."')",
 		"H55_AbortTC('"..hero.."')"
 	)
@@ -3327,23 +3519,23 @@ end
 
 function H55_TM_Gov_or_Tele(hero,town)
 	local text = H55_TM(hero, town, "/Text/Game/Scripts/TownPortal/TM_Gov_or_Tele.txt")
-	QuestionBoxForPlayers(GetPlayerFilter(player), text,
+	QuestionBoxForPlayers(GetPlayerFilter(GetObjectOwner(hero)), text,
 		"H55_TGStartQuestionBox('"..hero.."','"..town.."')",
 		"H55_ATPQuestionBox('"..hero.."')"
 	)
 end
 
 function H55_TM_Tele_or_Close(hero,town)
-	local text = H55_TM(hero, town, "/Text/Game/Scripts/TownPortal/TM_Gov_or_Tele.txt")
-	QuestionBoxForPlayers(GetPlayerFilter(player), text,
+	local text = H55_TM(hero, town, "/Text/Game/Scripts/TownPortal/TM_Tele_or_Close.txt")
+	QuestionBoxForPlayers(GetPlayerFilter(GetObjectOwner(hero)), text,
 		"H55_ATPQuestionBox('"..hero.."')",
-		"H55_AbortTC('"..hero.."')"
+		"H55_OfferUltimatesQuestionBox('"..hero.."')"
 	)
 end
 
 function H55_TM_Wtp_or_Close(hero,town)
 	local text = H55_TM(hero, town, "/Text/Game/Scripts/TownPortal/TM_Wtp_or_Close.txt")
-	QuestionBoxForPlayers(GetPlayerFilter(player), text,
+	QuestionBoxForPlayers(GetPlayerFilter(GetObjectOwner(hero)), text,
 		"H55_WTPQuestionBox('"..hero.."')",
 		"H55_AbortTC('"..hero.."')"
 	)
@@ -3351,7 +3543,7 @@ end
 
 function H55_TM_Gov_or_Close(hero,town)
 	local text = H55_TM(hero, town, "/Text/Game/Scripts/TownPortal/TM_Gov_or_Close.txt")
-	QuestionBoxForPlayers(GetPlayerFilter(player), text,
+	QuestionBoxForPlayers(GetPlayerFilter(GetObjectOwner(hero)), text,
 		"H55_TGStartQuestionBox('"..hero.."','"..town.."')",
 		"H55_AbortTC('"..hero.."')"
 	)
@@ -3359,9 +3551,9 @@ end
 
 function H55_TM_End_or_Close(hero,town)
 	local text = H55_TM(hero, town, "/Text/Game/Scripts/TownPortal/TM_End_or_Close.txt")
-	QuestionBoxForPlayers(GetPlayerFilter(player), text,
-		"H55_TCQuestionBox('"..hero.."','"..town.."')",
-		"H55_ATPQuestionBox('"..hero.."')"
+	QuestionBoxForPlayers(GetPlayerFilter(GetObjectOwner(hero)), text,
+		"H55_TGEndQuestionBox('"..hero.."','"..town.."')",
+		"H55_AbortTC('"..hero.."')"
 	)
 end
 
@@ -4107,7 +4299,7 @@ function H55_WeeklyEvents(player)
 		print(growth)
 		if growth > 0 then
 			AddObjectCreatures(town,elemtype,growth) -- growth = 0 leads to error
-			H55_Display({"/Text/Game/Scripts/Garrison.txt"; num=growth},town,player,5)
+			H55_Display({"/Text/Game/Scripts/Garrison.txt"; num=growth},town,player)
 		end
 	end
 			
@@ -4116,6 +4308,7 @@ function H55_WeeklyEvents(player)
 	------------------------------------------------------------------------------------------------------------------------------------------------
 
 	local heroes = GetPlayerHeroes(player);
+
 	if heroes~=nil then
 	
 		--Economic specs
@@ -4232,6 +4425,8 @@ function H55_WeeklyEvents(player)
 		if contains(heroes,"Darkstorm") ~= nil then H55_WeeklyReinforce("Darkstorm",player,H55_Dungeon,3,N/2) end; 	--minotaur
 		if contains(heroes,"Ildar") 	~= nil then H55_WeeklyReinforce("Ildar",player,H55_Sylvan,4,N) end; 		--druid
 		if contains(heroes,"Maximus") 	~= nil then H55_WeeklyReinforce("Maximus",player,H55_Fortress,4,N) end;	--brawler
+
+		if contains(heroes,"Maximus") 	~= nil then H55_WeeklyReinforce("Hero7",player,H55_Stronghold,4,N) end;
 
 		-- if contains(heroes,"Tamika") 	~= nil then H55_WeeklyReinforce("Tamika",player,H55_Necropolis,4,N) end; 	--vampires
 		--if contains(heroes,"Matewa") ~= nil then H55_WeeklyReinforce("Matewa",player,124,176,123,0.2) end;
@@ -4379,7 +4574,7 @@ function H55_WeeklyEvents(player)
 						end;
 					end;					
 				end;
-			end;		
+			end;	
 				
 			------------------------------------------------------------------------------------------------------------------------------------------------
 			H55_DEBUG = {7,"Artifacts",player,hero};--------------------------------------------------------------------------------------------------------
@@ -4704,7 +4899,7 @@ function H55_WeeklyEvents(player)
 				end;
 			end;
 			------------------------------------------------------------------------------------------------------------------------------------------------
-			--H55_DEBUG = {8a,"Skillbooks",player,hero};--------------------------------------------------------------------------------------------------------
+			H55_DEBUG = {8,"Skillbooks",player,hero};--------------------------------------------------------------------------------------------------------
 			------------------------------------------------------------------------------------------------------------------------------------------------
 			local booksread = 0
 
@@ -4871,6 +5066,8 @@ function H55_WeeklyEvents(player)
 				ShowFlyingSign({"/Text/Game/Scripts/Skillbooks.txt"},hero,player,5);
 				--sleep(4);
 			end;
+
+			H55_Booksread[hero] = (H55_Booksread[hero] or 0) + booksread
 
 			------------------------------------------------------------------------------------------------------------------------------------------------
 			H55_DEBUG = {9,"Governance",player,hero};-------------------------------------------------------------------------------------------------------
@@ -5059,6 +5256,96 @@ end;
 --DAILY EVENTS
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
+H55_Battle = {}
+function H55_AfterBattle(player, hero, ci)
+	for _, stat in { STAT_HEALTH, STAT_INITIATIVE, STAT_SPEED } do
+		if H55_BattleBonus[stat][hero] then
+			GiveHeroBattleBonus(hero, stat - 5, H55_BattleBonus[stat][hero])
+		end
+	end
+
+	if HasHeroSkill(hero, SKILL_ACADEMY_AWARD) then
+		H55_GiveResources(player, random(6), 2, hero)
+	end
+
+	
+	---- MANA ----
+	local mana = 4 + 0.5 * GetHeroStat(hero, STAT_KNOWLEDGE)
+
+	mana = mana +  3 * (HasArtefact(hero, ARTIFACT_BEGINNER_MAGIC_STICK) or 0)
+	mana = mana +  2 * (HasArtefact(hero, ARTIFACT_BREASTPLATE_OF_PETRIFIED_WOOD) or 0)
+	mana = mana +  6 * (HasArtefact(hero, ARTIFACT_CROWN_OF_MAGI) or 0)
+	mana = mana + 12 * (HasArtefact(hero, ARTIFACT_EIGHTFOLD) or 0)
+	mana = mana +  8 * (HasArtefact(hero, ARTIFACT_GEAR_03) or 0)
+	mana = mana + 12 * (HasArtefact(hero, ARTIFACT_MONK_01) or 0)
+	mana = mana +  4 * (HasArtefact(hero, ARTIFACT_MONK_02) or 0)
+	mana = mana +  3 * (HasArtefact(hero, ARTIFACT_MONK_04) or 0)
+	mana = mana +  6 * (HasArtefact(hero, ARTIFACT_ROBE_OF_MAGI) or 0)
+	mana = mana +  2 * (HasArtefact(hero, ARTIFACT_RUNE_OF_FLAME) or 0)
+	mana = mana +  5 * (HasArtefact(hero, ARTIFACT_RUNIC_WAR_AXE) or 0)
+	mana = mana +  5 * (HasArtefact(hero, ARTIFACT_RUNIC_WAR_HARNESS) or 0)
+	mana = mana -  3 * (HasArtefact(hero, ARTIFACT_UPG_ST1) or 0)
+	mana = mana +  3 * (HasArtefact(hero, ARTIFACT_UPG_ST2) or 0)
+
+	ChangeHeroStat(hero, STAT_MANA_POINTS, mana)
+
+
+	---- MOVEMENT ----
+
+	local movement = HasHeroSkill(hero,SKILL_RAISE_ARCHERS) and 100 or 0
+
+	movement = movement - 200 * (3 - GetHeroSkillMastery(hero,SKILL_RUSH)) * (HasHeroSkill(hero,SKILL_RUSH) or 0)
+	movement = movement - 200 * (3 - GetHeroSkillMastery(hero,SKILL_STAMINA))  * (HasHeroSkill(hero,SKILL_STAMINA) or 0)
+	
+	for _, cr in H55_ArmyInfoSimple(hero) do
+		if cr == CREATURE_CLERIC or cr == CREATURE_ORCCHIEF_CHIEFTAIN then
+			movement = movement + 100
+			break
+		end
+	end
+
+	ChangeHeroStat(hero, STAT_MOVE_POINTS, movement)
+
+
+	---- DIPLOMACY ----
+
+	local join = (hero == 'Elleshar') and 0.1 or 0
+
+	join = join + 0.05 * (HasHeroSkill(hero, SKILL_DIPLOMACY) or 0)
+	join = join + 0.05 * (HasArtefact(hero, ARTIFACT_CROWN_OF_LEADER) or 0)
+
+	H55_Diplomacy(player,hero,ci,join)
+
+	
+	---- RESURRECTION ----
+
+	local resurrect = (hero == "Jeddite" or hero == "Kraal") and 0.05 or 0
+
+	resurrect = resurrect + 0.02 * (HasArtefact(hero,ARTIFACT_LIFE_01,1) or 0)
+	resurrect = resurrect + 0.03 * (HasArtefact(hero,ARTIFACT_LIFE_02,1) or 0)
+	resurrect = resurrect + 0.03 * (HasArtefact(hero,ARTIFACT_LIFE_03,1) or 0)
+	resurrect = resurrect + 0.04 * (HasArtefact(hero,ARTIFACT_LIFE_04,1) or 0)
+	resurrect = resurrect + 0.04 * (HasArtefact(hero,ARTIFACT_SANDALS_OF_THE_SAINT,1) or 0)
+	resurrect = resurrect + 0.05 * (HasArtefact(hero,ARTIFACT_MEDICAL01,1) or 0)
+	resurrect = resurrect + 0.05 * (HasArtefact(hero,ARTIFACT_MEDICAL02,1) or 0)
+
+	resurrect = resurrect + 0.03 * (HasArtefact(hero,ARTIFACT_MEDICAL03,1) or 0)
+	resurrect = resurrect + 0.03 * (HasArtefact(hero,ARTIFACT_MEDICAL04,1) or 0)
+	resurrect = resurrect + 0.04 * (HasArtefact(hero,ARTIFACT_GEAR_02,1) or 0)
+
+	resurrect = resurrect + 0.02 * GetHeroSkillMastery(hero,SKILL_NO_REST_FOR_THE_WICKED)
+	resurrect = resurrect + 0.04 * GetHeroSkillMastery(hero,SKILL_GUARDIAN_ANGEL)
+	resurrect = resurrect + 0.04 * GetHeroSkillMastery(hero,SKILL_LAST_AID)
+
+	if HasArtefact(hero,ARTIFACT_POTION03,1) then
+		RemoveArtefact(hero, ARTIFACT_POTION03)
+		resurrect = resurrect + 0.30
+	end
+
+	H55_ResurrectArmy(player,hero,ci,resurrect)
+
+end
+
 function H55_AdjustGovernorDefense(hero,town)
 
 	------------------------------------------------------------------------------------------------------------------------------------------------
@@ -5229,6 +5516,7 @@ function H55_DailyEvents(player)
 	H55_DEBUG = {12,"Dwellings",player,""};---------------------------------------------------------------------------------------------------------
 	------------------------------------------------------------------------------------------------------------------------------------------------
 	
+	
 	local playerrace = H55_PlayerFactions[player];
 	local dwellingrace = H55_GetTownRaceID(playerrace);	
 	local alltowns = GetObjectNamesByType("TOWN");
@@ -5247,6 +5535,7 @@ function H55_DailyEvents(player)
 		local allT2dwellings = {};
 		local allT3dwellings = {};
 		local allT4dwellings = {};	
+
 			
 		for i=1,8 do
 			allT1dwellings[i] = GetObjectNamesByType(H55_T1DwellingTypes[i])
@@ -5327,33 +5616,32 @@ function H55_DailyEvents(player)
 	
 	for i,hero in heroes do
 
+		
+		H55_AngelWings[hero] = nil
+
+		H55_HauntedMines[player][hero] = HasHeroSkill(hero, SKILL_HERALD_OF_DEATH)
+		H55_Towns = H55_Min(1, length(alltowns))
+
+		
 		------------------------------------------------------------------------------------------------------------------------------------------------
-		H55_DEBUG = {13,"DarkRitual",player,hero};----------------------------------------------------------------------------------------------------------
+		H55_DEBUG = {13,"Ultimates",player,hero};----------------------------------------------------------------------------------------------------------
 		------------------------------------------------------------------------------------------------------------------------------------------------
 
-		if not HasHeroSkill(hero, SKILL_DARK_RITUAL) then
-			if H55_Day <= H55_DarkRitualDay and H55_Changed(H55_DarkRitual, hero, 1) then
-				H55_ChangeHeroStat(hero, STAT_INITIATIVE, -1)
-				H55_ChangeHeroStat(hero, STAT_LUCK, -1)
-			end
-			if H55_Day > H55_DarkRitualDay and H55_Changed(H55_DarkRitual, hero, nil) then
-				H55_ChangeHeroStat(hero, STAT_INITIATIVE, 1)
-				H55_ChangeHeroStat(hero, STAT_LUCK, 1)
-			end
-		elseif H55_Changed(H55_DarkRitual, hero, nil) then
-			H55_ChangeHeroStat(hero, STAT_INITIATIVE, 1)
-			H55_ChangeHeroStat(hero, STAT_LUCK, 1)
+		if GetHeroSkillMastery(hero, SKILL_SHATTER_DARK_MAGIC) > H55_Curses then
+			H55_Curses = GetHeroSkillMastery(hero, SKILL_SHATTER_DARK_MAGIC)
 		end
+
+		local curses = H55_Curses - GetHeroSkillMastery(hero, SKILL_SHATTER_DARK_MAGIC)
+
+		ChangeHeroStat(hero, STAT_MOVE_POINTS, -150*curses)
+
+		H55_OfferUltimates(player, hero, nil)
 
 		------------------------------------------------------------------------------------------------------------------------------------------------
 		H55_DEBUG = {13,"Potions",player,hero};------------------------------------------------------------------------------------------------------
 		------------------------------------------------------------------------------------------------------------------------------------------------
 
 		if H55_RPGPotions == 1 then
-			if (HasArtefact(hero,ARTIFACT_POTION02,1) ~= nil) then
-				H55_MovePotionDrinkers[hero] = 1
-				RemoveArtefact(hero,ARTIFACT_POTION02);
-			end;
 			if (HasArtefact(hero,ARTIFACT_POTION01,1) ~= nil) then
 				ChangeHeroStat(hero,STAT_MANA_POINTS,999);
 				RemoveArtefact(hero,ARTIFACT_POTION01);
@@ -5549,42 +5837,6 @@ function H55_DailyEvents(player)
 		------------------------------------------------------------------------------------------------------------------------------------------------
 
 		H55_DailyManaPayout[hero] = 0;
-		if (HasArtefact(hero,ARTIFACT_RUNIC_WAR_HARNESS,1) ~= nil) and H55_RunicInterrupters[hero] ~= H55_Day then
-			H55_RunicWearers[hero] = H55_Day;
-			--ChangeHeroStat(hero,STAT_MANA_POINTS,5);
-			H55_DailyManaPayout[hero] = H55_DailyManaPayout[hero] + 5;
-		end;
-		if (HasArtefact(hero,ARTIFACT_MONK_02,1) ~= nil) and H55_Monk02Interrupters[hero] ~= H55_Day then
-			H55_Monk02Wearers[hero] = H55_Day;
-			--ChangeHeroStat(hero,STAT_MANA_POINTS,4);
-			H55_DailyManaPayout[hero] = H55_DailyManaPayout[hero] + 4;
-		end;
-		if (HasArtefact(hero,ARTIFACT_ROBE_OF_MAGI,1) ~= nil) and H55_RobeInterrupters[hero] ~= H55_Day then
-			H55_RobeWearers[hero] = H55_Day;
-			--ChangeHeroStat(hero,STAT_MANA_POINTS,6);
-			H55_DailyManaPayout[hero] = H55_DailyManaPayout[hero] + 6;
-		end;
-		ChangeHeroStat(hero,STAT_MANA_POINTS,3)
-		if (HasArtefact(hero,ARTIFACT_CROWN_OF_MAGI,1) ~= nil) and H55_CrownInterrupters[hero] ~= H55_Day then
-			H55_CrownWearers[hero] = H55_Day;
-			--ChangeHeroStat(hero,STAT_MANA_POINTS,9);
-			H55_DailyManaPayout[hero] = H55_DailyManaPayout[hero] + 6;
-		end;
-		if (HasArtefact(hero,ARTIFACT_MONK_01,1) ~= nil) and H55_Monk01Interrupters[hero] ~= H55_Day then
-			H55_Monk01Wearers[hero] = H55_Day;
-			--ChangeHeroStat(hero,STAT_MANA_POINTS,12);
-			H55_DailyManaPayout[hero] = H55_DailyManaPayout[hero] + 12;
-		end;
-		if (HasArtefact(hero,ARTIFACT_GEAR_03,1) ~= nil) and H55_AlchemistInterrupters[hero] ~= H55_Day then
-			H55_AlchemistWearers[hero] = H55_Day;
-			--ChangeHeroStat(hero,STAT_MANA_POINTS,8);
-			H55_DailyManaPayout[hero] = H55_DailyManaPayout[hero] + 8;
-		end;
-		if (HasArtefact(hero,ARTIFACT_BREASTPLATE_OF_PETRIFIED_WOOD,1) ~= nil) and H55_EldritchInterrupters[hero] ~= H55_Day then
-			H55_EldritchWearers[hero] = H55_Day;
-			--ChangeHeroStat(hero,STAT_MANA_POINTS,2);
-			H55_DailyManaPayout[hero] = H55_DailyManaPayout[hero] + 2;
-		end;
 		if H55_DailyManaPayout[hero] >= 1 then
 			ChangeHeroStat(hero,STAT_MANA_POINTS,H55_DailyManaPayout[hero]);
 		end;	
@@ -5651,18 +5903,15 @@ function H55_DailyEvents(player)
 			local amount = 0;
 			local taxes = 0;
 			for i = 0,6 do
-				if (type[i] == 30) then
+				if count[i] < 1 then break end
+				if H55_CreaturesInv[type[i]][2] == 1 then
 					amount = amount + count[i]
-				elseif (type[i] ==152) then	
-					amount = amount + count[i]
-				elseif (type[i] ==29) then	
-					amount = amount + count[i]
-				end;
-			end;
+				end
+			end
 			if amount > 0 then
 				taxes = H55_Round(amount/2);
 				H55_GlobalDailyGoldPayout[player] = H55_GlobalDailyGoldPayout[player]+taxes;
-			end;
+			end
 		end;
 		if (HasHeroSkill(hero,SKILL_GOBLIN_SUPPORT) ~= nil) then
 			local type,count = H55_ArmyInfo(hero);
@@ -5686,21 +5935,13 @@ function H55_DailyEvents(player)
 			local amount = H55_Round(GetHeroStat(hero,STAT_KNOWLEDGE)*25);		
 			H55_GlobalDailyGoldPayout[player] = H55_GlobalDailyGoldPayout[player]+amount;			
 		end;
-		if (HasHeroSkill(hero,SKILL_DEFEND_US_ALL) ~= nil) and (GetHeroLevel(hero) >= 10) then
-			H55_DefendUs(hero,player,H55_Stronghold,3,1);
-		end;
-		if (HasHeroSkill(hero,SKILL_MARCH_OF_THE_MACHINES) ~= nil) and (GetHeroLevel(hero) >= 10) then
-			H55_DefendUs(hero,player,H55_Academy,3,1);
-		end;
-		if (HasHeroSkill(hero,SKILL_SPOILS_OF_WAR) ~= nil) and (GetHeroLevel(hero) >= 10) then
-			H55_DefendUs(hero,player,H55_Inferno,1,2);
-		end;	
-		if (HasHeroSkill(hero,SKILL_DEMONIC_FLAME) ~= nil) and (GetHeroLevel(hero) >= 10) then
-			H55_DefendUs(hero,player,H55_Fortress,1,2);
-		end;	
-		if (HasHeroSkill(hero,SKILL_FOREST_GUARD_EMBLEM) ~= nil) and (GetHeroLevel(hero) >= 10) then
-			H55_DefendUs(hero,player,H55_Sylvan,2,2);
-		end;	
+		if GetHeroLevel(hero) >= 5 then
+			H55_DefendUs(hero,player,H55_Inferno,1,HasHeroSkill(hero,SKILL_SPOILS_OF_WAR) or 0)
+			H55_DefendUs(hero,player,H55_Fortress,1,HasHeroSkill(hero,SKILL_DEMONIC_FLAME) or 0)
+			H55_DefendUs(hero,player,H55_Stronghold,3,HasHeroSkill(hero,SKILL_DEFEND_US_ALL) or 0)
+			H55_DefendUs(hero,player,H55_Academy,3,HasHeroSkill(hero,SKILL_MARCH_OF_THE_MACHINES) or 0)
+			H55_DefendUs(hero,player,H55_Sylvan,3,HasHeroSkill(hero,SKILL_FOREST_GUARD_EMBLEM) or 0)
+		end	
 		if (HasHeroSkill(hero,SKILL_GRAIL_VISION) ~= nil) then
 			local rndchoice = random(7);
 			local knowledge = GetHeroStat(hero,STAT_KNOWLEDGE);
@@ -5724,9 +5965,8 @@ function H55_DailyEvents(player)
 		end;			
 	end;
 	
-	H55_DailyEventsCounter[player] = H55_DailyEventsCounter[player]+1;
 	
-	if H55_IsThisAIPlayer(player) == 1 and H55_TownConvEnabled == 1 then		
+	if H55_IsThisAIPlayer(player) == 1 and H55_TownConvEnabled == 1 and H55_GameMode == 3 then		
 		if townsofrace < H55_MaxTownsPerFaction then
 			for i,town in alltowns do
 				if GetObjectOwner(town) == player and (H55_GetTownRace(town) ~= playerrace) and (H55_IsAnyHeroInTown(town,player) == 0) then
@@ -5846,9 +6086,12 @@ function H55_ContinuesEvent(player)
 
 	if heroes~=nil then	
 	
-		if contains(heroes,"Sandro") ~= nil and H55_Banshee["Sandro"] ~= 1 then
+		if contains(heroes,"Sandro") ~= nil and H55_Changed(H55_Banshee, "Sandro", 1) then
 			ChangeHeroStat("Sandro",STAT_LUCK,-1);
-			H55_Banshee["Sandro"] = 1;
+		end;
+		
+		if contains(heroes,"Zouleika") ~= nil and H55_Changed(H55_Banshee, "Zouleika", 1) then
+			ChangeHeroStat("Zouleika",STAT_LUCK,-1);
 		end;
 		-- if contains(heroes,"Shadwyn") ~= nil then
 			-- H55_AdjustStatSpec(player,"Shadwyn",4,7);
@@ -5927,26 +6170,82 @@ function H55_ContinuesEvent(player)
 
 
 		for _, hero in heroes do
+			
+			------------------------------------------------------------------------------------------------------------------------------------------------
+			H55_DEBUG = {180,"Avatars",player,hero};----------------------------------------------------------------------------------------------------------
+			------------------------------------------------------------------------------------------------------------------------------------------------
+
+			local t6 = H55_Creatures[H55_GetHeroRaceNum(hero)][6]
+			local army = H55_ArmyInfoSimple(hero)
+			for _, creature in army  do
+				if (not creature or creature == 0) then break end
+				local amount = GetHeroCreatures(hero, creature)
+				if creature == CREATURE_PHOENIX and not HasHeroSkill(hero, SKILL_MASTER_OF_CREATURES) and H55_Ultimates[SKILL_SUMMONING_MAGIC]["player"][player] then
+					ChangeHeroStat(hero, STAT_MANA_POINTS, -999)
+				end
+				if creature == CREATURE_SNOW_APE and not HasHeroSkill(hero, SKILL_RUNIC_ARMOR) and H55_Ultimates[SKILL_DARK_MAGIC]["player"][player] then
+					ChangeHeroStat(hero, STAT_MANA_POINTS, -999)
+				end
+				if creature == CREATURE_BLACK_KNIGHT and not HasHeroSkill(hero, SKILL_SHATTER_LIGHT_MAGIC) and H55_Ultimates[SKILL_LIGHT_MAGIC]["player"][player] then
+					ChangeHeroStat(hero, STAT_MANA_POINTS, -999)
+				end
+				if HasHeroSkill(hero, SKILL_MASTER_OF_CREATURES) and contains(t6, creature) then
+					RemoveHeroCreatures(hero, creature, amount)
+					AddHeroCreatures(hero, CREATURE_PHOENIX, amount)
+				end
+				if HasHeroSkill(hero, SKILL_RUNIC_ARMOR) and contains(t6, creature) then
+					RemoveHeroCreatures(hero, creature, amount)
+					AddHeroCreatures(hero, CREATURE_SNOW_APE, amount)
+				end
+				if HasHeroSkill(hero, SKILL_SHATTER_LIGHT_MAGIC) and contains(t6, creature) then
+					RemoveHeroCreatures(hero, creature, amount)
+					AddHeroCreatures(hero, CREATURE_BLACK_KNIGHT, amount)
+				end
+			end
+			
+			------------------------------------------------------------------------------------------------------------------------------------------------
+			H55_DEBUG = {181,"Curses",player,hero};----------------------------------------------------------------------------------------------------------
+			------------------------------------------------------------------------------------------------------------------------------------------------
+
+			local mana = 0.65 * GetHeroStat(hero, STAT_KNOWLEDGE) * (HasHeroSkill(hero, SKILL_INTELLIGENCE) and 1.0 or 1.2)
+
+			if not HasHeroSkill(hero, SKILL_DARK_RITUAL) then
+				if H55_Day <= H55_DarkRitualDay and GetHeroStat(hero, STAT_MANA_POINTS) > mana then
+					ChangeHeroStat(hero, STAT_MANA_POINTS, mana)
+				end
+			end
+
+			local curses = H55_Curses - GetHeroSkillMastery(hero, SKILL_SHATTER_DARK_MAGIC)
+
+			if curses > 0 and not HasArtefact(hero, ARTIFACT_HELM_OF_CHAOS) then
+				GiveArtefact(hero, ARTIFACT_HELM_OF_CHAOS)
+			elseif curses < 1 and HasArtefact(hero, ARTIFACT_HELM_OF_CHAOS) then
+				RemoveArtefact(hero, ARTIFACT_HELM_OF_CHAOS)
+			end
+	
+			local badboy = curses > 0 and not HasArtefact(hero, ARTIFACT_HELM_OF_CHAOS,1)
+
+			H55_ChangeHeroStatOn(hero, "Curses1", STAT_MORALE, badboy and -2 or 0)
+			H55_ChangeHeroStatOn(hero, "Curses2", STAT_LUCK, badboy and -2 or 0)
+
+			
+			if H55_RPGPotions == 1 then
+				if HasArtefact(hero,ARTIFACT_POTION02,1) and GetHeroStat(hero, STAT_MOVE_POINTS) <= 100 then
+					RemoveArtefact(hero,ARTIFACT_POTION02)
+					ChangeHeroStat(hero,STAT_MOVE_POINTS,3000);
+					H55_Display("/Text/Game/Scripts/Movepotion.txt",hero,player) 
+				end
+			end
 
 			------------------------------------------------------------------------------------------------------------------------------------------------
-			H55_DEBUG = {18,"BattleBonus",player,hero};------------------------------------------------------------------------------------------------------
+			H55_DEBUG = {182,"BattleBonus",player,hero};------------------------------------------------------------------------------------------------------
 			------------------------------------------------------------------------------------------------------------------------------------------------
 
 			-- H55_ChangeHeroStatOnSkill(hero, SKILL_SHATTER_SUMMONING_MAGIC, STAT_HEALTH, 5)
 			-- H55_ChangeHeroStatOnSkill(hero, SKILL_SHATTER_DESTRUCTIVE_MAGIC, STAT_INITIATIVE, 0.7)
 
-			if GetSavedCombatArmyHero(ci, 1) == hero then
-				if H55_Changed(H55_BattleBonusCI, hero, ci) then
-					for _, stat in { STAT_HEALTH, STAT_INITIATIVE, STAT_SPEED } do
-						if H55_BattleBonus[stat][hero] or 0 ~= 0 then
-							GiveHeroBattleBonus(hero, stat - 5, H55_BattleBonus[stat][hero])
-						end
-					end
-				end
-
-				if HasHeroSkill(hero, SKILL_ACADEMY_AWARD) and H55_Changed(H55_AwardCI, hero, ci) then
-					H55_GiveResources(player, random(5), 2, hero)
-				end
+			if GetSavedCombatArmyHero(ci,1)==hero and H55_Changed(H55_Battle, hero, ci) then
+				H55_AfterBattle(player, hero, ci)
 			end
 
 			if HasHeroSkill(hero, SKILL_DARK_RITUAL) and GetHeroStat(hero, STAT_MOVE_POINTS) == 0 and GetHeroStat(hero, STAT_MANA_POINTS) == GetHeroStat(hero, STAT_KNOWLEDGE) * 10 then
@@ -5964,38 +6263,42 @@ function H55_ContinuesEvent(player)
 
 			-- SetHeroCombatScript(hero, "/scripts/H55-Core.lua")
 			------------------------------------------------------------------------------------------------------------------------------------------------
-			H55_DEBUG = {18,"TownGain",player,hero};------------------------------------------------------------------------------------------------------
+			H55_DEBUG = {183,"TownGain",player,hero};------------------------------------------------------------------------------------------------------
 			------------------------------------------------------------------------------------------------------------------------------------------------
-
-			local uSchools = H55_GetUnusualSchools(hero)
 
 			for ix, school in H55_Schools do
 				local mastery = GetHeroSkillMastery(hero, school);
 
-				if mastery == 1 then
-					local spells = {
-						[SKILL_SUMMONING_MAGIC] = SPELL_WASP_SWARM,
-						[SKILL_DESTRUCTIVE_MAGIC] = SPELL_STONE_SPIKES,
-						[SKILL_DARK_MAGIC] = SPELL_WASP_SWARM,
-						[SKILL_LIGHT_MAGIC] = SPELL_MAGIC_ARROW,
-					}
-					TeachHeroSpell(hero, spells[school])
+				if mastery >= 1 and H55_Changed(H55_MagicOwners[school][1], hero, 1) then
+					TeachHeroSpell(hero, H55_Spells[school][1][1])
 				end
-
-				if mastery >= 1 and H55_Changed(H55_MagicOwners[mastery][school], hero, 1) then
-					H55_TeachHeroRandomSpell(hero, school, mastery)
+				if mastery >= 2 and H55_Changed(H55_MagicOwners[school][2], hero, 1) then
+					H55_TeachHeroRandomSpell(player, hero, school, 1)
+				end				
+				if mastery >= 3 and H55_Changed(H55_MagicOwners[school][3], hero, 1) then
+					H55_TeachHeroRandomSpell(player, hero, school, 2)
 				end
+			end
+			
+			if HasHeroSkill(hero,SKILL_WISDOM) and H55_Changed(H55_WisdomOwners, hero, 1) then
+				H55_TeachHeroRandomSpell(player, hero, H55_Schools[1+random(4)], 4)
+			end
+			if HasHeroSkill(hero,SKILL_EAGLE_EYE) and H55_Changed(H55_BrillianceOwners, hero, 1) then
+				H55_TeachHeroRandomSpell(player, hero, H55_Schools[1+random(4)], 5)
+				H55_TeachHeroRandomSpell(player, hero, H55_Schools[1+random(4)], 5)
+			end
 
-				if mastery >= 3 and HasHeroSkill(hero,SKILL_WISDOM) and H55_Changed(H55_WisdomOwners[school], hero, 1) then
-					H55_TeachHeroRandomSpell(hero, school, 4)
-				end
-
-				if mastery >= 3 and HasHeroSkill(hero,SKILL_SCHOLAR) and contains(uSchools, school) then
-					if GetHeroLevel(hero) > 15 and H55_Changed(H55_ScholarOwners[4][school], hero, 1) then
-						H55_TeachHeroRandomSpell(hero, school, 4)
+			if HasHeroSkill(hero,SKILL_SCHOLAR) and H55_GetHeroClass(hero) ~= "Chieftain" then
+				for _, school in H55_UnusualSchools[H55_GetHeroRaceNum(hero)] do
+					local mastery = GetHeroSkillMastery(hero, school)
+					if GetHeroLevel(hero) >= 20 and mastery >= 1 and H55_Changed(H55_ScholarOwners[school][1], hero, 1) then
+						H55_TeachHeroRandomSpell(player, hero, school, 3)
 					end
-					if GetHeroLevel(hero) > 20 and H55_Changed(H55_ScholarOwners[5][school], hero, 1) then
-						H55_TeachHeroRandomSpell(hero, school, 5)
+					if GetHeroLevel(hero) >= 25 and mastery >= 2 and H55_Changed(H55_ScholarOwners[school][2], hero, 1) then
+						H55_TeachHeroRandomSpell(player, hero, school, 4)
+					end
+					if GetHeroLevel(hero) >= 30 and mastery >= 3 and H55_Changed(H55_ScholarOwners[school][3], hero, 1) then
+						H55_TeachHeroRandomSpell(player, hero, school, 5)
 					end
 				end
 			end
@@ -6010,7 +6313,7 @@ function H55_ContinuesEvent(player)
 					end;
 				end;
 			end;	
-			if H55_GetHeroClass(hero) == "Shaman" or H55_GetHeroClass(hero) == "Witch" then
+			if H55_GetHeroClass(hero) == "Witch" then
 				if strongholdtowns ~= nil then
 					for i, town in strongholdtowns do
 						if (GetTownBuildingLevel(town,TOWN_BUILDING_SPECIAL_1) >= 1) and H55_HallTrialStudent[hero] ~= 1 and (H55_GetDistance(hero,town) <= 6) then
@@ -6042,6 +6345,9 @@ function H55_ContinuesEvent(player)
 							end;
 						end;						
 						if (GetTownBuildingLevel(town,TOWN_BUILDING_SPECIAL_4) == 1) and H55_PileSkullsStudent[town][hero] ~= 1 and (H55_GetDistance(hero,town) <= 6) then
+							if GetHeroLevel(hero) >= 10 then TeachHeroSpell(hero, SPELL_SUMMON_BOAT) end
+							if GetHeroLevel(hero) >= 15 then TeachHeroSpell(hero, SPELL_SUMMON_CREATURES) end
+							if GetHeroLevel(hero) >= 20 then TeachHeroSpell(hero, SPELL_TOWN_PORTAL) end
 							ChangeHeroStat(hero,STAT_KNOWLEDGE,1);						
 							H55_PileSkullsStudent[town][hero]=1;
 							if H55_IsThisAIPlayer(player) ~= 1 and H55_GetDistance(hero,town) ~= 0 then
@@ -6475,16 +6781,6 @@ function H55_ContinuesEvent(player)
 				if (HasArtefact(hero,ARTIFACT_POTION02,1) == nil) and (H55_MovePotionOwners[hero] == 1) then
 					H55_MovePotionOwners[hero] = 0;
 				end;
-
-				if (HasArtefact(hero,ARTIFACT_POTION03,1) ~= nil) and (H55_ResurrectPotionOwners[hero] ~= 1) then
-					H55_ResurrectPotionOwners[hero] = 1;
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then
-						ShowFlyingSign("/Text/Game/Scripts/RespotionEq.txt",hero,player,5)  sleep(2);
-					end;
-				end;
-				if (HasArtefact(hero,ARTIFACT_POTION03,1) == nil) and (H55_ResurrectPotionOwners[hero] == 1) then
-					H55_ResurrectPotionOwners[hero] = 0;
-				end;
 			end;
 
 			--Movepotion
@@ -6501,548 +6797,6 @@ function H55_ContinuesEvent(player)
 			H55_DEBUG = {20,"Spells",player,hero};--------------------------------------------------------------------------------------------------------
 			------------------------------------------------------------------------------------------------------------------------------------------------
 			
-			if contains(H55_Shamans,hero) ~= nil or contains(H55_Witches,hero) ~= nil then
-				local level = GetHeroLevel(hero);
-				if level >= 5 and H55_GetWalkerHutLevel(hero,player) == 1 then
-					if KnowHeroSpell(hero,H55_AdventureSpells[1]) == nil then
-						TeachHeroSpell(hero,(H55_AdventureSpells[1]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_AdventureSpellsText[1]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;	
-				if level >= 10 and H55_GetWalkerHutLevel(hero,player) == 1 then
-					if KnowHeroSpell(hero,H55_AdventureSpells[2]) == nil then
-						TeachHeroSpell(hero,(H55_AdventureSpells[2]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_AdventureSpellsText[2]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 15 and H55_GetWalkerHutLevel(hero,player) == 1 then
-					if KnowHeroSpell(hero,H55_AdventureSpells[3]) == nil then
-						TeachHeroSpell(hero,(H55_AdventureSpells[3]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_AdventureSpellsText[3]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 20 and H55_GetWalkerHutLevel(hero,player) == 1 then
-					if KnowHeroSpell(hero,H55_AdventureSpells[4]) == nil then
-						TeachHeroSpell(hero,(H55_AdventureSpells[4]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_AdventureSpellsText[4]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-			end;
-			
-			if hero == "Shiva" then
-				local level = GetHeroLevel(hero);
-				local pattern = H55_ShamanRnd[H55_ShamanPattern[hero]];
-				if level >= 2 then
-					local choice = pattern[1][1];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 4 then
-					local choice = pattern[1][2];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 6 then
-					local choice = pattern[1][3];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 8 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][1];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 11 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][2];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 13 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][3];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 16 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_LIGHT_MAGIC) >= 2) then
-					local choice = pattern[3][1];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 18 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_LIGHT_MAGIC) >= 2) then
-					local choice = pattern[3][2];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 21 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_LIGHT_MAGIC) == 3) then
-					local choice = pattern[4][1];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 23 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_LIGHT_MAGIC) >= 2) then
-					local choice = pattern[3][3];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 26 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_LIGHT_MAGIC) == 3) then
-					local choice = pattern[4][2];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 28 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_LIGHT_MAGIC) == 3) then
-					local choice = pattern[4][3];
-					if KnowHeroSpell(hero,(H55_ShamanLightSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanLightSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanLightSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-			end;
-			if hero == "Mokka" or hero == "Hero7" then
-				local level = GetHeroLevel(hero);
-				local pattern = H55_ShamanRnd[H55_ShamanPattern[hero]];
-				if level >= 2 then
-					local choice = pattern[1][1];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 4 then
-					local choice = pattern[1][2];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 6 then
-					local choice = pattern[1][3];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 8 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][1];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 11 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][2];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 13 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][3];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 16 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_SUMMONING_MAGIC) >= 2) then
-					local choice = pattern[3][1];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 18 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_SUMMONING_MAGIC) >= 2) then
-					local choice = pattern[3][2];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 21 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_SUMMONING_MAGIC) == 3) then
-					local choice = pattern[4][1];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 23 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_SUMMONING_MAGIC) >= 2) then
-					local choice = pattern[3][3];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 26 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_SUMMONING_MAGIC) == 3) then
-					local choice = pattern[4][2];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 28 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_SUMMONING_MAGIC) == 3) then
-					local choice = pattern[4][3];
-					if KnowHeroSpell(hero,(H55_ShamanSummoningSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanSummoningSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanSummoningSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;			
-			end;
-			if hero == "Zouleika" or hero == "Erika" then
-				local level = GetHeroLevel(hero);
-				local pattern = H55_ShamanRnd[H55_ShamanPattern[hero]];
-				if level >= 2 then
-					local choice = pattern[1][1];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 4 then
-					local choice = pattern[1][2];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 6 then
-					local choice = pattern[1][3];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 8 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][1];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 11 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][2];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 13 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][3];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 16 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_DESTRUCTIVE_MAGIC) >= 2) then
-					local choice = pattern[3][1];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 18 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_DESTRUCTIVE_MAGIC) >= 2) then
-					local choice = pattern[3][2];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 21 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_DESTRUCTIVE_MAGIC) == 3) then
-					local choice = pattern[4][1];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 23 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_DESTRUCTIVE_MAGIC) >= 2) then
-					local choice = pattern[3][3];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 26 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_DESTRUCTIVE_MAGIC) == 3) then
-					local choice = pattern[4][2];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 28 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_DESTRUCTIVE_MAGIC) == 3) then
-					local choice = pattern[4][3];
-					if KnowHeroSpell(hero,(H55_ShamanDestructiveSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDestructiveSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDestructiveSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-			end;
-			if hero == "Hero2" or hero == "Hero3" then
-				local level = GetHeroLevel(hero);
-				local pattern = H55_ShamanRnd[H55_ShamanPattern[hero]];
-				if level >= 2 then
-					local choice = pattern[1][1];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 4 then
-					local choice = pattern[1][2];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 6 then
-					local choice = pattern[1][3];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[1][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[1][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[1][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 8 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][1];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 11 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][2];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 13 and H55_GetHallTrialLevel(hero,player) >= 1 then
-					local choice = pattern[2][3];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[2][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[2][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[2][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 16 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_DARK_MAGIC) >= 2) then
-					local choice = pattern[3][1];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 18 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_DARK_MAGIC) >= 2) then
-					local choice = pattern[3][2];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 21 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_DARK_MAGIC) == 3) then
-					local choice = pattern[4][1];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 23 and H55_GetHallTrialLevel(hero,player) >= 2 and (GetHeroSkillMastery(hero,SKILL_DARK_MAGIC) >= 2) then
-					local choice = pattern[3][3];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[3][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[3][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[3][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 26 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_DARK_MAGIC) == 3) then
-					local choice = pattern[4][2];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-				if level >= 28 and H55_GetHallTrialLevel(hero,player) == 3 and (GetHeroSkillMastery(hero,SKILL_DARK_MAGIC) == 3) then
-					local choice = pattern[4][3];
-					if KnowHeroSpell(hero,(H55_ShamanDarkSpells[4][choice])) == nil then
-						TeachHeroSpell(hero,(H55_ShamanDarkSpells[4][choice]));
-						if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then 
-							ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_ShamanDarkSpellsText[4][choice]},hero,player,7); 
-							sleep(4);
-						end;
-					end;
-				end;
-			end;
-			if HasHeroSkill(hero,SKILL_WAR_MACHINES) and H55_Changed(H55_FirstAid, hero, 1) then
-				GiveHeroWarMachine(hero, WAR_MACHINE_FIRST_AID_TENT)
-			end
-			if HasHeroSkill(hero,SKILL_WILDFIRE) and H55_Changed(H55_AmmoCart, hero, 1) then
-				GiveHeroWarMachine(hero, WAR_MACHINE_AMMO_CART)
-			end
 			-- GiveExp(hero, 10000)
 			-- sleep(1000000)
 
@@ -7061,7 +6815,7 @@ function H55_ContinuesEvent(player)
 					end
 				end
 
-				if HasHeroSkill(hero,SKILL_MASTER_OF_FIRE) then
+				if HasHeroSkill(hero,SKILL_SET_AFIRE) then
 					TeachHeroSpell(hero,SPELL_CONJURE_PHOENIX);
 				end
 				if HasHeroSkill(hero,SKILL_TWILIGHT) then
@@ -7069,43 +6823,39 @@ function H55_ContinuesEvent(player)
 				end
 				if (HasHeroSkill(hero,SKILL_MASTER_OF_ICE) ~= nil) then
 					TeachHeroSpell(hero,SPELL_ICE_BOLT);
-					TeachHeroSpell(hero,SPELL_FROST_RING);
 				end;
 				if (HasHeroSkill(hero,SKILL_MASTER_OF_FIRE) ~= nil) then
 					TeachHeroSpell(hero,SPELL_FIREWALL);
-					TeachHeroSpell(hero,SPELL_FIREBALL);
 				end;
 				if (HasHeroSkill(hero,SKILL_MASTER_OF_LIGHTNINGS) ~= nil) then
 					TeachHeroSpell(hero,SPELL_LIGHTNING_BOLT);
-					TeachHeroSpell(hero,SPELL_CHAIN_LIGHTNING);
+					-- TeachHeroSpell(hero,SPELL_CHAIN_LIGHTNING);
+				end;				
+				if (HasHeroSkill(hero,SKILL_DEADLY_COLD) ~= nil) then
+					TeachHeroSpell(hero,SPELL_FROST_RING);
 				end;
+
+
 				if (HasHeroSkill(hero,SKILL_MASTER_OF_BLESSING) ~= nil) and KnowHeroSpell(hero,H55_SpellsL1[7]) == nil then
 					TeachHeroSpell(hero,H55_SpellsL1[7]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL1[7]},hero,player,7) sleep(4) end;
 				end;
 				if (HasHeroSkill(hero,SKILL_MASTER_OF_ABJURATION) ~= nil) and KnowHeroSpell(hero,H55_SpellsL1[6]) == nil then
 					TeachHeroSpell(hero,H55_SpellsL1[6]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL1[6]},hero,player,7) sleep(4) end;
 				end;
 				if (HasHeroSkill(hero,SKILL_MASTER_OF_WRATH) ~= nil) and KnowHeroSpell(hero,H55_SpellsL1[8]) == nil then
 					TeachHeroSpell(hero,H55_SpellsL1[8]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL1[8]},hero,player,7) sleep(4) end;
 				end;
 				if (HasHeroSkill(hero,SKILL_MASTER_OF_CURSES) ~= nil) and KnowHeroSpell(hero,H55_SpellsL1[2]) == nil then
 					TeachHeroSpell(hero,H55_SpellsL1[2]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL1[2]},hero,player,7) sleep(4) end;
 				end;
 				if (HasHeroSkill(hero,SKILL_MASTER_OF_SICKNESS) ~= nil) and KnowHeroSpell(hero,H55_SpellsL2[2]) == nil then
 					TeachHeroSpell(hero,H55_SpellsL2[2]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL2[2]},hero,player,7) sleep(4) end;
 				end;
 				if (HasHeroSkill(hero,SKILL_MASTER_OF_MIND) ~= nil) and KnowHeroSpell(hero,H55_SpellsL1[1]) == nil then
 					TeachHeroSpell(hero,H55_SpellsL1[1]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL1[1]},hero,player,7) sleep(4) end;
 				end;
 				if (HasHeroSkill(hero,SKILL_MASTER_OF_QUAKES) ~= nil) and KnowHeroSpell(hero,H55_SpellsL2[9]) == nil then
 					TeachHeroSpell(hero,H55_SpellsL2[9]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL2[9]},hero,player,7) sleep(4) end;
 				end;
 				-- if (HasHeroSkill(hero,SKILL_MASTER_OF_ANIMATION) ~= nil) and (KnowHeroSpell(hero,H55_SpellsL2[11]) == nil) then
 				-- 	TeachHeroSpell(hero,H55_SpellsL2[11]);
@@ -7117,26 +6867,15 @@ function H55_ContinuesEvent(player)
 				-- end;
 				if (HasHeroSkill(hero,SKILL_FIRE_AFFINITY) ~= nil) and KnowHeroSpell(hero,H55_SpellsL1[10]) == nil then
 					TeachHeroSpell(hero,H55_SpellsL1[10]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL1[10]},hero,player,7) sleep(4) end;
 				end;
 				if (HasHeroSkill(hero,SKILL_DEAD_LUCK) ~= nil) and KnowHeroSpell(hero,H55_SpellsL3[3]) == nil then
 					TeachHeroSpell(hero,H55_SpellsL3[3]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL3[3]},hero,player,7) sleep(4) end;
 				end;
 				if (HasHeroSkill(hero,SKILL_MASTER_OF_SECRETS) ~= nil) and KnowHeroSpell(hero,H55_SpellsL3[1]) == nil then
 					TeachHeroSpell(hero,H55_SpellsL3[1]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL3[1]},hero,player,7) sleep(4) end;
-				end;
-				if (HasHeroSkill(hero,SKILL_DEADLY_COLD) ~= nil) and KnowHeroSpell(hero,H55_SpellsL3[5]) == nil then
-					TeachHeroSpell(hero,H55_SpellsL3[5]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL3[5]},hero,player,7) sleep(4) end;
 				end;
 				if (HasHeroSkill(hero,SKILL_WEAKENING_STRIKE) ~= nil) and H55_GetHeroClass(hero) ~= "Chieftain" then
 					TeachHeroSpell(hero,SPELL_WEAKNESS);
-				end;
-				if (HasHeroSkill(hero,SKILL_ETERNAL_LIGHT) ~= nil) and KnowHeroSpell(hero,H55_SpellsL2[7]) == nil then
-					TeachHeroSpell(hero,H55_SpellsL2[7]);
-					if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign({"/Text/Game/Scripts/Learnspell.txt";name=H55_SpellsTextL2[7]},hero,player,7) sleep(4) end;
 				end;
 				if (HasHeroSkill(hero,SKILL_CUNNING_OF_THE_WOODS) ~= nil) and KnowHeroSpell(hero,H55_SpellsL2[3]) == nil then
 					TeachHeroSpell(hero,SPELL_MASS_DISRUPTING_RAY);
@@ -7218,10 +6957,10 @@ function H55_ContinuesEvent(player)
 
 			-- Gifts
 
-			if HasHeroSkill(hero,PERK_FIRST_AID) ~= nil and H55_LastAidOwners[hero] ~= 1 and HasArtefact(hero,ARTIFACT_MEDICAL03,0) == nil then
-				GiveArtefact(hero,ARTIFACT_MEDICAL03);
-				H55_LastAidOwners[hero] = 1;
-			end;
+			-- if HasHeroSkill(hero,PERK_FIRST_AID) ~= nil and H55_LastAidOwners[hero] ~= 1 and HasArtefact(hero,ARTIFACT_MEDICAL03,0) == nil then
+			-- 	GiveArtefact(hero,ARTIFACT_MEDICAL03);
+			-- 	H55_LastAidOwners[hero] = 1;
+			-- end;
 			if HasArtefact(hero,ARTIFACT_UPG_HM2,1) ~= nil and H55_HeavenlyOwners[hero] ~= 1 then
 				local experience  = GetHeroLevel(hero);
 				local amount = experience*experience*experience*experience;
@@ -7230,34 +6969,18 @@ function H55_ContinuesEvent(player)
 			end;
 			if H55_RPGPotions == 1 and H55_IsThisAIPlayer(player) ~= 1 and H55_StartPotionOwners[hero] ~= 1 and H55_StartPotionGlobalOwners[player] ~= 1 then
 				GiveArtefact(hero,ARTIFACT_POTION01);
+				GiveArtefact(hero,ARTIFACT_POTION02);
+				GiveArtefact(hero,ARTIFACT_POTION03);
 				H55_StartPotionOwners[hero] = 1;
 				H55_StartPotionGlobalOwners[player] = 1;
 			end;
-			-- if H55_GameMode == 2 and H55_IsThisAIPlayer(player) == 1 and H55_ShacklesOwners[hero] ~= 1 then
-				-- GiveArtefact(hero,ARTIFACT_UPG_AR2,1);
-				-- H55_ShacklesOwners[hero] = 1;
-			-- end;
+
+
 			if H55_GameMode == 3 and H55_IsThisAIPlayer(player) == 1 and H55_UnlootableAIOwners[hero] ~= 1 then
 				SetHeroLootable(hero,nil);
 				H55_UnlootableAIOwners[hero] = 1;
 				print(hero," cannot be looted and will fight to the death!");
 			end;
-
-			-- if H55_IsHeroInAnyTown(hero) == 1 then
-				-- if HasArtefact(hero,ARTIFACT_SENTINEL,1) ~= nil  and H55_SentinelOwners[hero] ~= 1 then
-					-- ChangeHeroStat(hero,STAT_DEFENCE,12);
-					-- H55_SentinelOwners[hero] = 1;
-				-- end;
-				-- if HasArtefact(hero,ARTIFACT_SENTINEL,1) == nil and H55_SentinelOwners[hero] == 1 then
-					-- ChangeHeroStat(hero,STAT_DEFENCE,-12);
-					-- H55_SentinelOwners[hero] = 0;
-				-- end;
-			-- else
-				-- if H55_SentinelOwners[hero] == 1 then
-					-- ChangeHeroStat(hero,STAT_DEFENCE,-12);
-					-- H55_SentinelOwners[hero] = 0;
-				-- end;
-			-- end;
 
 			if HasHeroSkill(hero,SKILL_MENTORING) ~= nil and H55_MentoringOwners[hero] ~= 1 then
 				H55_MentoringOwners[hero] = 1;
@@ -7279,317 +7002,7 @@ function H55_ContinuesEvent(player)
 				ChangeHeroStat(hero,STAT_DEFENCE,-2);			
 				H55_BarbarianMentoringOwners[hero] = 0;
 			end;
-			-- if H55_GetHeroClass(hero) == "Ranger" and HasHeroSkill(hero,SKILL_DESTRUCTIVE_MAGIC) ~= nil and H55_DestructivePenaltyReceived[hero] ~= 1 then
-				-- ChangeHeroStat(hero,STAT_MORALE,-1);
-				-- H55_DestructivePenaltyReceived[hero] = 1;
-			-- end;
-			-- if H55_GetHeroClass(hero) == "Ranger" and HasHeroSkill(hero,SKILL_DESTRUCTIVE_MAGIC) == nil and H55_DestructivePenaltyReceived[hero] == 1 then
-				-- ChangeHeroStat(hero,STAT_MORALE,1);
-				-- H55_DestructivePenaltyReceived[hero] = 0;
-			-- end;
-			-- if (HasHeroSkill(hero,SKILL_IMBUE_BALLISTA) ~= nil) and (H55_ImbueBallistaOwners[hero] ~= 1) then
-				-- H55_ImbueBallistaOwners[hero] = 1;
-				-- GiveHeroSkill(hero,SKILL_DESTRUCTIVE_MAGIC);
-			-- end;
-			-- if (HasHeroSkill(hero,SKILL_IMBUE_BALLISTA) == nil) and (H55_ImbueBallistaOwners[hero] == 1) then
-				-- H55_ImbueBallistaOwners[hero] = 0;
-			-- end;	
-			if (HasHeroSkill(hero,SKILL_DEMONIC_FLAME) ~= nil) and (H55_DemonicFlameOwners[hero] ~= 1) then
-				H55_DemonicFlameOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_DEFENCE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Defense.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_DEMONIC_FLAME) == nil) and (H55_DemonicFlameOwners[hero] == 1) then
-				H55_DemonicFlameOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_DEFENCE,-2);
-			end;	
-	
-			if (HasHeroSkill(hero,SKILL_BODYBUILDING) ~= nil) and (GetHeroLevel(hero) >= 10) and (H55_BodybuildingOwners[hero] ~= 1) then
-				H55_BodybuildingOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_DEFENCE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Defense.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_BODYBUILDING) == nil) and (H55_BodybuildingOwners[hero] == 1) then
-				H55_BodybuildingOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_DEFENCE,-2);
-			end; 		
-			-- if (HasHeroSkill(hero,SKILL_CASTER_CERTIFICATE) ~= nil) and (GetHeroLevel(hero) >= 20) and (H55_CertificateOwners[hero] ~= 1) then
-				-- H55_CertificateOwners[hero] = 1;
-				-- ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				-- if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			-- end;
-			-- if (HasHeroSkill(hero,SKILL_CASTER_CERTIFICATE) == nil) and (H55_CertificateOwners[hero] == 1) then
-				-- H55_CertificateOwners[hero] = 0;
-				-- ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			-- end;
-			-- if (HasHeroSkill(hero,SKILL_INSIGHTS) ~= nil) and (GetHeroLevel(hero) >= 20) and (H55_BrillianceOwners[hero] ~= 1) then
-				-- H55_BrillianceOwners[hero] = 1;
-				-- ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				-- if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			-- end;
-			-- if (HasHeroSkill(hero,SKILL_INSIGHTS) == nil) and (H55_BrillianceOwners[hero] == 1) then
-				-- H55_BrillianceOwners[hero] = 0;
-				-- ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			-- end; 	
-			if (HasHeroSkill(hero,SKILL_WEAKEN_DARK) ~= nil) and (H55_WeakenDarkOwners[hero] ~= 1) then
-				H55_WeakenDarkOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Knowledge.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_WEAKEN_DARK) == nil) and (H55_WeakenDarkOwners[hero] == 1) then
-				H55_WeakenDarkOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-			end; 	
-			if (HasHeroSkill(hero,SKILL_WEAKEN_LIGHT) ~= nil) and (H55_WeakenLightOwners[hero] ~= 1) then
-				H55_WeakenLightOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Knowledge.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_WEAKEN_LIGHT) == nil) and (H55_WeakenLightOwners[hero] == 1) then
-				H55_WeakenLightOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-			end; 
-			if (HasHeroSkill(hero,SKILL_WEAKEN_SUMMONING) ~= nil) and (H55_WeakenSummoningOwners[hero] ~= 1) then
-				H55_WeakenSummoningOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Knowledge.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_WEAKEN_SUMMONING) == nil) and (H55_WeakenSummoningOwners[hero] == 1) then
-				H55_WeakenSummoningOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-			end; 	
-			if (HasHeroSkill(hero,SKILL_WEAKEN_DESTRUCTIVE) ~= nil) and (H55_WeakenDestructiveOwners[hero] ~= 1) then
-				H55_WeakenDestructiveOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Knowledge.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_WEAKEN_DESTRUCTIVE) == nil) and (H55_WeakenDestructiveOwners[hero] == 1) then
-				H55_WeakenDestructiveOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-			end; 
-			if (HasHeroSkill(hero,SKILL_DETAIN_DARK) ~= nil) and (H55_DetainDarkOwners[hero] ~= 1) then
-				H55_DetainDarkOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_DETAIN_DARK) == nil) and (H55_DetainDarkOwners[hero] == 1) then
-				H55_DetainDarkOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			end; 	
-			if (HasHeroSkill(hero,SKILL_DETAIN_LIGHT) ~= nil) and (H55_DetainLightOwners[hero] ~= 1) then
-				H55_DetainLightOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_DETAIN_LIGHT) == nil) and (H55_DetainLightOwners[hero] == 1) then
-				H55_DetainLightOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			end; 
-			if (HasHeroSkill(hero,SKILL_DETAIN_SUMMONING) ~= nil) and (H55_DetainSummoningOwners[hero] ~= 1) then
-				H55_DetainSummoningOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_DETAIN_SUMMONING) == nil) and (H55_DetainSummoningOwners[hero] == 1) then
-				H55_DetainSummoningOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			end; 	
-			if (HasHeroSkill(hero,SKILL_DETAIN_DESTRUCTIVE) ~= nil) and (H55_DetainDestructiveOwners[hero] ~= 1) then
-				H55_DetainDestructiveOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_DETAIN_DESTRUCTIVE) == nil) and (H55_DetainDestructiveOwners[hero] == 1) then
-				H55_DetainDestructiveOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			end;			
 
-
-			if GetHeroLevel(hero) >= 30 then
-				H55_ChangeHeroStatOnSkill(hero, SKILL_TWILIGHT, STAT_SPELL_POWER, 3)
-			end
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_SEAL_OF_PROTECTION, STAT_DEFENCE, 2)
-
-			if GetHeroLevel(hero) >= 30 then
-				H55_ChangeHeroStatOnSkill(hero, SKILL_PARIAH, STAT_SPELL_POWER, 5)
-			end
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_CHILLING_BONES, STAT_DEFENCE, (H55_GetHeroRace(hero) == H55_Necropolis) and 3 or 7)
-
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_DEMONIC_RETALIATION, STAT_ATTACK, 5)
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_DARK_REVELATION, STAT_KNOWLEDGE, 2)
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_BARBARIAN_DARK_REVELATION, STAT_ATTACK, 1)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_BARBARIAN_DARK_REVELATION, STAT_DEFENCE, 1)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_BARBARIAN_DARK_REVELATION, STAT_SPELL_POWER, 1)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_BARBARIAN_DARK_REVELATION, STAT_KNOWLEDGE, 1)
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_ELITE_CASTERS, STAT_KNOWLEDGE, 2)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_BARBARIAN_ELITE_CASTERS, STAT_KNOWLEDGE, 2)
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_CUNNING_OF_THE_WOODS, STAT_KNOWLEDGE, 2)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_FOREST_RAGE, STAT_LUCK, 1)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_DEATH_TO_NONEXISTENT, STAT_ATTACK, 4)
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_HOLY_CHARGE, STAT_ATTACK, 2)
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_POWER_OF_HASTE, STAT_KNOWLEDGE, 2)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_POWER_OF_STONE, STAT_SPELL_POWER, 4)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_WEAKENING_STRIKE, STAT_SPELL_POWER, 4)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_ELVEN_LUCK, STAT_LUCK, 2)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_ELVEN_LUCK, STAT_INITIATIVE, HasHeroSkill(hero, SKILL_ABSOLUTE_LUCK) and 0 or 1)
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_DEMONIC_FIRE, STAT_SPELL_POWER, 4)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_EMPOWERED_SPELLS, STAT_KNOWLEDGE, 3)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_ELEMENTAL_BALANCE, STAT_SPELL_POWER, 4)
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_MASTER_OF_QUAKES, STAT_KNOWLEDGE, 2)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_COUNTERSPELL, STAT_KNOWLEDGE, 7)
-
-
-
-			-- if (HasHeroSkill(hero,SKILL_OFFENSIVE_FORMATION) ~= nil) and (H55_OffensiveFormationOwners[hero] ~= 1) and (H55_GetHeroRaceNum(hero) ~= 7) then
-				-- H55_OffensiveFormationOwners[hero] = 1;
-				-- ChangeHeroStat(hero,STAT_ATTACK,4);
-				-- if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Attack.txt",hero,player,5) end;
-			-- end;
-			-- if (HasHeroSkill(hero,SKILL_OFFENSIVE_FORMATION) == nil) and (H55_OffensiveFormationOwners[hero] == 1) and (H55_GetHeroRaceNum(hero) ~= 7) then
-				-- H55_OffensiveFormationOwners[hero] = 0;
-				-- ChangeHeroStat(hero,STAT_ATTACK,-4);
-			-- end;			
-			-- if (HasHeroSkill(hero,SKILL_DEFENSIVE_FORMATION) ~= nil) and (H55_DefensiveFormationOwners[hero] ~= 1) and (H55_GetHeroRaceNum(hero) ~= 7) then
-				-- H55_DefensiveFormationOwners[hero] = 1;
-				-- ChangeHeroStat(hero,STAT_DEFENCE,4);
-				-- if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Defense.txt",hero,player,5) end;
-			-- end;
-			-- if (HasHeroSkill(hero,SKILL_DEFENSIVE_FORMATION) == nil) and (H55_DefensiveFormationOwners[hero] == 1) and (H55_GetHeroRaceNum(hero) ~= 7) then
-				-- H55_DefensiveFormationOwners[hero] = 0;
-				-- ChangeHeroStat(hero,STAT_DEFENCE,-4);
-			-- end;
-			if (HasHeroSkill(hero,SKILL_RETRIBUTION) ~= nil) and (H55_RetributionOwners[hero] ~= 1) and (H55_GetHeroRaceNum(hero) == 4) then
-				H55_RetributionOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_ATTACK,7);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Attack.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_RETRIBUTION) == nil) and (H55_RetributionOwners[hero] == 1) and (H55_GetHeroRaceNum(hero) == 4) then
-				H55_RetributionOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_ATTACK,-7);
-			end;	
-			if (HasHeroSkill(hero,SKILL_ELEMENTAL_OVERKILL) ~= nil) and (H55_OverkillOwners[hero] ~= 1) then
-				H55_OverkillOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_ELEMENTAL_OVERKILL) == nil) and (H55_OverkillOwners[hero] == 1) then
-				H55_OverkillOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			end;
-			-- if (HasHeroSkill(hero,SKILL_ELEMENTAL_OVERKILL) ~= nil) and (HasHeroSkill(hero,SKILL_SUMMONING_MAGIC) ~= nil) and (H55_OverkillSumOwners[hero] ~= 1) then
-				-- H55_OverkillSumOwners[hero] = 1;
-				-- ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				-- if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			-- end;
-			-- if (HasHeroSkill(hero,SKILL_ELEMENTAL_OVERKILL) == nil) and (H55_OverkillSumOwners[hero] == 1) then
-				-- H55_OverkillSumOwners[hero] = 0;
-				-- ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			-- end;
-			-- if (HasHeroSkill(hero,SKILL_SUMMONING_MAGIC) == nil) and (H55_OverkillSumOwners[hero] == 1) then
-				-- H55_OverkillSumOwners[hero] = 0;
-				-- ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			-- end;
-			if (H55_IsThisAIPlayer(player) ~= 1) and (HasHeroSkill(hero,SKILL_VOICE) ~= nil) and (HasHeroSkill(hero,SKILL_EMPATHY) ~= nil) and (H55_EmpathyOwners[hero] ~= 1) then
-				H55_EmpathyOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_MORALE,-2);
-			end;
-			if (H55_IsThisAIPlayer(player) ~= 1) and (HasHeroSkill(hero,SKILL_EMPATHY) == nil) and (H55_EmpathyOwners[hero] == 1) then
-				H55_EmpathyOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_MORALE,2);
-			end;
-			if (H55_IsThisAIPlayer(player) ~= 1) and (HasHeroSkill(hero,SKILL_VOICE) == nil) and (H55_EmpathyOwners[hero] == 1) then
-				H55_EmpathyOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_MORALE,2);
-			end;		
-			if (HasHeroSkill(hero,SKILL_MASTER_OF_SECRETS) ~= nil) and (GetHeroLevel(hero) >= 20) and (H55_ArcaneExaltationOwners[hero] ~= 1) then
-				H55_ArcaneExaltationOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,6);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_MASTER_OF_SECRETS) == nil) and (H55_ArcaneExaltationOwners[hero] == 1) then
-				H55_ArcaneExaltationOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_SPELL_POWER,-6);
-			end;
-			if (HasHeroSkill(hero,SKILL_SECRETS_OF_DESTRUCTION) ~= nil) and (GetHeroLevel(hero) >= 20) and (H55_SecretsDestructionOwners[hero] ~= 1) then
-				H55_SecretsDestructionOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Knowledge.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_SECRETS_OF_DESTRUCTION) == nil) and (H55_SecretsDestructionOwners[hero] == 1) then
-				H55_SecretsDestructionOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-			end;
-			-- if (HasHeroSkill(hero,SKILL_DEADLY_COLD) ~= nil) and (GetHeroLevel(hero) >= 20) and (H55_ColdDeathOwners[hero] ~= 1) then
-				-- H55_ColdDeathOwners[hero] = 1;
-				-- ChangeHeroStat(hero,STAT_SPELL_POWER,2);
-				-- if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Spellpower.txt",hero,player,5) end;
-			-- end;
-			-- if (HasHeroSkill(hero,SKILL_DEADLY_COLD) == nil) and (H55_ColdDeathOwners[hero] == 1) then
-				-- H55_ColdDeathOwners[hero] = 0;
-				-- ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-			-- end;						
-			if (HasHeroSkill(hero,SKILL_TRIPLE_CATAPULT) ~= nil) and (HasHeroWarMachine(hero,4) ~= nil) and (H55_TripleCatapultOwners[hero] ~= 1) then
-				H55_TripleCatapultOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_ATTACK,2);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Attack.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_TRIPLE_CATAPULT) == nil) and (H55_TripleCatapultOwners[hero] == 1) then
-				H55_TripleCatapultOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_ATTACK,-2);
-			end;
-			if (HasHeroWarMachine(hero,4) == nil) and (H55_TripleCatapultOwners[hero] == 1) then
-				H55_TripleCatapultOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_ATTACK,-2);
-			end;			
-			if (HasHeroSkill(hero,SKILL_TRIPLE_CATAPULT) ~= nil) and GetHeroSkillMastery(hero,SKILL_WAR_MACHINES) == 3 and (HasHeroWarMachine(hero,4) ~= nil) and (H55_TripleCatapultExpertOwners[hero] ~= 1) then
-				H55_TripleCatapultExpertOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_ATTACK,1);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Attack.txt",hero,player,5) end;
-			end;
-			if (HasHeroSkill(hero,SKILL_TRIPLE_CATAPULT) == nil) and (H55_TripleCatapultExpertOwners[hero] == 1) then
-				H55_TripleCatapultExpertOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_ATTACK,-1);
-			end;
-			if GetHeroSkillMastery(hero,SKILL_WAR_MACHINES) < 3 and (H55_TripleCatapultExpertOwners[hero] == 1) then
-				H55_TripleCatapultExpertOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_ATTACK,-1);
-			end;
-			if (HasHeroWarMachine(hero,4) == nil) and (H55_TripleCatapultExpertOwners[hero] == 1) then
-				H55_TripleCatapultExpertOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_ATTACK,-1);
-			end;
-			if (HasHeroSkill(hero,SKILL_TRIPLE_CATAPULT) ~= nil) and (HasHeroWarMachine(hero,4) ~= nil) and (HasArtefact(hero,ARTIFACT_RING_OF_MACHINE_AFFINITY,1) ~= nil) and (H55_TripleCatapultRingOwners[hero] ~= 1) then
-				H55_TripleCatapultRingOwners[hero] = 1;
-				ChangeHeroStat(hero,STAT_ATTACK,1);
-				if H55_IsThisAIPlayer(player) ~= 1 and H55_IsHeroInAnyTown(hero) == 0 then ShowFlyingSign("/Text/Game/Scripts/Attack.txt",hero,player,5) end;
-			end;		
-			if (HasHeroSkill(hero,SKILL_TRIPLE_CATAPULT) == nil) and (H55_TripleCatapultRingOwners[hero] == 1) then
-				H55_TripleCatapultRingOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_ATTACK,-1);
-			end;
-			if (HasArtefact(hero,ARTIFACT_RING_OF_MACHINE_AFFINITY,1) == nil) and (H55_TripleCatapultRingOwners[hero] == 1) then
-				H55_TripleCatapultRingOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_ATTACK,-1);
-			end;			
-			if (HasHeroWarMachine(hero,4) == nil) and (H55_TripleCatapultRingOwners[hero] == 1) then
-				H55_TripleCatapultRingOwners[hero] = 0;
-				ChangeHeroStat(hero,STAT_ATTACK,-1);
-			end;
-			if (HasHeroSkill(hero,SKILL_STUDENT_AWARD) ~= nil) and (H55_StudentAwardOwners[hero] ~= 1) then
-				H55_StudentAwardOwners[hero] = 1;
-				GiveExp(hero,(GetHeroLevel(hero)*250));
-			end;
 
 			------------------------------------------------------------------------------------------------------------------------------------------------
 			H55_DEBUG = {22,"Network Skills",player,hero};-----------------------------------------------------------------------------------------------
@@ -7607,135 +7020,87 @@ function H55_ContinuesEvent(player)
 			------------------------------------------------------------------------------------------------------------------------------------------------
 			H55_DEBUG = {23,"BaseSkills",player,hero};----------------------------------------------------------------------------------------------------
 			------------------------------------------------------------------------------------------------------------------------------------------------
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_INVOCATION, STAT_DEFENCE, 3)
-
-			H55_ChangeHeroStatOnSkill(hero, SKILL_MIGHT_OVER_MAGIC, STAT_ATTACK, GetHeroStat(hero, STAT_SPELL_POWER)/2)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_POWER_OF_HASTE, STAT_ATTACK, 6)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_POWER_OF_STONE, STAT_DEFENCE, 6)
-
-			if H55_GetHeroClass(hero) == "Chieftain" and HasHeroSkill(hero, SKILL_SCHOLAR) then
-				GiveHeroSkill(hero, SKILL_POWER_OF_BLOOD)
+			
+			if H55_Changed(H55_AngelWings, hero, HasArtefact(hero,ARTIFACT_ANGEL_WINGS,1)) and HasArtefact(hero,ARTIFACT_ANGEL_WINGS,1) then 
+				ChangeHeroStat(hero, STAT_MOVE_POINTS, HasHeroSkill(hero,SKILL_CORRUPT_DESTRUCTIVE) and -1000 or -2000)
 			end
 
-			H55_ChangeHeroStatOnSkill(hero, SKILL_LEARNING, STAT_DEFENCE, 1)
-			H55_ChangeHeroStatOnSkill(hero, SKILL_BARBARIAN_LEARNING, STAT_DEFENCE, 1)
+			if HasHeroSkill(hero, SKILL_FIRST_AID) and H55_Changed(H55_FirstAid, hero, 1) then
+				GiveHeroWarMachine(hero, WAR_MACHINE_FIRST_AID_TENT)
+			end
 
-			H55_ChangeHeroStatOnSkill(hero, SKILL_NECROMANCY, STAT_MORALE, 1)
+			if GetHeroLevel(hero) >= 30 then
+				H55_ChangeHeroStatOnSkill(hero, SKILL_PARIAH, STAT_SPELL_POWER, 5)
+			end
+			H55_ChangeHeroStatOnSkill(hero, SKILL_SHATTER_SUMMONING_MAGIC, STAT_DEFENCE, 3)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_SEAL_OF_PROTECTION, STAT_DEFENCE, GetHeroStat(hero, STAT_DEFENCE) * 0.18)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_ABSOLUTE_LUCK, STAT_ATTACK, GetHeroStat(hero, STAT_LUCK) < 5 and -3.34 or 0)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_ABSOLUTE_PROTECTION, STAT_DEFENCE, -2)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_WEAKEN_SUMMONING, STAT_ATTACK, -2)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_RETRIBUTION, STAT_MORALE, 1.7)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_CORRUPT_DARK, STAT_HEALTH, 13.4)
 
+			H55_ChangeHeroStatOnSkill(hero, SKILL_CUNNING_OF_THE_WOODS, STAT_KNOWLEDGE, 2)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_FOREST_RAGE, STAT_LUCK, 1)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_DEMONIC_FLAME, STAT_DEFENCE, 2)
 
-			if (H55_GetHeroRaceNum(hero) == H55_Necropolis) then
-				H55_ChangeHeroStatOnSkill(hero, SKILL_LEADERSHIP, STAT_DEFENCE, 4)
-			end;
+			H55_ChangeHeroStatOnSkill(hero, SKILL_HOLY_CHARGE, STAT_ATTACK, 2)
+			-- H55_ChangeHeroStatOnSkill(hero, SKILL_LAST_STAND, STAT_DEFENCE, 3)
 
-			------------------------------------------------------------------------------------------------------------------------------------------------
-			H55_DEBUG = {24,"Mana after battle",player,hero};-------------------------------------------------------------------------------------------
-			------------------------------------------------------------------------------------------------------------------------------------------------
+			H55_ChangeHeroStatOnSkill(hero, SKILL_POWER_OF_HASTE, STAT_KNOWLEDGE, 1)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_WEAKENING_STRIKE, STAT_SPELL_POWER, 3)
 
-			H55_AfterBattleMana[hero] = 0;
-			if (HasArtefact(hero,ARTIFACT_BEGINNER_MAGIC_STICK,1)) ~= nil and (H55_StickManaReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-				H55_AfterBattleMana[hero] = H55_AfterBattleMana[hero] + 3;
-				H55_StickManaReceived[hero] = ci;
-			end;
-			if (HasArtefact(hero,ARTIFACT_EIGHTFOLD,1)) ~= nil and (H55_FoldManaReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-				H55_AfterBattleMana[hero] = H55_AfterBattleMana[hero] + 12;
-				H55_FoldManaReceived[hero] = ci;
-			end;
-			if (HasArtefact(hero,ARTIFACT_UPG_ST2,1)) ~= nil and (H55_AngelicManaReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-				H55_AfterBattleMana[hero] = H55_AfterBattleMana[hero] + 5;
-				H55_AngelicManaReceived[hero] = ci;
-			end;
-			if (HasArtefact(hero,ARTIFACT_RUNE_OF_FLAME,1)) ~= nil and (H55_FlameManaReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-				H55_AfterBattleMana[hero] = H55_AfterBattleMana[hero] + 2;
-				H55_FlameManaReceived[hero] = ci;
-			end;
-			if (HasArtefact(hero,ARTIFACT_RUNIC_WAR_AXE,1)) ~= nil and (H55_AxeManaReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-				H55_AfterBattleMana[hero] = H55_AfterBattleMana[hero] + 5;
-				H55_AxeManaReceived[hero] = ci;
-			end;
-			if (HasArtefact(hero,ARTIFACT_MONK_04,1)) ~= nil and (H55_SwordManaReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-				H55_AfterBattleMana[hero] = H55_AfterBattleMana[hero] + 3;
-				H55_SwordManaReceived[hero] = ci;
-			end;
-			if H55_AfterBattleMana[hero] >= 1 then
-				ChangeHeroStat(hero,STAT_MANA_POINTS,H55_AfterBattleMana[hero]);
-			end;
+			H55_ChangeHeroStatOnSkill(hero, SKILL_DEMONIC_FIRE, STAT_SPELL_POWER, 2)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_EMPOWERED_SPELLS, STAT_KNOWLEDGE, 3)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_ELEMENTAL_BALANCE, STAT_SPELL_POWER, 2)
+
+			H55_ChangeHeroStatOnSkill(hero, SKILL_MASTER_OF_QUAKES, STAT_KNOWLEDGE, 2)
+			H55_ChangeHeroStatOnSkill(hero, SKILL_COUNTERSPELL, STAT_KNOWLEDGE, 7)
+
+			H55_ChangeHeroStatOnSkill(hero, SKILL_INVOCATION, STAT_SPELL_POWER, GetHeroStat(hero, STAT_SPELL_POWER)*0.08)
+
+			if H55_GetHeroClass(hero) == "Chieftain" then
+				H55_ChangeHeroStatOnSkill(hero, SKILL_POWER_OF_HASTE, STAT_ATTACK, 3)
+				H55_ChangeHeroStatOnSkill(hero, SKILL_POWER_OF_STONE, STAT_DEFENCE, 3)
+				H55_ChangeHeroStatOnSkill(hero, SKILL_MIGHT_OVER_MAGIC, STAT_ATTACK, GetHeroStat(hero, STAT_SPELL_POWER)/2)
+			else
+				H55_ChangeHeroStatOnSkill(hero, SKILL_MIGHT_OVER_MAGIC, STAT_SPELL_POWER, -0.22*GetHeroStat(hero, STAT_SPELL_POWER))
+			end
+
+			if H55_GetHeroRaceNum(hero) ~= H55_Necropolis then
+				H55_ChangeHeroStatOnSkill(hero, SKILL_CHILLING_BONES, STAT_DEFENCE, 4)
+				H55_ChangeHeroStatOnSkill(hero, SKILL_NECROMANCY, STAT_MORALE, 1)
+			end
+
 
 			------------------------------------------------------------------------------------------------------------------------------------------------
 			H55_DEBUG = {24,"Resurrection",player,hero};--------------------------------------------------------------------------------------------------
 			------------------------------------------------------------------------------------------------------------------------------------------------
 
-			-- Ressurection artifacts
-			local resurrect = 0
-			if H55_GetHeroRaceNum(hero) ~= 4 then -- or HasHeroSkill(hero,SKILL_ROAD_HOME)
-				resurrect = resurrect + 0.04 * OI(HasArtefact(hero,ARTIFACT_LIFE_01,1))
-				resurrect = resurrect + 0.05 * OI(HasArtefact(hero,ARTIFACT_LIFE_02,1))
-				resurrect = resurrect + 0.06 * OI(HasArtefact(hero,ARTIFACT_LIFE_03,1))
-				resurrect = resurrect + 0.07 * OI(HasArtefact(hero,ARTIFACT_SANDALS_OF_THE_SAINT,1))
-				resurrect = resurrect + 0.08 * OI(HasArtefact(hero,ARTIFACT_LIFE_04,1))
-				resurrect = resurrect + 0.09 * OI(HasArtefact(hero,ARTIFACT_SENTINEL,1))
-			end
-
-			-- Perks
-			resurrect = resurrect + 0.04 * GetHeroSkillMastery(hero,SKILL_NO_REST_FOR_THE_WICKED)
-			resurrect = resurrect + 0.05 * GetHeroSkillMastery(hero,SKILL_GUARDIAN_ANGEL)
-			resurrect = resurrect + 0.06 * GetHeroSkillMastery(hero,SKILL_LAST_AID)
-
-			H55_ResurrectArmy(player,hero,ci,resurrect)
-
-			if (HasArtefact(hero,ARTIFACT_MONK_04,1)) ~= nil and (H55_ArtManaReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-				ChangeHeroStat(hero,STAT_MANA_POINTS,8);
-				H55_ArtManaReceived[hero] = ci;
-			end;
 			-- if H55_IsThisAIPlayer(player) ~= 1 then		
 				-- if (HasArtefact(hero,ARTIFACT_MONK_03,1)) ~= nil and (H55_ArtMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
 					-- ChangeHeroStat(hero,STAT_MOVE_POINTS,350);
 					-- H55_ArtMoveReceived[hero] = ci;
 				-- end;
 			-- end;
+
 			if H55_IsThisAIPlayer(player) ~= 1 and IsHeroInBoat(hero) ~= nil then
-				if (HasHeroSkill(hero,HERO_SKILL_SNATCH)) ~= nil then
-					if (HasArtefact(hero,ARTIFACT_PIRATE01,1)) ~= nil and (H55_HatMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-						ChangeHeroStat(hero,STAT_MOVE_POINTS,500);
-						H55_HatMoveReceived[hero] = ci;
-					end;
-					if (HasArtefact(hero,ARTIFACT_PIRATE06,1)) ~= nil and (H55_NecklaceMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-						ChangeHeroStat(hero,STAT_MOVE_POINTS,250);
-						H55_NecklaceMoveReceived[hero] = ci;
-					end;
-				else
-					if (HasArtefact(hero,ARTIFACT_PIRATE01,1)) ~= nil and (H55_HatMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-						ChangeHeroStat(hero,STAT_MOVE_POINTS,600);
-						H55_HatMoveReceived[hero] = ci;
-					end;
-					if (HasArtefact(hero,ARTIFACT_PIRATE06,1)) ~= nil and (H55_NecklaceMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-						ChangeHeroStat(hero,STAT_MOVE_POINTS,350);
-						H55_NecklaceMoveReceived[hero] = ci;
+				if (HasArtefact(hero,ARTIFACT_PIRATE01,1)) ~= nil and (H55_HatMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
+					ChangeHeroStat(hero,STAT_MOVE_POINTS,500);
+					H55_HatMoveReceived[hero] = ci;
 				end;
-			end;
+				if (HasArtefact(hero,ARTIFACT_PIRATE06,1)) ~= nil and (H55_NecklaceMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
+					ChangeHeroStat(hero,STAT_MOVE_POINTS,250);
+					H55_NecklaceMoveReceived[hero] = ci;
+				end;
 			elseif H55_IsThisAIPlayer(player) ~= 1 then
-				if (HasHeroSkill(hero,SKILL_SNATCH)) ~= nil then
-					if (HasArtefact(hero,ARTIFACT_PIRATE05,1)) ~= nil and (H55_BootsMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-						ChangeHeroStat(hero,STAT_MOVE_POINTS,100);
-						H55_BootsMoveReceived[hero] = ci;
-					end;
-					if (HasArtefact(hero,ARTIFACT_GUARDIAN_02,1)) ~= nil and (H55_GuardianMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-						ChangeHeroStat(hero,STAT_MOVE_POINTS,100);
-						H55_GuardianMoveReceived[hero] = ci;
-					end;
-					if (HasHeroSkill(hero,SKILL_PATH_OF_WAR)) ~= nil and (H55_SnatchMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-						ChangeHeroStat(hero,STAT_MOVE_POINTS,-100);
-						H55_SnatchMoveReceived[hero] = ci;
-					end;
-				else
-					if (HasArtefact(hero,ARTIFACT_PIRATE05,1)) ~= nil and (H55_BootsMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-						ChangeHeroStat(hero,STAT_MOVE_POINTS,200);
-						H55_BootsMoveReceived[hero] = ci;
-					end;
-					if (HasArtefact(hero,ARTIFACT_GUARDIAN_02,1)) ~= nil and (H55_GuardianMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
-						ChangeHeroStat(hero,STAT_MOVE_POINTS,200);
-						H55_GuardianMoveReceived[hero] = ci;
-					end;
+				if (HasArtefact(hero,ARTIFACT_PIRATE05,1)) ~= nil and (H55_BootsMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
+					ChangeHeroStat(hero,STAT_MOVE_POINTS,150);
+					H55_BootsMoveReceived[hero] = ci;
+				end;
+				if (HasArtefact(hero,ARTIFACT_GUARDIAN_02,1)) ~= nil and (H55_GuardianMoveReceived[hero] ~= ci) and (GetSavedCombatArmyHero(ci,1)==hero) then
+					ChangeHeroStat(hero,STAT_MOVE_POINTS,150);
+					H55_GuardianMoveReceived[hero] = ci;
 				end;
 			end;
 			-- if H55_IsThisAIPlayer(player) ~= 1 then
@@ -7852,53 +7217,71 @@ function H55_WTF()
 	end;
 end;
 
--- function H55_TeamUpQuestion()
-	-- local status = H55_DetectTeamConfig()
-	-- local answering = 1
-	-- for id = 1,8 do
-		-- if IsPlayerCurrent(id) then
-			-- answering = id
-		-- end;
-	-- end;
-	-- if status == 1 then
-		-- QuestionBoxForPlayers(GetPlayerFilter(answering),"/Text/Game/Scripts/Teamquestion.txt","H55_TeamHumansvsAI","H55_NoTeams");
-	-- elseif H55_AllAgainstOne == 1 then
-		-- H55_ChallengeMe(answering);
-	-- else
-		-- print("H55 Team up question skipped.");
-	-- end;
--- end;
+function H55_TeamUpQuestion()
+	local status = H55_DetectTeamConfig()
+	local answering = 1
+	for id = 1,8 do
+		if IsPlayerCurrent(id) then
+			answering = id
+		end;
+	end;
+	if status == 1 then
+		QuestionBoxForPlayers(GetPlayerFilter(answering),"/Text/Game/Scripts/Teamquestion.txt","H55_TeamHumansvsAI","H55_NoTeams");
+	elseif H55_AllAgainstOne == 1 then
+		H55_ChallengeMe(answering);
+	else
+		print("H55 Team up question skipped.");
+	end;
+end;
 
-function H55_GodMode()
+function H55_MixStacksQuestion()
+	for player = 1,8 do
+		if H55_IsThisAIPlayer(player) == 0 then
+			QuestionBoxForPlayers(GetPlayerFilter(player), "/Text/Game/Scripts/MixStacksQuestion.txt", "H55_MixStacks", "H55_Noop")
+			return
+		end
+	end
+end
+
+function H55_Noop() end
+
+function H55_MixStacks()
 	print("H55 Modifying Neutral stack sizes...");
-	BlockGame();
-	H55_NoFog(1)
+	-- BlockGame();
 	print(length(GetObjectNamesByType("CREATURE")))
-	local ix = 0
-	for _, object in GetObjectNamesByType("CREATURE") do
-		ix = ix + 1
-		-- if i > 50 then break end
+	local creatures = GetObjectNamesByType("CREATURE")
+
+	for ix, object in creatures do
 		local creatures = H55_MonsterInfo(object)
-		if length(creatures) == 1 then
-			local power,unit,typ,stacks = 0, 1, {0,0,0}, 3+random(3)
-			for unit_, count in creatures do
-				local typ_ = H55_CreaturesInv[unit_]
-				power = power + count / H55_CreaturesGrowthReal[typ_[1]][typ_[2]]
-				if typ_[2] > typ[2] then
-					unit = unit_
-					typ  = typ_
-				end
-				RemoveObjectCreatures(object, unit_, count - H55_RoundUp(count / stacks))
+		local power,unit,typ,stacks = 0, 1, {0,0,0}, 5
+		local ix = 0
+		for unit_, count in creatures do
+			ix = ix + 1
+			local typ_ = H55_CreaturesInv[unit_]
+			power = power + count / H55_CreaturesGrowthReal[typ_[1]][typ_[2]]
+			if typ_[2] > typ[2] then
+				unit = unit_
+				typ  = typ_
 			end
-			for i = 2,stacks do
-				local town = i < 4 and typ[1] or H55_EvilTowns[typ[1]][1+random(5)]
-				local tier, up = 1+random(H55_CreaturesInv[unit][2]), 2+random(1)
-				local amount   = H55_RoundUp(power / stacks * H55_CreaturesGrowthReal[town][tier])
+			if ix > 1 then
+				RemoveObjectCreatures(object, unit_, count)
+			end
+		end
+		power = power * (typ[2] == 1 and 0.8 or 1)
+		RemoveObjectCreatures(object, unit, 1 + creatures[unit] * (ix == 1 and 2/3 or 0))
+		local town2 = H55_EvilTowns[typ[1]][1+random(4)]
+		for i = 1,2 do
+			local town     = i < 2 and typ[1] or town2
+			local tier, up = 1+random(H55_CreaturesInv[unit][2]), 2+random(2)
+			local amount   = H55_RoundUp(power / 3 * H55_CreaturesGrowthReal[town][tier])
+			if amount >= 1 then
 				AddObjectCreatures(object, H55_Creatures[town][tier][up], amount)
 			end
 		end
+		
+		if mod(ix, 10) == 0 then print(ix); sleep(10) end
 	end
-	UnblockGame()
+	-- UnblockGame()
 	print("H55 Neutrals processed")
 end
 
@@ -7920,124 +7303,22 @@ function H55_HasGovernor(player)
 	return check
 end;
 
-function H55_CamFixTooManySkills(hero)
-	if (HasHeroSkill(hero,DEMON_FEAT_DEMONIC_FLAME) ~= nil) then
-		ChangeHeroStat(hero,STAT_DEFENCE,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_BODYBUILDING) ~= nil) and (GetHeroLevel(hero) >= 10) then
-		ChangeHeroStat(hero,STAT_DEFENCE,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_DARK) ~= nil) then
-		ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_LIGHT) ~= nil) then
-		ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_SUMMONING) ~= nil) then
-		ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_WEAKEN_DESTRUCTIVE) ~= nil) then
-		ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_DETAIN_DARK) ~= nil) then
-		ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_DETAIN_LIGHT) ~= nil) then
-		ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_DETAIN_SUMMONING) ~= nil) then
-		ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_DETAIN_DESTRUCTIVE) ~= nil) then
-		ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-	end;
-	if (HasHeroSkill(hero,NECROMANCER_FEAT_TWILIGHT) ~= nil) and (GetHeroLevel(hero) >= 30) then
-		ChangeHeroStat(hero,STAT_SPELL_POWER,-3);
-	end;
-	if (HasHeroSkill(hero,WIZARD_FEAT_SEAL_OF_PROTECTION) ~= nil) then
-		ChangeHeroStat(hero,STAT_DEFENCE,-2);
-	end;
-	if (HasHeroSkill(hero,KNIGHT_FEAT_PARIAH) ~= nil) and (GetHeroLevel(hero) >= 30) then
-		ChangeHeroStat(hero,STAT_SPELL_POWER,-5);
-		ChangeHeroStat(hero,STAT_LUCK,1);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_SHRUG_DARKNESS) ~= nil) and (H55_GetHeroRaceNum(hero) ~= 4) then
-		ChangeHeroStat(hero,STAT_MORALE,-3);
-	end;
-	if (HasHeroSkill(hero,NECROMANCER_FEAT_CHILLING_BONES) ~= nil) then
-		ChangeHeroStat(hero,STAT_DEFENCE,-2);
-	end;
-	if (HasHeroSkill(hero,NECROMANCER_FEAT_CHILLING_BONES) ~= nil) and (H55_GetHeroRaceNum(hero) ~= 4) then
-		ChangeHeroStat(hero,STAT_DEFENCE,-4);
-	end;
-	if (HasHeroSkill(hero,DEMON_FEAT_DEMONIC_RETALIATION) ~= nil) then
-		ChangeHeroStat(hero,STAT_ATTACK,-2);
-	end;
-	if (HasHeroSkill(hero,WARLOCK_FEAT_DARK_REVELATION) ~= nil) then
-		ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_BARBARIAN_DARK_REVELATION) ~= nil) then
-		ChangeHeroStat(hero,STAT_ATTACK,-1);
-		ChangeHeroStat(hero,STAT_DEFENCE,-1);
-		ChangeHeroStat(hero,STAT_SPELL_POWER,-1);
-		ChangeHeroStat(hero,STAT_KNOWLEDGE,-1);
-	end;
-	if (HasHeroSkill(hero,WARLOCK_FEAT_ELITE_CASTERS) ~= nil) then
-		ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_BARBARIAN_ELITE_CASTERS) ~= nil) then
-		ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-	end;
-	if (HasHeroSkill(hero,RANGER_FEAT_CUNNING_OF_THE_WOODS) ~= nil) then
-		ChangeHeroStat(hero,STAT_KNOWLEDGE,-1);
-	end;
-	if (HasHeroSkill(hero,RANGER_FEAT_FOREST_RAGE) ~= nil) then
-		ChangeHeroStat(hero,STAT_LUCK,1);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_DEATH_TO_NONEXISTENT) ~= nil) then
-		ChangeHeroStat(hero,STAT_ATTACK,-4);
-	end;
-	if (HasHeroSkill(hero,PERK_EXPERT_TRAINER) ~= nil) then
-		ChangeHeroStat(hero,STAT_ATTACK,-2);
-		ChangeHeroStat(hero,STAT_DEFENCE,-2);
-	end;
-	if (HasHeroSkill(hero,RANGER_FEAT_LAST_STAND) ~= nil) and (H55_GetHeroRaceNum(hero) ~= 7) then
-		ChangeHeroStat(hero,STAT_DEFENCE,-2);
-	end;
-	if (HasHeroSkill(hero,KNIGHT_FEAT_RETRIBUTION) ~= nil) and (H55_GetHeroRaceNum(hero) == 4) then
-		ChangeHeroStat(hero,STAT_ATTACK,-2);
-	end;
-	if (HasHeroSkill(hero,WARLOCK_FEAT_ELEMENTAL_OVERKILL) ~= nil) then
-		ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_PREPARATION) ~= nil) then
-		ChangeHeroStat(hero,STAT_ATTACK,2);
-	end;
-	if (HasHeroSkill(hero,HERO_SKILL_VOICE) ~= nil) and (HasHeroSkill(hero,HERO_SKILL_EMPATHY) ~= nil) then
-		ChangeHeroStat(hero,STAT_MORALE,2);
-	end;
-	if (HasHeroSkill(hero,DEMON_FEAT_MASTER_OF_SECRETS) ~= nil) and (GetHeroLevel(hero) >= 20) then
-		ChangeHeroStat(hero,STAT_SPELL_POWER,-2);
-	end;
-	if (HasHeroSkill(hero,WARLOCK_FEAT_SECRETS_OF_DESTRUCTION) ~= nil) and (GetHeroLevel(hero) >= 20) then
-		ChangeHeroStat(hero,STAT_KNOWLEDGE,-2);
-	end;
-	-- if (HasHeroSkill(hero,DEMON_FEAT_TRIPLE_CATAPULT) ~= nil) and (HasHeroWarMachine(hero,4) ~= nil) then
-		-- ChangeHeroStat(hero,STAT_ATTACK,-2);
-	-- end;
-	-- if (HasHeroSkill(hero,DEMON_FEAT_TRIPLE_CATAPULT) ~= nil) and GetHeroSkillMastery(hero,SKILL_WAR_MACHINES) == 3 and (HasHeroWarMachine(hero,4) ~= nil) then
-		-- ChangeHeroStat(hero,STAT_ATTACK,-1);
-	-- end;
-	-- if (HasHeroSkill(hero,DEMON_FEAT_TRIPLE_CATAPULT) ~= nil) and (HasHeroWarMachine(hero,4) ~= nil) and (HasArtefact(hero,ARTIFACT_RING_OF_MACHINE_AFFINITY,1) ~= nil) then
-		-- ChangeHeroStat(hero,STAT_ATTACK,-1);
-	-- end;
-end;
-
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 --MAIN EVENT
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function ErrorBox()
+	print(H55_DEBUG[2])
+	for player = 1,8 do
+		if H55_IsThisAIPlayer(player) ~= 1 then
+			MessageBoxForPlayers(GetPlayerFilter(player), {"/Text/Game/Scripts/Error.txt"; debug=H55_DEBUG[1]}, "H55_Noop")
+		end
+	end
+end
 					
 function H55_ContinuesActivator()
+	errorHook(ErrorBox)
+
 	while (H55_Switch == 1) do
 			
 		H55_Day = GetDate(DAY);
@@ -8052,23 +7333,20 @@ function H55_ContinuesActivator()
 		
 		for i = 1,8 do
 			if (GetPlayerState(i) == 1) then								
-				if (IsPlayerCurrent(i)) and (H55_Workday == 1) and (H55_Day ~= 1) and not H55_WeeklyEventsDone[i] then
+				if (IsPlayerCurrent(i)) and (H55_Workday == 1) and (H55_Day ~= 1) and H55_Changed(H55_WeeklyEventsCounter, i, H55_Day) then
 					H55_SetGlobalWeeklyPayouts(i,0);
 					H55_WeeklyEvents(i);
 				else
 					H55_SetGlobalWeeklyPayouts(i,0);
 				end;				
-				if (IsPlayerCurrent(i)) and (H55_Day ~= 1) and (H55_DailyEventsCounter[i] < H55_Day) then	
+				if (IsPlayerCurrent(i)) and (H55_Day ~= 1) and H55_Changed(H55_DailyEventsCounter, i, H55_Day) then	
 					H55_SetGlobalDailyPayouts(i,0);				
 					H55_DailyEvents(i);
 					H55_PayoutThisPlayer(i);
 				end;	
 				if (H55_ArtifactsIndexed ~= 1) and (H55_Workday == 2) then
 					H55_IndexArtifacts();	
-				end;				
-				if (IsPlayerCurrent(i)) and (H55_Workday == 2) then
-					H55_ResetWeeklyEvents(i);	
-				end;
+				end;	
 				if (IsPlayerCurrent(i)) then
 					H55_ContinuesEvent(i);
 				end;
@@ -8097,11 +7375,12 @@ startThread(H55_DetectDuel);
 
 doFile("/scripts/H55-AdvMap.lua");
 
---startThread(H55_TeamUpQuestion);
-startThread(H55_GodMode)
+-- startThread(H55_TeamUpQuestion);
+startThread(H55_MixStacksQuestion)
 startThread(H55_ContinuesActivator);
 Trigger(CUSTOM_ABILITY_TRIGGER,"H55_TownManagement");
 Trigger(NEW_DAY_TRIGGER,"H55_CrashProtection");
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 --APPENDIX

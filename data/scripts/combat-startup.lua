@@ -239,7 +239,7 @@ function HeroDeath(unitName, side) end
 function CreatureDeath(unitName, side)
 	for _, unit in GetCreatures(1 - side) do
 		if GetUnitMaxManaPoints(unit) then
-			SetUnitManaPoints(unit, GetUnitManaPoints(unit) + GetUnitMaxManaPoints(unit))
+			SetUnitManaPoints(unit, GetUnitManaPoints(unit) + GetUnitMaxManaPoints(unit)/2)
 		end
 	end
 end

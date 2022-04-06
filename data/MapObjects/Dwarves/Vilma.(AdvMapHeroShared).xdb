@@ -1,73 +1,78 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <AdvMapHeroShared ObjectRecordID="13">
-	<Model href="/Characters/Heroes/RuneMage_LOD.xdb#xpointer(/Model)"/>
-	<AnimSet href="/Characters/Heroes/RuneMage_LOD-adv.xdb#xpointer(/AnimSet)"/>
-	<blockedTiles/>
-	<holeTiles/>
+	<Model href="/Characters/Heroes/RuneMage_LOD.xdb#xpointer(/Model)" />
+	<AnimSet href="/Characters/Heroes/RuneMage_LOD-adv.xdb#xpointer(/AnimSet)" />
+	<blockedTiles />
+	<holeTiles />
 	<activeTiles>
 		<Item>
 			<x>0</x>
 			<y>0</y>
 		</Item>
 	</activeTiles>
-	<passableTiles/>
+	<passableTiles />
 	<PossessionMarkerTile>
 		<x>0</x>
 		<y>0</y>
 	</PossessionMarkerTile>
-	<Effect/>
-	<EffectWhenOwned/>
-	<messagesFileRef/>
+	<Effect />
+	<EffectWhenOwned />
+	<messagesFileRef />
 	<WaterBased>false</WaterBased>
 	<ApplyHeroTrace>false</ApplyHeroTrace>
-	<SoundEffect/>
-	<flybyMessageFileRef href=""/>
-	<ObjectTypeFileRef href="/Text/Visibility_Types/Units.txt"/>
+	<SoundEffect />
+	<flybyMessageFileRef href="" />
+	<ObjectTypeFileRef href="/Text/Visibility_Types/Units.txt" />
 	<TerrainAligned>false</TerrainAligned>
 	<FlyPassable>true</FlyPassable>
-	<AdventureSoundEffect/>
-	<RazedStatic/>
-	<Icon128/>
+	<AdventureSoundEffect />
+	<RazedStatic />
+	<Icon128 />
 	<InternalName>Vilma</InternalName>
 	<Class>HERO_CLASS_FLAMEKEEPERA</Class>
 	<Specialization>HERO_SPEC_LOGISTICS</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_EXPERT</Mastery>
+		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_RUNELORE</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Haven/Wanderer3/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Haven/Wanderer3/Description.txt"/>
-	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Haven/Wanderer.xdb#xpointer(/Texture)"/>
-	<FaceTexture href="/Textures/Icons/Heroes/Fortress/Fortress_Hedwig_128x128.(Texture).xdb#xpointer(/Texture)"/>
-	<FaceTextureSmall/>
-	<HeroCharacterArena href="/Characters/Heroes/RuneMage.(Character).xdb#xpointer(/Character)"/>
-	<HeroCharacterArenaMelee href="/Characters/Heroes/RuneMageHero_Strike.(Character).xdb#xpointer(/Character)"/>
-	<HeroCharacterAdventure href="/Characters/Heroes/RuneMage_LOD.(Character).xdb#xpointer(/Character)"/>
-	<HeroIndividualCamera/>
-	<CombatVisual href="/GameMechanics/CreatureVisual/Heroes/Runemage.xdb#xpointer(/CreatureVisual)"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Haven/Wanderer3/Name.txt" />
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Haven/Wanderer3/Description.txt" />
+	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Haven/Wanderer.xdb#xpointer(/Texture)" />
+	<FaceTexture href="/Textures/Icons/Heroes/Fortress/Fortress_Hedwig_128x128.(Texture).xdb#xpointer(/Texture)" />
+	<FaceTextureSmall />
+	<HeroCharacterArena href="/Characters/Heroes/RuneMage.(Character).xdb#xpointer(/Character)" />
+	<HeroCharacterArenaMelee href="/Characters/Heroes/RuneMageHero_Strike.(Character).xdb#xpointer(/Character)" />
+	<HeroCharacterAdventure href="/Characters/Heroes/RuneMage_LOD.(Character).xdb#xpointer(/Character)" />
+	<HeroIndividualCamera />
+	<CombatVisual href="/GameMechanics/CreatureVisual/Heroes/Runemage.xdb#xpointer(/CreatureVisual)" />
 	<TownType>TOWN_FORTRESS</TownType>
 	<Editable>
-		<NameFileRef href="/Text/Game/Heroes/Persons/Dwarves/Hedwig/Name.txt"/>
-		<BiographyFileRef href="/Text/Game/Heroes/Persons/Dwarves/Hedwig/Bio.txt"/>
+		<NameFileRef href="/Text/Game/Heroes/Persons/Dwarves/Hedwig/Name.txt" />
+		<BiographyFileRef href="/Text/Game/Heroes/Persons/Dwarves/Hedwig/Bio.txt" />
 		<Offence>0</Offence>
 		<Defence>1</Defence>
 		<Spellpower>2</Spellpower>
-		<Knowledge>3</Knowledge>
-		<skills/>
-		<perkIDs/>
-		<spellIDs/>
+		<Knowledge>2</Knowledge>
+		<skills>
+			<Item>
+				<Mastery>MASTERY_BASIC</Mastery>
+				<SkillID>HERO_SKILL_DEFENCE</SkillID>
+			</Item>
+		</skills>
+		<perkIDs />
+		<spellIDs />
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>
 		<AmmoCart>false</AmmoCart>
-		<FavoriteEnemies/>
+		<FavoriteEnemies />
 	</Editable>
 	<ArrowButtonState>0</ArrowButtonState>
-	<Decal/>
-	<Selection href="/_(Model)/Heroes/RuneMage_Path/Symbol.xdb#xpointer(/Model)"/>
-	<Trace href="/MapObjects/_(AdvMapHeroTraceSet)/Fortress.(AdvMapHeroTraceSet).xdb#xpointer(/AdvMapHeroTraceSet)"/>
-	<RaceTraitIcon/>
-	<RaceTraitDescFileRef href=""/>
+	<Decal />
+	<Selection href="/_(Model)/Heroes/RuneMage_Path/Symbol.xdb#xpointer(/Model)" />
+	<Trace href="/MapObjects/_(AdvMapHeroTraceSet)/Fortress.(AdvMapHeroTraceSet).xdb#xpointer(/AdvMapHeroTraceSet)" />
+	<RaceTraitIcon />
+	<RaceTraitDescFileRef href="" />
 	<ScenarioHero>false</ScenarioHero>
-	<AdventureMusic/>
+	<AdventureMusic />
 	<HideInEditor>false</HideInEditor>
 </AdvMapHeroShared>

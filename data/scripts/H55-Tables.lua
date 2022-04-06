@@ -70,15 +70,15 @@ H55_ClassesNames = {
 	-- {{}, {}, {}, {85,86,87,88}, {113,116}, {89,90,114,115}, {91}} --Neutral
 
 H55_EvilTowns = {
-	{1, 2, 5, 7, 9}, -- Haven
-	{1, 2, 5, 7, 9}, -- Sylvan
-	{3, 4, 6, 8, 9}, -- Inferno
-	{3, 4, 6, 8, 9}, -- Necro
-	{1, 2, 5, 7, 9}, -- Academy
-	{3, 4, 6, 8, 9}, -- Dungeon
-	{1, 2, 5, 7, 9}, -- Fortress
-	{3, 4, 6, 8, 9}, -- Stronghold
-	{1, 2, 5, 7, 9}, -- Neutral
+	{2, 5, 7, 9}, -- Haven
+	{1, 5, 7, 9}, -- Sylvan
+	{4, 6, 8, 9}, -- Inferno
+	{3, 6, 8, 9}, -- Necro
+	{1, 2, 7, 9}, -- Academy
+	{3, 4, 8, 9}, -- Dungeon
+	{1, 2, 5, 9}, -- Fortress
+	{3, 4, 6, 9}, -- Stronghold
+	{1, 2, 5, 7}, -- Neutral
 }
 
 -- H55_ClassesTexts = {
@@ -131,13 +131,13 @@ H55_Creatures = {
 	{{71,72,138},{73,74,139},{75,76,140},{77,78,141},{79,80,142},{81,82,143},{83,84,144}}, --Dungeon
 	{{92,93,166},{94,95,167},{96,97,168},{98,99,169},{100,101,170},{102,103,171},{104,105,172}}, --Fortress
 	{{117,118,173},{119,120,174},{121,122,175},{123,124,176},{125,126,177},{127,128,178},{129,130,179}}, --Stronghold
-	{{85,85,86}, {87,87,88}, {113,113,113}, {116,116,116}, {115,115,114}, {90,90,89}, {91,91,91}} --Neutral
+	{{87,87,88}, {85,85,86}, {113,113,113}, {116,116,116}, {115,115,115}, {90,90,90}, {89,114,91}} --Neutral
 };	
 H55_CreaturesInv = {}
-for faction = 1,9,1 do
+for town = 1,9,1 do
 	for tier = 1,7,1 do
 		for upgrade = 1,3 do
-			H55_CreaturesInv[H55_Creatures[faction][tier][upgrade]] = {faction, tier, upgrade}
+			H55_CreaturesInv[H55_Creatures[town][tier][upgrade]] = {town, tier, upgrade}
 		end
 	end
 end
@@ -151,7 +151,7 @@ H55_CreaturesGrowth = {
 {7, 6, 5, 4, 3, 2, 1}, --Dungeon
 {16, 14, 7, 8, 3, 2, 1}, --Fortress
 {28, 14, 11, 5, 5, 2, 1}, --Stronghold
-{4, 4, 6, 3, 2, 2, 1} -- Neutral
+{20, 20, 6, 3, 2, 2, 1} -- Neutral
 };
 
 H55_CreaturesGrowthReal = {
@@ -163,7 +163,7 @@ H55_CreaturesGrowthReal = {
 {7, 5, 6, 4, 3, 2, 1}, --Dungeon
 {16, 14, 7, 6, 3, 2, 1}, --Fortress
 {25, 14, 11, 5, 5, 2, 1}, --Stronghold
-{4, 4, 6, 3, 2, 2, 1} -- Neutral
+{20, 20, 6, 3, 2, 2, 0.5} -- Neutral
 };
 
 H55_NeutralCreatures = {85,86,87,88,91,113,115,116}; --Fire,Water,Earth,Air,Phoenix,Wolf,MissingSnowApe(114),Manticore,Mummy
@@ -293,7 +293,6 @@ H55_MajorArtifactsDuel = {
 	ARTIFACT_UPG_ST1,
 	ARTIFACT_OGRE_CLUB,
 	ARTIFACT_OGRE_SHIELD,
-	ARTIFACT_CROWN_OF_LEADER,
 	ARTIFACT_GREAT_AXE_OF_GIANT_SLAYING,	
 	ARTIFACT_BOOTS_OF_SWIFTNESS,
 	ARTIFACT_DRAGON_SCALE_SHIELD,
@@ -375,6 +374,7 @@ H55_RelicArtifactsDuel = {
 	ARTIFACT_GUARDIAN_03,
 	ARTIFACT_UNICORN_HORN_BOW,
 	-- ARTIFACT_MASK_OF_DOPPELGANGER,
+	ARTIFACT_CROWN_OF_LEADER,
 	ARTIFACT_CROWN_OF_COURAGE,	
 	-- ARTIFACT_MEDICAL01,	
 	-- ARTIFACT_MEDICAL02,
@@ -452,7 +452,6 @@ H55_MajorArtifacts = {
 	ARTIFACT_UPG_ST1,
 	ARTIFACT_OGRE_CLUB,
 	ARTIFACT_OGRE_SHIELD,
-	ARTIFACT_CROWN_OF_LEADER,
 	ARTIFACT_GREAT_AXE_OF_GIANT_SLAYING,	
 	ARTIFACT_BOOTS_OF_SWIFTNESS,
 	ARTIFACT_DRAGON_SCALE_SHIELD,
@@ -541,6 +540,7 @@ H55_RelicArtifacts = {
 	ARTIFACT_URGASH_01,	
 	ARTIFACT_URGASH_02,
 	ARTIFACT_GOLDEN_HORSESHOE,	
+	ARTIFACT_CROWN_OF_LEADER,
 	ARTIFACT_CROWN_OF_COURAGE,
 	ARTIFACT_TITANS_TRIDENT,
 	ARTIFACT_GEAR_01,
@@ -751,38 +751,38 @@ H55_UnusualSchools = {
 [5] = {SKILL_LIGHT_MAGIC,SKILL_DARK_MAGIC},
 [6] = {SKILL_LIGHT_MAGIC,SKILL_SUMMONING_MAGIC},
 [7] = {SKILL_DARK_MAGIC,SKILL_SUMMONING_MAGIC},
-[8] = {SKILL_LIGHT_MAGIC,SKILL_SUMMONING_MAGIC},
+[8] = {SKILL_LIGHT_MAGIC,SKILL_SUMMONING_MAGIC,SKILL_DARK_MAGIC,SKILL_DESTRUCTIVE_MAGIC},
 [9] = {SKILL_DARK_MAGIC,SKILL_DESTRUCTIVE_MAGIC}
 }
 
 H55_Spells = {
 	[SKILL_SUMMONING_MAGIC] = {
-        [1] = {SPELL_WASP_SWARM,SPELL_LAND_MINE},
-        [2] = {SPELL_EARTHQUAKE,SPELL_ARCANE_CRYSTAL},
+        [1] = {SPELL_WASP_SWARM,SPELL_LAND_MINE,SPELL_ARCANE_CRYSTAL},
+        [2] = {SPELL_EARTHQUAKE,SPELL_MAGIC_FIST},
 		[3] = {SPELL_ANTI_MAGIC,SPELL_BLADE_BARRIER},
 		[4] = {SPELL_SUMMON_HIVE,SPELL_FIREWALL},
 		[5] = {SPELL_HYPNOTIZE,SPELL_CONJURE_PHOENIX}
 	},
 	[SKILL_DESTRUCTIVE_MAGIC] = {
-        [1] = {SPELL_ICE_BOLT,SPELL_STONE_SPIKES},
-        [2] = {SPELL_FROST_RING,SPELL_LIGHTNING_BOLT},
-		[3] = {SPELL_FIREBALL,SPELL_METEOR_SHOWER},
+        [1] = {SPELL_STONE_SPIKES,SPELL_ICE_BOLT},
+        [2] = {SPELL_METEOR_SHOWER,SPELL_LIGHTNING_BOLT},
+		[3] = {SPELL_FIREBALL,SPELL_FROST_RING},
 		[4] = {SPELL_ARMAGEDDON,SPELL_IMPLOSION},
 		[5] = {SPELL_DEEP_FREEZE,SPELL_CHAIN_LIGHTNING}
 	},
 	[SKILL_DARK_MAGIC] = {
-        [1] = {SPELL_CURSE,SPELL_DISRUPTING_RAY,SPELL_SLOW},
-        [2] = {SPELL_WEAKNESS,SPELL_PLAGUE,SPELL_WEAKNESS},
+        [1] = {SPELL_PLAGUE,SPELL_CURSE,SPELL_WEAKNESS},
+        [2] = {SPELL_SLOW,SPELL_DISRUPTING_RAY},
 		[3] = {SPELL_ANIMATE_DEAD,SPELL_SORROW},
 		[4] = {SPELL_TELEPORT,SPELL_PHANTOM,SPELL_UNHOLY_WORD},
 		[5] = {SPELL_BERSERK,SPELL_VAMPIRISM}
 	},
 	[SKILL_LIGHT_MAGIC] = {
-        [1] = {SPELL_BLESS,SPELL_STONESKIN,SPELL_MAGIC_ARROW},
+        [1] = {SPELL_MAGIC_ARROW,SPELL_BLESS,SPELL_STONESKIN},
         [2] = {SPELL_BLOODLUST,SPELL_HASTE,SPELL_DEFLECT_ARROWS},
 		[3] = {SPELL_DISPEL,SPELL_REGENERATION,SPELL_HOLY_WORD},
-		[4] = {SPELL_BLIND,SPELL_DIVINE_VENGEANCE},
-		[5] = {SPELL_CELESTIAL_SHIELD,SPELL_RESURRECT}
+		[4] = {SPELL_DIVINE_VENGEANCE,SPELL_RESURRECT},
+		[5] = {SPELL_CELESTIAL_SHIELD,SPELL_BLIND}
 	}
 };
 
@@ -1237,9 +1237,9 @@ H55_WitchSkills = {                         --SKILL ID
 	SKILL_OFFENCE,                          -- 17
 	HERO_SKILL_RUNELORE,                    -- 18
 	HERO_SKILL_SHATTER_DARK_MAGIC,          -- 19
-	HERO_SKILL_SHATTER_DESTRUCTIVE_MAGIC,   -- 20
-	HERO_SKILL_SHATTER_LIGHT_MAGIC,         -- 21
-	HERO_SKILL_SHATTER_SUMMONING_MAGIC,     -- 22
+	SKILL_BODYBUILDING,   -- 20
+	SKILL_WARCRY_LEARNING,         -- 21
+	SKILL_WARCRY_LEARNING,         -- 22
 	SKILL_SORCERY,                          -- 23
 	SKILL_SUMMONING_MAGIC,                  -- 24
 	HERO_SKILL_VOICE,                       -- 25

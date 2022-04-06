@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>16</AttackSkill>
-	<DefenceSkill>16</DefenceSkill>
-	<Shots>8</Shots>
+	<AttackSkill>24</AttackSkill>
+	<DefenceSkill>24</DefenceSkill>
+	<Shots>6</Shots>
 	<MinDamage>17</MinDamage>
 	<MaxDamage>20</MaxDamage>
 	<Speed>4</Speed>
 	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>160</Health>
+	<Health>120</Health>
 	<KnownSpells>
 		<Item>
 			<Spell>SPELL_FIREWALL</Spell>

@@ -225,7 +225,7 @@ H55_AbandonedMines = GetObjectNamesByType("BUILDING_ABANDONED_MINE");
 H55_AbandonedMinesQty = length(H55_AbandonedMines);
 H55_AbandonedMineArmies = {};
 H55_AbandonedMineClaims = {};
-H55_WoodMines = GetObjectNamesByType("BUILDING_SAW_MILL");
+H55_WoodMines = GetObjectNamesByType("BUILDING_SAWMILL");
 H55_WoodMineClaims = {};
 H55_OreMines = GetObjectNamesByType("BUILDING_ORE_PIT");
 H55_OreMineClaims = {};
@@ -825,7 +825,15 @@ function H55_PrepareAdvMap()
 	------------------------------------------------------------------------------------------------------------------------------------------------
 	H55_DEBUG = {110,"SpecialObjects",1,"NoHero"};--------------------------------------------------------------------------------------------------
 	------------------------------------------------------------------------------------------------------------------------------------------------
-	
+
+	for _, mines in {H55_AbandonedMines, H55_WoodMines, H55_OreMines, H55_CrystalMines, H55_GemMines, H55_SulphurMines, H55_MercuryMines, H55_GoldMines} do
+		for _, mine in mines do
+			
+			-- SetObjectEnabled(mine,nil);
+			Trigger(OBJECT_TOUCH_TRIGGER,mine,"H55_MineVisit")
+		end
+	end
+
 	if H55_SphinxsQty ~= 0 then
 		for i, sphinx in H55_Sphinxs do
 			SetObjectEnabled(sphinx,nil);
@@ -3500,10 +3508,10 @@ function H55_RegularTempleAccept(hero,temple)
 		QuestionBoxForPlayers(GetPlayerFilter(player),{"/Text/Game/Scripts/Summon/Manticore.txt"},
 		"H55_SummonManticoreAccept('"..hero.."','"..temple.."')","H55_SummonManticoreRefuse('"..hero.."','"..temple.."')");
 	end;		
-	if HasArtefact(hero,ARTIFACT_GEAR_06,0) ~= nil then
-		QuestionBoxForPlayers(GetPlayerFilter(player),{"/Text/Game/Scripts/Summon/Eagle.txt"},
-		"H55_SummonEagleAccept('"..hero.."','"..temple.."')","H55_SummonEagleRefuse('"..hero.."','"..temple.."')");
-	end;
+	-- if HasArtefact(hero,ARTIFACT_GEAR_06,0) ~= nil then
+	-- 	QuestionBoxForPlayers(GetPlayerFilter(player),{"/Text/Game/Scripts/Summon/Eagle.txt"},
+	-- 	"H55_SummonEagleAccept('"..hero.."','"..temple.."')","H55_SummonEagleRefuse('"..hero.."','"..temple.."')");
+	-- end;
 	if HasArtefact(hero,ARTIFACT_SHAWL_OF_GREAT_LICH,0) ~= nil then
 		QuestionBoxForPlayers(GetPlayerFilter(player),{"/Text/Game/Scripts/Summon/Dreadknight.txt"},
 		"H55_SummonDreadKnightAccept('"..hero.."','"..temple.."')","H55_SummonDreadKnightRefuse('"..hero.."','"..temple.."')");
@@ -7670,6 +7678,7 @@ function H55_ArtifactAward(hero,level)
 end;
 
 function H55_ArtifactStartBonus(hero)
+	if hero == nil then return end
 	local rnd = random(length(H55_MinorArtifacts))+1;	
 	GiveArtefact(hero,H55_MinorArtifacts[rnd],0);
 end;

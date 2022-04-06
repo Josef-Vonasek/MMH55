@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="1000054">
-	<AttackSkill>2</AttackSkill>
-	<DefenceSkill>2</DefenceSkill>
-	<Shots>10</Shots>
+	<AttackSkill>13</AttackSkill>
+	<DefenceSkill>13</DefenceSkill>
+	<Shots>7</Shots>
 	<MinDamage>3</MinDamage>
 	<MaxDamage>5</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>35</Health>
+	<Health>26</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
@@ -48,6 +48,5 @@
 	</Upgrades>
 	<Abilities>
 		<Item>ABILITY_NO_MELEE_PENALTY</Item>
-		<Item>ABILITY_MAGIC_ATTACK</Item>
 	</Abilities>
 </Creature>

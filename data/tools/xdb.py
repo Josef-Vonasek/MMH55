@@ -11,6 +11,14 @@ class XDB:
         tree = ET.Element(tag, attributes or {})
         if type(content) == str:
             tree.text = content
+        elif type(content) == int:
+            tree.text = str(content)
+        elif type(content) == dict:
+            for key, val in content.items():
+                if key[0] == '#':
+                    tree.attrib[key[1:]] = val
+                else:
+                    tree.append(Self.new(key, val).tree)
         else:
             tree.extend(c.tree for c in content)
         return Self(tree)

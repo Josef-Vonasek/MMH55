@@ -1,78 +1,78 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <AdvMapHeroShared ObjectRecordID="66">
-	<Model href="/Characters/Heroes/Ranger_LOD.xdb#xpointer(/Model)"/>
-	<AnimSet href="/Characters/Heroes/Ranger_LOD-adv.xdb#xpointer(/AnimSet)"/>
-	<blockedTiles/>
-	<holeTiles/>
+	<Model href="/Characters/Heroes/Ranger_LOD.xdb#xpointer(/Model)" />
+	<AnimSet href="/Characters/Heroes/Ranger_LOD-adv.xdb#xpointer(/AnimSet)" />
+	<blockedTiles />
+	<holeTiles />
 	<activeTiles>
 		<Item>
 			<x>0</x>
 			<y>0</y>
 		</Item>
 	</activeTiles>
-	<passableTiles/>
+	<passableTiles />
 	<PossessionMarkerTile>
 		<x>0</x>
 		<y>0</y>
 	</PossessionMarkerTile>
-	<Effect/>
-	<EffectWhenOwned/>
-	<messagesFileRef/>
+	<Effect />
+	<EffectWhenOwned />
+	<messagesFileRef />
 	<WaterBased>false</WaterBased>
 	<ApplyHeroTrace>false</ApplyHeroTrace>
-	<SoundEffect/>
-	<flybyMessageFileRef href=""/>
-	<ObjectTypeFileRef href="/Text/Visibility_Types/Units.txt"/>
+	<SoundEffect />
+	<flybyMessageFileRef href="" />
+	<ObjectTypeFileRef href="/Text/Visibility_Types/Units.txt" />
 	<TerrainAligned>false</TerrainAligned>
 	<FlyPassable>true</FlyPassable>
-	<AdventureSoundEffect/>
-	<RazedStatic/>
-	<Icon128 href="/Textures/Icons/Heroes/Preserve/Preserve_Findan_128x128.(Texture).xdb#xpointer(/Texture)"/>
+	<AdventureSoundEffect />
+	<RazedStatic />
+	<Icon128 href="/Textures/Icons/Heroes/Preserve/Preserve_Findan_128x128.(Texture).xdb#xpointer(/Texture)" />
 	<InternalName>Heam</InternalName>
 	<Class>HERO_CLASS_RANGERA</Class>
 	<Specialization>HERO_SPEC_OFFENDER</Specialization>
 	<PrimarySkill>
 		<Mastery>MASTERY_BASIC</Mastery>
-		<SkillID>HERO_SKILL_LOGISTICS</SkillID>
+		<SkillID>HERO_SKILL_DEFENCE</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Stronghold/Offender3/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Stronghold/Offender3/Description.txt"/>
-	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Preserve/Elven_Volley.xdb#xpointer(/Texture)"/>
-	<FaceTexture href="/Textures/Icons/Heroes/Preserve/Preserve_Findan_128x128.(Texture).xdb#xpointer(/Texture)"/>
-	<FaceTextureSmall/>
-	<HeroCharacterArena href="/Characters/Heroes/Findan.(Character).xdb#xpointer(/Character)"/>
-	<HeroCharacterArenaMelee/>
-	<HeroCharacterAdventure href="/Characters/Heroes/Findan_LOD.(Character).xdb#xpointer(/Character)"/>
-	<HeroIndividualCamera/>
-	<CombatVisual href="/GameMechanics/CreatureVisual/Heroes/Ranger.xdb#xpointer(/CreatureVisual)"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Stronghold/Offender3/Name.txt" />
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Stronghold/Offender3/Description.txt" />
+	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Preserve/Elven_Volley.xdb#xpointer(/Texture)" />
+	<FaceTexture href="/Textures/Icons/Heroes/Preserve/Preserve_Findan_128x128.(Texture).xdb#xpointer(/Texture)" />
+	<FaceTextureSmall />
+	<HeroCharacterArena href="/Characters/Heroes/Findan.(Character).xdb#xpointer(/Character)" />
+	<HeroCharacterArenaMelee />
+	<HeroCharacterAdventure href="/Characters/Heroes/Findan_LOD.(Character).xdb#xpointer(/Character)" />
+	<HeroIndividualCamera />
+	<CombatVisual href="/GameMechanics/CreatureVisual/Heroes/Ranger.xdb#xpointer(/CreatureVisual)" />
 	<TownType>TOWN_PRESERVE</TownType>
 	<Editable>
-		<NameFileRef href="/Text/Game/Heroes/Persons/Preserve/Heam/Name.txt"/>
-		<BiographyFileRef href="/Text/Game/Heroes/Persons/Preserve/Heam/Bio.txt"/>
+		<NameFileRef href="/Text/Game/Heroes/Persons/Preserve/Heam/Name.txt" />
+		<BiographyFileRef href="/Text/Game/Heroes/Persons/Preserve/Heam/Bio.txt" />
 		<Offence>3</Offence>
 		<Defence>0</Defence>
 		<Spellpower>1</Spellpower>
-		<Knowledge>2</Knowledge>
-		<skills>			
+		<Knowledge>1</Knowledge>
+		<skills>
 			<Item>
-				<Mastery>MASTERY_ADVANCED</Mastery>
+				<Mastery>MASTERY_BASIC</Mastery>
 				<SkillID>HERO_SKILL_TRAINING</SkillID>
-			</Item>		
+			</Item>
 		</skills>
-		<perkIDs/>
-		<spellIDs/>
+		<perkIDs />
+		<spellIDs />
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>
 		<AmmoCart>false</AmmoCart>
-		<FavoriteEnemies/>
+		<FavoriteEnemies />
 	</Editable>
 	<ArrowButtonState>0</ArrowButtonState>
-	<Decal/>
-	<Selection href="/_(Model)/Heroes/Ranger_Path/Symbol.xdb#xpointer(/Model)"/>
-	<Trace href="/MapObjects/_(AdvMapHeroTraceSet)/Rampart.xdb#xpointer(/AdvMapHeroTraceSet)"/>
-	<RaceTraitIcon/>
-	<RaceTraitDescFileRef href=""/>
+	<Decal />
+	<Selection href="/_(Model)/Heroes/Ranger_Path/Symbol.xdb#xpointer(/Model)" />
+	<Trace href="/MapObjects/_(AdvMapHeroTraceSet)/Rampart.xdb#xpointer(/AdvMapHeroTraceSet)" />
+	<RaceTraitIcon />
+	<RaceTraitDescFileRef href="" />
 	<ScenarioHero>false</ScenarioHero>
-	<AdventureMusic href="/Sounds/_(Music)/AdvMap-Heroes/Findan.xdb#xpointer(/Music)"/>
+	<AdventureMusic href="/Sounds/_(Music)/AdvMap-Heroes/Findan.xdb#xpointer(/Music)" />
 	<HideInEditor>false</HideInEditor>
 </AdvMapHeroShared>

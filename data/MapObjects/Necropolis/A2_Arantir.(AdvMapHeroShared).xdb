@@ -1,86 +1,86 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <AdvMapHeroShared>
-	<Model href="/Characters/Heroes/H5A2/Arantir_Mounted.xdb#xpointer(/Model)"/>
-	<AnimSet href="/Characters/Heroes/H5A2/Arantir_Mounted-arena.xdb#xpointer(/AnimSet)"/>
-	<blockedTiles/>
-	<holeTiles/>
+	<Model href="/Characters/Heroes/H5A2/Arantir_Mounted.xdb#xpointer(/Model)" />
+	<AnimSet href="/Characters/Heroes/H5A2/Arantir_Mounted-arena.xdb#xpointer(/AnimSet)" />
+	<blockedTiles />
+	<holeTiles />
 	<activeTiles>
 		<Item>
 			<x>0</x>
 			<y>0</y>
 		</Item>
 	</activeTiles>
-	<passableTiles/>
+	<passableTiles />
 	<PossessionMarkerTile>
 		<x>0</x>
 		<y>0</y>
 	</PossessionMarkerTile>
-	<Effect/>
-	<EffectWhenOwned/>
+	<Effect />
+	<EffectWhenOwned />
 	<messagesFileRef>
-		<Item href=""/>
+		<Item href="" />
 	</messagesFileRef>
 	<WaterBased>false</WaterBased>
 	<ApplyHeroTrace>false</ApplyHeroTrace>
-	<SoundEffect/>
-	<flybyMessageFileRef href=""/>
-	<ObjectTypeFileRef href="/Text/Visibility_Types/Units.txt"/>
+	<SoundEffect />
+	<flybyMessageFileRef href="" />
+	<ObjectTypeFileRef href="/Text/Visibility_Types/Units.txt" />
 	<TerrainAligned>false</TerrainAligned>
 	<FlyPassable>true</FlyPassable>
-	<AdventureSoundEffect/>
-	<RazedStatic/>
-	<Icon128 href="/UI/H5A2/Icons/Heroes/Portrets128x128/Necropolis_Arantir.(Texture).xdb#xpointer(/Texture)"/>
+	<AdventureSoundEffect />
+	<RazedStatic />
+	<Icon128 href="/UI/H5A2/Icons/Heroes/Portrets128x128/Necropolis_Arantir.(Texture).xdb#xpointer(/Texture)" />
 	<InternalName>Arantir</InternalName>
 	<Class>HERO_CLASS_NECROMANCERA</Class>
-	<Specialization>HERO_SPEC_REANIMATOR</Specialization>
+	<Specialization>HERO_SPEC_AVATAR_OF_DEATH</Specialization>
 	<PrimarySkill>
-		<Mastery>MASTERY_ADVANCED</Mastery>
+		<Mastery>MASTERY_BASIC</Mastery>
 		<SkillID>HERO_SKILL_NECROMANCY</SkillID>
 	</PrimarySkill>
-	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Necropolis/Reanimator/Name.txt"/>
-	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Necropolis/Reanimator/Description.txt"/>
-	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Necropolis/Reanimator.xdb#xpointer(/Texture)"/>
-	<FaceTexture href="/UI/H5A2/Icons/Heroes/Portrets128x128/Necropolis_Arantir.(Texture).xdb#xpointer(/Texture)"/>
-	<FaceTextureSmall/>
-	<HeroCharacterArena href="/Characters/Heroes/H5A2/Arantir_Mounted.(Character).xdb#xpointer(/Character)"/>
-	<HeroCharacterArenaMelee/>
-	<HeroCharacterAdventure href="/Characters/Heroes/H5A2/Arantir_Mounted.(Character).xdb#xpointer(/Character)"/>
-	<HeroIndividualCamera/>
-	<CombatVisual href="/GameMechanics/CreatureVisual/Heroes/Necromancer.xdb#xpointer(/CreatureVisual)"/>
+	<SpecializationNameFileRef href="/Text/Game/Heroes/Specializations/Necropolis/AvatarOfDeath5/Name.txt" />
+	<SpecializationDescFileRef href="/Text/Game/Heroes/Specializations/Necropolis/AvatarOfDeath5/Description.txt" />
+	<SpecializationIcon href="/Textures/HeroScreen/Specializations/Necropolis/AvatarOfDeath.xdb#xpointer(/Texture)" />
+	<FaceTexture href="/UI/H5A2/Icons/Heroes/Portrets128x128/Necropolis_Arantir.(Texture).xdb#xpointer(/Texture)" />
+	<FaceTextureSmall />
+	<HeroCharacterArena href="/Characters/Heroes/H5A2/Arantir_Mounted.(Character).xdb#xpointer(/Character)" />
+	<HeroCharacterArenaMelee />
+	<HeroCharacterAdventure href="/Characters/Heroes/H5A2/Arantir_Mounted.(Character).xdb#xpointer(/Character)" />
+	<HeroIndividualCamera />
+	<CombatVisual href="/GameMechanics/CreatureVisual/Heroes/Necromancer.xdb#xpointer(/CreatureVisual)" />
 	<TownType>TOWN_NECROMANCY</TownType>
 	<Editable>
-		<NameFileRef href="/Text/Game/Heroes/Persons/Necropolis/Arantir/Name.txt"/>
-		<BiographyFileRef href="/Text/Game/Heroes/Persons/Necropolis/Arantir/Bio.txt"/>
+		<NameFileRef href="/Text/Game/Heroes/Persons/Necropolis/Arantir/Name.txt" />
+		<BiographyFileRef href="/Text/Game/Heroes/Persons/Necropolis/Arantir/Bio.txt" />
 		<Offence>1</Offence>
 		<Defence>1</Defence>
 		<Spellpower>2</Spellpower>
-		<Knowledge>2</Knowledge>
+		<Knowledge>1</Knowledge>
 		<skills>
 			<Item>
 				<Mastery>MASTERY_BASIC</Mastery>
-				<SkillID>HERO_SKILL_DARK_MAGIC</SkillID>
+				<SkillID>HERO_SKILL_SORCERY</SkillID>
 			</Item>
 		</skills>
-		<perkIDs/>
-		<spellIDs/>
+		<perkIDs />
+		<spellIDs />
 		<Ballista>false</Ballista>
 		<FirstAidTent>false</FirstAidTent>
 		<AmmoCart>false</AmmoCart>
-		<FavoriteEnemies/>
+		<FavoriteEnemies />
 	</Editable>
 	<ArrowButtonState>0</ArrowButtonState>
-	<Decal/>
-	<Selection href="/_(Model)/Heroes/Necromancer_Path/Symbol.xdb#xpointer(/Model)"/>
-	<Trace href="/MapObjects/_(AdvMapHeroTraceSet)/Necropolis.xdb#xpointer(/AdvMapHeroTraceSet)"/>
-	<RaceTraitIcon/>
-	<RaceTraitDescFileRef href=""/>
+	<Decal />
+	<Selection href="/_(Model)/Heroes/Necromancer_Path/Symbol.xdb#xpointer(/Model)" />
+	<Trace href="/MapObjects/_(AdvMapHeroTraceSet)/Necropolis.xdb#xpointer(/AdvMapHeroTraceSet)" />
+	<RaceTraitIcon />
+	<RaceTraitDescFileRef href="" />
 	<ScenarioHero>false</ScenarioHero>
-	<AdventureMusic href="/Sounds/_(Music)/AdvMap-Heroes/a2-Arantir.xdb#xpointer(/Music)"/>
+	<AdventureMusic href="/Sounds/_(Music)/AdvMap-Heroes/a2-Arantir.xdb#xpointer(/Music)" />
 	<HideInEditor>false</HideInEditor>
 	<PresetMinimalAttributes>
 		<Offence>2</Offence>
 		<Defence>2</Defence>
 		<Spellpower>2</Spellpower>
-		<Knowledge>3</Knowledge>
+		<Knowledge>2</Knowledge>
 	</PresetMinimalAttributes>
 </AdvMapHeroShared>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Spell ObjectRecordID="16">
 	<NameFileRef href="/Text/Game/Spells/Creature_Abilities/Haven/LayHands/Name.txt"/>
-	<LongDescriptionFileRef href=""/>
-	<Texture href="/Textures/RefMaps/negx.xdb#xpointer(/Texture)"/>
+	<LongDescriptionFileRef href="/Text/Game/Creatures/Creature_abilities/Lay_Hands/description.txt"/>
+	<Texture href="/UI/H5A2/Icons/Spells/Regeneration.(Texture).xdb#xpointer(/Texture)"/>
 	<EffectTexture/>
 	<SpellBookPredictions/>
 	<CombatLogTexts>

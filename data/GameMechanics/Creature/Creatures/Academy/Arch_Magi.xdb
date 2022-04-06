@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="1000044">
-	<AttackSkill>10</AttackSkill>
-	<DefenceSkill>10</DefenceSkill>
-	<Shots>10</Shots>
+	<AttackSkill>21</AttackSkill>
+	<DefenceSkill>21</DefenceSkill>
+	<Shots>7</Shots>
 	<MinDamage>8</MinDamage>
 	<MaxDamage>8</MaxDamage>
 	<Speed>4</Speed>
 	<Initiative>11</Initiative>
 	<Flying>false</Flying>
-	<Health>80</Health>
+	<Health>60</Health>
 	<KnownSpells>
 		<Item>
 			<Spell>SPELL_ANTI_MAGIC</Spell>
@@ -23,7 +23,7 @@
 			<Mastery>MASTERY_EXPERT</Mastery>
 		</Item>
 	</KnownSpells>
-	<SpellPoints>15</SpellPoints>
+	<SpellPoints>20</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
 	<SpellPoints2>0</SpellPoints2>
 	<Exp>60</Exp>

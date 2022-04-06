@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>26</AttackSkill>
-	<DefenceSkill>26</DefenceSkill>
+	<AttackSkill>27</AttackSkill>
+	<DefenceSkill>27</DefenceSkill>
 	<Shots>0</Shots>
 	<MinDamage>20</MinDamage>
 	<MaxDamage>27</MaxDamage>
 	<Speed>8</Speed>
 	<Initiative>10</Initiative>
 	<Flying>true</Flying>
-	<Health>280</Health>
+	<Health>210</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
@@ -44,8 +44,8 @@
 	<BaseCreature>CREATURE_WYVERN</BaseCreature>
 	<Upgrades />
 	<Abilities>
-		<Item>ABILITY_VENOM</Item>
 		<Item>ABILITY_REGENERATION</Item>
+		<Item>ABILITY_VENOM</Item>
 		<Item>ABILITY_IMMUNITY_TO_BERSERK</Item>
 	</Abilities>
 </Creature>

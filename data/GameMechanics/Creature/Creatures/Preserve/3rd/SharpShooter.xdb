@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>6</AttackSkill>
-	<DefenceSkill>6</DefenceSkill>
-	<Shots>12</Shots>
+	<AttackSkill>19</AttackSkill>
+	<DefenceSkill>19</DefenceSkill>
+	<Shots>9</Shots>
 	<MinDamage>7</MinDamage>
 	<MaxDamage>8</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>40</Health>
+	<Health>30</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
@@ -46,6 +46,5 @@
 	<Abilities>
 		<Item>ABILITY_NO_RANGE_PENALTY</Item>
 		<Item>ABILITY_PIERCING_ARROW</Item>
-		<Item>ABILITY_MAGIC_ATTACK</Item>
 	</Abilities>
 </Creature>

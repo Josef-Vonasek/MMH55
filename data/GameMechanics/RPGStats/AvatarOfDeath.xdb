@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RPGCombatUniqueCreatureStats>
-	<PrototypeCreature>CREATURE_SHADOW_DRAGON</PrototypeCreature>
+	<PrototypeCreature>CREATURE_BLACK_KNIGHT</PrototypeCreature>
 	<Health>0</Health>
 	<Health_PerPower>0</Health_PerPower>
 	<Health_PerLevel>10</Health_PerLevel>
@@ -69,7 +69,7 @@
 		<Item>
 			<Level>50</Level>
 			<Abilities>
-				<Item>ABILITY_CLEAVE</Item>
+				<Item>ABILITY_DASH</Item>
 			</Abilities>
 		</Item>
 	</Abilities>

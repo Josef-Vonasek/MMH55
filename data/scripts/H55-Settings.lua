@@ -11,10 +11,10 @@
 
 H55_TownGateEnabled = 1; --Activates Town Gate, allows teleportation of heroes to any town (0 = deactivated).
 
-H55_TownConvEnabled = 0; --Activates Town and Dwelling Conversion (0 = deactivated)
+H55_TownConvEnabled = 1; --Activates Town and Dwelling Conversion (0 = deactivated)
 H55_AmountExtraTownsDwellings = 1; --Allows to increase amount of allowed conversions for dwellings and towns (1 = balanced like RC3, zero can also be used).
 
-H55_GovernanceEnabled = 0; --Allows the creation of governor heroes (0 = deactivated).
+H55_GovernanceEnabled = 1; --Allows the creation of governor heroes (0 = deactivated).
 H55_GovernorExpCoef = 1; --Multiplier for experience gain of governors (do not set to zero) Example: 1.2 = 20% more, 0.8 = 20% less.
 
 H55_IgnoreExpAdjustment = 0; --If this is set to 1, the game will not adjust the experience gain to the size of the neutral stacks (so higher difficulty will not be as hard).
@@ -70,7 +70,7 @@ H55_NegativeArtifacts = 1; --Set to 0 to disable secret negative artifacts from 
 H55_MoonDiscQuest = 0; --Set to 1 to activate moondisc combo-artifact quest on all maps, NOT RECOMMENDED, copy/paste this setting only to maps that are suitable.
 H55_MoonDiscOnARMGMaps = 1; --Set to 0 to disable moondisc combo-artifact quests on ARMG maps.
 
-H55_RPGPotions = 0; --Set to 1 to enable experimental potion feature.
+H55_RPGPotions = 1; --Set to 1 to enable experimental potion feature.
 
 H55_Duel_WeeksGrowth = 8; --Settings for ARMG Duel Template, this one determines army size.
 H55_Duel_HeroLevel = 25; --Levels given by witch hut, Max level = 50!

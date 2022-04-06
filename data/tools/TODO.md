@@ -1,0 +1,3 @@
+- add elemental vision
+- add governor bonuses
+- add combat bonuses

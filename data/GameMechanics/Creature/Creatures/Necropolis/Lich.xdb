@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="69">
-	<AttackSkill>16</AttackSkill>
-	<DefenceSkill>16</DefenceSkill>
-	<Shots>10</Shots>
-	<MinDamage>12</MinDamage>
-	<MaxDamage>17</MaxDamage>
+	<AttackSkill>24</AttackSkill>
+	<DefenceSkill>24</DefenceSkill>
+	<Shots>7</Shots>
+	<MinDamage>10</MinDamage>
+	<MaxDamage>14</MaxDamage>
 	<Speed>4</Speed>
 	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>130</Health>
+	<Health>97</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
@@ -49,5 +49,6 @@
 	<Abilities>
 		<Item>ABILITY_UNDEAD</Item>
 		<Item>ABILITY_DEATH_CLOUD</Item>
+		<Item>ABILITY_VENOM</Item>
 	</Abilities>
 </Creature>

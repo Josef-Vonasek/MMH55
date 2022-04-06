@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>16</AttackSkill>
-	<DefenceSkill>16</DefenceSkill>
-	<Shots>10</Shots>
+	<AttackSkill>24</AttackSkill>
+	<DefenceSkill>24</DefenceSkill>
+	<Shots>7</Shots>
 	<MinDamage>15</MinDamage>
 	<MaxDamage>19</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>200</Health>
+	<Health>150</Health>
 	<KnownSpells>
 		<Item>
 			<Spell>SPELL_SLOW</Spell>
@@ -23,7 +23,7 @@
 			<Mastery>MASTERY_EXPERT</Mastery>
 		</Item>
 	</KnownSpells>
-	<SpellPoints>10</SpellPoints>
+	<SpellPoints>15</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
 	<SpellPoints2>0</SpellPoints2>
 	<Exp>95</Exp>

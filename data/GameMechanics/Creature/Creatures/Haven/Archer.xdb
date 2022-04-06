@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="5">
-	<AttackSkill>4</AttackSkill>
-	<DefenceSkill>4</DefenceSkill>
-	<Shots>8</Shots>
+	<AttackSkill>16</AttackSkill>
+	<DefenceSkill>16</DefenceSkill>
+	<Shots>6</Shots>
 	<MinDamage>2</MinDamage>
 	<MaxDamage>4</MaxDamage>
 	<Speed>4</Speed>
 	<Initiative>9</Initiative>
 	<Flying>false</Flying>
-	<Health>20</Health>
-	<KnownSpells/>
+	<Health>15</Health>
+	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
 	<SpellPoints2>0</SpellPoints2>
@@ -59,6 +59,5 @@
 	</Upgrades>
 	<Abilities>
 		<Item>ABILITY_SCATTER_SHOT</Item>
-		<Item>ABILITY_MAGIC_ATTACK</Item>
 	</Abilities>
 </Creature>

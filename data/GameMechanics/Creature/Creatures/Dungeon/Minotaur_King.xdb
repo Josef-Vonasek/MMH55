@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="1000028">
-	<AttackSkill>6</AttackSkill>
-	<DefenceSkill>6</DefenceSkill>
+	<AttackSkill>19</AttackSkill>
+	<DefenceSkill>19</DefenceSkill>
 	<Shots>0</Shots>
 	<MinDamage>4</MinDamage>
 	<MaxDamage>6</MaxDamage>
 	<Speed>6</Speed>
 	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>84</Health>
+	<Health>63</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
@@ -44,7 +44,6 @@
 	<BaseCreature>CREATURE_MINOTAUR</BaseCreature>
 	<Upgrades />
 	<Abilities>
-		<Item>ABILITY_BRAVERY</Item>
 		<Item>ABILITY_CLEAVE</Item>
 	</Abilities>
 </Creature>

@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>16</AttackSkill>
-	<DefenceSkill>16</DefenceSkill>
+	<AttackSkill>24</AttackSkill>
+	<DefenceSkill>24</DefenceSkill>
 	<Shots>0</Shots>
-	<MinDamage>7</MinDamage>
-	<MaxDamage>12</MaxDamage>
+	<MinDamage>14</MinDamage>
+	<MaxDamage>24</MaxDamage>
 	<Speed>8</Speed>
 	<Initiative>12</Initiative>
 	<Flying>true</Flying>
-	<Health>100</Health>
+	<Health>75</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>99</SpellPoints1>
@@ -47,6 +47,6 @@
 	<Abilities>
 		<Item>ABILITY_LUCK_GAMBLER</Item>
 		<Item>ABILITY_MAGIC_PROOF_75</Item>
-		<Item>ABILITY_RIDE_BY_ATTACK</Item>
+		<!-- <Item>ABILITY_RIDE_BY_ATTACK</Item> -->
 	</Abilities>
 </Creature>

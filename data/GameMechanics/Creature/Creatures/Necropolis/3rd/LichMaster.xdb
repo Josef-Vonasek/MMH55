@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>16</AttackSkill>
-	<DefenceSkill>16</DefenceSkill>
-	<Shots>10</Shots>
+	<AttackSkill>24</AttackSkill>
+	<DefenceSkill>24</DefenceSkill>
+	<Shots>7</Shots>
 	<MinDamage>17</MinDamage>
 	<MaxDamage>21</MaxDamage>
 	<Speed>4</Speed>
 	<Initiative>9</Initiative>
 	<Flying>false</Flying>
-	<Health>140</Health>
+	<Health>105</Health>
 	<KnownSpells>
 		<Item>
 			<Spell>SPELL_MASS_PLAGUE</Spell>

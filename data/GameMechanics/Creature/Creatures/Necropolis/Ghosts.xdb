@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="1000021">
-	<AttackSkill>6</AttackSkill>
-	<DefenceSkill>6</DefenceSkill>
+	<AttackSkill>19</AttackSkill>
+	<DefenceSkill>19</DefenceSkill>
 	<Shots>0</Shots>
-	<MinDamage>6</MinDamage>
-	<MaxDamage>9</MaxDamage>
+	<MinDamage>3</MinDamage>
+	<MaxDamage>6</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>10</Initiative>
 	<Flying>true</Flying>
-	<Health>75</Health>
+	<Health>30</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
-	<SpellPoints1>0</SpellPoints1>
+	<SpellPoints1>1</SpellPoints1>
 	<SpellPoints2>0</SpellPoints2>
 	<Exp>31</Exp>
 	<Power>321</Power>
@@ -47,5 +47,6 @@
 		<Item>ABILITY_UNDEAD</Item>
 		<Item>ABILITY_INCORPOREAL</Item>
 		<Item>ABILITY_MANA_DRAIN</Item>
+		<Item>ABILITY_HOWL</Item>
 	</Abilities>
 </Creature>

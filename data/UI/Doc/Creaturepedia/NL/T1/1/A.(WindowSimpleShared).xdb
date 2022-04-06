@@ -2,9 +2,9 @@
 <WindowSimpleShared ObjectRecordID="1000326">
 	<Crap>false</Crap>
 	<Children>
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/NO_ENEMY_RETALIATION/P0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/ELEMENTAL/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/IMMUNITY_TO_AIR/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/ELEMENTAL/P0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/IMMUNITY_TO_AIR/P1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/NO_ENEMY_RETALIATION/P2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/Creaturepedia/Common/Abilities/INCORPOREAL/P3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="C.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 	</Children>

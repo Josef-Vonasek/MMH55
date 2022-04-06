@@ -6,6 +6,7 @@
 		<Item href="/UI/Doc/SkillWheel/PrimarySkills/Defense/PSButton.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/PrimarySkills/Spellpower/PSButton.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/PrimarySkills/Knowledge/PSButton.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Dark/P1/PerkButton0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Dark/P1/PerkButton1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Dark/P1/PerkButton2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Dark/P1/PerkButton3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
@@ -105,15 +106,16 @@
 		<Item href="/UI/Doc/SkillWheel/Skills/Occultism/P10/PerkButton7.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Occultism/P10/PerkButton8.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Occultism/P10/PerkButton9.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P11/PerkButton1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P11/PerkButton2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P11/PerkButton3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P11/PerkButton4.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P11/PerkButton5.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P11/PerkButton6.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P11/PerkButton7.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P11/PerkButton8.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P11/PerkButton9.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P11/PerkButton0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P11/PerkButton1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P11/PerkButton2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P11/PerkButton3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P11/PerkButton4.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P11/PerkButton5.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P11/PerkButton6.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P11/PerkButton7.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P11/PerkButton8.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P11/PerkButton9.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Necromancy/P12/PerkButton0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Necromancy/P12/PerkButton1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Necromancy/P12/PerkButton2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
@@ -124,15 +126,16 @@
 		<Item href="/UI/Doc/SkillWheel/Skills/Necromancy/P12/PerkButton7.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Necromancy/P12/PerkButton8.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Necromancy/P12/PerkButton9.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P13/PerkButton1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P13/PerkButton2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P13/PerkButton3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P13/PerkButton4.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P13/PerkButton5.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P13/PerkButton6.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P13/PerkButton7.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P13/PerkButton8.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
-		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P13/PerkButton9.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton4.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton5.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton6.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton7.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton8.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton9.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 	</Children>
 	<Background />
 	<Foreground />

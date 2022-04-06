@@ -2,7 +2,7 @@
 <Spell>
 	<NameFileRef href="/Text/Game/Creatures/Creature_abilities/BearRoar/Name.txt"/>
 	<LongDescriptionFileRef href="/Text/Game/Creatures/Creature_abilities/BearRoar/Description.txt"/>
-	<Texture href="/UI/H5A2/Icons/Creatures_Abilites/BearRoar.(Texture).xdb#xpointer(/Texture)"/>
+	<Texture href="/UI/H5A2/Icons/Heroes_Skills/Other_Perks/Bodybuilding.(Texture).xdb#xpointer(/Texture)"/>
 	<EffectTexture/>
 	<SpellBookPredictions/>
 	<CombatLogTexts/>

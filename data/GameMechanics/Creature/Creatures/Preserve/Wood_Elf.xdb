@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="1000008">
-	<AttackSkill>6</AttackSkill>
-	<DefenceSkill>6</DefenceSkill>
-	<Shots>20</Shots>
+	<AttackSkill>19</AttackSkill>
+	<DefenceSkill>19</DefenceSkill>
+	<Shots>15</Shots>
 	<MinDamage>4</MinDamage>
 	<MaxDamage>7</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>28</Health>
+	<Health>21</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
@@ -48,6 +48,5 @@
 	</Upgrades>
 	<Abilities>
 		<Item>ABILITY_ELVES_DOUBLE_SHOT</Item>
-		<Item>ABILITY_MAGIC_ATTACK</Item>
 	</Abilities>
 </Creature>

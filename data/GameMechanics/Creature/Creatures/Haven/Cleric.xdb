@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="11">
-	<AttackSkill>16</AttackSkill>
-	<DefenceSkill>16</DefenceSkill>
-	<Shots>10</Shots>
+	<AttackSkill>24</AttackSkill>
+	<DefenceSkill>24</DefenceSkill>
+	<Shots>7</Shots>
 	<MinDamage>15</MinDamage>
 	<MaxDamage>19</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>10</Initiative>
 	<Flying>false</Flying>
-	<Health>200</Health>
+	<Health>150</Health>
 	<KnownSpells>
 		<Item>
 			<Spell>SPELL_DISPEL</Spell>
@@ -26,8 +26,12 @@
 			<Spell>SPELL_MASS_STONESKIN</Spell>
 			<Mastery>MASTERY_EXPERT</Mastery>
 		</Item>
+		<Item>
+			<Spell>SPELL_ABILITY_LAY_HANDS</Spell>
+			<Mastery>MASTERY_EXPERT</Mastery>
+		</Item>
 	</KnownSpells>
-	<SpellPoints>10</SpellPoints>
+	<SpellPoints>15</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
 	<SpellPoints2>0</SpellPoints2>
 	<Exp>95</Exp>
@@ -63,7 +67,5 @@
 	<Abilities>
 		<Item>ABILITY_RANGE_PENALTY</Item>
 		<Item>ABILITY_NO_MELEE_PENALTY</Item>
-		<Item>ABILITY_LAY_HANDS</Item>
-		<Item>ABILITY_BRAVERY</Item>
 	</Abilities>
 </Creature>

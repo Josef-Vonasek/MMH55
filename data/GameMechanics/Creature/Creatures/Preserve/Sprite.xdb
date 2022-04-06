@@ -1,22 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="1000005">
-	<AttackSkill>2</AttackSkill>
-	<DefenceSkill>2</DefenceSkill>
+	<AttackSkill>13</AttackSkill>
+	<DefenceSkill>13</DefenceSkill>
 	<Shots>0</Shots>
 	<MinDamage>2</MinDamage>
 	<MaxDamage>3</MaxDamage>
 	<Speed>7</Speed>
 	<Initiative>12</Initiative>
 	<Flying>true</Flying>
-	<Health>16</Health>
+	<Health>12</Health>
 	<KnownSpells>
 		<Item>
 			<Spell>SPELL_MASS_BLESS</Spell>
 			<Mastery>MASTERY_EXPERT</Mastery>
 		</Item>
 	</KnownSpells>
-	<SpellPoints>8</SpellPoints>
-	<SpellPoints1>2</SpellPoints1>
+	<SpellPoints>10</SpellPoints>
+	<SpellPoints1>1</SpellPoints1>
 	<SpellPoints2>0</SpellPoints2>
 	<Exp>15</Exp>
 	<Power>159</Power>

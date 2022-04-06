@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="46">
-	<AttackSkill>26</AttackSkill>
-	<DefenceSkill>26</DefenceSkill>
+	<AttackSkill>27</AttackSkill>
+	<DefenceSkill>27</DefenceSkill>
 	<Shots>0</Shots>
-	<MinDamage>13</MinDamage>
-	<MaxDamage>31</MaxDamage>
+	<MinDamage>7</MinDamage>
+	<MaxDamage>15</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>9</Initiative>
 	<Flying>false</Flying>
-	<Health>332</Health>
+	<Health>249</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>2</SpellPoints1>
@@ -47,5 +47,6 @@
 		<Item>ABILITY_DEMONIC</Item>
 		<Item>ABILITY_VORPAL_SWORD</Item>
 		<Item>ABILITY_FLAMESTRIKE</Item>
+		<Item>ABILITY_DOUBLE_ATTACK</Item>
 	</Abilities>
 </Creature>

@@ -6,6 +6,7 @@
 		<Item href="/UI/Doc/SkillWheel/PrimarySkills/Defense/PSButton.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/PrimarySkills/Spellpower/PSButton.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/PrimarySkills/Knowledge/PSButton.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P1/PerkButton0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P1/PerkButton1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P1/PerkButton2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Destructive/P1/PerkButton3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
@@ -125,6 +126,7 @@
 		<Item href="/UI/Doc/SkillWheel/Skills/Artificer/P12/PerkButton7.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Artificer/P12/PerkButton8.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Artificer/P12/PerkButton9.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
+		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton0.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton1.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton2.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />
 		<Item href="/UI/Doc/SkillWheel/Skills/Summoning/P13/PerkButton3.(WindowMSButton).xdb#xpointer(/WindowMSButton)" />

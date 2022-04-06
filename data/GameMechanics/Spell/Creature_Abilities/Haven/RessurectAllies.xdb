@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Spell ObjectRecordID="17">
 	<NameFileRef href="/Text/Game/Spells/Creature_Abilities/Haven/ResurrectAllies/Name.txt"/>
-	<LongDescriptionFileRef href=""/>
-	<Texture/>
+	<LongDescriptionFileRef href="/Text/Game/Spells/Creature_Abilities/Haven/ResurrectAllies/Description.txt"/>
+	<Texture href="/Textures/SpellBook______2618/Spells/Spell_Resurrect.xdb#xpointer(/Texture)" />
 	<EffectTexture/>
 	<SpellBookPredictions>
 		<Item href="/Text/Game/Spells/SpellBookPredictions/Heal.txt"/>

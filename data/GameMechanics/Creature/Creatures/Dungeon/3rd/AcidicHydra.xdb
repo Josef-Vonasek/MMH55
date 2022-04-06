@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>16</AttackSkill>
-	<DefenceSkill>16</DefenceSkill>
+	<AttackSkill>24</AttackSkill>
+	<DefenceSkill>24</DefenceSkill>
 	<Shots>0</Shots>
 	<MinDamage>10</MinDamage>
 	<MaxDamage>13</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>9</Initiative>
 	<Flying>false</Flying>
-	<Health>300</Health>
+	<Health>225</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
@@ -46,7 +46,6 @@
 	<Abilities>
 		<Item>ABILITY_SIX_HEADED_ATTACK</Item>
 		<Item>ABILITY_NO_ENEMY_RETALIATION</Item>
-		<Item>ABILITY_ENRAGED</Item>
 		<Item>ABILITY_TAUNT</Item>
 		<Item>ABILITY_ACID_BLOOD</Item>
 	</Abilities>

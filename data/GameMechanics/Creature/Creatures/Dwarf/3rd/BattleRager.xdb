@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>10</AttackSkill>
-	<DefenceSkill>10</DefenceSkill>
+	<AttackSkill>21</AttackSkill>
+	<DefenceSkill>21</DefenceSkill>
 	<Shots>0</Shots>
 	<MinDamage>3</MinDamage>
 	<MaxDamage>7</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>13</Initiative>
 	<Flying>false</Flying>
-	<Health>80</Health>
+	<Health>60</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
@@ -47,5 +47,6 @@
 	<Abilities>
 		<Item>ABILITY_IMMUNITY_TO_MIND_CONTROL</Item>
 		<Item>ABILITY_ANTI_GIANT</Item>
+		<Item>ABILITY_LIZARD_BITE</Item>
 	</Abilities>
 </Creature>

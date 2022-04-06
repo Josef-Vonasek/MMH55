@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature>
-	<AttackSkill>2</AttackSkill>
-	<DefenceSkill>2</DefenceSkill>
-	<Shots>12</Shots>
+	<AttackSkill>13</AttackSkill>
+	<DefenceSkill>13</DefenceSkill>
+	<Shots>9</Shots>
 	<MinDamage>1</MinDamage>
 	<MaxDamage>2</MaxDamage>
 	<Speed>5</Speed>
 	<Initiative>12</Initiative>
 	<Flying>false</Flying>
-	<Health>16</Health>
+	<Health>12</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
@@ -46,7 +46,5 @@
 	<Upgrades />
 	<Abilities>
 		<Item>ABILITY_SABOTAGE</Item>
-		<Item>ABILITY_MECHANICAL</Item>
-		<Item>ABILITY_MAGIC_ATTACK</Item>
 	</Abilities>
 </Creature>

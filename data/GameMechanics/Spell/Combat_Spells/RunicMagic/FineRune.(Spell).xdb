@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Spell>
-	<NameFileRef href="SpellEffectFineRuneName.txt"/>
-	<LongDescriptionFileRef href="SpellEffectFineRuneDesc.txt"/>
-	<Texture href="/UI/H5A1/Icons/Abilites/Skills/128x128/Fine_Rune.(Texture).xdb#xpointer(/Texture)"/>
-	<EffectTexture/>
-	<SpellBookPredictions/>
-	<CombatLogTexts/>
+	<NameFileRef href="SpellEffectFineRuneName.txt" />
+	<LongDescriptionFileRef href="SpellEffectFineRuneDesc.txt" />
+	<Texture href="/UI/H5A1/Icons/Abilites/Skills/128x128/Fine_Rune.(Texture).xdb#xpointer(/Texture)" />
+	<EffectTexture />
+	<SpellBookPredictions />
+	<CombatLogTexts />
 	<Level>0</Level>
 	<MagicSchool>MAGIC_SCHOOL_SPECIAL</MagicSchool>
 	<RequiredHeroLevel>0</RequiredHeroLevel>
@@ -60,5 +60,5 @@
 	<CanSelectDead>false</CanSelectDead>
 	<Target>TARGET_FRIEND</Target>
 	<Element>ELEMENT_NONE</Element>
-	<visuals/>
+	<visuals />
 </Spell>

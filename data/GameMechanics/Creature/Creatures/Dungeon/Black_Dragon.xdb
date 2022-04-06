@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Creature ObjectRecordID="1000035">
-	<AttackSkill>42</AttackSkill>
-	<DefenceSkill>42</DefenceSkill>
+	<AttackSkill>30</AttackSkill>
+	<DefenceSkill>30</DefenceSkill>
 	<Shots>0</Shots>
 	<MinDamage>45</MinDamage>
 	<MaxDamage>70</MaxDamage>
 	<Speed>9</Speed>
 	<Initiative>10</Initiative>
 	<Flying>true</Flying>
-	<Health>600</Health>
+	<Health>450</Health>
 	<KnownSpells />
 	<SpellPoints>0</SpellPoints>
 	<SpellPoints1>0</SpellPoints1>
@@ -44,8 +44,7 @@
 	<BaseCreature>CREATURE_DEEP_DRAGON</BaseCreature>
 	<Upgrades />
 	<Abilities>
-		<Item>ABILITY_IMMUNITY_TO_MAGIC</Item>
-		<Item>ABILITY_FIRE_BREATH</Item>
 		<Item>ABILITY_ENCHANTED_OBSIDIAN</Item>
+		<Item>ABILITY_FIRE_BREATH</Item>
 	</Abilities>
 </Creature>
